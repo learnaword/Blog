@@ -1,5 +1,7 @@
 package com.mjl.blog.framework.MVC;
 
+import com.mjl.blog.framework.MVC.handler.GlobalExceptionHandler;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -14,4 +16,5 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/")
                 .addResourceLocations("/webapp/");
     }
+
 }

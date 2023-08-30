@@ -26,6 +26,7 @@
         <lombok.version>1.18.26</lombok.version>
         <jackson-databind.version>2.12.5</jackson-databind.version>
         <druid.version>1.2.16</druid.version>
+        <guava.version>32.0.1-jre</guava.version>
     </properties>
     <dependencies>
         <!--引入MybtaisPlus-->
@@ -100,6 +101,12 @@
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>3.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
     </dependencies>
 </project>
