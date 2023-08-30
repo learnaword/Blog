@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -32,79 +32,79 @@
 		margin:0;
 		padding:0px;
 	}
-	
+
 	.gray-bg {
 		background-color: #f3f3f4;
 	}
-	
+
 	.middle-box {
 		max-width: 400px;
 		z-index: 100;
 		margin: 0 auto;
 		padding-top: 0px;
 	}
-	
+
 	.text-center {
 		text-align: center;
 	}
-	
+
 	.middle-box h1 {
 		font-size: 160px;
 	}
-	
+
 	.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
 		font-family: inherit;
 		line-height: 1.1;
 		color: inherit;
 	}
-	
+
 	h1 {
 		margin: .67em 0;
 		font-size: 2em;
 	}
-	
+
 	.font-bold {
 		font-weight: 600;
 	}
-	
+
 	h3,h4,h5 {
 		margin-top: 5px;
 		font-weight: 600;
 	}
-	
+
 	h3 {
 		font-size: 16px;
 	}
-	
+
 	.h3,h3 {
 		font-size: 24px;
 	}
-	
-	
-	
+
+
+
 	.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
 		font-family: inherit;
 		line-height: 1.1;
 		color: inherit;
 	}
-	
+
 	.m-t {
 		margin-top: 15px;
 	}
-	
+
 	.form-inline .form-group {
 		display: inline-block;
 		margin-bottom: 0;
 		vertical-align: middle;
 	}
-	
+
 	.form-inline .form-control {
 		display: inline-block;
 		width: auto;
 		vertical-align: middle;
 		border:1px solid #1ab394;
 	}
-	
+
 	.form-control,.single-line {
 		background-color: #FFFFFF;
 		background-image: none;
@@ -120,19 +120,19 @@
 		width: 100%;
 		font-size: 14px;
 	}
-	
+
 	.btn-primary {
 		background-color: #1ab394;
 		border-color: #1ab394;
 		color: #FFFFFF;
 	}
-	
+
 	.btn {
 		border-radius: 3px;
 	}
-	
-	
-	
+
+
+
 	.btn {
 		display: inline-block;
 		padding: 6px 12px;
@@ -154,34 +154,34 @@
 		border: 1px solid transparent;
 		border-radius: 4px;
 	}
-	
+
 	button,input,select,textarea {
 		font-family: inherit;
 		font-size: inherit;
 		line-height: inherit;
 	}
-	
+
 	button,html input[type=button],input[type=reset],input[type=submit] {
 		-webkit-appearance: button;
 		cursor: pointer;
 	}
-	
+
 	button,select {
 		text-transform: none;
 	}
-	
+
 	button {
 		overflow: visible;
 	}
-	
+
 	button,input,optgroup,select,textarea {
 		margin: 0;
 		font: inherit;
 		color: inherit;
-		
+
 	}
 	</style>
-	 
+
 </head>
 
 <body class="gray-bg">

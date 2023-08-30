@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,25 +18,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="description" content="">
 
 <link rel="shortcut icon" href="favicon.ico">
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
+<link href="/css/bootstrap.min.css"
   rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/font-awesome.css"
-  rel="stylesheet">
-<link
-  href="${pageContext.request.contextPath}/js/plugins/fancybox/jquery.fancybox.css"
-  rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/animate.css"
-  rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/style.css"
+<link href="/css/font-awesome.css"
   rel="stylesheet">
 <link
-  href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css"
+  href="/js/plugins/fancybox/jquery.fancybox.css"
+  rel="stylesheet">
+<link href="/css/animate.css"
+  rel="stylesheet">
+<link href="/css/style.css"
+  rel="stylesheet">
+<link
+  href="/css/plugins/sweetalert/sweetalert.css"
   rel="stylesheet">
 <link rel="stylesheet"
-  href="${pageContext.request.contextPath}/css/plugins/webuploader/webuploader.css">
+  href="/css/plugins/webuploader/webuploader.css">
 <link rel="stylesheet"
-  href="${pageContext.request.contextPath}/css/plugins/webuploader/webuploader-demo.css">
-<link href="${pageContext.request.contextPath}/css/fakeLoader.css"
+  href="/css/plugins/webuploader/webuploader-demo.css">
+<link href="/css/fakeLoader.css"
   rel="stylesheet">
 
 <style>
@@ -147,32 +147,32 @@ bottom: 15px;
 
 
   <!-- 全局js -->
-  <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
 
-  <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-
-  <script
-    src="${pageContext.request.contextPath}/js/plugins/peity/jquery.peity.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
   <script
-    src="${pageContext.request.contextPath}/js/plugins/fancybox/jquery.fancybox.js"></script>
-  <script src="${pageContext.request.contextPath}/js/fakeLoader.min.js"></script>
+    src="/js/plugins/peity/jquery.peity.min.js"></script>
+
+  <script
+    src="/js/plugins/fancybox/jquery.fancybox.js"></script>
+  <script src="/js/fakeLoader.min.js"></script>
   <!-- 自定义js -->
-  <script src="${pageContext.request.contextPath}/js/content.js"></script>
+  <script src="/js/content.js"></script>
 
   <script
-    src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+    src="/js/plugins/sweetalert/sweetalert.min.js"></script>
 
   <!-- Web Uploader -->
   <script type="text/javascript">
         // 添加全局站点信息
-        var BASE_URL = '${pageContext.request.contextPath}/js/plugins/webuploader';
+        var BASE_URL = '/js/plugins/webuploader';
     </script>
   <script
-    src="${pageContext.request.contextPath}/js/plugins/webuploader/webuploader.min.js"></script>
+    src="/js/plugins/webuploader/webuploader.min.js"></script>
   <script
-    src="${pageContext.request.contextPath}/js/plugins/webuploader/webuploader-demo.js"></script>
-  <script src="${pageContext.request.contextPath}/js/admin/pics/pics.js"></script>
+    src="/js/plugins/webuploader/webuploader-demo.js"></script>
+  <script src="/js/admin/pics/pics.js"></script>
 </body>
 
 </html>

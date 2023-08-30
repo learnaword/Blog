@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -9,17 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>帮忙么:一个提供网上兼职,手机挣钱的网赚博客平台</title>
- <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+ <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="keywords" content="手机兼职,网上赚钱,网上兼职,手机挣钱,网赚软件"/>
     <meta name="description" content="帮忙么:一个提供手机兼职,网上赚钱,网上兼职,手机挣钱,网赚软件的网赚博客平台，平台讲述各种网上挣钱的方法，总有一款适合你。"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%-- <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"> --%>
-    <link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/css/loaders.css"
+    <%-- <link href="/css/bootstrap.min.css" rel="stylesheet"> --%>
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+	<link href="/css/loaders.css"
 	rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/css/font-awesome.css"
+	<link href="/css/font-awesome.css"
 	rel="stylesheet">
 	<style type="text/css">
 	.loader-inner > div{
@@ -27,7 +27,7 @@
 	}
 </style>
 </head>
-<body style="background:url(${pageContext.request.contextPath}/images/bj.png) repeat top left scroll">
+<body style="background:url(/images/bj.png) repeat top left scroll">
 <%@ include file="top.jsp" %>
   <article>
     <div class="lbox">
@@ -41,15 +41,15 @@
 	      </span>
 	     资源分享
 	     </h2>
-       
+
         <ul>
-      
+
         </ul>
         <div class="pagelist ">
-      
+
             </div>
             <div class="pageMin ">
-      
+
             </div>
       </div>
     </div>
@@ -71,16 +71,16 @@
 		        <i><img src="images/t03.jpg"></i>
 		      </ul>
 		      <ul class="sidenews">
-		       
+
 		      </ul>
 		    </div>
     </div>
   </article>
 
     <!-- 全局js -->
-  <%--   <script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script> --%>
-	<script src="${pageContext.request.contextPath}/js/page/resource.js"></script>
-	<script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
-   
+  <%--   <script src="/js/jquery.min.js?v=2.1.4"></script> --%>
+	<script src="/js/page/resource.js"></script>
+	<script src="/js/layer/layer.js"></script>
+
 </body>
 </html>

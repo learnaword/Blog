@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!doctype html>
 <html>
 <head>
@@ -7,20 +7,20 @@
   <title>帮忙么:一个网上创业,分享生活经验,人生感悟,手机赚钱的平台</title>
   <meta name="keywords" content="手机兼职,网上赚钱,网上兼职,手机挣钱"/>
   <meta name="description" content="帮忙么网，网站主要是为了分享站长的个人的生活经验，网上创业，人生感悟，解决生活中遇到的小问题，分享个人的一些生活经验。"/>
-   <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+   <link rel="shortcut icon" href="/images/favicon.ico">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
-   <link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet">
-   <link href="${pageContext.request.contextPath}/css/loaders.css" rel="stylesheet">
+   <link href="/css/style.css" rel="stylesheet">
+   <link href="/css/animate.css" rel="stylesheet">
+   <link href="/css/loaders.css" rel="stylesheet">
    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-   <link href="${pageContext.request.contextPath}/css/common.min.css" rel="stylesheet">
+   <link href="/css/common.min.css" rel="stylesheet">
    <script src="https://hm.baidu.com/hm.js?f655f558c510211e38805f6b586e6b15"></script>
    <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
-   <script src="${pageContext.request.contextPath}/js/comm.js"></script>
+   <script src="/js/comm.js"></script>
 </head>
 <style type="text/css">
-   cursor: url('${pageContext.request.contextPath}/images/ani/a.cur'), auto;}
-   a {cursor: url('${pageContext.request.contextPath}/images/ani/b.cur'), auto;}
+   cursor: url('/images/ani/a.cur'), auto;}
+   a {cursor: url('/images/ani/b.cur'), auto;}
    .loader-inner>div {background-color: #907f819e}
    .whitebg {background: #fff; border-radius: 3px;padding: 20px;margin-bottom: 20px;overflow: hidden;}
    .lanmu img {height: 100px;float: left;margin-right: 20px;}
@@ -33,7 +33,7 @@
   <article>
     <div class="lbox">
       <div class="whitebg lanmu">
-        <img src="${pageContext.request.contextPath}/images/lm01.jpg">
+        <img src="/images/lm01.jpg">
         <h1>文章列表</h1>
         <p>对陌生的事物，人们都会有抵触的心态，因此我开发出了软件专区功能，在这里你将充分了解这个软件，如何赚钱，能赚到多少，有什么优>点和缺点等等，尽我最大可能让你找到适合自己的网赚方式。</p>      </div>
       <div class="newblogs bloglist">
@@ -94,6 +94,6 @@
     <a href="#" class="top cd-top animated ">Top</a>
   </article>
 <%@ include file="fonter.jsp"%>
-  <script src="${pageContext.request.contextPath}/js/page/list.js"></script>
-  <script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
+  <script src="/js/page/list.js"></script>
+  <script src="/js/layer/layer.js"></script>
 </body>

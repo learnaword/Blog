@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!doctype html>
 <html>
 <head>
@@ -8,20 +8,20 @@
   <meta name="keywords" content="手机兼职,网上赚钱,网上兼职,手机挣钱"/>
   <meta name="description" content="帮忙么网，网站主要是为了分享站长的个人的生活经验，网上创业，人生感悟，解决生活中遇到的小问题，分享个人的一些生活经验。"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/images/favicon.ico">
-   <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
-   <link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet">
-   <link href="${pageContext.request.contextPath}/css/loaders.css" rel="stylesheet">
-   <link href="${pageContext.request.contextPath}/css/loaders.css" rel="stylesheet">
+<link rel="shortcut icon" href="/images/favicon.ico">
+   <link href="/css/style.css" rel="stylesheet">
+   <link href="/css/animate.css" rel="stylesheet">
+   <link href="/css/loaders.css" rel="stylesheet">
+   <link href="/css/loaders.css" rel="stylesheet">
    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-   <link href="${pageContext.request.contextPath}/css/common.min.css" rel="stylesheet">
+   <link href="/css/common.min.css" rel="stylesheet">
    <script src="https://hm.baidu.com/hm.js?f655f558c510211e38805f6b586e6b15"></script>
    <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
-   <script src="${pageContext.request.contextPath}/js/comm.js"></script>
+   <script src="/js/comm.js"></script>
 </head>
 <style type="text/css">
-   cursor: url('${pageContext.request.contextPath}/images/ani/a.cur'), auto;}
-   a {cursor: url('${pageContext.request.contextPath}/images/ani/b.cur'), auto;}
+   cursor: url('/images/ani/a.cur'), auto;}
+   a {cursor: url('/images/ani/b.cur'), auto;}
    .loader-inner>div {background-color: #907f819e}
    .whitebg {background: #fff; border-radius: 3px;padding: 20px;margin-bottom: 20px;overflow: hidden;}
    .lanmu img {height: 100px;float: left;margin-right: 20px;}
@@ -59,7 +59,7 @@
        <div class="whitebg notice">
       <h2 class="htitle">猜你喜欢</h2>
       <ul>
-      
+
      </ul>
     </div>
       <div class="tuijian2 whitebg">
@@ -89,7 +89,7 @@
     <a href="#" class="top cd-top animated ">Top</a>
   </article>
 <%@ include file="fonter.jsp"%>
-  <script src="${pageContext.request.contextPath}/js/page/list.js"></script>
-  <script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
+  <script src="/js/page/list.js"></script>
+  <script src="/js/layer/layer.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,21 +11,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>更新博客</title>
     <link rel="shortcut icon" href="https://www.bangmangma.com/images/favicon.ico">
-<link href="${pageContext.request.contextPath}/css/github-gist.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/font-awesome.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/plugins/iCheck/custom.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/fakeLoader.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/plugins/summernote/summernote.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/base.css" rel="stylesheet">
+<link href="/css/github-gist.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/font-awesome.css" rel="stylesheet">
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="/css/fakeLoader.css" rel="stylesheet">
+<link href="/css/plugins/summernote/summernote.css" rel="stylesheet">
+<link href="/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+<link href="/css/animate.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/index.css" rel="stylesheet">
+<link href="/css/base.css" rel="stylesheet">
 <link href="/css/info.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/plugins/webuploader/webuploader.css">
-<link rel="stylesheet"href="${pageContext.request.contextPath}/css/plugins/webuploader/webuploader-demo.css">
+<link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/plugins/webuploader/webuploader.css">
+<link rel="stylesheet"href="/css/plugins/webuploader/webuploader-demo.css">
 <style>
 .news_infos span{
  	font-size:13px;
@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 							<h5 class="tag-title">封面</h5>
 							    <a class="fancybox picPath" href="#pic" data-toggle="modal" onclick="findPicList()">
-								</a>	
+								</a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -74,12 +74,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                                 <button type="button" onclick="javascript:window.location.href='https://www.bangmangma.com/admin/blog/blogTable.jsp'"
                                                     class="btn btn-white btn-sm" data-toggle="tooltip"
                                                     data-placement="top" title="列表">
-                                                    <i class="fa fa-pencil"></i>列表 
+                                                    <i class="fa fa-pencil"></i>列表
                                                 </button>
                                                 <button type="button" onclick="javascript:window.location.href='https://www.bangmangma.com/admin/blog/autoBlog.jsp'"
                                                     class="btn btn-white btn-sm" data-toggle="tooltip"
                                                     data-placement="top" title="自动">
-                                                    <i class="fa fa-pencil"></i>自动 
+                                                    <i class="fa fa-pencil"></i>自动
                                                 </button>
                                                <button type="button" onclick="javascript:history.back(2);"
                                                    class="btn btn-danger btn-sm" data-toggle="tooltip"
@@ -174,7 +174,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                                                 data-placement="top" title="删除">
                                                                 <i class="fa fa-pencil"></i>删除
                                                         </button>
-							<button id="add_draft2" type="button" 
+							<button id="add_draft2" type="button"
 								class="btn btn-white btn-sm" data-toggle="tooltip"
 								data-placement="top" title="草稿">
 								<i class="fa fa-pencil"></i> 草稿
@@ -218,16 +218,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 			</div>
-			
-			
-			<div class="modal inmodal" id="pic" tabindex="-1" 
+
+
+			<div class="modal inmodal" id="pic" tabindex="-1"
 				aria-hidden="true">
 				<div class="modal-dialog" style="width:79.3%;margin-top:-1%;">
 					<div class="modal-content animated fadeInUp">
 						<button type="button" class="close" style="margin-right:7px"
 							data-dismiss="modal">
 							<span aria-hidden="true">&times;</span>
-						</button> 
+						</button>
 								<div id="uploader" class="wu-example" style="margin:0px 5.6% 0  5.6%;">
                                 <div class="queueList">
                                     <div id="dndArea" class="placeholder" style="min-height: 110px;padding-top: 0px;background:none">
@@ -248,8 +248,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
 						</div>
 						<div class="modal-body picsList" style="height:260px;overflow:scroll; padding: 0px 30px 0px 30px;">
-							
-							
+
+
 						</div>
 					</div>
 				</div>
@@ -260,40 +260,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 </body>
 	<!-- 全局js -->
-	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/highlight.pack.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/highlight.pack.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
 	<!-- 自定义js -->
-	<script src="${pageContext.request.contextPath}/js/content.js"></script>
+	<script src="/js/content.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+		src="/js/plugins/sweetalert/sweetalert.min.js"></script>
 
 	<!-- iCheck -->
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/iCheck/icheck.min.js"></script>
+		src="/js/plugins/iCheck/icheck.min.js"></script>
 
 	<!-- jQuery Validation plugin javascript-->
-    <script src="${pageContext.request.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/plugins/validate/messages_zh.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/plugins/validate/form-validate-demo.js"></script>
- <script src="${pageContext.request.contextPath}/js/fakeLoader.min.js"></script>
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="/js/plugins/validate/form-validate-demo.js"></script>
+ <script src="/js/fakeLoader.min.js"></script>
  	<!-- Web Uploader -->
     <script type="text/javascript">
         // 添加全局站点信息
-        var BASE_URL = '${pageContext.request.contextPath}/js/plugins/webuploader';
+        var BASE_URL = '/js/plugins/webuploader';
     </script>
-    <script src="${pageContext.request.contextPath}/js/plugins/webuploader/webuploader.min.js"></script>
-   <script src="${pageContext.request.contextPath}/js/plugins/webuploader/webuploader-demo2.js"></script>
+    <script src="/js/plugins/webuploader/webuploader.min.js"></script>
+   <script src="/js/plugins/webuploader/webuploader-demo2.js"></script>
 
 	<!-- SUMMERNOTE -->
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/summernote/summernote.min.js"></script>
+		src="/js/plugins/summernote/summernote.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/summernote/summernote-zh-CN.js"></script>
+		src="/js/plugins/summernote/summernote-zh-CN.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/admin/blog/updateBlog.js"></script>
+		src="/js/admin/blog/updateBlog.js"></script>
 
 </body>
 

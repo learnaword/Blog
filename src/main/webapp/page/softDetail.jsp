@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%@ taglib uri="jakarta.tags.fmt"  prefix="fmt"%>
 <!doctype html>
 <html>
 <head>
@@ -86,6 +86,6 @@
     <a href="#" class="top cd-top animated ">Top</a>
 </article>
 <%@ include file="fonter.jsp"%>
-<script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
+<script src="/js/layer/layer.js"></script>
 </body>
 </html>

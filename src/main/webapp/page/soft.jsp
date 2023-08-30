@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!doctype html>
 <html>
 <head>
@@ -9,13 +9,13 @@
     <meta name="keywords" content="手机兼职,手机赚钱软件,免费赚钱" />
     <meta name="description" content="手机赚钱软件专区:在这里有大量的手机免费赚钱赚钱软件，软件专区功能，在这里你将充分了解这个软件，如何赚钱，能赚到多少，有什么优点和缺点等等，尽我最大可能让你找到适合自己的方式。" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"href="${pageContext.request.contextPath}/images/favicon.ico">
-    <link href="${pageContext.request.contextPath}/css/loaders.css" rel="stylesheet">
+    <link rel="shortcut icon"href="/images/favicon.ico">
+    <link href="/css/loaders.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/common.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/soft.css" rel="stylesheet">
+    <link href="/css/common.min.css" rel="stylesheet">
+    <link href="/css/soft.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/comm.js"></script>
+    <script src="/js/comm.js"></script>
 </head>
 <body>
   <%@ include file="top.jsp"%>
@@ -97,6 +97,6 @@
     <a href="#" class="top cd-top animated ">Top</a>
   </article>
 <%@ include file="fonter.jsp"%>
-  <script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
+  <script src="/js/layer/layer.js"></script>
 </body>
 </html>

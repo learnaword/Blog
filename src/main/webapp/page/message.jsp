@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!doctype html>
 <html>
 <head>
@@ -7,13 +7,13 @@
  <meta name="baidu-site-verification" content="Eg9tVrHSEK"/>
     <title>帮忙么:一个提供网上兼职,手机挣钱的网赚博客平台</title>
     <link rel="shortcut icon"
-          href="${pageContext.request.contextPath}/images/favicon.ico">
+          href="/images/favicon.ico">
     <meta name="keywords" content="手机兼职,网上赚钱,网上兼职,手机挣钱,网赚软件"/>
     <meta name="description" content="帮忙么:一个提供手机兼职,网上赚钱,网上兼职,手机挣钱,网赚软件的网赚博客平台，平台讲述各种网上挣钱的方法，总有一款适合你。"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet">
+	<link href="/css/animate.css" rel="stylesheet">
 </head>
-<body style="background:url(${pageContext.request.contextPath}/images/bj.png) repeat top left scroll">
+<body style="background:url(/images/bj.png) repeat top left scroll">
 	<%@ include file="top.jsp" %>
 	<article>
 		<div class="lbox">
@@ -40,10 +40,10 @@
 
 				</ul>
 			</div>
-			
+
 		</div>
 	</article>
-	<script src="${pageContext.request.contextPath}/js/page/message.js"></script>
-	<script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
+	<script src="/js/page/message.js"></script>
+	<script src="/js/layer/layer.js"></script>
 </body>
 </html>

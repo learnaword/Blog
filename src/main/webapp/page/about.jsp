@@ -1,20 +1,14 @@
-﻿
-
-
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>手机赚钱软件专区</title>
-	<link rel="shortcut icon"
-		  href="/images/favicon.ico">
+	<link rel="shortcut icon" href="/images/favicon.ico">
 	<meta name="keywords" content="手机兼职,手机赚钱软件,免费赚钱" />
 	<meta name="description" content="手机赚钱软件专区:在这里有大量的手机免费赚钱赚钱软件，软件专区功能，在这里你将充分了解这个软件，如何赚钱，能赚到多少，有什么优点和缺点等等，尽我最大可能让你找到适合自己的网赚方式。" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/style.css"
-		  rel="stylesheet">
-	<link href="/css/loaders.css"
-		  rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/loaders.css" rel="stylesheet">
 
 	<style type="text/css">
 		.loader-inner>div {
@@ -45,15 +39,11 @@
 
 
 <head>
-	<link rel="shortcut icon"
-		  href="/images/favicon.ico">
-	<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css"
-		  rel="stylesheet">
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/css/common.min.css" rel="stylesheet">
-	<script
-			src="https://hm.baidu.com/hm.js?f655f558c510211e38805f6b586e6b15"></script>
-	<script
-			src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://hm.baidu.com/hm.js?f655f558c510211e38805f6b586e6b15"></script>
+	<script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 	<script src="/js/comm.js"></script>
 	<style>
 		* {

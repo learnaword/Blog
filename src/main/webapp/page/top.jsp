@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <header id="header" style="margin:0px;">
   <div class="navbox">
  <h2 id="mnavh">
@@ -20,7 +20,7 @@
 </header>
 <div class="searchbox">
   <div class="search">
-    <form action="${pageContext.request.contextPath}/result" name="searchform" method="post"
+    <form action="/result" name="searchform" method="post"
       id="searchform">
       <input name="keyboard" id="keyboard" class="input_text"
         value="请输入关键字词" style="color: rgb(153, 153, 153);"

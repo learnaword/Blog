@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -20,22 +20,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	content="">
 
 <link rel="shortcut icon" href="favicon.ico">
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
+<link href="/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/font-awesome.css"
-	rel="stylesheet">
-<link
-	href="${pageContext.request.contextPath}/css/plugins/iCheck/custom.css"
-	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/animate.css"
-	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/style.css"
+<link href="/css/font-awesome.css"
 	rel="stylesheet">
 <link
-	href="${pageContext.request.contextPath}/css/plugins/bootstrap-table/bootstrap-table.min.css"
+	href="/css/plugins/iCheck/custom.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/fakeLoader.css" rel="stylesheet">
+<link href="/css/animate.css"
+	rel="stylesheet">
+<link href="/css/style.css"
+	rel="stylesheet">
+<link
+	href="/css/plugins/bootstrap-table/bootstrap-table.min.css"
+	rel="stylesheet">
+<link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="/css/fakeLoader.css" rel="stylesheet">
 </head>
 
 <body class="white-bg" style="opacity:0">
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										  style="color:#a94442;font-size:12px;padding: 0px;"></span>
 								</div>
 							</form>
-							
+
 							<h5>所有类别</h5>
 							<ul class="category-list" style="padding: 0">
 
@@ -116,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div>
                                 <span class="tip2" style="color:#a94442"></span>
                                 <div id="update">
-                                    
+
                                 </div>
                             </form>
                         </div>
@@ -128,33 +128,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 	<!-- 全局js -->
-	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 
 
 
 	<!-- 自定义js -->
-	<script src="${pageContext.request.contextPath}/js/content.js"></script>
-	<script src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/fakeLoader.min.js"></script>
+	<script src="/js/content.js"></script>
+	<script src="/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="/js/fakeLoader.min.js"></script>
 	<!-- iCheck -->
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/iCheck/icheck.min.js"></script>
-	
+		src="/js/plugins/iCheck/icheck.min.js"></script>
+
 	<!-- jQuery Validation plugin javascript-->
-    <script src="${pageContext.request.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/plugins/validate/messages_zh.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/plugins/validate/form-validate-demo.js"></script>
-	
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="/js/plugins/validate/form-validate-demo.js"></script>
+
 	<!-- Bootstrap table -->
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		src="/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/admin/blog/blogType.js"></script>
+		src="/js/admin/blog/blogType.js"></script>
 </body>
 
 </html>

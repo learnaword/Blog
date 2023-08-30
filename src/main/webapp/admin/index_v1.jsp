@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -20,22 +20,22 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
+<link href="/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/font-awesome.min.css"
+<link href="/css/font-awesome.min.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/animate.css"
+<link href="/css/animate.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/style.css"
-	rel="stylesheet">
-<link
-	href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css"
+<link href="/css/style.css"
 	rel="stylesheet">
 <link
-	href="${pageContext.request.contextPath}/css/plugins/datapicker/datepicker3.css"
+	href="/css/plugins/sweetalert/sweetalert.css"
 	rel="stylesheet">
 <link
-	href="${pageContext.request.contextPath}/css/fakeLoader.css"
+	href="/css/plugins/datapicker/datepicker3.css"
+	rel="stylesheet">
+<link
+	href="/css/fakeLoader.css"
 	rel="stylesheet">
 </head>
 
@@ -239,20 +239,20 @@
 
 	<!-- 全局js -->
 	<script
-		src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+		src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/echarts/echarts.min.js"></script>
+		src="/js/plugins/echarts/echarts.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/fakeLoader.min.js"></script>
+		src="/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="/js/fakeLoader.min.js"></script>
 	<!-- Data picker -->
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+		src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
 	<script
-		src="${pageContext.request.contextPath}/js/admin/index_v1.js"></script>
-	
+		src="/js/admin/index_v1.js"></script>
+
 </body>
 
 </html>

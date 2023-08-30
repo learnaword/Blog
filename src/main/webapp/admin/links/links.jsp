@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,21 +17,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="keywords" content="">
 <meta name="description"
 	content="">
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
+<link href="/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/font-awesome.css"
+<link href="/css/font-awesome.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/animate.css"
+<link href="/css/animate.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/style.css"
-	rel="stylesheet">
-<link
-	href="${pageContext.request.contextPath}/css/plugins/bootstrap-table/bootstrap-table.min.css"
+<link href="/css/style.css"
 	rel="stylesheet">
 <link
-	href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css"
+	href="/css/plugins/bootstrap-table/bootstrap-table.min.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/fakeLoader.css" rel="stylesheet">
+<link
+	href="/css/plugins/sweetalert/sweetalert.css"
+	rel="stylesheet">
+<link href="/css/fakeLoader.css" rel="stylesheet">
 </head>
 
 <body class="white-bg" style="opacity:0">
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											class="form-control">
 									</div>
 								</div>
-								
+
 								<div class="form-group">
 									<div class="input-group m-b">
 										<span class="input-group-addon">链接</span> <input type="text"
@@ -145,30 +145,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 	<!-- 全局js -->
-	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 
 <script
-		src="${pageContext.request.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
+		src="/js/plugins/validate/jquery.validate.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/validate/messages_zh.min.js"></script>
+		src="/js/plugins/validate/messages_zh.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/validate/form-validate-demo.js"></script>
+		src="/js/plugins/validate/form-validate-demo.js"></script>
 
 	<!-- 自定义js -->
-	<script src="${pageContext.request.contextPath}/js/content.js"></script>
+	<script src="/js/content.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+		src="/js/plugins/sweetalert/sweetalert.min.js"></script>
 
-<script src="${pageContext.request.contextPath}/js/fakeLoader.min.js"></script>
+<script src="/js/fakeLoader.min.js"></script>
 	<!-- Bootstrap table -->
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		src="/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/js/admin/links/links.js"></script>
+		src="/js/admin/links/links.js"></script>
 </body>
 </html>
