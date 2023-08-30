@@ -11,15 +11,4 @@ public class BlogController {
     @Resource
     MybatisPlusInterceptor mybatisPlusInterceptor;
 
-    @RequestMapping("/login")
-    public String login(){
-        System.out.println(111111);
-        return "login";
-    }
-
-    @RequestMapping("/")
-    public String index(){
-        System.out.println(2111111);
-        return "index";
-    }
 }
