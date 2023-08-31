@@ -83,9 +83,9 @@ function login(){
 	    username: $('input[name="username"]').val(),
 	    password: $('input[name="password"]').val()
     };
-    $.post("/checkLogin", function (formData){
+    $.post("/checkLogin",formData, function (data){
        if(formData.code != 200){
-       		$(".msg").text(formData.msg);
+       		$(".msg").text(data.msg);
        }else{
 
        }

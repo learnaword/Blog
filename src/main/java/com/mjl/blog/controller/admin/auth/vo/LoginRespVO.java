@@ -17,5 +17,5 @@ public class LoginRespVO {
 
     private String refreshToken;
 
-    private LocalDateTime expiresTime;
+    private LocalDateTime expires;
 }
