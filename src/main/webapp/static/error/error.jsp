@@ -21,7 +21,7 @@
 <meta name="description"
 	content="">
 
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="/static/images/favicon.ico">
 
 <style type="text/css">
 	body {

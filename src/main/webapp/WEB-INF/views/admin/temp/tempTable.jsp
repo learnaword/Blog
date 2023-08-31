@@ -1,43 +1,24 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 <!DOCTYPE html>
 <html>
-
 <head>
-
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>专区数据</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link href="/css/github-gist.css"
-		  rel="stylesheet">
-	<link href="/css/bootstrap.min.css"
-		  rel="stylesheet">
-	<link href="/css/font-awesome.css"
-		  rel="stylesheet">
-	<link
-			href="/css/plugins/bootstrap-table/bootstrap-table.min.css"
-			rel="stylesheet">
-	<link href="/css/animate.css"
-		  rel="stylesheet">
-	<link href="/css/style.css"
-		  rel="stylesheet">
-	<link href="/css/index.css"
-		  rel="stylesheet">
-	<link href="/css/base.css"
-		  rel="stylesheet">
-	<link href="/css/fakeLoader.css"
-		  rel="stylesheet">
-	<link
-			href="/css/plugins/sweetalert/sweetalert.css"
-			rel="stylesheet">
-
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link href="/css/github-gist.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/font-awesome.css" rel="stylesheet">
+	<link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	<link href="/css/animate.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/index.css" rel="stylesheet">
+	<link href="/css/base.css" rel="stylesheet">
+	<link href="/css/fakeLoader.css" rel="stylesheet">
+	<link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 	<style>
 		.news_infos span {
 			font-size: 13px;
@@ -76,9 +57,6 @@
 		</div>
 	</div>
 </div>
-
-</div>
-
 <!-- 全局js -->
 <script src="/js/jquery.min.js"></script>
 
@@ -88,19 +66,14 @@
 
 <!-- 自定义js -->
 <script src="/js/content.js"></script>
-<script
-		src="/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="/js/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="/js/contabs.js"></script>
 <script src="/js/fakeLoader.min.js"></script>
 <!-- Bootstrap table -->
-<script
-		src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-<script
-		src="/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-<script
-		src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-<script
-		src="/js/admin/temp/tempTable.js"></script>
+<script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="/js/admin/temp/tempTable.js"></script>
 
 </body>
 </html>

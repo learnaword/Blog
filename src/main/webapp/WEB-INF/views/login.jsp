@@ -1,35 +1,24 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<title>登录</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/font-awesome.css" rel="stylesheet">
-	<link href="/css/animate.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
-	<link href="/css/login.css" rel="stylesheet">
-
-	<script>
-        if (window.top !== window.self) {
-            window.top.location = window.location;
-        }
-    </script>
-
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/font-awesome.css" rel="stylesheet">
+	<link href="/static/css/animate.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+	<link href="/static/css/login.css" rel="stylesheet">
 </head>
-
 <body class="signin">
 <div class="signinpanel">
 	<div class="row">
 		<div class="col-sm-7">
 			<div class="signin-info">
 				<div class="logopanel m-b">
-					<h1>[ bangmangma.com ]</h1>
+					<h1>[ www.bangmangma.com ]</h1>
 				</div>
 				<div class="m-b"></div>
 				<h4>
@@ -57,7 +46,7 @@
 		<div class="col-sm-5">
 			<form id="login">
 				<h3 class="no-margins">登录</h3>
-				<p class="m-t-md">登录访问 bangmangma 后台管理网站</p>
+				<p class="m-t-md">登录访问 www.bangmangma 后台管理网站</p>
 				<input type="text" id="username" name="username" class="form-control uname" placeholder="用户名" />
 				<input type="password" name="password" id="password" class="form-control pword m-b" placeholder="密码" />
 				<a style="color:#101010de" href="javascript:void(0);">忘记密码了？</a>
@@ -72,25 +61,7 @@
 		</div>
 	</div>
 </div>
-<div class="gohome" style="display:none"></div>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/content.js"></script>
-<script type="text/javascript">
-function login(){
-	let url = "/checkLogin";
-	var formData = {
-	    username: $('input[name="username"]').val(),
-	    password: $('input[name="password"]').val()
-    };
-    $.post("/checkLogin",formData, function (data){
-       if(formData.code != 200){
-       		$(".msg").text(data.msg);
-       }else{
-
-       }
-    })
- }
-</script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/admin/login.js"></script>
 </body>
 </html>

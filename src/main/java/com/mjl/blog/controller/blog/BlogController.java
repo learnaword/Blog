@@ -11,4 +11,8 @@ public class BlogController {
     @Resource
     MybatisPlusInterceptor mybatisPlusInterceptor;
 
+    @RequestMapping("/")
+    public String index(){
+        return "page/index";
+    }
 }

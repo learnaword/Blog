@@ -1,10 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,39 +13,21 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 
-	<link rel="shortcut icon" href="favicon.ico">
-	<link href="/css/github-gist.css"
-		  rel="stylesheet">
-	<link href="/css/base.css"
-		  rel="stylesheet">
-	<link href="/css/bootstrap.min.css"
-		  rel="stylesheet">
-	<link href="/css/font-awesome.css"
-		  rel="stylesheet">
-	<link
-			href="/css/plugins/iCheck/custom.css"
-			rel="stylesheet">
-	<link
-			href="/css/plugins/summernote/summernote.css"
-			rel="stylesheet">
-	<link
-			href="/css/plugins/summernote/summernote-bs4.css"
-			rel="stylesheet">
-	<link href="/css/animate.css"
-		  rel="stylesheet">
-	<link href="/css/style.css"
-		  rel="stylesheet">
-	<link href="/css/index.css"
-		  rel="stylesheet">
-	<link
-			href="/css/plugins/sweetalert/sweetalert.css"
-			rel="stylesheet">
-	<link rel="stylesheet"
-		  href="/css/plugins/webuploader/webuploader.css">
-	<link rel="stylesheet"
-		  href="/css/plugins/webuploader/webuploader-demo.css">
-	<link href="/css/fakeLoader.css"
-		  rel="stylesheet">
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link href="/css/github-gist.css" rel="stylesheet">
+	<link href="/css/base.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/font-awesome.css" rel="stylesheet">
+	<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+	<link href="/css/plugins/summernote/summernote.css" rel="stylesheet">
+	<link href="/css/plugins/summernote/summernote-bs4.css" rel="stylesheet">
+	<link href="/css/animate.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/index.css" rel="stylesheet">
+	<link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/plugins/webuploader/webuploader.css">
+	<link rel="stylesheet" href="/css/plugins/webuploader/webuploader-demo.css">
+	<link href="/css/fakeLoader.css" rel="stylesheet">
 	<style>
 		.news_infos span {
 			font-size: 13px;
