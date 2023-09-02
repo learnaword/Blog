@@ -8,10 +8,10 @@ function login(){
             $(".msg").text(data.msg);
         }else{
             //存储token
-            localStorage.setItem("accessToken",data.accessToken);
-            localStorage.setItem("refreshToken",data.refreshToken);
-            //页面跳转
-            window.location.href = "/admin/index";
+            localStorage.setItem("accessToken",data.data.accessToken);
+            localStorage.setItem("accessTokenExpires",data.data.expires);
+            localStorage.setItem("refreshToken",data.data.refreshToken);
+            window.location.href = "/page/admin/index.jsp";
         }
     })
 }

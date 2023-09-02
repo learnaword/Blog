@@ -9,17 +9,17 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link href="/css/gruvbox-light.css" rel="stylesheet">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/font-awesome.css" rel="stylesheet">
-    <link href="/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="/css/animate.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <link href="/css/plugins/datapicker/datepicker3.css"rel="stylesheet">
-    <link href="/css/index.css" rel="stylesheet">
-    <link href="/css/base.css" rel="stylesheet">
-    <link href="/css/fakeLoader.css" rel="stylesheet">
+    <link href="/static/css/gruvbox-light.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/datapicker/datepicker3.css"rel="stylesheet">
+    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/fakeLoader.css" rel="stylesheet">
     <style type="text/css">
         .input-group-addon{
             color: #c23531;
@@ -203,18 +203,19 @@
 </div>
 
 <!-- 全局js -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/highlight.pack.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/plugins/peity/jquery.peity.min.js"></script>
-<script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 <!-- 自定义js -->
-<script src="/js/content.js"></script>
-<script src="/js/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="/js/plugins/echarts/echarts.min.js"></script>
-<script src="/js/fakeLoader.min.js"></script>
-<script src="/js/admin/charts/charts.js"></script>
+<script src="/static/js/content.js"></script>
+<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="/static/js/plugins/echarts/echarts.min.js"></script>
+<script src="/static/js/fakeLoader.min.js"></script>
+<script src="/static/js/admin/token.js"></script>
+<script src="/static/js/admin/charts/charts.js"></script>
 
 </body>
 

@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SystemRefreshTokenDO implements Serializable {
-    private Integer id;
+    private Long id;
 
     private String refreshToken;
 

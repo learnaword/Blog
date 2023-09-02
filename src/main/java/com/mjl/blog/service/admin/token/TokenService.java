@@ -7,4 +7,6 @@ import com.mjl.blog.dal.dataobject.SystemRefreshTokenDO;
 public interface TokenService {
     SystemAccessTokenDO createAccessToken(Long userId, LoginReqVO loginReqVO);
     SystemRefreshTokenDO createRefreshToken(Long userId, LoginReqVO loginReqVO);
+
+    SystemAccessTokenDO checkAccessToken(String token);
 }

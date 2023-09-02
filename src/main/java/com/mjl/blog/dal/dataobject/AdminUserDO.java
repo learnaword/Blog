@@ -10,9 +10,10 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("t_bloger")
+@TableName("t_user")
 public class AdminUserDO implements Serializable {
     private Long id;
     private String username;
     private String password;
+    private Boolean hasPermission;
 }

@@ -7,16 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="renderer" content="webkit">
 	<title>博客后台 - 主页</title>
-	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/css/animate.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
-	<link href="/css/fakeLoader.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/static/css/animate.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+	<link href="/static/css/fakeLoader.css" rel="stylesheet">
 </head>
-
-<body class="fixed-sidebar full-height-layout white-bg"
-	  style="overflow:hidden;">
+<body class="fixed-sidebar full-height-layout white-bg" style="overflow:hidden;">
 <div id="fakeloader"></div>
 <div id="wrapper">
 	<!--左侧导航开始-->
@@ -29,7 +27,7 @@
 				<li class="nav-header">
 					<div class="dropdown profile-element">
 							<span><img alt="images" style="width:64px;height:64px;"class="img-circle"
-									   src="/images/photos2.jpg" /></span>
+									   src="/static/images/photos2.jpg" /></span>
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
 								class="clear"> <span class="block m-t-xs"><strong
 								class="font-bold">house</strong></span> <span
@@ -41,97 +39,81 @@
 							</li>
 							<li><a  href="javascript:void(0);" onclick="permission()">修改密码</a></li>
 							<li class="divider"></li>
-							<li><a href="/admin/logout">安全退出</a></li>
+							<li><a href="/page/admin/logout">安全退出</a></li>
 						</ul>
 					</div>
 					<div class="logo-element"></div>
 				</li>
-				<li><a href="/admin/index_v1.jsp" class="J_menuItem"> <i class="fa fa-home"></i> <span
+				<li><a href="/page/admin/index_v1.jsp" class="J_menuItem"> <i class="fa fa-home"></i> <span
 						class="nav-label">主页</span>
 				</a></li>
-				<li><a href="/admin/blog/media.jsp" target= "_blank"><i class="fa fa-child"></i> <span
+				<li><a href="/page/admin/blog/media.jsp" target= "_blank"><i class="fa fa-child"></i> <span
 						class="nav-label">自媒体</span></a>
 				</li>
 				<li><a class="J_menuItem"
-					   href="/admin/log/log.jsp"><i class="fa fa-hourglass-2"></i>
+					   href="/page/admin/log/log.jsp"><i class="fa fa-hourglass-2"></i>
 					<span class="nav-label">操作日志</span></a></li>
 
-				<li><a class="J_menuItem" href="/admin/charts/eCharts.jsp"><i class="fa fa-bar-chart"></i><span
-						class="nav-label">统计图表</span></a>
+				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp"><i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
 				</li>
 				<li><a href="#"><i class="fa fa-book"></i> <span
 						class="nav-label">博客模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem"
-							   href="/admin/blog/blogTable.jsp">博客管理</a>
+						<li><a class="J_menuItem" href="/page/admin/blog/blogTable.jsp">博客管理</a>
 						</li>
-
-						<li><a class="J_menuItem"
-							   href="/admin/blog/addBlog.jsp">写博客</a>
+						<li><a class="J_menuItem" href="/page/admin/blog/addBlog.jsp">写博客</a>
 						</li>
-						<li><a class="J_menuItem"
-							   href="/admin/blog/autoBlog.jsp">自动生成</a>
+						<li><a class="J_menuItem" href="/page/admin/blog/autoBlog.jsp">自动生成</a>
 						</li>
-						<li><a class="J_menuItem"
-							   href="/admin/blog/findBlog.jsp">查询博客</a>
+						<li><a class="J_menuItem" href="/page/admin/blog/findBlog.jsp">查询博客</a>
 						</li>
-						<li><a class="J_menuItem"
-							   href="/admin/blog/blogType.jsp">类别</a>
+						<li><a class="J_menuItem" href="/page/admin/blog/blogType.jsp">类别</a>
 						</li>
-
-
 					</ul></li>
 				<li><a href="#"><i class="fa fa-book"></i> <span
 						class="nav-label">专区模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem"
-							   href="/admin/soft/addSoft.jsp">添加专区</a>
+						<li><a class="J_menuItem" href="/page/admin/soft/addSoft.jsp">添加专区</a>
 						</li>
-						<li><a class="J_menuItem"
-							   href="/admin/soft/softTable.jsp">专区列表</a>
+						<li><a class="J_menuItem" href="/page/admin/soft/softTable.jsp">专区列表</a>
 						</li>
 
 					</ul></li>
 				<li><a href="#"><i class="fa fa-book"></i> <span
 						class="nav-label">博客模版</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem"
-							   href="/admin/temp/addTemp.jsp">添加模板</a>
+						<li><a class="J_menuItem" href="/page/admin/temp/addTemp.jsp">添加模板</a>
 						</li>
-						<li><a class="J_menuItem"
-							   href="/admin/temp/tempTable.jsp">模板列表</a>
+						<li><a class="J_menuItem" href="/page/admin/temp/tempTable.jsp">模板列表</a>
 						</li>
-						<li><a class="J_menuItem"
-							   href="/admin/temp/findTemp.jsp">查询模板</a>
+						<li><a class="J_menuItem" href="/page/admin/temp/findTemp.jsp">查询模板</a>
 						</li>
-						<li><a class="J_menuItem"
-							   href="/admin/temp/replaceTemp.jsp">替换模板</a>
+						<li><a class="J_menuItem" href="/page/admin/temp/replaceTemp.jsp">替换模板</a>
 						</li>
 					</ul></li>
-				<li><a href="/admin/blog/autoBlog.jsp" target= "_blank"><i class="fa fa-desktop"></i> <span
+				<li><a href="/page/admin/blog/autoBlog.jsp" target= "_blank"><i class="fa fa-desktop"></i> <span
 						class="nav-label">自动生成</span></a>
 				</li>
-				<li><a class="J_menuItem" href="/admin/resource/resource.jsp"><i class="fa fa-table"></i> <span
+				<li><a class="J_menuItem" href="/page/admin/resource/resource.jsp"><i class="fa fa-table"></i> <span
 						class="nav-label">资源模块</span></a>
 				</li>
 				<li><a href="#"><i class="fa fa-street-view"></i> <span
 						class="nav-label">访客模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
-
-						<li><a class="J_menuItem" href="/admin/visit/visit.jsp">访客记录
+						<li><a class="J_menuItem" href="/page/admin/visit/visit.jsp">访客记录
 						</a></li>
-						<li><a class="J_menuItem" href="/admin/visit/visitTable.jsp">访客统计
+						<li><a class="J_menuItem" href="/page/admin/visit/visitTable.jsp">访客统计
 						</a></li>
-						<li><a class="J_menuItem" href="/admin/visit/black.jsp">黑名单
+						<li><a class="J_menuItem" href="/page/admin/visit/black.jsp">黑名单
 						</a></li>
 					</ul>
 				</li>
 				<li><a href="#" class="links"><i class="fa fa-unlink"></i> <span
 						class="nav-label">友情链接</span>               </a>
 					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem" href="/admin/links/links.jsp"> 友情链接 </a>
+						<li><a class="J_menuItem" href="/page/admin/links/links.jsp"> 友情链接 </a>
 						</li>
-						<li class="isApplyLinks"><a class="J_menuItem" href="/admin/links/isApplyLinks.jsp"> 未处理消息 </a>
+						<li class="isApplyLinks"><a class="J_menuItem" href="/page/admin/links/isApplyLinks.jsp"> 未处理消息 </a>
 						</li>
 					</ul>
 				</li>
@@ -140,7 +122,7 @@
 						class="nav-label">评论模块</span></a>
 				</li>
 
-				<li><a href="/admin/pics/pics.jsp" class="J_menuItem"><i class="fa fa-picture-o"></i> <span
+				<li><a href="/page/admin/pics/pics.jsp" class="J_menuItem"><i class="fa fa-picture-o"></i> <span
 						class="nav-label">本地图库</span></a>
 				</li>
 				<li><a href="/" target= "_blank"><i class="fa fa-desktop"></i> <span
@@ -157,7 +139,6 @@
 				<div class="navbar-header">
 					<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
 					   href="javascript:void(0)"><i class="fa fa-bars"></i> </a>
-
 				</div>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown hidden-xs"><a
@@ -174,7 +155,7 @@
 			<nav class="page-tabs J_menuTabs">
 				<div class="page-tabs-content">
 					<a href="javascript:void(0)" class="active J_menuTab"
-					   data-id="/admin/index_v1.jsp">主页</a>
+					   data-id="/page/admin/index_v1.jsp">主页</a>
 				</div>
 			</nav>
 			<button class="roll-nav roll-right J_tabRight">
@@ -183,7 +164,6 @@
 			<div class="btn-group roll-nav roll-right">
 				<button class="dropdown J_tabClose" data-toggle="dropdown">
 					关闭操作<span class="caret"></span>
-
 				</button>
 				<ul role="menu" class="dropdown-menu dropdown-menu-right">
 					<li class="J_tabShowActive"><a>定位当前选项卡</a></li>
@@ -192,19 +172,16 @@
 					<li class="J_tabCloseOther"><a>关闭其他选项卡</a></li>
 				</ul>
 			</div>
-			<a href="/admin/logout" class="roll-nav roll-right J_tabExit"><i
+			<a href="/page/admin/logout" class="roll-nav roll-right J_tabExit"><i
 					class="fa fa fa-sign-out"></i> 退出</a>
 		</div>
 		<div class="row J_mainContent" id="content-main">
-			<iframe class="J_iframe" name="iframe0" width="100%" height="100%"
-					src="/admin/index_v1.jsp"
-					frameborder="0"
-					data-id="/admin/index_v1.jsp"
-					seamless></iframe>
+			<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/page/admin/index_v1.jsp"
+					frameborder="0" data-id="/page/admin/index_v1.jsp" seamless></iframe>
 		</div>
 		<div class="footer">
 			<div class="pull-right">
-				&copy; 2018 <a href="http://www.luotf.com/" target="_blank">house
+				&copy; 2018 <a href="http://www.bangmangma.com/" target="_blank">house
 				blog</a>
 			</div>
 		</div>
@@ -213,15 +190,11 @@
 	<!--右侧边栏开始-->
 	<div id="right-sidebar">
 		<div class="sidebar-container">
-
 			<ul class="nav nav-tabs navs-3">
-
 				<li class="active"><a data-toggle="tab" href="#tab-1"> <i
 						class="fa fa-gear"></i> 主题
 				</a></li>
-
 			</ul>
-
 			<div class="tab-content">
 				<div id="tab-1" class="tab-pane active">
 					<div class="sidebar-title">
@@ -248,7 +221,6 @@
 						</div>
 						<div class="setings-item">
 							<span>固定顶部</span>
-
 							<div class="switch">
 								<div class="onoffswitch">
 									<input type="checkbox" name="fixednavbar"
@@ -262,7 +234,6 @@
 						</div>
 						<div class="setings-item">
 							<span> 固定宽度 </span>
-
 							<div class="switch">
 								<div class="onoffswitch">
 									<input type="checkbox" name="boxedlayout"
@@ -292,29 +263,23 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
-
 			</div>
-
 		</div>
 	</div>
-
 </div>
 
 <!-- 全局js -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="/static/js/admin/token.js"></script>
 
 <!-- 自定义js -->
-<script src="/js/hplus.js"></script>
-<script src="/js/contabs.js"></script>
-
-<script src="/js/fakeLoader.min.js"></script>
+<script src="/static/js/hplus.js"></script>
+<script src="/static/js/contabs.js"></script>
+<script src="/static/js/fakeLoader.min.js"></script>
 
 <script>
 	$(document).ready(function() {
@@ -343,9 +308,6 @@
 			}
 		});
 	}
-
 </script>
-
 </body>
-
 </html>

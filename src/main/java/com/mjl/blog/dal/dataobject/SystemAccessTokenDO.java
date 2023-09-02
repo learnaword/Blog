@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SystemAccessTokenDO implements Serializable {
-    private Integer id;
+    private Long id;
 
     private String accessToken;
 

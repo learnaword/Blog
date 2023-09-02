@@ -39,9 +39,6 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableMethodSecurity
 public class WebSecurityConfigurerAdapter {
 
-    @Resource
-    private WebProperties webProperties;
-
     /**
      * 认证失败处理类 Bean
      */
@@ -58,9 +55,6 @@ public class WebSecurityConfigurerAdapter {
     @Resource
     private TokenAuthenticationFilter authenticationTokenFilter;
 
-    @Resource
-    private ApplicationContext applicationContext;
-
     /**
      * 由于 Spring Security 创建 AuthenticationManager 对象时，没声明 @Bean 注解，导致无法被注入
      * 通过覆写父类的该方法，添加 @Bean 注解，解决该问题
@@ -70,6 +64,7 @@ public class WebSecurityConfigurerAdapter {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
+    //在filterChain里使用mvc.pattern的时候需要用到，所以必须得有。
     @Bean
     MvcRequestMatcher.Builder mvc(HandlerMappingIntrospector introspector) {
         return new MvcRequestMatcher.Builder(introspector);
@@ -97,13 +92,10 @@ public class WebSecurityConfigurerAdapter {
                 // ①：全局共享规则
                 .authorizeHttpRequests((authz)->authz
                         // 1.1 静态资源，可匿名访问
-                        .requestMatchers(mvc.pattern("/WEB-INF/**"),mvc.pattern("/myroot/**")).permitAll()
-                        .requestMatchers(mvc.pattern("/static/**"),mvc.pattern("/upload/**")).permitAll()
                         .requestMatchers(mvc.pattern("/admin/login"),mvc.pattern("/admin/checkLogin")).permitAll()
-                        .requestMatchers(mvc.pattern("/error"),mvc.pattern("/sitemap.xml")).permitAll()
-                        .requestMatchers(mvc.pattern("/")).permitAll()
-                        // ③：兜底规则，必须认证
-                        .anyRequest().authenticated()
+                        .requestMatchers(mvc.pattern("/admin/**")).authenticated()
+                        .anyRequest().permitAll()
+
                 );
 
         // 添加 Token Filter
