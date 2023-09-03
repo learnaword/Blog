@@ -10,13 +10,12 @@
 	<link rel="shortcut icon" href="/static/images/favicon.ico">
 	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/static/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 	<link href="/static/css/animate.css" rel="stylesheet">
 	<link href="/static/css/style.css" rel="stylesheet">
 	<link href="/static/css/fakeLoader.css" rel="stylesheet">
 </head>
 <body class="fixed-sidebar full-height-layout white-bg" style="overflow:hidden;">
-<div id="fakeloader"></div>
 <div id="wrapper">
 	<!--左侧导航开始-->
 	<nav class="navbar-default navbar-static-side" role="navigation">
@@ -69,9 +68,6 @@
 						</li>
 						<li>
 							<a class="J_menuItem" href="/page/admin/blog/addBlog.jsp">写博客</a>
-						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/blog/autoBlog.jsp">自动生成</a>
 						</li>
 						<li>
 							<a class="J_menuItem" href="/page/admin/blog/findBlog.jsp">查询博客</a>
@@ -248,7 +244,7 @@
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="/static/js/plugins/axios/axios.min.js"></script>
 <!-- 自定义js -->
 <script src="/static/js/admin/token.js"></script>

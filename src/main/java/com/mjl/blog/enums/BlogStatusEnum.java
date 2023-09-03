@@ -12,7 +12,7 @@ import lombok.Getter;
 public enum BlogStatusEnum {
 
     PUBLISHED(1, "已发布"),
-    SPAM(2, "垃圾"),
+    SPAM(2, "已删除"),
     RESERVED(-1, "储备"),
     DRAFT(-2, "草稿");
 

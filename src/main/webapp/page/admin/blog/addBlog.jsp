@@ -4,36 +4,21 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>添加博客</title>c
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-
+	<title>添加博客</title>
 	<link rel="shortcut icon" href="/static/images/favicon.ico">
-	<link href="/static/css/github-gist.css" rel="stylesheet">
-	<link href="/static/css/base.css" rel="stylesheet">
 	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/font-awesome.css" rel="stylesheet">
-	<link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 	<link href="/static/css/plugins/summernote/summernote.css" rel="stylesheet">
 	<link href="/static/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
-	<link href="/static/css/animate.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/index.css" rel="stylesheet">
-	<link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="/static/css/plugins/webuploader/webuploader.css">
-	<link rel="stylesheet" href="/static/css/plugins/webuploader/webuploader-demo.css">
-	<link href="/static/css/fakeLoader.css" rel="stylesheet">
-	<style>
-		.news_infos span {
-			font-size: 13px;
-		}
-	</style>
+	<link href="/static/css/font-awesome.css" rel="stylesheet">
+	<link href="/static/css/base.css" rel="stylesheet">
+	<link href="/static/css/info.css" rel="stylesheet">
+	<link href="/static/plugins/layui/css/layui.css" rel="stylesheet"/>
+	<script src="/static/plugins/layui/layui.js"></script>
 </head>
 
-<body class="white-bg" style="opacity:0">
-<div id="fakeloader"></div>
+<body class="white-bg">
 <div class="wrapper wrapper-content">
 	<div class="row">
 		<div class="col-sm-3">
@@ -55,241 +40,127 @@
 									class="fa fa-trash-o "></i>垃圾箱<span
 									class="s-3 label label-danger pull-right">0 篇</span></a></li>
 						</ul>
-						<h5>博客分类</h5>
-						<ul class="category-list" style="padding: 0">
-
-						</ul>
-
 						<div class="clearfix"></div>
+					</div>
+					<div class="layui-upload-drag" style="display: block;" id="ID-upload-demo-drag">
+						<i class="layui-icon layui-icon-upload"></i>
+						<div>点击上传封面</div>
+						<div class="layui-hide" id="ID-upload-demo-preview">
+							<hr> <img src="" id ="images" alt="上传成功后渲染" style="max-width: 100%">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<div class="col-sm-9">
 			<div class="ibox float-e-margins">
 				<div class="mail-box-header">
-					<div class="pull-right tooltip-demo">
-						<button id="add_draft" type="button" class="btn btn-white btn-sm"
-								data-toggle="tooltip" data-placement="top" title="存为草稿">
-							<i class="fa fa-pencil"></i> 存为草稿
-						</button>
-						<button type="button" onclick="" class="btn btn-danger btn-sm"
-								data-toggle="tooltip" data-placement="top" title="放弃">
-							<i class="fa fa-times"></i> 放弃
-						</button>
+					<div class="layui-form-item">
+						<div class="layui-input-group">
+							<div class="layui-input-suffix">
+								<button type="button"  lay-verify="required" class="layui-btn layui-btn-warm layui-btn-radius">文章标题</button>
+							</div>
+							<input type="text" name="title" style="width: 800px;border-color: #ff9900;" placeholder="输入标题" class="layui-input">
+						</div>
 					</div>
-					<h2>写博客</h2>
 				</div>
-				<div class="mail-box">
-					<div class="mail-body">
-						<form class="form-horizontal" method="post" id="commentForm">
-							<div class="form-group">
-								<label class="col-sm-2 control-label">封面：</label>
-								<div class="col-sm-10">
-									<a class="fancybox picPath" href="#pic" data-toggle="modal"
-									   onclick="findPicList()"> <img
-											class="picPath animated fadeInRight"
-											style="width: 190px; height: 115px;" alt="封面" title="点击更换封面"
-											src="" />
-									</a>
-								</div>
-							</div>
-							<input type="hidden" value="" class="imagePath">
-							<div class="form-group">
-								<label class="col-sm-2 control-label">标题：</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="title"
-										   name="title" value="" required="" maxlength="50"
-										   aria-required="true">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">摘要：</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="introduction"
-										   name="introduction" value="" required="" maxlength="400"
-										   aria-required="true">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">网赚类型：</label>
-								<div class="col-sm-10">
-									<select class="form-control m-b" id="typeName" name="typeName">
-
-									</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">软件类型：</label>
-								<div class="col-sm-10">
-									<select class="form-control m-b" id="soft" name="soft">
-
-									</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">专区分类：</label>
-								<div class="col-sm-10">
-									<select class="form-control m-b" id="commentnum" name="commentnum">
-										<option value="1">介绍</option>
-										<option value="2">经验</option>
-										<option value="3">问答</option>
-									</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">排名指数：</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="clicknum" name="clicknum" value="0">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">推荐：</label>
-								<div class="col-sm-10">
-									<select class="form-control m-b" id="agreenum" name="agreenum">
-
-									</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">关键字：</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="keyword"
-										   required="" aria-required="true" name="keyword" value=""
-										   maxlength="30">
-									<p class="help-block m-b-none">
-										<i class="fa fa-info-circle"></i> 多个关键字之间用“;”分隔
-									</p>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="mail-text h-200" style="width:84%;margin:0 auto;">
-						<div id="summernote"></div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="mail-body text-right tooltip-demo">
-
-						<button id="prev1" type="button" class="btn btn-sm btn-primary"
-								data-placement="top" title="预览" data-toggle="tooltip">
-							<i class="fa fa-reply"></i> 预览
-						</button>
-
-						<button id="prev2" type="button" style="display:none"
-								onclick="prevBlog()" data-target="#myModal" data-toggle="modal">
-						</button>
-						<button id="add_draft2" type="button"
-								class="btn btn-white btn-sm" data-toggle="tooltip"
-								data-placement="top" title="存为草稿">
-							<i class="fa fa-pencil"></i> 存为草稿
-						</button>
-					</div>
+				<div class="mail-text h-200" style="width:100%;margin:0 auto;">
+					<div id="summernote"></div>
 					<div class="clearfix"></div>
 				</div>
+				<div class="mail-body text-right tooltip-demo">
+					<button id="prev1" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" lay-on="page" data-toggle="tooltip">
+						<i class="fa fa-reply"></i> 发表
+					</button>
+
+					<button id="add_draft2" type="button"
+							class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="存为草稿">
+						<i class="fa fa-pencil"></i> 存为草稿
+					</button>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
-
-		<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog"
-			 aria-hidden="true">
-			<div class="modal-dialog" style="width:702px">
-				<div class="modal-content animated fadeInUp">
-					<button type="button" class="close" style="margin-right:7px"
-							data-dismiss="modal">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div class="infos" style="margin:0px;">
-						<div class="newsview" style="padding-top:0px;">
-							<h3 class="news_title"></h3>
-							<div class="news_author">
-								<span class="au01">house</span>
-							</div>
-							<div class="tags"></div>
-
-							<div class="news_infos"></div>
-
-						</div>
-					</div>
-					<div class="modal-footer">
-						<span class="add"></span>
-						<button type="button" class="btn btn-primary"
-								data-dismiss="modal">关闭</button>
+		<div id="configBlog" style="margin-right:15px;" class="layui-hide">
+			<form class="layui-form layui-form-pane" action="xxx">
+				<div class="layui-form-item">
+					<label class="layui-form-label">描述：</label>
+					<div class="layui-input-block">
+						<input type="text" name="introduction" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
 					</div>
 				</div>
-			</div>
-		</div>
-
-
-		<div class="modal inmodal" id="pic" tabindex="-1" aria-hidden="true">
-			<div class="modal-dialog" style="width:79.3%;margin-top:-1%;">
-				<div class="modal-content animated fadeInUp">
-					<button type="button" class="close" style="margin-right:7px"
-							data-dismiss="modal">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div id="uploader" class="wu-example"
-						 style="margin:0px 5.6% 0  5.6%;">
-						<div class="queueList">
-							<div id="dndArea" class="placeholder"
-								 style="min-height: 110px;padding-top: 0px;background:none">
-								<div id="filePicker"></div>
-								<p>或将照片拖到这里，单次最多可选300张</p>
-							</div>
-						</div>
-						<div class="statusBar" style="display:none;">
-							<div class="progress">
-								<span class="text">0%</span> <span class="percentage"></span>
-							</div>
-							<div class="info"></div>
-							<div class="btns">
-								<div id="filePicker2"></div>
-								<div class="uploadBtn">开始上传</div>
-							</div>
-						</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">专区</label>
+					<div class="layui-input-inline">
+						<select name="softId">
+						</select>
 					</div>
-					<div class="modal-body picsList"
-						 style="height:260px;overflow:scroll; padding: 0px 30px 0px 30px;">
-
-
+					<div class="layui-input-inline">
+						<select name="softSection">
+							<option value="1">介绍</option>
+							<option value="2">经验</option>
+							<option value="3">问答</option>
+						</select>
 					</div>
 				</div>
-			</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">广告推荐</label>
+					<div class="layui-input-inline">
+						<select name="adType" lay-filter="aihao">
+							<option value="1">暂时没有</option>
+						</select>
+					</div>
+				</div>
+				<div class="layui-form-item" pane>
+					<label class="layui-form-label">是否置顶：</label>
+					<div class="layui-input-block">
+						<input type="radio" name="isTop" value="1" title="是" checked>
+						<input type="radio" name="isTop" value="0" title="否">
+					</div>
+				</div>
+				<div class="layui-form-item" pane>
+					<label class="layui-form-label">是否推荐：</label>
+					<div class="layui-input-block">
+						<input type="radio" name="isRecommend" value="1" title="是" checked>
+						<input type="radio" name="isRecommend" value="0" title="否">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">排名指数：</label>
+					<div class="layui-input-inline layui-input-wrap">
+						<input type="text" name="rankScore" lay-verify="required" autocomplete="off" lay-affix="clear" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">关键词：</label>
+					<div class="layui-input-block">
+						<input type="text" name="keyword" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button type="button" class="layui-btn" id="submit_btn">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</form>
 		</div>
-
 	</div>
-</div>
-
-<!-- 全局js -->
-<script src="/static/js/jquery.min.js"></script>
-
-<script src="/static/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();
-</script>
-<script src="/static/js/bootstrap.min.js"></script>
-
-<!-- 自定义js -->
-<script src="/static/js/content.js"></script>
-<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
-
-<!-- Web Uploader -->
-<script type="text/javascript">
-	// 添加全局站点信息
-	var BASE_URL = '/js/plugins/webuploader';
-</script>
-<script src="/static/js/plugins/webuploader/webuploader.min.js"></script>
-<script src="/static/js/plugins/webuploader/webuploader-demo2.js"></script>
-
-<!-- jQuery Validation plugin javascript-->
-<script src="/static/js/plugins/validate/jquery.validate.min.js"></script>
-<script src="/static/js/plugins/validate/messages_zh.min.js"></script>
-<script src="/static/js/plugins/validate/form-validate-demo.js"></script>
-<!-- iCheck -->
-<script src="/static/js/plugins/iCheck/icheck.min.js"></script>
-<script src="/static/js/fakeLoader.min.js"></script>
-<!-- SUMMERNOTE -->
-<script src="/static/js/plugins/summernote/summernote.min.js"></script>
-<script src="/static/js/plugins/summernote/summernote-zh-CN.js"></script>
-<script src="/static/js/admin/token.js"></script>
-<script src="/static/js/admin/blog/addBlog.js"></script>
+	<!--全局js -->
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<!--request携带token-->
+	<script src="/static/js/axios/axios.min.js"></script>
+	<!--Swal弹框 -->
+	<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="/static/plugins/sweetalert2/sweetalert2.min.css"></script>
+	<!--上传图片-->
+	<!--SUMMERNOTE -->
+	<script src="/static/js/plugins/summernote/summernote.min.js"></script>
+	<script src="/static/js/plugins/summernote/summernote-zh-CN.js"></script>
+	<!--自定义js-->
+	<script src="/static/js/admin/token.js"></script>
+	<script type="module" src="/static/js/admin/blog/addBlog.js"></script>
 </body>
 </html>

@@ -64,7 +64,7 @@
     line-height: 40px;
     height: 40px;
     font-size: 18px;
-    ;
+;
     border-bottom: #000 2px solid;
     position: relative;
 }
@@ -653,7 +653,7 @@ h3.blogtitle {
     text-shadow: rgba(255, 255, 255, 0.3) 0px 1px 0px;
 }
 
- .avatar1 {
+.avatar1 {
     width: 158px;
     height: 100px;
     overflow: hidden;
@@ -662,7 +662,7 @@ h3.blogtitle {
 
 .avatar1 img {
     height: 100px
-} 
+}
 
 
 /*search*/
@@ -816,7 +816,7 @@ h3.blogtitle {
     height: 70px;
     overflow: hidden;
     display: block;
-  /*  border: #efefef 1px solid;*/
+    /*  border: #efefef 1px solid;*/
     float: left;
     margin-right: 10px;
 }

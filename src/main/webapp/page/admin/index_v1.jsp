@@ -7,12 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>博客后台 - 主页</title>
 	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/static/css/animate.css" rel="stylesheet">
 	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
-	<link href="/static/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
-	<link href="/static/css/fakeLoader.css" rel="stylesheet">
+	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
@@ -135,12 +131,9 @@
 <!-- 全局js -->
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/plugins/echarts/echarts.min.js"></script>
-<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
-<script src="/static/js/fakeLoader.min.js"></script>
+<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="/static/js/axios/axios.min.js"></script>
 <!-- Data picker -->
-<script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 <script src="/static/js/admin/token.js"></script>
 <script type="module" src="/static/js/admin/index_v1.js"></script>
 

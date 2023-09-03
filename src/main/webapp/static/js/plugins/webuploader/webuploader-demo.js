@@ -1,11 +1,7 @@
 jQuery(function() {
     var $ = jQuery,    // just in case. Make sure it's not an other libaray.
-    
-        $wrap = $('#uploader'),
 
-        // 图片容器
-        $queue = $('<ul class="filelist"></ul>')
-            .appendTo( $wrap.find('.queueList') ),
+        $wrap = $('#uploader'),
 
         // 状态栏，包括进度和控制按钮
         $statusBar = $wrap.find('.statusBar'),
@@ -22,12 +18,6 @@ jQuery(function() {
         // 总体进度条
         $progress = $statusBar.find('.progress').hide(),
 
-        // 添加的文件数量
-        fileCount = 0,
-
-        // 添加的文件总大小
-        fileSize = 0,
-
         // 优化retina, 在retina下这个值是2
         ratio = window.devicePixelRatio || 1,
 
@@ -41,17 +31,6 @@ jQuery(function() {
         // 所有文件的进度信息，key为file id
         percentages = {},
 
-        supportTransition = (function(){
-            var s = document.createElement('p').style,
-                r = 'transition' in s ||
-                      'WebkitTransition' in s ||
-                      'MozTransition' in s ||
-                      'msTransition' in s ||
-                      'OTransition' in s;
-            s = null;
-            return r;
-        })(),
-
         // WebUploader实例
         uploader;
 
@@ -60,10 +39,10 @@ jQuery(function() {
         throw new Error( 'WebUploader does not support the browser you are using.' );
     }
 
-    
-    
+
+
     //以下是 单独的上传组件/不含模态框
-    
+
     uploader = WebUploader.create({
         pick: {
             id: '#filePicker',
@@ -71,29 +50,20 @@ jQuery(function() {
         },
         dnd: '#uploader .queueList',
         paste: document.body,
-
         accept: {
             title: 'Images',
             extensions: 'gif,jpg,jpeg,bmp,png',
             mimeTypes: 'image/*'
         },
-
         // swf文件路径
         swf: BASE_URL + '/Uploader.swf',
-
         disableGlobalDnd: true,
-
         chunked: true,
         // server: 'http://webuploader.duapp.com/server/fileupload.php',
-        server: '../uploadBg',
+        server: '/admin/file/upload',
         fileNumLimit: 300,
         fileSizeLimit: 5 * 1024 * 1024,    // 200 M
         fileSingleSizeLimit: 1 * 1024 * 1024    // 50 M
-    });
-    // 添加“添加文件”的按钮，
-    uploader.addButton({
-        id: '#filePicker2',
-        label: '继续添加'
     });
 
     // 当有文件添加进来时执行，负责view的创建
@@ -121,12 +91,12 @@ jQuery(function() {
                     case 'interrupt':
                         text = '上传暂停';
                         break;
-
                     default:
                         text = '上传失败，请重试';
                         break;
                 }
 
+                alert(111)
                 $info.text( text ).appendTo( $li );
             };
 
@@ -212,9 +182,8 @@ jQuery(function() {
                 });
             } else {
                 $wrap.css( 'filter', 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ (~~((file.rotation/90)%4 + 4)%4) +')');
-                
-            }
 
+            }
 
         });
 
@@ -224,7 +193,6 @@ jQuery(function() {
     // 负责view的销毁
     function removeFile( file ) {
         var $li = $('#'+file.id);
-
         delete percentages[ file.id ];
         updateTotalProgress();
         $li.off().find('.file-panel').off().end().remove();
@@ -248,36 +216,8 @@ jQuery(function() {
         updateStatus();
     }
 
-    function updateStatus() {
-        var text = '', stats;
-
-        if ( state === 'ready' ) {
-            text = '选中' + fileCount + '张图片，共' +
-                    WebUploader.formatSize( fileSize ) + '。';
-        } else if ( state === 'confirm' ) {
-            stats = uploader.getStats();
-            if ( stats.uploadFailNum ) {
-                text = '已成功上传' + stats.successNum+ '张照片至服务器相册，'+
-                    stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
-            }
-
-        } else {
-            stats = uploader.getStats();
-            text = '共' + fileCount + '张（' +
-                    WebUploader.formatSize( fileSize )  +
-                    '），已上传' + stats.successNum + '张';
-
-            if ( stats.uploadFailNum ) {
-                text += '，失败' + stats.uploadFailNum + '张';
-            }
-        }
-
-        $info.html( text );
-    }
-
     function setState( val ) {
         var file, stats;
-
         if ( val === state ) {
             return;
         }
@@ -319,7 +259,8 @@ jQuery(function() {
                 $progress.hide();
                 $upload.text( '开始上传' ).addClass( 'disabled' );
                 stats = uploader.getStats();
-                if ( stats.successNum && !stats.uploadFailNum ) {
+                alert(11);
+                if (stats.successNum && !stats.uploadFailNum ) {
                     setState( 'finish' );
                     return;
                 }
@@ -327,7 +268,7 @@ jQuery(function() {
             case 'finish':
                 stats = uploader.getStats();
                 if ( stats.successNum ) {
-                	//alert( '上传成功' );
+                	alert( '上传成功' );
                 } else {
                     // 没有成功的图片，重设
                     state = 'done';
@@ -374,32 +315,12 @@ jQuery(function() {
     };
     //上传成功后
     uploader.on('uploadSuccess',function(file,response){
+        alert(111)
     	$(".imagePath").val(response.path);
     	swal("上传成功", "", "success");
     	common_getPicFileList();
     });
-    
-    function common_getPicFileList() {
-        $.ajax({
-            //此处使用的是自己封装的JAVA类
-            url: "../getFileList",
-            type: "POST",
-            success: function (data) {
-                if (data.status==0) {
-                	swal("服务器图库为空", "请上传", "error");
-                } else {
-                 var pics='';
-                for(var i=0;i<data.fileList.length;i++){
-                	pics+='<a class="fancybox" href="'+data.fileList[i]+'"><img style="width: 254px; height: 143px;margin-right:5px;" alt="image" src="'+data.fileList[i]+'" /></a>'
-                	}
-                }
-				$(".pics").html(pics);
-            },
-            error: function (e) {
-            	swal("获取图片错误", "请检查接口服务", "error");
-            }
-        });
-    }
+
     uploader.on( 'all', function( type ) {
         var stats;
         switch( type ) {
@@ -418,7 +339,7 @@ jQuery(function() {
         }
     });
 
-    
+
     uploader.onError = function( code ) {
         alert( 'Eroor: ' + code );
     };

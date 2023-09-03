@@ -13,7 +13,6 @@ public final class ServerException extends RuntimeException {
     /**
      * 全局错误码
      *
-     * @see GlobalErrorCodeConstants
      */
     private Integer code;
 

@@ -19,7 +19,6 @@ public class BlogAuthController {
 
     @RequestMapping("/login")
     public String toLogin(){
-        System.out.println(11111);
         return "/admin/login";
     }
 
@@ -33,11 +32,6 @@ public class BlogAuthController {
     public CommonResult<LoginRespVO> checkLogin(LoginReqVO loginReqVO){
         LoginRespVO loginRespVO = authService.login(loginReqVO);
         return CommonResult.success(loginRespVO);
-    }
-
-    @RequestMapping("/test")
-    public void test(){
-        System.out.println("11111111111");
     }
 
 }

@@ -1,5 +1,7 @@
 package com.mjl.blog.dal.dataobject;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -16,6 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BlogDO implements Serializable{
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     private String title;
@@ -26,25 +29,45 @@ public class BlogDO implements Serializable{
 
     private String images;
 
+    /*
+    * 文章内容
+     */
     private String content;
 
-    private Integer clicknum;
+    /*
+    * 排名指数
+     */
+    private Integer rankScore;
 
-    private Integer commentnum;
+    /*
+    * 广告推荐
+     */
+    private Integer adType;
 
-    private Integer agreenum;
+    /*
+    * 是否置顶
+     */
+    private Integer isTop;
 
-    private Integer istop;
+    /*
+    * 是否推荐
+     */
+    private Integer isRecommend;
 
-    private Integer isrecommend;
+    private Long updateTime;
 
-    private Long updatetime;
-
-    private Long createtime;
+    private Long createTime;
 
     private Integer status;
 
-    private Integer typeId;
-
+    /*
+    * 专区
+     */
     private Integer softId;
+
+    /*
+    * 专区板块：问答、介绍、经验
+    */
+    private Integer softSection;
+
 }

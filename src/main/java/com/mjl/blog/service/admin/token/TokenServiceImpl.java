@@ -26,7 +26,7 @@ public class TokenServiceImpl implements TokenService{
     @Resource
     SystemRefreshTokenMapper systemRefreshTokenMapper;
 
-    private final int ACCESS_TOKEN_EXPIRES_TIME = 20; //分钟
+    private final int ACCESS_TOKEN_EXPIRES_TIME = 120; //分钟
     private final int REFRESH_TOKEN_EXPIRES_TIME = 1200;
 
     @Override

@@ -20,7 +20,7 @@
 	<link href="/static/css/animate.css" rel="stylesheet">
 	<link href="/static/css/style.css" rel="stylesheet">
 	<link href="/static/css/index.css" rel="stylesheet">
-	<link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/static/css/plugins/webuploader/webuploader.css">
 	<link rel="stylesheet" href="/static/css/plugins/webuploader/webuploader-demo.css">
 	<link href="/static/css/fakeLoader.css" rel="stylesheet">
@@ -137,7 +137,7 @@
 
 <!-- 自定义js -->
 <script src="/static/js/content.js"></script>
-<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <!-- Web Uploader -->
 <script type="text/javascript">

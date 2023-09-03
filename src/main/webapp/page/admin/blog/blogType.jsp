@@ -15,7 +15,7 @@
 	<link href="/static/css/animate.css" rel="stylesheet">
 	<link href="/static/css/style.css" rel="stylesheet">
 	<link href="/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-	<link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 	<link href="/static/css/fakeLoader.css" rel="stylesheet">
 </head>
 
@@ -112,7 +112,7 @@
 
 <!-- 自定义js -->
 <script src="/static/js/content.js"></script>
-<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="/static/js/fakeLoader.min.js"></script>
 <!-- iCheck -->
 <script src="/static/js/plugins/iCheck/icheck.min.js"></script>

@@ -273,7 +273,7 @@
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="/static/js/admin/token.js"></script>
 
 <!-- 自定义js -->

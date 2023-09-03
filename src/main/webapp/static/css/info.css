@@ -1,5 +1,5 @@
-echarset "UTF-8";
-}n/
+@charset "UTF-8";
+
 .u-like{margin-top:5px;background-color:#fff;padding:10px;}
 .u-like ul{padding-top:3px;border-top:1px solid #eeeeee;}
 .u-like li{line-height:34px;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis}

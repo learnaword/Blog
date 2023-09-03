@@ -15,7 +15,7 @@
     <link href="/static/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
     <link href="/static/css/animate.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
-    <link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
     <link href="/static/css/plugins/datapicker/datepicker3.css"rel="stylesheet">
     <link href="/static/css/index.css" rel="stylesheet">
     <link href="/static/css/base.css" rel="stylesheet">
@@ -142,7 +142,7 @@
 <script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 <!-- 自定义js -->
 <script src="/static/js/content.js"></script>
-<script src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="/static/js/plugins/echarts/echarts.min.js"></script>
 <script src="/static/js/fakeLoader.min.js"></script>
 <script src="/static/js/admin/token.js"></script>

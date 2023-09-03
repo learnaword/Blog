@@ -19,7 +19,7 @@
 	<link href="/static/css/index.css" rel="stylesheet">
 	<link href="/static/css/base.css" rel="stylesheet">
 	<link href="/static/css/info.css" rel="stylesheet">
-	<link href="/static/css/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/static/css/plugins/webuploader/webuploader.css">
 	<link rel="stylesheet"href="/static/css/plugins/webuploader/webuploader-demo.css">
 	<style>
@@ -144,7 +144,7 @@
 <!-- 自定义js -->
 <script src="/static/js/content.js"></script>
 <script
-		src="/static/js/plugins/sweetalert/sweetalert2.min.js"></script>
+		src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <!-- iCheck -->
 <script
