@@ -279,7 +279,7 @@
 <script src="/static/js/plugins/summernote/summernote.min.js"></script>
 <script src="/static/js/plugins/summernote/summernote-zh-CN.js"></script>
 <script src="/static/js/admin/token.js"></script>
-<script src="/static/js/admin/blog/updateBlog.js"></script>
+<script src="/static/js/admin/blog/update.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateReqVO {
-    private Integer id;
 
     @NotBlank(message="标题不能为空！！")
     private String title;
@@ -45,18 +44,12 @@ public class CreateReqVO {
      */
     private Integer isRecommend;
 
-    private Long updateTime;
-
-    private Long createTime;
-
     private Integer status;
-
-    private Integer typeId;
 
     /*
      * 专区
      */
-    private Integer softId;
+    private Long softId;
 
     /*
      * 专区板块：问答、介绍、经验

@@ -54,9 +54,22 @@
 					<i class="fa fa-child"></i>
 					<span class="nav-label">自媒体</span></a>
 				</li>
-				<li><a href="/page/admin/blog/autoBlog.jsp" target= "_blank">
-					<i class="fa fa-desktop"></i> <span
-						class="nav-label">自动生成</span></a>
+				<li><a href="#"><i class="fa fa-desktop"></i>
+					<span class="nav-label">自动生成</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/config/table.jsp">配置管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/config/add.jsp">创建配置</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/sentence/table.jsp">句子管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/write.jsp">生成博客</a>
+						</li>
+					</ul>
 				</li>
 				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp"><i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
 				</li>
@@ -64,16 +77,10 @@
 					<span class="nav-label">博客模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a class="J_menuItem" href="/page/admin/blog/blogTable.jsp">博客管理</a>
+							<a class="J_menuItem" href="/page/admin/blog/table.jsp">博客管理</a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="/page/admin/blog/addBlog.jsp">写博客</a>
-						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/blog/findBlog.jsp">查询博客</a>
-						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/blog/blogType.jsp">类别</a>
+							<a class="J_menuItem" href="/page/admin/blog/add.jsp">写博客</a>
 						</li>
 					</ul>
 				</li>

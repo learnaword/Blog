@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BlogTableRespVO {
-    private Integer id;
+    private Long id;
 
     private String title;
 

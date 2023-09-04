@@ -16,6 +16,6 @@ public interface BlogMapper extends BaseMapperX<BlogDO> {
     default PageResult<BlogDO> selectPage(BlogTableReqVO reqVO) {
         return selectPage(reqVO, new LambdaQueryWrapper<BlogDO>()
                 .eq(BlogDO::getStatus, reqVO.getStatus())
-                .orderByDesc(BlogDO::getId));
+                .orderByDesc(BlogDO::getUpdateTime));
     }
 }

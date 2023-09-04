@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface SoftService {
     List<SoftDO> getSoftList();
+    SoftDO getSoftById(Long id);
 }

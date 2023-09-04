@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BlogDO implements Serializable{
     @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String title;
 
@@ -63,7 +63,7 @@ public class BlogDO implements Serializable{
     /*
     * 专区
      */
-    private Integer softId;
+    private Long softId;
 
     /*
     * 专区板块：问答、介绍、经验

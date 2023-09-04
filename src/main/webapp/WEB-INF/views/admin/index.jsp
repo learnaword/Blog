@@ -59,9 +59,9 @@
 				<li><a href="#"><i class="fa fa-book"></i> <span
 						class="nav-label">博客模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem" href="/page/admin/blog/blogTable.jsp">博客管理</a>
+						<li><a class="J_menuItem" href="/page/admin/blog/table.jsp">博客管理</a>
 						</li>
-						<li><a class="J_menuItem" href="/page/admin/blog/addBlog.jsp">写博客</a>
+						<li><a class="J_menuItem" href="/page/admin/blog/add.jsp">写博客</a>
 						</li>
 						<li><a class="J_menuItem" href="/page/admin/blog/autoBlog.jsp">自动生成</a>
 						</li>

@@ -8,7 +8,7 @@ $(document).ready(function() {
 //初始化已发表的文章
 function initBlogCountByStatus(){
 	//初始化博客数目
-	request.get('/admin/blogTypeCounts').then(function (data) {
+	request.get('/admin/blog/blogTypeCounts').then(function (data) {
 		var responseData = data.data.data;
 		//草稿
 		$(".draft").html(responseData.draftCounts);
@@ -31,7 +31,7 @@ function initBlogCountByStatus(){
 
 function initBlogCountByDate(){
 	//初始化博客数目
-	request.get('/admin/blogDateCounts',{params:{
+	request.get('/admin/blog/blogDateCounts',{params:{
 			preNum: 3
 		}}).then(function (data) {
 		var responseData = data.data.data;

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import static com.mjl.blog.common.pojo.CommonResult.success;
 
-@RequestMapping("/admin")
+@RequestMapping("/admin/blog")
 @RestController
 @Validated
 public class BlogAdminController {
@@ -64,6 +64,23 @@ public class BlogAdminController {
     @PostMapping ("/create")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(blogAdminService.create(createReqVO) > 0 ? true : false);
+    }
+
+    @PostMapping ("/update")
+    public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
+        blogAdminService.update(updateReqVO);
+        return success(true);
+    }
+
+    @PostMapping ("/autoCreate")
+    public CommonResult<Boolean> autoCreate(@RequestBody @Valid UpdateReqVO updateReqVO){
+        blogAdminService.update(updateReqVO);
+        return success(true);
+    }
+
+    @GetMapping("/get")
+    public CommonResult<BlogRespVO> get(Long id){
+        return success(BlogConvert.INSTANCE.convert(blogAdminService.getBlogById(id)));
     }
 
 }

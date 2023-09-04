@@ -36,11 +36,9 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = SecurityFrameworkUtils.obtainAuthorization(request,"Authorization");
-        String authorization = request.getHeader("Authorization");
         System.out.println("token：" + token);
-        System.out.println("authorization：" + authorization);
         System.out.println("url："+ request.getRequestURI());
-        authorization = "313131jkjuoewqieqwoieq";
+        System.out.println("------------------------");
         if(StrUtil.isNotEmpty(token)) {
             //通过token构建用户。
             LoginUser loginUser = buildLoginUserByToken(token);

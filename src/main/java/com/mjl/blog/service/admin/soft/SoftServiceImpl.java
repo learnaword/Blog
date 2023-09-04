@@ -17,4 +17,9 @@ public class SoftServiceImpl implements SoftService{
     public List<SoftDO> getSoftList() {
         return softMapper.selectList(SoftDO::getStatus, CommonStatusEnum.ENABLE.getStatus());
     }
+
+    @Override
+    public SoftDO getSoftById(Long id) {
+        return softMapper.selectById(id);
+    }
 }

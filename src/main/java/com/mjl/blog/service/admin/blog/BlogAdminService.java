@@ -22,4 +22,8 @@ public interface BlogAdminService {
     void updateBlogsRecommend(UpdateBlogsRecommendReqVO updateBlogsRecommendReqVO);
 
     int create(CreateReqVO createReqVO);
+
+    BlogDO getBlogById(Long id);
+
+    void update(UpdateReqVO updateReqVO);
 }

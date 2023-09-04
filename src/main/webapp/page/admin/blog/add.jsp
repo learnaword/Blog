@@ -7,15 +7,15 @@
 	<title>添加博客</title>
 	<link rel="shortcut icon" href="/static/images/favicon.ico">
 	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/plugins/layui/css/layui.css" rel="stylesheet"/>
 	<link href="/static/css/style.css" rel="stylesheet">
 	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 	<link href="/static/css/plugins/summernote/summernote.css" rel="stylesheet">
 	<link href="/static/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
 	<link href="/static/css/font-awesome.css" rel="stylesheet">
-	<link href="/static/css/base.css" rel="stylesheet">
 	<link href="/static/css/info.css" rel="stylesheet">
-	<link href="/static/plugins/layui/css/layui.css" rel="stylesheet"/>
-	<script src="/static/plugins/layui/layui.js"></script>
+	<link href="/static/css/base.css" rel="stylesheet">
+
 </head>
 
 <body class="white-bg">
@@ -28,18 +28,6 @@
 						<a class="btn btn-block btn-primary compose-mail"
 						   href="javascript:void(0);">写博客</a>
 						<div class="space-25"></div>
-						<h5>博客状态</h5>
-						<ul class="folder-list m-b-md" style="padding: 0">
-							<li><a href="javascript:void(0);"> <i
-									class="fa fa-inbox "></i>发表<span
-									class="s-1 label label-info pull-right">0 篇</span></a></li>
-							<li><a href="javascript:void(0);"> <i
-									class="fa fa-file-text-o "></i>草稿<span
-									class="s-2 label label-warning pull-right">0 篇</span></a></li>
-							<li><a href="javascript:void(0);"> <i
-									class="fa fa-trash-o "></i>垃圾箱<span
-									class="s-3 label label-danger pull-right">0 篇</span></a></li>
-						</ul>
 						<div class="clearfix"></div>
 					</div>
 					<div class="layui-upload-drag" style="display: block;" id="ID-upload-demo-drag">
@@ -70,24 +58,30 @@
 				</div>
 				<div class="mail-body text-right tooltip-demo">
 					<button id="prev1" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" lay-on="page" data-toggle="tooltip">
-						<i class="fa fa-reply"></i> 发表
+						<i class="fa"></i> 发表
 					</button>
-
-					<button id="add_draft2" type="button"
-							class="btn btn-white btn-sm" data-toggle="tooltip"
-							data-placement="top" title="存为草稿">
-						<i class="fa fa-pencil"></i> 存为草稿
+					<button type="button" onclick="javascript:window.location.href='table.jsp'"
+							class="btn layui-btn-primary layui-border-blue btn-sm" data-toggle="tooltip"
+							title="返回列表">
+						<i class="fa"></i>返回列表
 					</button>
 				</div>
+
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		<div id="configBlog" style="margin-right:15px;" class="layui-hide">
-			<form class="layui-form layui-form-pane" action="xxx">
+			<form class="layui-form layui-form-pane" style="padding:10px;" action="xxx">
 				<div class="layui-form-item">
 					<label class="layui-form-label">描述：</label>
 					<div class="layui-input-block">
 						<input type="text" name="introduction" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">关键词：</label>
+					<div class="layui-input-block">
+						<input type="text" name="keyword" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
 					</div>
 				</div>
 				<div class="layui-form-item">
@@ -98,7 +92,7 @@
 					</div>
 					<div class="layui-input-inline">
 						<select name="softSection">
-							<option value="1">介绍</option>
+							<option value="1" selected>介绍</option>
 							<option value="2">经验</option>
 							<option value="3">问答</option>
 						</select>
@@ -115,27 +109,32 @@
 				<div class="layui-form-item" pane>
 					<label class="layui-form-label">是否置顶：</label>
 					<div class="layui-input-block">
-						<input type="radio" name="isTop" value="1" title="是" checked>
-						<input type="radio" name="isTop" value="0" title="否">
+						<input type="radio" name="isTop" value="0" title="否" checked>
+						<input type="radio" name="isTop" value="1" title="是">
 					</div>
 				</div>
 				<div class="layui-form-item" pane>
 					<label class="layui-form-label">是否推荐：</label>
 					<div class="layui-input-block">
-						<input type="radio" name="isRecommend" value="1" title="是" checked>
-						<input type="radio" name="isRecommend" value="0" title="否">
+						<input type="radio" name="isRecommend" value="0" title="否" checked>
+						<input type="radio" name="isRecommend" value="1" title="是">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">排名指数：</label>
 					<div class="layui-input-inline layui-input-wrap">
-						<input type="text" name="rankScore" lay-verify="required" autocomplete="off" lay-affix="clear" class="layui-input">
+						<input type="text" name="rankScore" lay-verify="required" placeholder="请输入" autocomplete="off" lay-affix="clear" class="layui-input">
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label class="layui-form-label">关键词：</label>
-					<div class="layui-input-block">
-						<input type="text" name="keyword" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input">
+					<label class="layui-form-label">状态</label>
+					<div class="layui-input-inline">
+						<select name="status">
+							<option value="1" selected>发布</option>
+							<option value="-1">储备</option>
+							<option value="-2">草稿</option>
+							<option value="2">删除</option>
+						</select>
 					</div>
 				</div>
 				<div class="layui-form-item">
@@ -152,6 +151,7 @@
 	<script src="/static/js/bootstrap.min.js"></script>
 	<!--request携带token-->
 	<script src="/static/js/axios/axios.min.js"></script>
+	<script src="/static/plugins/layui/layui.js"></script>
 	<!--Swal弹框 -->
 	<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
 	<script src="/static/plugins/sweetalert2/sweetalert2.min.css"></script>
@@ -161,6 +161,6 @@
 	<script src="/static/js/plugins/summernote/summernote-zh-CN.js"></script>
 	<!--自定义js-->
 	<script src="/static/js/admin/token.js"></script>
-	<script type="module" src="/static/js/admin/blog/addBlog.js"></script>
+	<script type="module" src="/static/js/admin/blog/add.js"></script>
 </body>
 </html>

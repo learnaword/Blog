@@ -1,7 +1,6 @@
 import request from "../../axios/axios-config.js";
 
 $(document).ready(function() {
-	initBlogCountBystatus();
 	//初始化富文本
 	$('#summernote').summernote({
 		fontSizes: ['12', '14', '16','18','20','24', '36','500'],
@@ -78,17 +77,18 @@ $(document).ready(function() {
 			var formData = {
 				title: $('input[name="title"]').val(),
 				introduction: $('input[name="introduction"]').val(),
-				softId: $('input[name="softId"]').val(),
+				softId: $('select[name="softId"]').val(),
 				softSection: $('input[name="softSection"]').val(),
-				adType: $('input[name="adType"]:checked').val(),
+				adType: $('select[name="adType"]').val(),
 				isTop: $('input[name="isTop"]:checked').val(),
 				isRecommend: $('input[name="isRecommend"]:checked').val(),
 				rankScore: $('input[name="rankScore"]').val(),
 				keyword: $('input[name="keyword"]').val(),
 				content: $("#summernote").code(),
+				status: $('select[name="status"]').val(),
 				images : $('#images').attr('src'),
 			};
-			request.post("/admin/create", formData).then(function(data){
+			request.post("/admin/blog/create", formData).then(function(data){
 				alert(data.data.code)
 				if(data.data.code == "0"){
 					Swal.fire({
@@ -130,16 +130,6 @@ $(document).ready(function() {
 		});
 	});
 });
-
-function initBlogCountBystatus(){
-	//初始化博客数目
-	request.get('/admin/blogTypeCounts').then(function(data){
-		var responseData = data.data.data;
-		$(".s-2").html(responseData.draftCounts + '篇');
-		$(".s-1").html(responseData.publishedCounts + '篇');
-		$(".s-3").html( responseData.spmCounts+ '篇');
-	})
-};
 
 //图片上传
 function sendFile(file, editor, $editable) {

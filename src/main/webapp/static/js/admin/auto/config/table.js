@@ -1,4 +1,4 @@
-import request from "../../axios/axios-config.js";
+import request from "../../../axios/axios-config.js";
 
 $(document).ready(function(){
     layui.use(['table', 'dropdown'], function(){
@@ -9,7 +9,7 @@ $(document).ready(function(){
         // 创建渲染实例
         table.render({
             elem: '#test'
-            ,url:'/admin/blogTable' // 此处为静态模拟数据，实际使用时需换成真实接口
+            ,url:'/admin/auto-config/table' // 此处为静态模拟数据，实际使用时需换成真实接口
             ,toolbar: '#toolbarDemo'
             ,headers: {
                 'Authorization': 'Bearer ' + token // 设置 Authorization 头，通常用于传递 token
@@ -42,30 +42,53 @@ $(document).ready(function(){
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
                 ,{field:'title', width: 240, title: '标题'}
-                ,{field:'keyword', title:'关键词', width: 120}
-                ,{field:'introduction', title: '描述', edit: 'textarea', minWidth: 120}
-                ,{field:'createTime', title:'发布时间', width: 120, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{
-                    field: 'status', title: '状态', align: 'center',width: 170, templet: function (d) {
+                ,{field:'softTitle', title:'软件专区', width: 120}
+                ,{field:'softSection', title: '软件专区分区',align: 'center', minWidth: 120,templet: function(d) {
                         var str="";
-                        if (d.status == '-1') {
+                         if (d.softSection == '1'){
+                            str = str + '<span class="layui-badge layui-bg-cyan">介绍</span>'
+                        }else if (d.softSection == '2'){
+                            str = str + '<span class="layui-badge layui-bg-cyan">经验</span>'
+                        }else if (d.softSection == '3'){
+                            str = str + '<span class="layui-badge layui-bg-cyan">问答</span>'
+                        }
+                         return str;
+                    }
+                 }
+                ,{
+                    field: 'blogStatus', title: '博客状态', align: 'center',width: 170, templet: function (d) {
+                        var str="";
+                        if (d.blogStatus == '-1') {
                             str = str + '<span class="layui-badge layui-bg-orange">储备</span>'
-                        } else if (d.status == '1'){
+                        } else if (d.blogStatus == '1'){
                             str = str + '<span class="layui-badge layui-bg-blue">发布</span>'
-                        } else if (d.status == '2') {
+                        } else if (d.blogStatus == '2') {
                             str = str + '<span style="background-color: #cccccc" class="layui-badge">删除</span>'
-                        }else if(d.status == '-2') {
+                        }else if(d.blogStatus == '-2') {
                             str = str + '<span style="background-color: #16b777" class="layui-badge">草稿</span>'
                         }
-                        if(d.istop == '1'){
+                        if(d.isTop == '1'){
                             str = str + '<span style="background-color:#a233c6" class="layui-badge">置顶</span>'
                         }
-                        if(d.isrecommend=='1'){
+                        if(d.isRecommend=='1'){
                             str = str + '<span class="layui-badge">推荐 </span>'
                         }
                         return str;
                     }
                 }
+                ,{
+                    field: 'status', title: '模版状态', align: 'center',width: 120, templet: function (d) {
+                        var str="";
+                        if (d.status == '0') {
+                            str = str + '<span class="layui-badge layui-bg-blue">发布</span>'
+                        } else if (d.status == '1'){
+                            str = str + '<span style="background-color: #cccccc" class="layui-badge">删除</span>'
+                        }
+                        return str;
+                    }
+                }
+                ,{field:'updateTime', title:'更新时间', width: 140, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'createTime', title:'发布时间', width: 140, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
                 ,{fixed: 'right', title:'操作', width: 160, minWidth: 125, toolbar: '#barDemo'}
             ]]
             ,done: function(){
@@ -77,20 +100,8 @@ $(document).ready(function(){
                         id: 'SPAM',
                         title: '移到删除'
                     },{
-                        id: 'DRAFT',
-                        title: '移到草稿'
-                    },{
-                        id: 'RESERVED',
-                        title: '移到储备'
-                    },{
                         id: 'PUBLISHED',
                         title: '移到发布'
-                    },{
-                        id: 'updateBlogsTop',
-                        title: '设为置顶'
-                    },{
-                        id: 'updateBlogsRecommend',
-                        title: '设为推荐'
                     }]
                     // 菜单被点击的事件
                     ,click: function(obj){
@@ -101,39 +112,13 @@ $(document).ready(function(){
                                 var selectedIds = data.map(function(item) {
                                     return item.id;
                                 });
-                                updateBlogsStatus(selectedIds,2)
-                                break;
-                            case 'DRAFT':
-                                var selectedIds = data.map(function(item) {
-                                    return item.id;
-                                });
-                                updateBlogsStatus(selectedIds,-2)
-                                break;
-                            case 'RESERVED':
-                                var selectedIds = data.map(function(item) {
-                                    return item.id;
-                                });
-                                updateBlogsStatus(selectedIds,-1)
+                                updateConfigStatus(selectedIds,1,"移到删除")
                                 break;
                             case 'PUBLISHED':
                                 var selectedIds = data.map(function(item) {
                                     return item.id;
                                 });
-                                updateBlogsStatus(selectedIds,1)
-                                break;
-                            case 'updateBlogsTop':
-                                var selectedIds = data.map(function(item) {
-                                    return item.id;
-                                });
-                                updateBlogsTop(selectedIds,1)
-                                break;
-                                break;
-                            case 'updateBlogsRecommend':
-                                var selectedIds = data.map(function(item) {
-                                    return item.id;
-                                });
-                                updateBlogsRecommend(selectedIds,1)
-                                break;
+                                updateConfigStatus(selectedIds,0,"移到发布")
                                 break;
                         }
                     }
@@ -148,12 +133,6 @@ $(document).ready(function(){
                     },{
                         id: 'SPAM',
                         title: '查看删除'
-                    },{
-                        id: 'RESERVED',
-                        title: '查看储备'
-                    },{
-                        id: 'DRAFT',
-                        title: '查看草稿'
                     }]
                     // 菜单被点击的事件
                     ,click: function(obj){
@@ -162,7 +141,7 @@ $(document).ready(function(){
                                 // 发布
                                 table.reload('test', {
                                     where: {
-                                        status: 1
+                                        status: 0
                                     }
                                 });
                                 break;
@@ -170,25 +149,9 @@ $(document).ready(function(){
                                 // 已删除
                                 table.reload('test', {
                                     where: {
-                                        status: 2
+                                        status: 1
                                     }
                                 }, true);
-                                break;
-                            case 'RESERVED':
-                                //储备
-                                table.reloadData('test', {
-                                    where: {
-                                        status: '-1'
-                                    }
-                                });
-                                break;
-                            case 'DRAFT':
-                                // 草稿
-                                table.reloadData('test', {
-                                    where: {
-                                        status: '-2'
-                                    }
-                                });
                                 break;
                         }
                     }
@@ -237,33 +200,30 @@ $(document).ready(function(){
             var data = obj.data; // 获得当前行数据
             // console.log(obj)
             if(obj.event === 'edit'){
-                layer.open({
-                    title: '编辑 - id:'+ data.id,
-                    type: 1,
-                    area: ['80%','80%'],
-                    content: '<div style="padding: 16px;">自定义表单元素</div>'
-                });
+                window.location.href = "/page/admin/auto/config/update.jsp?id="+data.id;
             } else if(obj.event === 'more'){
                 // 更多 - 下拉菜单
                 dropdown.render({
                     elem: this, // 触发事件的 DOM 对象
                     show: true, // 外部事件触发即显示
                     data: [{
-                        title: '查看',
-                        id: 'detail'
+                        id: 'SPAM',
+                        title: '移到删除'
                     },{
-                        title: '删除',
-                        id: 'del'
+                        id: 'PUBLISHED',
+                        title: '移到发布'
                     }],
                     click: function(menudata){
-                        if(menudata.id === 'detail'){
-                            layer.msg('查看操作，当前行 ID:'+ data.id);
-                        } else if(menudata.id === 'del'){
-                            layer.confirm('真的删除行 [id: '+ data.id +'] 么', function(index){
-                                obj.del(); // 删除对应行（tr）的DOM结构
+                        if(menudata.id === 'SPAM'){
+                            layer.confirm('将 [id: '+ data.id +'] 移到删除', function(index){
+                                updateConfigStatus([data.id],1,"移到删除");
                                 layer.close(index);
-                                // 向服务端发送删除指令
-                            });
+                            })
+                        }else if(menudata.id === 'PUBLISHED'){
+                            layer.confirm('将 [id: '+ data.id +'] 移到发布', function(index){
+                                updateConfigStatus([data.id],0,"移到发布");
+                                layer.close(index);
+                            })
                         }
                     },
                     align: 'right', // 右对齐弹出
@@ -272,89 +232,27 @@ $(document).ready(function(){
             }
         });
 
-        // 触发表格复选框选择
-        table.on('checkbox(test)', function(obj){
-            console.log(obj)
-        });
-
-        // 触发表格单选框选择
-        table.on('radio(test)', function(obj){
-            console.log(obj)
-        });
-
-        // 行单击事件
-        table.on('row(test)', function(obj){
-            //console.log(obj);
-            //layer.closeAll('tips');
-        });
-        // 行双击事件
-        table.on('rowDouble(test)', function(obj){
-            console.log(obj);
-        });
-
-        // 单元格编辑事件
-        table.on('edit(test)', function(obj){
-            var field = obj.field; // 得到字段
-            var value = obj.value; // 得到修改后的值
-            var data = obj.data; // 得到所在行所有键值
-            // 值的校验
-            if(field === 'email'){
-                if(!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(obj.value)){
-                    layer.tips('输入的邮箱格式不正确，请重新编辑', this, {tips: 1});
-                    return obj.reedit(); // 重新编辑 -- v2.8.0 新增
-                }
-            }
-            // 编辑后续操作，如提交更新请求，以完成真实的数据更新
-            // …
-            layer.msg('编辑成功', {icon: 1});
-
-            // 其他更新操作
-            var update = {};
-            update[field] = value;
-            obj.update(update);
-        });
     });
 })
-export function updateBlogsStatus(selectedIds,status){
-    request.post("/admin/updateBlogsStatus", {ids:selectedIds,status: status}).then(function(data){
+export function updateConfigStatus(selectedIds,status,msg){
+    request.post("/admin/auto-config/updateConfigStatus", {ids:selectedIds,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
-            title: '移动操作', //标题
-            text: "移动成功！", //显示内容
+            title: msg + '操作', //标题
+            text: msg + "成功！", //显示内容
             confirmButtonText: '确定',
         }).then(function(isConfirm) {
-            location.reload();
+            var table = layui.table;
+            table.reloadData('test', {
+                where: {
+                    status: status
+                }
+            });
         })
     })
 }
 
-export function updateBlogsRecommend(selectedIds,isRecommend){
-    request.post("/admin/updateBlogsRecommend", {ids:selectedIds,isRecommend: isRecommend}).then(function(data){
-        Swal.fire({
-            type: 'warning', // 弹框类型
-            title: '设置推荐', //标题
-            text: "设置成功！", //显示内容
-            confirmButtonText: '确定',
-        }).then(function(isConfirm) {
-            location.reload();
-        })
-    })
-}
 
-export function updateBlogsTop(selectedIds,isTop){
-    request.post("/admin/updateBlogsTop", {ids:selectedIds,isTop: isTop}).then(function(data){
-        Swal.fire({
-            type: 'warning', // 弹框类型
-            title: '设置置顶', //标题
-            text: "设置成功！", //显示内容
-            confirmButtonText: '确定',
-        }).then(function(isConfirm) {
-            location.reload();
-        })
-    })
-}
 
-window.updateBlogsStatus = updateBlogsStatus
-window.updateBlogsTop = updateBlogsTop
-window.updateBlogsRecommend = updateBlogsRecommend
+window.updateConfigStatus = updateConfigStatus
 

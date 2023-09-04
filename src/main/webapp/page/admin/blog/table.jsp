@@ -12,7 +12,7 @@
 	<script src="/static/js/axios/axios.min.js"></script>
 	<script src="/static/js/jquery.min.js"></script>
 	<script src="/static/js/admin/token.js"></script>
-	<script type="module" src="/static/js/admin/blog/blogTable.js"></script>
+	<script type="module" src="/static/js/admin/blog/table.js"></script>
 </head>
 <body>
 <div style="padding: 16px;">

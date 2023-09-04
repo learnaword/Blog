@@ -154,7 +154,7 @@
 <script src="/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 <script src="/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 <script src="/static/js/admin/token.js"></script>
-<script src="/static/js/admin/blog/blogTable.js"></script>
+<script src="/static/js/admin/blog/table.js"></script>
 
 </body>
 </html>
