@@ -7,6 +7,8 @@ import com.mjl.blog.controller.admin.auto.config.vo.UpdateStatusReqVO;
 import com.mjl.blog.controller.admin.auto.config.vo.UpdateReqVO;
 import com.mjl.blog.dal.dataobject.AutoConfigDO;
 
+import java.util.List;
+
 public interface AutoConfigService {
 
     PageResult<AutoConfigDO> getList(TableReqVO blogTableReqVO);
@@ -18,4 +20,8 @@ public interface AutoConfigService {
     void updateStatus(UpdateStatusReqVO updateStatusReqVO);
 
     void update(UpdateReqVO updateReqVO);
+
+    List<AutoConfigDO> getList();
+
+    AutoConfigDO getByBlogTitle(String title);
 }

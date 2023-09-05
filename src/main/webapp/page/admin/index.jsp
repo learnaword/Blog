@@ -67,7 +67,7 @@
 							<a class="J_menuItem" href="/page/admin/auto/sentence/table.jsp">句子管理</a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="/page/admin/auto/write.jsp">生成博客</a>
+							<a class="J_menuItem" href="/page/admin/auto/blog/write.jsp">生成博客</a>
 						</li>
 					</ul>
 				</li>

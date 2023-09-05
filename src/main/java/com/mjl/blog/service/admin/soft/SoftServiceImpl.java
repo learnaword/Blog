@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class SoftServiceImpl implements SoftService{
     @Resource
-    SoftMapper softMapper;
+    private SoftMapper softMapper;
 
     @Override
     public List<SoftDO> getSoftList() {

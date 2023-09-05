@@ -18,7 +18,7 @@ import static com.mjl.blog.common.pojo.CommonResult.success;
 public class BlogAdminController {
 
     @Resource
-    BlogAdminService blogAdminService;
+    private BlogAdminService blogAdminService;
 
     /*
     * 获取各个类型文章的数量

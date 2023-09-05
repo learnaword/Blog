@@ -3,7 +3,9 @@ package com.mjl.blog.controller.admin.auto.config;
 import com.mjl.blog.common.pojo.CommonResult;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.controller.admin.auto.config.vo.*;
+import com.mjl.blog.controller.admin.soft.vo.SoftListVO;
 import com.mjl.blog.convert.AutoConfigConvert;
+import com.mjl.blog.convert.SoftConvert;
 import com.mjl.blog.dal.dataobject.AutoConfigDO;
 import com.mjl.blog.service.admin.auto.config.AutoConfigService;
 import com.mjl.blog.service.admin.soft.SoftService;
@@ -23,9 +25,9 @@ import static com.mjl.blog.common.pojo.CommonResult.success;
 public class AutoConfigController {
 
     @Resource
-    AutoConfigService  autoConfigService;
+    private AutoConfigService  autoConfigService;
     @Resource
-    SoftService softService;
+    private SoftService softService;
 
     @GetMapping("/table")
     public CommonResult<PageResult<TableRespVO>> getBlogTable(TableReqVO tableReqVO){
@@ -40,6 +42,11 @@ public class AutoConfigController {
         });
 
         return success(new PageResult<>(autoConfigList,configDOPageResult.getTotal()));
+    }
+
+    @GetMapping("/list")
+    public CommonResult<List<AutoConfigDO>> getList(){
+        return CommonResult.success(autoConfigService.getList());
     }
 
     @PostMapping ("/updateConfigStatus")

@@ -9,7 +9,10 @@ import com.mjl.blog.controller.admin.auto.config.vo.UpdateStatusReqVO;
 import com.mjl.blog.controller.admin.auto.config.vo.UpdateReqVO;
 import com.mjl.blog.convert.AutoConfigConvert;
 import com.mjl.blog.dal.dataobject.AutoConfigDO;
+import com.mjl.blog.dal.dataobject.SoftDO;
 import com.mjl.blog.dal.mysql.AutoConfigMapper;
+import com.mjl.blog.enums.BlogStatusEnum;
+import com.mjl.blog.service.admin.soft.SoftService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +21,31 @@ import java.util.List;
 @Service
 public class AutoConfigServiceImpl implements AutoConfigService {
     @Resource
-    AutoConfigMapper autoConfigMapper;
+    private AutoConfigMapper autoConfigMapper;
+    @Resource
+    private SoftService softService;
     @Override
     public void update(UpdateReqVO updateReqVO) {
         AutoConfigDO autoConfigDO = AutoConfigConvert.INSTANCE.convert(updateReqVO);
         autoConfigDO.setUpdateTime(System.currentTimeMillis());
         autoConfigMapper.updateById(autoConfigDO);
+    }
+
+    @Override
+    public List<AutoConfigDO> getList() {
+        return autoConfigMapper.selectList(AutoConfigDO::getStatus,CommonStatusEnum.ENABLE.getStatus());
+    }
+
+    @Override
+    public AutoConfigDO getByBlogTitle(String title) {
+        List<AutoConfigDO> autoConfigDOList = getList();
+        for (AutoConfigDO autoConfigDO:autoConfigDOList) {
+            SoftDO softDO = softService.getSoftById(autoConfigDO.getSoftId());
+            if(title.contains(softDO.getTitle()) && autoConfigDO.getBlogStatus().equals(BlogStatusEnum.PUBLISHED.getStatus())){
+                return autoConfigDO;
+            }
+        }
+        return null;
     }
 
     @Override

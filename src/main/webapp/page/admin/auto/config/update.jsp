@@ -115,7 +115,7 @@
 						<div class="layui-form-item layui-form-text">
 							<label class="layui-form-label">软件推荐html</label>
 							<div class="layui-input-block">
-								<textarea name="recommendHtml" placeholder="请输入内容" class="layui-textarea"></textarea>
+								<textarea name="recommendHtml" style="height:300px;" placeholder="请输入内容" class="layui-textarea"></textarea>
 							</div>
 						</div>
 					</form>
@@ -133,6 +133,7 @@
 				</div>
 			</div>
 		</div>
+
 		<!--全局js -->
 		<script src="/static/js/jquery.min.js"></script>
 		<script src="/static/js/bootstrap.min.js"></script>
@@ -149,5 +150,6 @@
 		<!--自定义js-->
 		<script src="/static/js/admin/token.js"></script>
 		<script type="module" src="/static/js/admin/auto/config/update.js"></script>
+
 </body>
 </html>

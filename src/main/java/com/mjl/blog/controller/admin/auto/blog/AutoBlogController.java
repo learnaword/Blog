@@ -1,13 +1,21 @@
 package com.mjl.blog.controller.admin.auto.blog;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.mjl.blog.service.admin.auto.blog.AutoBlogService;
+import com.mjl.blog.controller.admin.auto.blog.vo.CreateReqVO;
+import jakarta.annotation.Resource;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/admin/autoblog")
+@RequestMapping("/admin/auto-blog")
+@RestController
 public class AutoBlogController {
 
-    @GetMapping("/getBlog")
-    public void getBlog(String title){
-
+    @Resource
+    private AutoBlogService autoBlogService;
+    @PostMapping("/create")
+    public void create(@RequestBody  CreateReqVO createReqVO){
+        autoBlogService.create(createReqVO);
     }
 }

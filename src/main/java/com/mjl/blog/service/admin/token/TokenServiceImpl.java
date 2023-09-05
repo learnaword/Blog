@@ -22,9 +22,9 @@ import static com.mjl.blog.common.exception.utils.ServiceExceptionUtil.exception
 public class TokenServiceImpl implements TokenService{
 
     @Resource
-    SystemAccessTokenMapper systemAccessTokenMapper;
+    private SystemAccessTokenMapper systemAccessTokenMapper;
     @Resource
-    SystemRefreshTokenMapper systemRefreshTokenMapper;
+    private SystemRefreshTokenMapper systemRefreshTokenMapper;
 
     private final int ACCESS_TOKEN_EXPIRES_TIME = 120; //分钟
     private final int REFRESH_TOKEN_EXPIRES_TIME = 1200;

@@ -16,7 +16,7 @@ import java.util.List;
 public class SoftAdminController {
 
     @Resource
-    SoftService softService;
+    private SoftService softService;
 
     @GetMapping("/softList")
     public CommonResult<List<SoftListVO>> getSoftList(){

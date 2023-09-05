@@ -99,7 +99,7 @@ function initConfig() {
 		$('select[name="blogStatus"]').val(data.blogStatus);
 		$('textarea[name="recommendHtml"]').val(data.recommendHtml);
 		$('#images').attr('src', data.images);
-		$('#contentImages').attr('src', data.images);
+		$('#contentImages').attr('src', data.contentImages);
 		$('input[name="adType"][value="'+ data.adType + '"]').prop('checked', true);
 		$('input[name="isTop"][value="'+ data.isTop + '"]').prop('checked', true);
 		$('input[name="isRecommend"][value="'+ data.isRecommend + '"]').prop('checked', true);

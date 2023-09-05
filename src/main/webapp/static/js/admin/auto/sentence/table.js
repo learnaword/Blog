@@ -41,10 +41,10 @@ $(document).ready(function(){
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
-                ,{field:'content', width: 240, title: '内容'}
-                ,{field:'usages', title:'使用次数', width: 120}
+                ,{field:'content', width: 200, title: '内容'}
+                ,{field:'usages', title:'使用次数', width: 80}
                 ,{
-                    field: 'status', title: '状态', align: 'center',width: 120, templet: function (d) {
+                    field: 'status', title: '状态', align: 'center',width: 80, templet: function (d) {
                         var str="";
                         if (d.status == '0') {
                             str = str + '<span class="layui-badge layui-bg-blue">发布</span>'
@@ -198,8 +198,9 @@ $(document).ready(function(){
                 })
             }
         });
-
     });
+
+
 })
 export function updateStatus(selectedIds,status,msg){
     request.post("/admin/auto-sentence/updateStatus", {ids:selectedIds,status: status}).then(function(data){
@@ -218,8 +219,3 @@ export function updateStatus(selectedIds,status,msg){
         })
     })
 }
-
-
-
-window.updateConfigStatus = updateConfigStatus
-

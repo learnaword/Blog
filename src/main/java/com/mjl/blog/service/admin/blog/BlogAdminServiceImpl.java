@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class BlogAdminServiceImpl implements BlogAdminService {
     @Resource
-    BlogMapper blogMapper;
+    private BlogMapper blogMapper;
     @Override
     public BlogTypeCountsRespVO getArticleTypeCounts() {
         BlogTypeCountsRespVO blogTypeCountsRespVO = new BlogTypeCountsRespVO()

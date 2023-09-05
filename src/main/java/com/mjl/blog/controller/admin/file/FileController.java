@@ -22,7 +22,7 @@ import java.io.IOException;
 public class FileController {
 
     @Resource
-    FileService fileService;
+    private FileService fileService;
 
     @RequestMapping({"/admin/file/upload"})
     public CommonResult<String> upload(FileUploadReqVO fileUploadReqVO) throws IOException {

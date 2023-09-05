@@ -20,10 +20,10 @@ import static com.mjl.blog.enums.ErrorCodeConstants.USERNAME_NOT_FOUND;
 public class AuthServiceImpl implements AuthService{
 
     @Resource
-    AdminUserMapper adminUserMapper;
+    private AdminUserMapper adminUserMapper;
 
     @Resource
-    TokenService tokenService;
+    private TokenService tokenService;
 
     @Override
     public LoginRespVO login(LoginReqVO loginReqVO) {

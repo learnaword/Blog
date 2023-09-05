@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdminUserServiceImpl implements AdminUserService {
     @Resource
-    AdminUserMapper adminUserMapper;
+    private AdminUserMapper adminUserMapper;
     @Override
     public AdminUserDO getUserById(Long userId) {
         return adminUserMapper.selectOne(AdminUserDO::getId,userId);

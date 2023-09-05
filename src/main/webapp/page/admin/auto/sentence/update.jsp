@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>更新配置</title>
+	<title>修改句子</title>
 	<link rel="shortcut icon" href="/static/images/favicon.ico">
 	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/static/plugins/layui/css/layui.css" rel="stylesheet"/>

@@ -10,11 +10,14 @@ import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class FileServiceImpl implements FileService{
     @Resource
-    FileMapper fileMapper;
+    private FileMapper fileMapper;
+
     @Override
     public String upload(String name, String path, byte[] content) {
         // 计算默认的 path 名
@@ -71,5 +74,6 @@ public class FileServiceImpl implements FileService{
     protected String formatFileUrl(String path) {
         return StrUtil.format("/admin-api/infra/file/get/{}", path);
     }
+
 
 }

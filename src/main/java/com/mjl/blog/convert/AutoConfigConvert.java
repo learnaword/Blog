@@ -5,6 +5,7 @@ import com.mjl.blog.controller.admin.auto.config.vo.GetRespVO;
 import com.mjl.blog.controller.admin.auto.config.vo.TableRespVO;
 import com.mjl.blog.controller.admin.auto.config.vo.UpdateReqVO;
 import com.mjl.blog.dal.dataobject.AutoConfigDO;
+import com.mjl.blog.dal.dataobject.BlogDO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

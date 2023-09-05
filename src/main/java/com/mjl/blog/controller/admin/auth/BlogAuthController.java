@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BlogAuthController {
 
     @Resource
-    AuthService authService;
+    private AuthService authService;
 
     @RequestMapping("/login")
     public String toLogin(){

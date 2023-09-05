@@ -115,7 +115,7 @@
 						<div class="layui-form-item layui-form-text">
 							<label class="layui-form-label">软件推荐html</label>
 							<div class="layui-input-block">
-								<textarea name="recommendHtml" placeholder="请输入内容" class="layui-textarea"></textarea>
+								<textarea name="recommendHtml" style="height:300px;"placeholder="请输入内容" class="layui-textarea"></textarea>
 							</div>
 						</div>
 					</form>
