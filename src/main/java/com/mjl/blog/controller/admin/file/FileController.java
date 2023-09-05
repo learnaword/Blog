@@ -3,20 +3,22 @@ package com.mjl.blog.controller.admin.file;
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.StrUtil;
 import com.mjl.blog.common.pojo.CommonResult;
+import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.ServletUtils;
-import com.mjl.blog.controller.admin.file.vo.FileUploadReqVO;
+import com.mjl.blog.controller.admin.file.vo.*;
+import com.mjl.blog.convert.FileConvert;
 import com.mjl.blog.dal.dataobject.FileDO;
 import com.mjl.blog.service.admin.file.FileService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+
+import static com.mjl.blog.common.pojo.CommonResult.success;
 
 @RestController
 public class FileController {
@@ -50,6 +52,18 @@ public class FileController {
         }
         //前端展示
         ServletUtils.write(response, content, fileType);
+    }
+
+    @GetMapping("/admin/file/table")
+    public CommonResult<PageResult<TableRespVO>> getTable(TableReqVO tableReqVO){
+        return success(FileConvert.INSTANCE.convert(fileService.getList(tableReqVO)));
+    }
+
+
+    @PostMapping("/admin/file/updateStatus")
+    public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
+        fileService.updateStatus(updateStatusReqVO);
+        return success(true);
     }
 
 }

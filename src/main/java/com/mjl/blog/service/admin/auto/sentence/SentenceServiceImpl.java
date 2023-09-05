@@ -67,6 +67,13 @@ public class SentenceServiceImpl implements SentenceService{
     @Override
     public List<SentenceDO> getListLimit(int i) {
         return sentenceMapper.selectList(new LambdaQueryWrapper<SentenceDO>().eq(SentenceDO::getStatus,CommonStatusEnum.ENABLE.getStatus())
-                .lt(SentenceDO::getUsages,3).last("LIMIT 2"));
+                .lt(SentenceDO::getUsages,3).last("ORDER BY RAND() LIMIT 2"));
+    }
+
+    @Override
+    public void updateList(List<SentenceDO> sentenceDOList) {
+        sentenceDOList.forEach(item->item.setUsages(item.getUsages()+1)
+                .setUpdateTime(System.currentTimeMillis()));
+        sentenceMapper.updateBatch(sentenceDOList);
     }
 }

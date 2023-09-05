@@ -1,4 +1,4 @@
-package com.mjl.blog.controller.admin.auto.config.vo;
+package com.mjl.blog.controller.admin.soft.vo;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -13,16 +13,16 @@ public class TableRespVO {
     @NotBlank(message = "标题不能为空")
     private String title;
 
-    private String softTitle;
-
-    private Integer softSection;
-
-    private Integer isTop;
-
-    private Integer isRecommend;
-
     private Integer status;
 
-    private Integer blogStatus;
+    private String introduction;
+
+    private String token;
+
+    private Long typeId;
+
+    private Long createTime;
+
+    private Long updateTime;
 
 }

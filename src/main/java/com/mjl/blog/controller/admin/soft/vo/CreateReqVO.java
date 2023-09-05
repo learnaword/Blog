@@ -1,29 +1,23 @@
-package com.mjl.blog.controller.admin.blog.vo;
+package com.mjl.blog.controller.admin.soft.vo;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class BlogRespVO {
-    private Long id;
-    @NotBlank(message = "标题不能为空")
+@AllArgsConstructor
+public class CreateReqVO {
+
+    @NotBlank(message="标题不能为空！！")
     private String title;
-
-    private String introduction;
-
-    private String keyword;
 
     private String images;
 
-    /*
-     * 文章内容
-     */
-    private String content;
+    private String contentImages;
 
+    private String recommendHtml;
     /*
      * 排名指数
      */
@@ -44,9 +38,10 @@ public class BlogRespVO {
      */
     private Integer isRecommend;
 
-    private Long updateTime;
-
-    private Long createTime;
+    /*
+     * 通过该模版生成文章的状态
+     */
+    private Integer blogStatus;
 
     private Integer status;
 

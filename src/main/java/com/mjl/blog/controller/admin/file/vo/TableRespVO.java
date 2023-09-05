@@ -1,23 +1,14 @@
-package com.mjl.blog.dal.dataobject;
+package com.mjl.blog.controller.admin.file.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
-@TableName("t_file")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class FileDO implements Serializable {
-    /**
-     * 编号，数据库自增
-     */
-    @TableId(value = "id", type = IdType.AUTO)
+public class TableRespVO {
     private Long id;
     /**
      * 原文件名
@@ -40,14 +31,11 @@ public class FileDO implements Serializable {
      */
     private Integer size;
 
-    /**
-     * 文件内容
-     */
-    private byte[] content;
 
     private Integer status;
 
     private Long createTime;
 
     private Long UpdateTime;
+
 }

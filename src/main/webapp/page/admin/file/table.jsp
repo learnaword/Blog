@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>博客数据</title>
+	<title>文件管理</title>
 	<link rel="shortcut icon" href="/static/images/favicon.ico">
 	<link rel="stylesheet" href="/static/plugins/layui/css/layui.css" media="all" />
 	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet"></link>
@@ -12,7 +12,7 @@
 	<script src="/static/js/axios/axios.min.js"></script>
 	<script src="/static/js/jquery.min.js"></script>
 	<script src="/static/js/admin/token.js"></script>
-	<script type="module" src="/static/js/admin/blog/table.js"></script>
+	<script type="module" src="/static/js/admin/file/table.js"></script>
 </head>
 <body>
 <div style="padding: 16px;">
@@ -37,7 +37,7 @@
 </script>
 <script type="text/html" id="barDemo">
 	<div class="layui-clear-space">
-		<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+		<a class="layui-btn layui-btn-xs" lay-event="del">删除</a>
 		<a class="layui-btn layui-btn-xs" lay-event="more">
 			更多
 			<i class="layui-icon layui-icon-down"></i>

@@ -1,8 +1,11 @@
 package com.mjl.blog.service.admin.file;
 
 import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.FileUtils;
+import com.mjl.blog.controller.admin.file.vo.*;
 import com.mjl.blog.dal.dataobject.FileDO;
 import com.mjl.blog.dal.mysql.FileMapper;
 import com.mjl.blog.framework.file.utils.FileTypeUtils;
@@ -12,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 @Service
 public class FileServiceImpl implements FileService{
     @Resource
@@ -69,6 +71,18 @@ public class FileServiceImpl implements FileService{
             return list.get(0).getContent();
         }
         return null;
+    }
+
+    @Override
+    public void updateStatus(UpdateStatusReqVO updateStatusReqVO) {
+        List<FileDO> fileDOList =  fileMapper.selectList(new LambdaQueryWrapper<FileDO>().in(FileDO::getId,updateStatusReqVO.getIds()));
+        fileDOList.forEach(item -> item.setStatus(updateStatusReqVO.getStatus()).setUpdateTime(System.currentTimeMillis()));
+        fileMapper.updateBatch(fileDOList);
+    }
+
+    @Override
+    public PageResult<FileDO> getList(TableReqVO tableReqVO) {
+        return fileMapper.selectPage(tableReqVO);
     }
 
     protected String formatFileUrl(String path) {

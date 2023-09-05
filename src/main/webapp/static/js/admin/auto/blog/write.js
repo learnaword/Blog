@@ -62,11 +62,12 @@ $(document).ready(function() {
 				images : $('#images').attr('src'),
 			};
 			request.post("/admin/auto-blog/create", formData).then(function(data){
+				alert(data.data.code)
 				if(data.data.code == "0"){
 					Swal.fire({
 						type: 'success', // 弹框类型
-						title: '保存文章', //标题
-						text: "保存成功！", //显示内容
+						title: '发布文章', //标题
+						text: "发布成功！", //显示内容
 						confirmButtonText: '确定',
 					}).then(function(isConfirm) {
 					})

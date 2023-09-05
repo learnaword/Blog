@@ -71,8 +71,6 @@
 						</li>
 					</ul>
 				</li>
-				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp"><i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
-				</li>
 				<li><a href="#"><i class="fa fa-book"></i>
 					<span class="nav-label">博客模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
@@ -89,10 +87,19 @@
 					<span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a class="J_menuItem" href="/page/admin/soft/addSoft.jsp">添加专区</a>
+							<a class="J_menuItem" href="/page/admin/soft/add.jsp">添加专区</a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="/page/admin/soft/softTable.jsp">专区列表</a>
+							<a class="J_menuItem" href="/page/admin/soft/table.jsp">专区管理</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">文件管理</span>
+					<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/file/table.jsp">文件管理</a>
 						</li>
 					</ul>
 				</li>
@@ -100,6 +107,8 @@
 					<i class="fa fa-hourglass-2"></i>
 					<span class="nav-label">操作日志</span></a>
 				 </li>
+				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp"><i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
+				</li>
 				<li><a href="/" target= "_blank"><i class="fa fa-desktop"></i> <span
 						class="nav-label">前台页面 </span></a>
 				</li>

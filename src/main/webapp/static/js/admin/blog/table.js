@@ -44,8 +44,8 @@ $(document).ready(function(){
                 ,{field:'title', width: 240, title: '标题'}
                 ,{field:'keyword', title:'关键词', width: 120}
                 ,{field:'introduction', title: '描述', edit: 'textarea', minWidth: 120}
-                ,{field:'updateTime', title:'更新时间', width: 140, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{field:'createTime', title:'发布时间', width: 140, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'updateTime', title:'更新时间', width: 110, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'createTime', title:'发布时间', width: 110, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
                 ,{
                     field: 'status', title: '状态', align: 'center',width: 170, templet: function (d) {
                         var str="";
@@ -230,6 +230,16 @@ $(document).ready(function(){
             ,error: function(res, msg){
                 console.log(res, msg)
             }
+        });
+
+        // 工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var id = obj.config.id;
+            switch(obj.event){
+                case 'refresh':
+                    location.reload();
+                    break;
+            };
         });
 
 

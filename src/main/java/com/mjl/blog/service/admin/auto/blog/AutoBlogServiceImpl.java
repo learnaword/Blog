@@ -34,8 +34,9 @@ public class AutoBlogServiceImpl implements AutoBlogService{
     public void create(CreateReqVO createReqVO) {
         //从数据库获取两个随机句子。
         List<SentenceDO> sentenceDOList =  sentenceService.getListLimit(2);
-        AutoConfigDO autoConfigDO = autoConfigService.getByBlogTitle(createReqVO.getTitle());
+
         //根据文章标题autoConfig获取到配置信息。
+        AutoConfigDO autoConfigDO = autoConfigService.getByBlogTitle(createReqVO.getTitle());
         if(createReqVO.getAutoConfig() !=0){
             autoConfigDO = autoConfigService.getById(createReqVO.getAutoConfig());
         }
@@ -79,5 +80,8 @@ public class AutoBlogServiceImpl implements AutoBlogService{
         blogDO.setIntroduction(introduction);
         blogDO.setStatus(autoConfigDO.getBlogStatus());
         blogMapper.insert(blogDO);
+
+        //更新句子使用次数
+        sentenceService.updateList(sentenceDOList);
     }
 }

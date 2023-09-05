@@ -20,6 +20,7 @@
 </div>
 <script type="text/html" id="toolbarDemo">
 	<div class="layui-btn-container">
+		<button class="layui-btn layui-btn-sm" lay-event="refresh">刷新</button>
 		<button class="layui-btn layui-btn-sm" id="dropdownButton">
 			操作
 			<i class="layui-icon layui-icon-down layui-font-12"></i>

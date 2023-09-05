@@ -1,4 +1,4 @@
-import request from "../../../axios/axios-config.js";
+import request from "../../axios/axios-config.js";
 
 $(document).ready(function(){
     layui.use(['table', 'dropdown'], function(){
@@ -9,7 +9,7 @@ $(document).ready(function(){
         // 创建渲染实例
         table.render({
             elem: '#test'
-            ,url:'/admin/auto-sentence/table' // 此处为静态模拟数据，实际使用时需换成真实接口
+            ,url:'/admin/file/table' // 此处为静态模拟数据，实际使用时需换成真实接口
             ,toolbar: '#toolbarDemo'
             ,headers: {
                 'Authorization': 'Bearer ' + token // 设置 Authorization 头，通常用于传递 token
@@ -41,10 +41,13 @@ $(document).ready(function(){
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
-                ,{field:'content', width: 200, title: '内容'}
-                ,{field:'usages', title:'使用次数', width: 80}
+                ,{field:'name', width: 160, title: '名字'}
+                ,{field:'path', title:'路径', width: 80}
+                ,{field:'url', title:'URL', width: 80}
+                ,{field:'type', title:'文件类型', width: 100}
+                ,{field:'size', title:'大小', width: 100}
                 ,{
-                    field: 'status', title: '状态', align: 'center',width: 80, templet: function (d) {
+                    field: 'status', title: '状态', align: 'center',width: 120, templet: function (d) {
                         var str="";
                         if (d.status == '0') {
                             str = str + '<span class="layui-badge layui-bg-blue">发布</span>'
@@ -54,8 +57,8 @@ $(document).ready(function(){
                         return str;
                     }
                 }
-                ,{field:'updateTime', title:'更新时间', width: 140, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{field:'createTime', title:'发布时间', width: 140, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'updateTime', title:'更新时间', width: 120, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'createTime', title:'发布时间', width: 120, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
                 ,{fixed: 'right', title:'操作', width: 160, minWidth: 125, toolbar: '#barDemo'}
             ]]
             ,done: function(){
@@ -174,8 +177,8 @@ $(document).ready(function(){
         table.on('tool(test)', function(obj){ // 双击 toolDouble
             var data = obj.data; // 获得当前行数据
             // console.log(obj)
-            if(obj.event === 'edit'){
-                window.location.href = "/page/admin/auto/sentence/update.jsp?id="+data.id;
+            if(obj.event === 'del'){
+                updateStatus([data.id],1,"移到删除");
             } else if(obj.event === 'more'){
                 // 更多 - 下拉菜单
                 dropdown.render({
@@ -206,12 +209,11 @@ $(document).ready(function(){
                 })
             }
         });
+
     });
-
-
 })
 export function updateStatus(selectedIds,status,msg){
-    request.post("/admin/auto-sentence/updateStatus", {ids:selectedIds,status: status}).then(function(data){
+    request.post("/admin/file/updateStatus", {ids:selectedIds,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题
@@ -227,3 +229,8 @@ export function updateStatus(selectedIds,status,msg){
         })
     })
 }
+
+
+
+window.updateStatus = updateStatus
+

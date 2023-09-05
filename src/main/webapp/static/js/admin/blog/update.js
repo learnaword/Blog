@@ -174,17 +174,29 @@ function sendFile(file, editor, $editable) {
 	}
 
 	//以上防止在图片在编辑器内拖拽引发第二次上传导致的提示错误
-	data = new FormData();
+	var data = new FormData();
 	data.append("file", file);
 	data.append("key", filename); //唯一性参数
 
-	request.post("/admin/file/upload",data).then(function(data) {
-		if (data == '') {
-			swal("上传失败", "请重试操作", "error");
+	request.post("/admin/file/upload",data).then(function(res) {
+		if (res.data == '') {
+			Swal.fire({
+				type: 'warning', // 弹框类型
+				title: '上传图片', //标题
+				text: "上传失败！", //显示内容
+				confirmButtonText: '确定',
+			}).then(function(isConfirm) {
+			})
 		} else {
-			var path = '图片地址  ' + date.path;
-			swal("上传成功", path, "success");
+			var path = '图片地址  ' + res.data.data;
+			Swal.fire({
+				type: 'success', // 弹框类型
+				title: '上传图片', //标题
+				text: "上传成功！", //显示内容
+				confirmButtonText: '确定',
+			}).then(function(isConfirm) {
+			})
 		}
-		editor.insertImage($editable, date.path);
+		editor.insertImage($editable, res.data.data);
 	})
 }

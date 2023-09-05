@@ -69,7 +69,7 @@ overflow: visible !important;
 					<button id="prev1" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" lay-on="page" data-toggle="tooltip">
 						<i class="fa"></i> 选择模版
 					</button>
-					<button type="button" onclick="javascript:window.location.href='table.jsp'"
+					<button type="button" onclick="javascript:window.location.href='/page/admin/blog/table.jsp'"
 							class="btn layui-btn-primary layui-border-blue btn-sm" data-toggle="tooltip"
 							title="返回列表">
 						<i class="fa"></i>返回列表

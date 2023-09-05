@@ -1,4 +1,4 @@
-import request from "../../../axios/axios-config.js";
+import request from "../../axios/axios-config.js";
 
 $(document).ready(function() {
 
@@ -49,23 +49,18 @@ $('#submit_btn').on('click', function () {
 	var formData = {
 		id: id,
 		title: $('input[name="title"]').val(),
-		softId: $('select[name="softId"]').val(),
-		softSection: $('select[name="softSection"]').val(),
-		adType: $('select[name="adType"]').val(),
-		isTop: $('input[name="isTop"]:checked').val(),
-		isRecommend: $('input[name="isRecommend"]:checked').val(),
-		rankScore: $('input[name="rankScore"]').val(),
-		recommendHtml: $('textarea[name="recommendHtml"]').val(),
-		blogStatus: $('select[name="blogStatus"]').val(),
+		typeId: $('select[name="typeId"]').val(),
+		introduction: $('input[name="introduction"]').val(),
 		images : $('#images').attr('src'),
-		contentImages : $('#contentImages').attr('src'),
+		token: $('input[name="token"]').val(),
+		status: $('select[name="status"]').val(),
 	};
-	request.post("/admin/auto-config/update", formData).then(function(data){
+	request.post("/admin/soft/update", formData).then(function(data){
 		if(data.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型
-				title: '保存配置', //标题
-				text: "保存成功！", //显示内容
+				title: '更新配置', //标题
+				text: "更新成功！", //显示内容
 				confirmButtonText: '确定',
 			}).then(function(isConfirm) {
 			})
@@ -88,24 +83,45 @@ function getURLParameter(id) {
 
 function initConfig() {
 	const id = getURLParameter('id');
-	let url = "/admin/auto-config/get?id=" + id;
+	let url = "/admin/soft/get?id=" + id;
 	request.get(url).then(function (res) {
 		var data = res.data.data;
-		//渲染图表
-		$('input[name="title"]').val(data.title);
-		$('input[name="rankScore"]').val(data.rankScore);
-		$('select[name="softSection"]').val(data.softSection);
-		$('select[name="softId"]').val(data.softId);
-		$('select[name="blogStatus"]').val(data.blogStatus);
-		$('textarea[name="recommendHtml"]').val(data.recommendHtml);
-		$('#images').attr('src', data.images);
-		$('#contentImages').attr('src', data.contentImages);
-		$('input[name="adType"][value="'+ data.adType + '"]').prop('checked', true);
-		$('input[name="isTop"][value="'+ data.isTop + '"]').prop('checked', true);
-		$('input[name="isRecommend"][value="'+ data.isRecommend + '"]').prop('checked', true);
+		$('input[name="title"]').val(data.title),
+		$('select[name="typeId"]').val(data.typeId),
+		$('input[name="introduction"]').val(data.introduction),
+		$('#images').attr('src',data.images),
+		$('input[name="token"]').val(data.token),
+		$('select[name="status"]').val(data.status),
 		$('#ID-upload-demo-preview').removeClass('layui-hide')
-		$('#content-image-preview').removeClass('layui-hide')
 		layui.form.render();
+	})
+}
+
+//图片上传
+function sendFile(file, editor, $editable) {
+	var filename = false;
+	try {
+		filename = file['name'];
+	} catch (e) {
+		filename = false;
+	}
+	if (!filename) {
+		$(".note-alarm").remove();
+	}
+
+	//以上防止在图片在编辑器内拖拽引发第二次上传导致的提示错误
+	data = new FormData();
+	data.append("file", file);
+	data.append("key", filename); //唯一性参数
+
+	request.post("/admin/file/upload",data).then(function(data) {
+		if (data == '') {
+			swal("上传失败", "请重试操作", "error");
+		} else {
+			var path = '图片地址  ' + date.path;
+			swal("上传成功", path, "success");
+		}
+		editor.insertImage($editable, date.path);
 	})
 }
 

@@ -41,9 +41,9 @@ $(document).ready(function(){
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
-                ,{field:'title', width: 240, title: '标题'}
-                ,{field:'softTitle', title:'软件专区', width: 120}
-                ,{field:'softSection', title: '软件专区分区',align: 'center', minWidth: 120,templet: function(d) {
+                ,{field:'title', width: 140, title: '标题'}
+                ,{field:'softTitle', title:'软件专区', width: 80}
+                ,{field:'softSection', title: '软件专区分区',align: 'center', minWidth: 100,templet: function(d) {
                         var str="";
                          if (d.softSection == '1'){
                             str = str + '<span class="layui-badge layui-bg-cyan">介绍</span>'
@@ -56,7 +56,7 @@ $(document).ready(function(){
                     }
                  }
                 ,{
-                    field: 'blogStatus', title: '博客状态', align: 'center',width: 170, templet: function (d) {
+                    field: 'blogStatus', title: '博客状态', align: 'center',width: 120, templet: function (d) {
                         var str="";
                         if (d.blogStatus == '-1') {
                             str = str + '<span class="layui-badge layui-bg-orange">储备</span>'
@@ -87,8 +87,8 @@ $(document).ready(function(){
                         return str;
                     }
                 }
-                ,{field:'updateTime', title:'更新时间', width: 140, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{field:'createTime', title:'发布时间', width: 140, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'updateTime', title:'更新时间', width: 120, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'createTime', title:'发布时间', width: 120, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
                 ,{fixed: 'right', title:'操作', width: 160, minWidth: 125, toolbar: '#barDemo'}
             ]]
             ,done: function(){
@@ -194,6 +194,14 @@ $(document).ready(function(){
             }
         });
 
+        table.on('toolbar(test)', function(obj){
+            var id = obj.config.id;
+            switch(obj.event){
+                case 'refresh':
+                    location.reload();
+                    break;
+            };
+        });
 
         // 触发单元格工具事件
         table.on('tool(test)', function(obj){ // 双击 toolDouble

@@ -26,11 +26,11 @@ public class SoftDO implements Serializable {
 
     private String images;
 
-    private Long updatetime;
+    private Long updateTime;
 
-    private Long createtime;
+    private Long createTime;
 
-    private Integer typeId;
+    private Long typeId;
 
     private Integer status;
 
