@@ -3,8 +3,10 @@ package com.mjl.blog.controller.admin.soft;
 import com.mjl.blog.common.pojo.CommonResult;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.controller.admin.soft.vo.*;
-import com.mjl.blog.convert.SoftConvert;
-import com.mjl.blog.service.admin.soft.SoftService;
+import com.mjl.blog.convert.admin.SoftAdminConvert;
+import com.mjl.blog.dal.dataobject.SoftDO;
+import com.mjl.blog.service.admin.soft.SoftAdminService;
+import com.mjl.blog.service.admin.type.TypeAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -19,16 +21,26 @@ import static com.mjl.blog.common.pojo.CommonResult.success;
 public class SoftAdminController {
 
     @Resource
-    private SoftService softService;
+    private SoftAdminService softService;
+    @Resource
+    private TypeAdminService typeService;
 
     @GetMapping("/softList")
     public CommonResult<List<SoftListVO>> getSoftList(){
-        return CommonResult.success(SoftConvert.INSTANCE.convert(softService.getSoftList()));
+        return CommonResult.success(SoftAdminConvert.INSTANCE.convert(softService.getSoftList()));
     }
 
     @GetMapping("/table")
     public CommonResult<PageResult<TableRespVO>> getTable(TableReqVO tableReqVO){
-        return success(SoftConvert.INSTANCE.convert(softService.getList(tableReqVO)));
+        PageResult<SoftDO> softDOPageResult = softService.getList(tableReqVO);
+
+        List<TableRespVO> softDOList = new ArrayList<>( softDOPageResult.getList().size() );
+        softDOPageResult.getList().forEach(item ->{
+            TableRespVO tableRespVO = SoftAdminConvert.INSTANCE.convert3(item);
+            tableRespVO.setTypeTitle(typeService.getById(item.getTypeId()).getTitle());
+            softDOList.add( tableRespVO );
+        });
+        return success(new PageResult<>(softDOList,softDOPageResult.getTotal()));
     }
 
 
@@ -58,6 +70,6 @@ public class SoftAdminController {
 
     @GetMapping("/get")
     public CommonResult<GetRespVO> get(Long id){
-        return success(SoftConvert.INSTANCE.convert2(softService.getById(id)));
+        return success(SoftAdminConvert.INSTANCE.convert2(softService.getById(id)));
     }
 }

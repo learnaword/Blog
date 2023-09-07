@@ -120,6 +120,9 @@ $(document).ready(function() {
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
 			},
+			data:{
+				module: 4,
+			},
 			url: '/admin/file/upload',
 			done: function(res){
 				layer.msg('上传成功');

@@ -41,10 +41,10 @@ $(document).ready(function(){
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
-                ,{field:'content', width: 200, title: '内容'}
-                ,{field:'usages', title:'使用次数', width: 80}
+                ,{field:'content', width: 270, title: '内容'}
+                ,{field:'usages', title:'使用次数',align: 'center', width: 100}
                 ,{
-                    field: 'status', title: '状态', align: 'center',width: 80, templet: function (d) {
+                    field: 'status', title: '状态', align: 'center',width: 100, templet: function (d) {
                         var str="";
                         if (d.status == '0') {
                             str = str + '<span class="layui-badge layui-bg-blue">发布</span>'
@@ -54,8 +54,8 @@ $(document).ready(function(){
                         return str;
                     }
                 }
-                ,{field:'updateTime', title:'更新时间', width: 140, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{field:'createTime', title:'发布时间', width: 140, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'updateTime', title:'更新时间', width: 160, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'createTime', title:'发布时间', width: 160, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
                 ,{fixed: 'right', title:'操作', width: 160, minWidth: 125, toolbar: '#barDemo'}
             ]]
             ,done: function(){
@@ -166,6 +166,9 @@ $(document).ready(function(){
             switch(obj.event){
                 case 'refresh':
                     location.reload();
+                    break;
+                case 'upload':
+                    $("#upload").click();
                     break;
             };
         });

@@ -17,4 +17,11 @@ public interface ErrorCodeConstants {
     //===========文章自动生成1002001000================
     ErrorCode INVALID_TEMPLATE = new ErrorCode(1002001001, "不存在可用模版");
 
+    //===========文件管理1002003000================
+    ErrorCode PATH_OCCUPIED = new ErrorCode(1002003001, "path已经被占用！");
+    ErrorCode FILE_TYPE_MATCH = new ErrorCode(1002003002, "文件类型不匹配！");
+    ErrorCode FILE_NOT_FOUND = new ErrorCode(1002003002, "文件不存在！");
+
+
+
 }

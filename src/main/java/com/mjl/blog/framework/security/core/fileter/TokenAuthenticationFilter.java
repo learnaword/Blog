@@ -1,6 +1,5 @@
 package com.mjl.blog.framework.security.core.fileter;
 
-import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.mjl.blog.common.exception.ServiceException;
 import com.mjl.blog.dal.dataobject.AdminUserDO;
@@ -8,7 +7,7 @@ import com.mjl.blog.dal.dataobject.SystemAccessTokenDO;
 import com.mjl.blog.framework.security.core.LoginUser;
 import com.mjl.blog.framework.security.core.util.SecurityFrameworkUtils;
 import com.mjl.blog.service.admin.adminUser.AdminUserService;
-import com.mjl.blog.service.admin.token.TokenService;
+import com.mjl.blog.service.admin.token.TokenAdminService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -28,7 +27,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
     @Resource
-    TokenService tokenService;
+    TokenAdminService tokenService;
 
     @Resource
     AdminUserService adminUserService;

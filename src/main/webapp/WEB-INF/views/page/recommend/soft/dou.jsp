@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <div class="recommend2">
     <span class="recSpan">抖音极速版</span>
-    <img style="height:40px;" src="https://www.bangmangma.com/upload/blog/2020-02-25187222.JPG">
+    <img style="height:40px;" src="/upload/blog/2020-02-25187222.JPG">
     <div>
         <span class="recSpan2">填邀请码：<span>8969737835</span>，领最高38元</span>
         <div class="frecDiv2">

@@ -43,7 +43,7 @@ $(document).ready(function(){
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
                 ,{field:'title', width: 240, title: '标题'}
                 ,{field:'introduction', title:'介绍', width: 120}
-                ,{field:'typeId', title:'类型', width: 80}
+                ,{field:'typeTitle', title:'类型', width: 80}
                 ,{field:'token', title:'token', width: 80}
                 ,{
                     field: 'status', title: '状态', align: 'center',width: 120, templet: function (d) {

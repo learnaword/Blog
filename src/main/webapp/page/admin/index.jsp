@@ -7,13 +7,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="renderer" content="webkit">
 	<title>博客后台 - 主页</title>
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/admin/font-awesome.min.css" rel="stylesheet">
 	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
-	<link href="/static/css/animate.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/fakeLoader.css" rel="stylesheet">
+	<link href="/static/css/admin/animate.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
+	<link href="/static/css/admin/fakeLoader.css" rel="stylesheet">
 </head>
 <body class="fixed-sidebar full-height-layout white-bg" style="overflow:hidden;">
 <div id="wrapper">
@@ -27,7 +27,7 @@
 				<li class="nav-header">
 					<div class="dropdown profile-element">
 							<span>
-								<img alt="images" style="width:64px;height:64px;"class="img-circle" src="/static/images/photos2.jpg" />
+								<img alt="images" style="width:64px;height:64px;"class="img-circle" src="/images/photos2.jpg" />
 							</span>
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 							<span class="clear">
@@ -50,9 +50,16 @@
 					<i class="fa fa-home"></i>
 					<span class="nav-label">主页</span></a>
 				</li>
-				<li><a href="/page/admin/blog/media.jsp" target= "_blank">
-					<i class="fa fa-child"></i>
-					<span class="nav-label">自媒体</span></a>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">自媒体</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/media/table.jsp">博客管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/media/add.jsp">写博客</a>
+						</li>
+					</ul>
 				</li>
 				<li><a href="#"><i class="fa fa-desktop"></i>
 					<span class="nav-label">自动生成</span><span class="fa arrow"></span></a>
@@ -91,6 +98,15 @@
 						</li>
 						<li>
 							<a class="J_menuItem" href="/page/admin/soft/table.jsp">专区管理</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">类型管理</span>
+					<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/type/table.jsp">类型管理</a>
 						</li>
 					</ul>
 				</li>

@@ -100,6 +100,8 @@ $(document).ready(function() {
 			elem: '#ID-upload-demo-drag', // 单图片上传
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
+			},data:{
+				module: 4,
 			},
 			url: '/admin/file/upload',
 			done: function(res){
@@ -177,7 +179,7 @@ function sendFile(file, editor, $editable) {
 	var data = new FormData();
 	data.append("file", file);
 	data.append("key", filename); //唯一性参数
-
+	data.append("module",3)
 	request.post("/admin/file/upload",data).then(function(res) {
 		if (res.data == '') {
 			Swal.fire({

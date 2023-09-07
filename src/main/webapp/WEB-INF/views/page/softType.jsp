@@ -9,53 +9,49 @@
     <meta name="keywords" content="手机兼职,手机赚钱软件,免费赚钱" />
     <meta name="description" content="手机赚钱软件专区:在这里有大量的手机免费赚钱赚钱软件，软件专区功能，在这里你将充分了解这个软件，如何赚钱，能赚到多少，有什么优点和缺点等等，尽我最大可能让你找到适合自己的网赚方式。" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"href="/static/images/favicon.ico">
-    <link href="/static/css/loaders.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/static/css/common.min.css" rel="stylesheet">
+    <link rel="shortcut icon"href="/images/favicon.ico">
     <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
-    <link href="https://www.bangmangma.com/css/soft.css" rel="stylesheet">
+    <link href="/static/css/page/soft.min.css" rel="stylesheet">
     <script src="/static/js/comm.js"></script>
 </head>
-<body
-  style="background:url(/images/bj.png) repeat top left scroll">
+<body>
   <%@ include file="top.jsp"%>
   <article>
     <div class="lbox">
         <div class="fenlei">
             <div class="item">
-                <a href="/softInfo/77.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29743131.PNG" alt="做任务"/>
-                <span class="caption">做任务</span></a>
+                <a href="/softInfo/77.html"><img src="/images/soft_task.PNG" alt="做任务"/>
+                    <span class="caption">做任务</span></a>
             </div>
             <div class="item">
-                <a href="/softInfo/79.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29932717.PNG" alt="看新闻"/>
-                <span class="caption">看新闻</span></a>
+                <a href="/softInfo/79.html"><img src="/images/soft_news.PNG" alt="看新闻"/>
+                    <span class="caption">看新闻</span></a>
             </div>
             <div class="item">
-                <a href="/softInfo/78.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29291943.PNG" alt="看视频"/>
-                <span class="caption">看视频</span></a>
+                <a href="/softInfo/78.html"><img src="/images/soft_vedio.PNG" alt="看视频"/>
+                    <span class="caption">看视频</span></a>
             </div>
             <div class="item">
-                <a href="/softInfo/80.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29148797.PNG" alt="淘宝客"/>
-                <span class="caption">淘宝客</span></a>
+                <a href="/softInfo/80.html"><img src="/images/soft_taobaoke.PNG" alt="淘宝客"/>
+                    <span class="caption">淘宝客</span></a>
             </div>
         </div>
         <div class="fenlei">
             <div class="item">
-                <a href="/softInfo/82.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-30837664.PNG" alt="玩游戏"/>
-                <span class="caption">玩游戏</span></a>
+                <a href="/softInfo/82.html"><img src="/images/soft_game.PNG" alt="玩游戏"/>
+                    <span class="caption">玩游戏</span></a>
             </div>
             <div class="item">
-                <a href="/softInfo/84.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-3083547.PNG" alt="建网站"/>
-                <span class="caption">建网站</span></a>
+                <a href="/softInfo/84.html"><img src="/images/soft_wap.PNG" alt="建网站"/>
+                    <span class="caption">建网站</span></a>
             </div>
             <div class="item">
-                <a href="/softInfo/83.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-30463842.PNG" alt="自媒体"/>
-                <span class="caption">自媒体</span></a>
+                <a href="/softInfo/83.html"><img src="/images/soft_media.PNG" alt="自媒体"/>
+                    <span class="caption">自媒体</span></a>
             </div>
             <div class="item">
-                <a href="/softInfo/85.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-30718520.PNG" alt="短视频"/>
-                <span class="caption">短视频</span></a>
+                <a href="/softInfo/85.html"><img src="/images/soft_douyin.PNG" alt="玩抖音"/>
+                    <span class="caption">短视频</span></a>
             </div>
         </div>
       <div class="newblogs bloglist">
@@ -63,10 +59,10 @@
           <c:forEach var="item" items="${softList}" varStatus="status">
             <li>
               <h3 class="blogtitle">
-                <a href="https://www.bangmangma.com/softDetail/${item.id}/1.html">${item.title}</a>
+                <a href="/softDetail/${item.id}/1.html">${item.title}</a>
               </h3>
-              <span class="blogpic imgscale">
-                    <a href="https://www.bangmangma.com/softDetail/${item.id}/1.html">
+              <span class="blogpic">
+                    <a href="/softDetail/${item.id}/1.html">
                        <img src="${item.images}"/></a>
               </span>
               <p class="blogtext">${item.introduction}</p>
@@ -82,14 +78,12 @@
         <h2 class="cloud_hometitle">软件类型</h2>
         <ul>
           <c:forEach var="item" items="${typeList}" varStatus="status">
-             <a href="https://www.bangmangma.com/softInfo/${item.id}.html">${item.typename}</a>
+             <a href="/softInfo/${item.id}.html">${item.title}</a>
           </c:forEach>
         </ul>
       </div>
     </div>
-    <a href="#" class="top cd-top animated ">Top</a>
   </article>
 <%@ include file="fonter.jsp"%>
-  <script src="/static/js/layer/layer.js"></script>
 </body>
 </html>

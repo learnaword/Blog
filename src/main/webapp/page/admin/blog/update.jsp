@@ -5,16 +5,16 @@
 <head>
 	<meta charset="utf-8">
 	<title>更新博客</title>
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link href="/static/plugins/layui/css/layui.css" rel="stylesheet"/>
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
+	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
 	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 	<link href="/static/css/plugins/summernote/summernote.css" rel="stylesheet">
 	<link href="/static/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
-	<link href="/static/css/font-awesome.css" rel="stylesheet">
-	<link href="/static/css/info.css" rel="stylesheet">
-	<link href="/static/css/base.css" rel="stylesheet">
+	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
+	<link href="/static/css/page/info.min.css" rel="stylesheet">
+	<link href="/static/css/admin/base.css" rel="stylesheet">
 </head>
 <body class="white-bg">
 <div class="wrapper wrapper-content">

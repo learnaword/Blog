@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>专区管理</title>
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link rel="stylesheet" href="/static/plugins/layui/css/layui.css" media="all" />
 	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet"></link>
 	<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>

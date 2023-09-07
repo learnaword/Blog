@@ -35,6 +35,9 @@ public class FileDO implements Serializable {
      * 文件的 MIME 类型，例如 "application/octet-stream"
      */
     private String type;
+
+    private Integer module;
+
     /**
      * 文件大小
      */

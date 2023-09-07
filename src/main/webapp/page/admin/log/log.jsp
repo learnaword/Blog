@@ -9,19 +9,19 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link href="/static/css/github-gist.css" rel="stylesheet">
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/font-awesome.css" rel="stylesheet">
+	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
 	<link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
-	<link href="/static/css/animate.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/loaders.css" rel="stylesheet">
+	<link href="/static/css/admin/animate.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
+	<link href="/static/css/admin/loaders.css" rel="stylesheet">
 	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
-	<link href="/static/css/fakeLoader.css" rel="stylesheet">
+	<link href="/static/css/admin/fakeLoader.css" rel="stylesheet">
 	<link href="/static/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
-	<link href="/static/css/index.css" rel="stylesheet">
-	<link href="/static/css/base.css" rel="stylesheet">
+	<link href="/static/css/page/index.min.css" rel="stylesheet">
+	<link href="/static/css/admin/base.css" rel="stylesheet">
 	<style type="text/css">
 		.loader-inner>div {
 			background-color: #907f819e

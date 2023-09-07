@@ -5,12 +5,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>登录</title>
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/font-awesome.css" rel="stylesheet">
-	<link href="/static/css/animate.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/login.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
+	<link href="/static/css/admin/animate.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
+	<link href="/static/css/admin/login.css" rel="stylesheet">
 </head>
 <body class="signin">
 <div class="signinpanel">
@@ -38,7 +38,7 @@
 				<div class=" tooltip-demo ">
 					<strong>还没有账号？
 						<a href="#" style="color:#3c3a39" data-toggle="tooltip" data-placement="top" title="QQ:875657453">联系站长&raquo;</a>
-						<a href="https://www.bangmangma.com/" style="color:#3c3a39;margin-left:15px;">首页&raquo;</a>
+						<a href="/" style="color:#3c3a39;margin-left:15px;">首页&raquo;</a>
 					</strong>
 				</div>
 			</div>

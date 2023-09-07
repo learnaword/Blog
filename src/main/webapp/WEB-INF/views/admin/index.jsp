@@ -7,15 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="renderer" content="webkit">
 	<title>博客后台 - 主页</title>
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/static/css/animate.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/fakeLoader.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/admin/font-awesome.min.css" rel="stylesheet">
+	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+	<link href="/static/css/admin/animate.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
+	<link href="/static/css/admin/fakeLoader.css" rel="stylesheet">
 </head>
 <body class="fixed-sidebar full-height-layout white-bg" style="overflow:hidden;">
-<div id="fakeloader"></div>
 <div id="wrapper">
 	<!--左侧导航开始-->
 	<nav class="navbar-default navbar-static-side" role="navigation">
@@ -26,12 +26,13 @@
 			<ul class="nav" id="side-menu">
 				<li class="nav-header">
 					<div class="dropdown profile-element">
-							<span><img alt="images" style="width:64px;height:64px;"class="img-circle"
-									   src="/static/images/photos2.jpg" /></span>
-						<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
-								class="clear"> <span class="block m-t-xs"><strong
-								class="font-bold">house</strong></span> <span
-								class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+							<span>
+								<img alt="images" style="width:64px;height:64px;"class="img-circle" src="/images/photos2.jpg" />
+							</span>
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+							<span class="clear">
+								<span class="block m-t-xs"><strong class="font-bold">house</strong></span>
+								<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
 							</span>
 						</a>
 						<ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -44,89 +45,89 @@
 					</div>
 					<div class="logo-element"></div>
 				</li>
-				<li><a href="/page/admin/index_v1.jsp" class="J_menuItem"> <i class="fa fa-home"></i> <span
-						class="nav-label">主页</span>
-				</a></li>
-				<li><a href="/page/admin/blog/media.jsp" target= "_blank"><i class="fa fa-child"></i> <span
-						class="nav-label">自媒体</span></a>
+				<li>
+					<a href="/page/admin/index_v1.jsp" class="J_menuItem">
+					<i class="fa fa-home"></i>
+					<span class="nav-label">主页</span></a>
 				</li>
-				<li><a class="J_menuItem"
-					   href="/page/admin/log/log.jsp"><i class="fa fa-hourglass-2"></i>
-					<span class="nav-label">操作日志</span></a></li>
-
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">自媒体</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/media/table.jsp">博客管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/media/add.jsp">写博客</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-desktop"></i>
+					<span class="nav-label">自动生成</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/config/table.jsp">配置管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/config/add.jsp">创建配置</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/sentence/table.jsp">句子管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/auto/blog/write.jsp">生成博客</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">博客模块</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/blog/table.jsp">博客管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/blog/add.jsp">写博客</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">专区模块</span>
+					<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/soft/add.jsp">添加专区</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/soft/table.jsp">专区管理</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">类型管理</span>
+					<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/type/table.jsp">类型管理</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">文件管理</span>
+					<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/file/table.jsp">文件管理</a>
+						</li>
+					</ul>
+				</li>
+				<li><a class="J_menuItem" href="/page/admin/log/log.jsp">
+					<i class="fa fa-hourglass-2"></i>
+					<span class="nav-label">操作日志</span></a>
+				 </li>
 				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp"><i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
-				</li>
-				<li><a href="#"><i class="fa fa-book"></i> <span
-						class="nav-label">博客模块</span><span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem" href="/page/admin/blog/table.jsp">博客管理</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/blog/add.jsp">写博客</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/blog/autoBlog.jsp">自动生成</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/blog/findBlog.jsp">查询博客</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/blog/blogType.jsp">类别</a>
-						</li>
-					</ul></li>
-				<li><a href="#"><i class="fa fa-book"></i> <span
-						class="nav-label">专区模块</span><span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem" href="/page/admin/soft/addSoft.jsp">添加专区</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/soft/softTable.jsp">专区列表</a>
-						</li>
-
-					</ul></li>
-				<li><a href="#"><i class="fa fa-book"></i> <span
-						class="nav-label">博客模版</span><span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem" href="/page/admin/temp/addTemp.jsp">添加模板</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/temp/tempTable.jsp">模板列表</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/temp/findTemp.jsp">查询模板</a>
-						</li>
-						<li><a class="J_menuItem" href="/page/admin/temp/replaceTemp.jsp">替换模板</a>
-						</li>
-					</ul></li>
-				<li><a href="/page/admin/blog/autoBlog.jsp" target= "_blank"><i class="fa fa-desktop"></i> <span
-						class="nav-label">自动生成</span></a>
-				</li>
-				<li><a class="J_menuItem" href="/page/admin/resource/resource.jsp"><i class="fa fa-table"></i> <span
-						class="nav-label">资源模块</span></a>
-				</li>
-				<li><a href="#"><i class="fa fa-street-view"></i> <span
-						class="nav-label">访客模块</span><span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem" href="/page/admin/visit/visit.jsp">访客记录
-						</a></li>
-						<li><a class="J_menuItem" href="/page/admin/visit/visitTable.jsp">访客统计
-						</a></li>
-						<li><a class="J_menuItem" href="/page/admin/visit/black.jsp">黑名单
-						</a></li>
-					</ul>
-				</li>
-				<li><a href="#" class="links"><i class="fa fa-unlink"></i> <span
-						class="nav-label">友情链接</span>               </a>
-					<ul class="nav nav-second-level">
-						<li><a class="J_menuItem" href="/page/admin/links/links.jsp"> 友情链接 </a>
-						</li>
-						<li class="isApplyLinks"><a class="J_menuItem" href="/page/admin/links/isApplyLinks.jsp"> 未处理消息 </a>
-						</li>
-					</ul>
-				</li>
-
-				<li><a href="http://changyan.kuaizhan.com/" class="J_menuItem"><i class="fa fa-commenting-o"></i> <span
-						class="nav-label">评论模块</span></a>
-				</li>
-
-				<li><a href="/page/admin/pics/pics.jsp" class="J_menuItem"><i class="fa fa-picture-o"></i> <span
-						class="nav-label">本地图库</span></a>
 				</li>
 				<li><a href="/" target= "_blank"><i class="fa fa-desktop"></i> <span
 						class="nav-label">前台页面 </span></a>
+				</li>
 			</ul>
 		</div>
 	</nav>
@@ -221,6 +222,7 @@
 						</div>
 						<div class="setings-item">
 							<span>固定顶部</span>
+
 							<div class="switch">
 								<div class="onoffswitch">
 									<input type="checkbox" name="fixednavbar"
@@ -266,6 +268,7 @@
 			</div>
 		</div>
 	</div>
+
 </div>
 
 <!-- 全局js -->
@@ -274,40 +277,11 @@
 <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 <script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-<script src="/static/js/admin/token.js"></script>
-
+<script src="/static/js/plugins/axios/axios.min.js"></script>
 <!-- 自定义js -->
+<script src="/static/js/admin/token.js"></script>
 <script src="/static/js/hplus.js"></script>
 <script src="/static/js/contabs.js"></script>
 <script src="/static/js/fakeLoader.min.js"></script>
-
-<script>
-	$(document).ready(function() {
-		initNoApplyLinksCount()  //初始化未处理链接消息数
-	});
-	//初始化未处理链接消息数
-	var initNoApplyLinksCount=function(){
-		$.ajax({
-			url : '../admin/selectNoApplyLinksCount',
-			type : 'post',
-			data:'',
-			dataType : 'json',
-			success : function(data) {
-				var count='';
-				var isApplyLinks='';
-				if(data.status==200){
-					count='<span class="label label-danger pull-right">'+data.count+'</span>';
-					isApplyLinks='<span class="label label-danger pull-right">'+data.count+'</span>';
-				}else{
-					count='<span class="fa arrow"></span>';
-				}
-				$(".links").append(count);
-				$(".isApplyLinks").find('a').append(isApplyLinks);
-			},
-			error : function() {
-			}
-		});
-	}
-</script>
 </body>
 </html>

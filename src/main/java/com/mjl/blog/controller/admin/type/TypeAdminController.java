@@ -1,0 +1,54 @@
+package com.mjl.blog.controller.admin.type;
+
+import com.mjl.blog.common.pojo.CommonResult;
+import com.mjl.blog.common.pojo.PageResult;
+import com.mjl.blog.controller.admin.type.vo.*;
+import com.mjl.blog.convert.admin.TypeAdminConvert;
+import com.mjl.blog.service.admin.type.TypeAdminService;
+import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import static com.mjl.blog.common.pojo.CommonResult.success;
+
+@RestController
+@RequestMapping("/admin/type")
+public class TypeAdminController {
+    @Resource
+    private TypeAdminService typeService;
+
+    @GetMapping("/list")
+    public CommonResult<List<TypeListVO>> getList(){
+        return CommonResult.success(TypeAdminConvert.INSTANCE.convert(typeService.getList()));
+    }
+
+    @GetMapping("/table")
+    public CommonResult<PageResult<TableRespVO>> getTable(TableReqVO tableReqVO){
+        return success(TypeAdminConvert.INSTANCE.convert(typeService.getList(tableReqVO)));
+    }
+
+
+    @PostMapping("/updateStatus")
+    public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
+        typeService.updateStatus(updateStatusReqVO);
+        return success(true);
+    }
+
+    @PostMapping ("/create")
+    public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
+        return success(typeService.create(createReqVO) > 0 ? true : false);
+    }
+
+    @PostMapping ("/update")
+    public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
+        typeService.update(updateReqVO);
+        return success(true);
+    }
+
+    @GetMapping("/get")
+    public CommonResult<GetRespVO> get(Long id){
+        return success(TypeAdminConvert.INSTANCE.convert2(typeService.getById(id)));
+    }
+}

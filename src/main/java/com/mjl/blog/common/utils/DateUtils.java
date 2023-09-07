@@ -128,6 +128,11 @@ public class DateUtils {
         return a.isAfter(b) ? a : b;
     }
 
+    public static String timestampToString(Long timestamp){
+        Date date = new Date(timestamp); // 需要将秒数转换为毫秒数
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
     /**
      * 计算当期时间相差的日期
      *

@@ -101,6 +101,7 @@ function sendFile(file, editor, $editable) {
 	data = new FormData();
 	data.append("file", file);
 	data.append("key", filename); //唯一性参数
+	data.append("module",3)
 
 	request.post("/admin/file/upload",data).then(function(data) {
 		if (data == '') {

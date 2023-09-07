@@ -1,9 +1,11 @@
 package com.mjl.blog.service.admin.blog;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.controller.admin.blog.vo.*;
-import com.mjl.blog.convert.BlogConvert;
+import com.mjl.blog.convert.admin.BlogAdminConvert;
 import com.mjl.blog.dal.dataobject.BlogDO;
 import com.mjl.blog.dal.mysql.BlogMapper;
 import com.mjl.blog.enums.BlogStatusEnum;
@@ -76,7 +78,7 @@ public class BlogAdminServiceImpl implements BlogAdminService {
 
     @Override
     public int create(CreateReqVO createReqVO) {
-        BlogDO blogDO = BlogConvert.INSTANCE.convert(createReqVO);
+        BlogDO blogDO = BlogAdminConvert.INSTANCE.convert(createReqVO);
         blogDO.setStatus(BlogStatusEnum.PUBLISHED.getStatus());
         blogDO.setCreateTime(System.currentTimeMillis());
         blogDO.setUpdateTime(System.currentTimeMillis());
@@ -90,8 +92,25 @@ public class BlogAdminServiceImpl implements BlogAdminService {
 
     @Override
     public void update(UpdateReqVO updateReqVO) {
-        BlogDO blogDO = BlogConvert.INSTANCE.convert(updateReqVO);
+        BlogDO blogDO = BlogAdminConvert.INSTANCE.convert(updateReqVO);
         blogDO.setUpdateTime(System.currentTimeMillis());
         blogMapper.updateById(blogDO);
+    }
+
+    @Override
+    public void replace(String searchStr, String replaceStr) {
+        String sql = String.format("content = REPLACE(content, '%s', '%s')", searchStr, replaceStr);
+        LambdaUpdateWrapper<BlogDO> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.setSql(sql);
+        blogMapper.update(null,updateWrapper);
+    }
+
+    @Override
+    public boolean fileIsUse(String name) {
+        List<BlogDO> blogDOList = blogMapper.selectList(new LambdaQueryWrapper<BlogDO>().like(BlogDO::getContent,name));
+        if(blogDOList.isEmpty()){
+            return false;
+        }
+        return true;
     }
 }

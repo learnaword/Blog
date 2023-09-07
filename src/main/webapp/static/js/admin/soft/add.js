@@ -10,6 +10,8 @@ $(document).ready(function() {
 			elem: '#ID-upload-demo-drag', // 单图片上传
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
+			},data:{
+				module: 4,
 			},
 			url: '/admin/file/upload',
 			done: function(res){
@@ -52,52 +54,5 @@ $('#submit_btn').on('click', function () {
 		}
 	});
 });
-//图片上传
-function sendFile(file, editor, $editable) {
-	var filename = false;
-	try {
-		filename = file['name'];
-	} catch (e) {
-		filename = false;
-	}
-	if (!filename) {
-		$(".note-alarm").remove();
-	}
 
-	//以上防止在图片在编辑器内拖拽引发第二次上传导致的提示错误
-	data = new FormData();
-	data.append("file", file);
-	data.append("key", filename); //唯一性参数
-
-	request.post("/admin/file/upload",data).then(function(data) {
-		if (data == '') {
-			swal("上传失败", "请重试操作", "error");
-		} else {
-			var path = '图片地址  ' + date.path;
-			swal("上传成功", path, "success");
-		}
-		editor.insertImage($editable, date.path);
-	})
-}
-
-function renderSoft() {
-	let url = "/admin/soft/softList";
-	request.get(url).then(function (data) {
-		if (data != null) {
-			//数据渲染到html
-			var responseData = data.data.data;
-			$('select[name="typeId"]').html("");
-			var typeName = '';
-			for (var i = 0; i < responseData.length; i++) {
-				typeName += '<option value="' + responseData[i].id + '">' + responseData[i].title + '</option>';
-			}
-			// 初始化数据
-			$('select[name="typeId"]').append(typeName);
-			//初始化博客信息。
-			//为什么放这里，因为我也不知道为什么，不放这里$('select[name="softId"]').val(data.softId)选不上。
-			//可能是和加载顺序有关系，放在这里可以保证先初始化soft信息，再来初始化博客。
-			layui.form.render();
-		}
-	});
-}
 

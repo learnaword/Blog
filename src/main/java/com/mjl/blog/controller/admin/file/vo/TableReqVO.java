@@ -6,4 +6,7 @@ import lombok.Data;
 @Data
 public class TableReqVO extends PageParam {
     private Integer status = 0;
+
+    private Integer module;
+
 }

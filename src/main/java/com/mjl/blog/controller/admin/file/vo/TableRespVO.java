@@ -18,6 +18,9 @@ public class TableRespVO {
      * 路径，即文件名
      */
     private String path;
+
+    private Integer module;
+
     /**
      * 访问地址
      */

@@ -12,6 +12,8 @@ $(document).ready(function() {
 			elem: '#content-image-drag', // 单图片上传
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
+			},data:{
+				module: 4,
 			},
 			url: '/admin/file/upload',
 			done: function(res){
@@ -32,6 +34,8 @@ $(document).ready(function() {
 			elem: '#ID-upload-demo-drag', // 单图片上传
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
+			},data:{
+				module: 4,
 			},
 			url: '/admin/file/upload',
 			done: function(res){
@@ -94,34 +98,6 @@ function initConfig() {
 		$('select[name="status"]').val(data.status),
 		$('#ID-upload-demo-preview').removeClass('layui-hide')
 		layui.form.render();
-	})
-}
-
-//图片上传
-function sendFile(file, editor, $editable) {
-	var filename = false;
-	try {
-		filename = file['name'];
-	} catch (e) {
-		filename = false;
-	}
-	if (!filename) {
-		$(".note-alarm").remove();
-	}
-
-	//以上防止在图片在编辑器内拖拽引发第二次上传导致的提示错误
-	data = new FormData();
-	data.append("file", file);
-	data.append("key", filename); //唯一性参数
-
-	request.post("/admin/file/upload",data).then(function(data) {
-		if (data == '') {
-			swal("上传失败", "请重试操作", "error");
-		} else {
-			var path = '图片地址  ' + date.path;
-			swal("上传成功", path, "success");
-		}
-		editor.insertImage($editable, date.path);
 	})
 }
 

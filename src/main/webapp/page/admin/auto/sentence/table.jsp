@@ -4,14 +4,14 @@
 <html>
 <head>
 	<title>句子管理</title>
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link rel="stylesheet" href="/static/plugins/layui/css/layui.css" media="all" />
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
 	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet"></link>
 	<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/info.css" rel="stylesheet">
-	<link href="/static/css/base.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
+	<link href="/static/css/info2.css" rel="stylesheet">
+	<link href="/static/css/admin/base.css" rel="stylesheet">
 	<script src="/static/plugins/layui/layui.js"></script>
 	<script src="/static/js/axios/axios.min.js"></script>
 	<script src="/static/js/jquery.min.js"></script>
@@ -21,29 +21,15 @@
 <body class="white-bg">
 <div class="wrapper wrapper-content">
 	<div class="row">
-		<div class="col-sm-3">
-			<div class="ibox float-e-margins">
-				<div class="ibox-content mailbox-content">
-					<div class="file-manager">
-						<a class="btn btn-block btn-primary compose-mail"
-						   href="javascript:void(0);">句子管理</a>
-						<div class="space-25"></div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="layui-upload-drag" style="display: block;" id="upload_file">
-						<i class="layui-icon layui-icon-upload"></i>
-						<div>文件生成</div>
-						<div class="layui-hide" id="ID-upload-demo-preview">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-9">
+		<div class="col-sm-12">
 			<div class="ibox float-e-margins">
 				<div class="mail-box-header">
 					<div style="padding: 16px;">
 						<table class="layui-hide" id="test" lay-filter="test"></table>
+						<button style="display: none" type="button" id ="upload" class="layui-btn layui-btn-sm" lay-options="{accept: 'file'}">
+							<i class="layui-icon layui-icon-upload"></i>
+							文件生成
+						</button>
 					</div>
 				</div>
 			</div>
@@ -53,6 +39,10 @@
 <script type="text/html" id="toolbarDemo">
 	<div class="layui-btn-container">
 		<button class="layui-btn layui-btn-sm" lay-event="refresh">刷新</button>
+		<button type="button" class="layui-btn layui-btn-sm demo-class-accept" lay-event="upload">
+			<i class="layui-icon layui-icon-upload"></i>
+			文件生成
+		</button>
 		<button class="layui-btn layui-btn-sm" id="dropdownButton">
 			操作
 			<i class="layui-icon layui-icon-down layui-font-12"></i>
@@ -84,11 +74,13 @@
 		var token = localStorage.getItem("accessToken")
 		// 渲染
 		upload.render({
-			elem: '#upload_file',
+			elem: '#upload',
 			url: '/admin/auto-sentence/fileCreate', // 此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
 			accept: 'file',
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
+			},data:{
+				module: 2,
 			},
 			progress: function(n, elem, res, index){
 				Swal.fire({

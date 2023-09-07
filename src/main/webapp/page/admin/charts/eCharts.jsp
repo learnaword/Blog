@@ -8,18 +8,18 @@
     <title>数据图表</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/static/css/gruvbox-light.css" rel="stylesheet">
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/admin/font-awesome.css" rel="stylesheet">
     <link href="/static/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="/static/css/animate.css" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/admin/animate.css" rel="stylesheet">
+    <link href="/static/css/admin/style.css" rel="stylesheet">
     <link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
     <link href="/static/css/plugins/datapicker/datepicker3.css"rel="stylesheet">
-    <link href="/static/css/index.css" rel="stylesheet">
-    <link href="/static/css/base.css" rel="stylesheet">
-    <link href="/static/css/fakeLoader.css" rel="stylesheet">
+    <link href="/static/css/page/index.min.css" rel="stylesheet">
+    <link href="/static/css/admin/base.css" rel="stylesheet">
+    <link href="/static/css/admin/fakeLoader.css" rel="stylesheet">
     <style type="text/css">
         .input-group-addon{
             color: #c23531;

@@ -4,10 +4,6 @@ import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.controller.admin.blog.vo.*;
 import com.mjl.blog.dal.dataobject.BlogDO;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-
 public interface BlogAdminService {
     BlogTypeCountsRespVO getArticleTypeCounts();
 
@@ -26,4 +22,8 @@ public interface BlogAdminService {
     BlogDO getBlogById(Long id);
 
     void update(UpdateReqVO updateReqVO);
+
+    void replace(String name, String name1);
+
+    boolean fileIsUse(String name);
 }

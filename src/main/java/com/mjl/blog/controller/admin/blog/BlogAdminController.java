@@ -3,7 +3,7 @@ package com.mjl.blog.controller.admin.blog;
 import com.mjl.blog.common.pojo.CommonResult;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.controller.admin.blog.vo.*;
-import com.mjl.blog.convert.BlogConvert;
+import com.mjl.blog.convert.admin.BlogAdminConvert;
 import com.mjl.blog.service.admin.blog.BlogAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
@@ -40,7 +40,7 @@ public class BlogAdminController {
 
     @GetMapping("/blogTable")
     public CommonResult<PageResult<BlogTableRespVO>> getBlogTable(BlogTableReqVO blogTableReqVO){
-        return success(BlogConvert.INSTANCE.convert(blogAdminService.getBlogList(blogTableReqVO)));
+        return success(BlogAdminConvert.INSTANCE.convert(blogAdminService.getBlogList(blogTableReqVO)));
     }
 
     @PostMapping ("/updateBlogsStatus")
@@ -80,7 +80,7 @@ public class BlogAdminController {
 
     @GetMapping("/get")
     public CommonResult<BlogRespVO> get(Long id){
-        return success(BlogConvert.INSTANCE.convert(blogAdminService.getBlogById(id)));
+        return success(BlogAdminConvert.INSTANCE.convert(blogAdminService.getBlogById(id)));
     }
 
 }

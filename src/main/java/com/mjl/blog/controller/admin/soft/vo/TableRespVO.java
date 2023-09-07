@@ -19,7 +19,7 @@ public class TableRespVO {
 
     private String token;
 
-    private Long typeId;
+    private String typeTitle;
 
     private Long createTime;
 

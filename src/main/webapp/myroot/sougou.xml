@@ -2,19 +2,19 @@
 <!-- XML文件需以utf-8编码无BOM -->
 <urlset>
     <url>
-        <loc>https://www.bangmangma.com/</loc>
+        <loc>/</loc>
         <data>
             <display>
-                <pc_url_pattern>https://www.bangmangma.com/find/(\d+)\.html</pc_url_pattern>
+                <pc_url_pattern>/find/(\d+)\.html</pc_url_pattern>
                 <!-- 必填，填写pc待映射页面的urlpattern-->
-                <pc_sample> https://www.bangmangma.com/find/1.html</pc_sample>
+                <pc_sample> /find/1.html</pc_sample>
                 <!-- 必填，给出1个能适用此映射规则的pc url示例-->
                  <version>7</version>
             </display>
             <display>
-                <pc_url_pattern>https://www.bangmangma.com/media/find/(\d+)\.html</pc_url_pattern>
+                <pc_url_pattern>/media/find/(\d+)\.html</pc_url_pattern>
                 <!-- 必填，填写pc待映射页面的urlpattern-->
-                <pc_sample> https://www.bangmangma.com/media/find/190603.html</pc_sample>
+                <pc_sample> /media/find/190603.html</pc_sample>
                 <!-- 必填，给出1个能适用此映射规则的pc url示例-->
                  <version>7</version>
             </display>

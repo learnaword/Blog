@@ -10,14 +10,10 @@
     <meta name="keywords" content="${softInfo.title}" />
     <meta name="description" content="${softInfo.introduction}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"href="https://www.bangmangma.com/images/favicon.ico">
-    <link href="https://www.bangmangma.com/css/style.css" rel="stylesheet">
-    <link href="https://www.bangmangma.com/css/loaders.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://www.bangmangma.com/css/mediacommon.min.css" rel="stylesheet">
+    <link rel="shortcut icon"href="/images/favicon.ico">
+    <link href="/static/css/page/media.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
-    <link href="https://www.bangmangma.com/css/media.css" rel="stylesheet">
-    <script src="https://www.bangmangma.com/js/comm.js"></script>
+    <script src="/static/js/comm.js"></script>
 </head>
 <body>
 <%@ include file="../top.jsp"%>
@@ -25,10 +21,10 @@
     <div class="lbox">
         <div class="newblogs bloglist">
             <ul>
-                <c:forEach var="item" items="${blogList}" varStatus="status">
+                <c:forEach var="item" items="${mediaNewList.getList()}" varStatus="status">
                     <li>
                         <h3 style="font-weight:bold;" class="blogtitle">
-                            <a style="color:#467ab2;" href="https://www.bangmangma.com${item.soft.token}/find/${item.id}.html">
+                            <a style="color:#467ab2;" href="/media/find/${item.id}.html">
                                     ${item.title}
                             </a>
                         </h3>
@@ -37,10 +33,10 @@
                         </p>
                         <p class="bloginfo">
                             <i class = "avatar">
-                                <img src="/static/images/image_.jpg" border=0 width="30" height="30">
+                                <img src="/images/image_.jpg" border=0 width="30" height="30">
                             </i>
                             <span>思想与现实</span>
-                            <span style="margin-left:10px;" class="m_time"><fmt:formatDate value="${Date(item.createTime )}" pattern="yyyy-MM-dd"/></span>
+                            <span style="margin-left:10px;" class="m_time">${item.createTime}</span>
                     </li>
                 </c:forEach>
             </ul>
@@ -50,36 +46,32 @@
   <div class="rbox">
 <div class="mediaCard" style="background:#fff;">
     <span class="mediaRecSpan">思想与现实</span>
-    <img style="height:50px;" src="https://www.bangmangma.com/images/image_.jpg"  alt="思想与现实">
+    <img style="height:50px;" src="/images/image_.jpg"  alt="思想与现实">
     <div class="mediaRecDiv">
          <span class="mediaRecSpan2">嗯～真是个复杂的问题。</span>
    </div>
    <div class="mediaRecText">
-
    </div>
 </div>
-        <div style="margin-top:10px;background-color:white;padding:10px;" class="hitebg notice">
+        <div style="margin-top:10px;background-color:white;padding:10px;" class="whitebg notice">
             <h3 class="htitle">推荐文章</h3>
             <ul>
-                <c:forEach var="item" items="${blogRecommendList}" end="6" varStatus="status">
-                    <li><a href="https://www.bangmangma.com${item.soft.token}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                <c:forEach var="item" items="${topBlogs}" end="6" varStatus="status">
+                    <li><a href="/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
-
             </ul>
         </div>
-        <div style="margin-top:10px;background-color:white;padding:10px;" class="hitebg notice">
+        <div style="margin-top:10px;background-color:white;padding:10px;" class="whitebg notice">
             <h3 class="htitle">最新文章</h3>
             <ul>
-                <c:forEach var="item" items="${blogNewRecommendList}" end="6" varStatus="status">
-                    <li><a href="https://www.bangmangma.com${item.soft.token}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                <c:forEach var="item" items="${newBlogs}" end="6" varStatus="status">
+                    <li><a href="/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 
             </ul>
         </div>
 </div>
-    <a href="#" class="top cd-top animated ">Top</a>
 </article>
 <%@ include file="../fonter.jsp"%>
-<script src="/static/js/layer/layer.js"></script>
 </body>
 </html>

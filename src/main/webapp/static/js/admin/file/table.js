@@ -42,6 +42,19 @@ $(document).ready(function(){
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
                 ,{field:'name', width: 160, title: '名字'}
+                ,{field:'module' , width: 160, title: '模块',templet: function (d) {
+                        var str="";
+                        if (d.module == '1') {
+                            str = str + '<span class="layui-badge layui-bg-blue">系统文件</span>'
+                        } else if (d.module == '2'){
+                            str = str + '<span style="background-color: #8FBC8F" class="layui-badge">普通文件</span>'
+                        }else if (d.module == '3'){
+                            str = str + '<span style="background-color: green" class="layui-badge">博客文件</span>'
+                        }else if (d.module == '4'){
+                            str = str + '<span style="background-color: #a233c6" class="layui-badge">头像文件</span>'
+                        }
+                        return str;
+                    }}
                 ,{field:'path', title:'路径', width: 80}
                 ,{field:'url', title:'URL', width: 80}
                 ,{field:'type', title:'文件类型', width: 100}
@@ -72,6 +85,18 @@ $(document).ready(function(){
                     },{
                         id: 'PUBLISHED',
                         title: '移到发布'
+                    },{
+                        id: 'SYSTEM_FILE',
+                        title: '移到系统文件'
+                    },{
+                        id: 'BLOG_FILE',
+                        title: '移到博客文件'
+                    },{
+                        id: 'BACKGROUND_FILE',
+                        title: '移到头像文件'
+                    },{
+                        id: 'COMMON_FILE',
+                        title: '移到普通文件'
                     }]
                     // 菜单被点击的事件
                     ,click: function(obj){
@@ -90,6 +115,30 @@ $(document).ready(function(){
                                 });
                                 updateStatus(selectedIds,0,"移到发布")
                                 break;
+                            case 'SYSTEM_FILE':
+                                var selectedIds = data.map(function(item) {
+                                    return item.id;
+                                });
+                                updateModule(selectedIds,1,"移到系统文件")
+                                break;
+                            case 'BLOG_FILE':
+                                var selectedIds = data.map(function(item) {
+                                    return item.id;
+                                });
+                                updateModule(selectedIds,3,"移到博客文件")
+                                break;
+                            case 'BACKGROUND_FILE':
+                                var selectedIds = data.map(function(item) {
+                                    return item.id;
+                                });
+                                updateModule(selectedIds,4,"移到头像")
+                                break;
+                            case 'COMMON_FILE':
+                                var selectedIds = data.map(function(item) {
+                                    return item.id;
+                                });
+                                updateModule(selectedIds,2,"移到普通文件")
+                                break;
                         }
                     }
                 });
@@ -103,6 +152,18 @@ $(document).ready(function(){
                     },{
                         id: 'SPAM',
                         title: '查看删除'
+                    },{
+                        id: 'SYSTEM_FILE',
+                        title: '查看系统文件'
+                    },{
+                    id: 'BLOG_FILE',
+                        title: '查看博客文件'
+                },{
+                        id: 'BACKGROUND_FILE',
+                        title: '查看头像文件'
+                    },{
+                        id: 'COMMON_FILE',
+                        title: '查看普通文件'
                     }]
                     // 菜单被点击的事件
                     ,click: function(obj){
@@ -120,6 +181,38 @@ $(document).ready(function(){
                                 table.reload('test', {
                                     where: {
                                         status: 1
+                                    }
+                                }, true);
+                                break;
+                            case 'BLOG_FILE':
+                                // 查看博客文件
+                                table.reload('test', {
+                                    where: {
+                                        module: 3
+                                    }
+                                }, true);
+                                break;
+                            case 'SYSTEM_FILE':
+                                // 查看系统文件
+                                table.reload('test', {
+                                    where: {
+                                        module: 1
+                                    }
+                                }, true);
+                                break;
+                            case 'BACKGROUND_FILE':
+                                // 查看头像
+                                table.reload('test', {
+                                    where: {
+                                        module: 4
+                                    }
+                                }, true);
+                                break;
+                            case 'COMMON_FILE':
+                                // 查看普通文件
+                                table.reload('test', {
+                                    where: {
+                                        module: 2
                                     }
                                 }, true);
                                 break;
@@ -170,6 +263,9 @@ $(document).ready(function(){
                 case 'refresh':
                     location.reload();
                     break;
+                case 'upload':
+                    $("#upload").click();
+                    break;
             };
         });
 
@@ -177,8 +273,8 @@ $(document).ready(function(){
         table.on('tool(test)', function(obj){ // 双击 toolDouble
             var data = obj.data; // 获得当前行数据
             // console.log(obj)
-            if(obj.event === 'del'){
-                updateStatus([data.id],1,"移到删除");
+            if(obj.event === 'edit'){
+                window.location.href = "/page/admin/file/update.jsp?id="+data.id;
             } else if(obj.event === 'more'){
                 // 更多 - 下拉菜单
                 dropdown.render({
@@ -190,6 +286,18 @@ $(document).ready(function(){
                     },{
                         id: 'PUBLISHED',
                         title: '移到发布'
+                    },{
+                        id: 'SYSTEM_FILE',
+                        title: '移到系统文件'
+                    },{
+                        id: 'BLOG_FILE',
+                        title: '移到博客文件'
+                    },{
+                        id: 'BACKGROUND_FILE',
+                        title: '移到头像文件'
+                    },{
+                        id: 'COMMON_FILE',
+                        title: '移到普通文件'
                     }],
                     click: function(menudata){
                         if(menudata.id === 'SPAM'){
@@ -202,6 +310,26 @@ $(document).ready(function(){
                                 updateStatus([data.id],0,"移到发布");
                                 layer.close(index);
                             })
+                        }else if(menudata.id === 'SYSTEM_FILE'){
+                            layer.confirm('将 [id: '+ data.id +'] 移到系统', function(index){
+                                updateModule([data.id],1,"移到系统文件");
+                                layer.close(index);
+                            })
+                        }else if(menudata.id === 'BLOG_FILE'){
+                            layer.confirm('将 [id: '+ data.id +'] 移到博客文件', function(index){
+                                updateModule([data.id],3,"移到博客文件");
+                                layer.close(index);
+                            })
+                        }else if(menudata.id === 'BACKGROUND_FILE'){
+                            layer.confirm('将 [id: '+ data.id +'] 移到头像', function(index){
+                                updateModule([data.id],4,"移到头像");
+                                layer.close(index);
+                            })
+                        }else if(menudata.id === 'COMMON_FILE'){
+                            layer.confirm('将 [id: '+ data.id +'] 移到普通文件', function(index){
+                                updateModule([data.id],2,"移到普通文件");
+                                layer.close(index);
+                            })
                         }
                     },
                     align: 'right', // 右对齐弹出
@@ -209,8 +337,8 @@ $(document).ready(function(){
                 })
             }
         });
-
     });
+
 })
 export function updateStatus(selectedIds,status,msg){
     request.post("/admin/file/updateStatus", {ids:selectedIds,status: status}).then(function(data){
@@ -224,6 +352,24 @@ export function updateStatus(selectedIds,status,msg){
             table.reloadData('test', {
                 where: {
                     status: status
+                }
+            });
+        })
+    })
+}
+
+export function updateModule(selectedIds,module,msg){
+    request.post("/admin/file/updateModule", {ids:selectedIds,module: module}).then(function(data){
+        Swal.fire({
+            type: 'warning', // 弹框类型
+            title: msg + '操作', //标题
+            text: msg + "成功！", //显示内容
+            confirmButtonText: '确定',
+        }).then(function(isConfirm) {
+            var table = layui.table;
+            table.reloadData('test', {
+                where: {
+                    module: module
                 }
             });
         })

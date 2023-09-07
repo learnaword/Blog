@@ -12,6 +12,8 @@ $(document).ready(function() {
 			elem: '#content-image-drag', // 单图片上传
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
+			},data:{
+				module: 4,
 			},
 			url: '/admin/file/upload',
 			done: function(res){
@@ -32,6 +34,8 @@ $(document).ready(function() {
 			elem: '#ID-upload-demo-drag', // 单图片上传
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
+			},data:{
+				module: 4,
 			},
 			url: '/admin/file/upload',
 			done: function(res){

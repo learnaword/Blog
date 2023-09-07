@@ -21,7 +21,7 @@
 <meta name="description"
 	content="">
 
-<link rel="shortcut icon" href="/static/images/favicon.ico">
+<link rel="shortcut icon" href="/images/favicon.ico">
 
 <style type="text/css">
 	body {
@@ -190,7 +190,7 @@
 		<h3 class="font-bold">抱歉，访问的网页不在了~</h3>
 		<div class="error-desc">
 			您还可以选择：
-				<button type="submit" onclick="window.location.href='https://www.bangmangma.com/'" class="btn btn-primary">去首页</button>
+				<button type="submit" onclick="window.location.href='/'" class="btn btn-primary">去首页</button>
 		</div>
 	</div>
 <footer>
