@@ -9,6 +9,7 @@ import com.mjl.blog.service.admin.soft.SoftAdminService;
 import com.mjl.blog.service.admin.type.TypeAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class SoftAdminController {
 
 
     @PostMapping("/updateStatus")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         softService.updateStatus(updateStatusReqVO);
         return success(true);
@@ -58,11 +60,13 @@ public class SoftAdminController {
 
 
     @PostMapping ("/create")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(softService.create(createReqVO) > 0 ? true : false);
     }
 
     @PostMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         softService.update(updateReqVO);
         return success(true);

@@ -7,6 +7,7 @@ import com.mjl.blog.convert.admin.BlogAdminConvert;
 import com.mjl.blog.service.admin.blog.BlogAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,35 +45,41 @@ public class BlogAdminController {
     }
 
     @PostMapping ("/updateBlogsStatus")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateBlogsStatus(@RequestBody UpdateBlogsStatusReqVO updateBlogsStatusReqVO){
         blogAdminService.updateBlogsStatus(updateBlogsStatusReqVO);
         return success(true);
     }
 
     @PostMapping ("/updateBlogsTop")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateBlogsTop(@RequestBody UpdateBlogsTopReqVO updateBlogsTopReqVO){
         blogAdminService.updateBlogsTop(updateBlogsTopReqVO);
         return success(true);
     }
 
     @PostMapping ("/updateBlogsRecommend")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateBlogsRecommend(@RequestBody UpdateBlogsRecommendReqVO updateBlogsRecommendReqVO){
         blogAdminService.updateBlogsRecommend(updateBlogsRecommendReqVO);
         return success(true);
     }
 
     @PostMapping ("/create")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(blogAdminService.create(createReqVO) > 0 ? true : false);
     }
 
     @PostMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         blogAdminService.update(updateReqVO);
         return success(true);
     }
 
     @PostMapping ("/autoCreate")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> autoCreate(@RequestBody @Valid UpdateReqVO updateReqVO){
         blogAdminService.update(updateReqVO);
         return success(true);

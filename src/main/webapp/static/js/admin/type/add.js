@@ -32,7 +32,6 @@ $('#submit_btn').on('click', function () {
 		status: $('select[name="status"]').val(),
 	};
 	request.post("/admin/soft/create", formData).then(function(data){
-		alert(data.data.code)
 		if(data.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型

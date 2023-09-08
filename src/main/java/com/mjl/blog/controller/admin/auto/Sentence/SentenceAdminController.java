@@ -8,6 +8,7 @@ import com.mjl.blog.convert.admin.SentenceAdminConvert;
 import com.mjl.blog.service.admin.auto.sentence.SentenceAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -39,12 +40,14 @@ public class SentenceAdminController {
     }
 
     @PostMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         sentenceService.update(updateReqVO);
         return success(true);
     }
 
     @RequestMapping ("/fileCreate")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> fileCreate(FIleCreateReqVO fIleCreateReqVO) throws IOException {
         MultipartFile file = fIleCreateReqVO.getFile();
         String path = fIleCreateReqVO.getPath();

@@ -9,6 +9,7 @@ import com.mjl.blog.service.admin.auto.config.AutoConfigAdminService;
 import com.mjl.blog.service.admin.soft.SoftAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,17 +49,20 @@ public class AutoConfigAdminController {
     }
 
     @PostMapping ("/updateConfigStatus")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateConfigStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         autoConfigService.updateStatus(updateStatusReqVO);
         return success(true);
     }
 
     @PostMapping ("/create")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(autoConfigService.create(createReqVO) > 0 ? true : false);
     }
 
     @PostMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         autoConfigService.update(updateReqVO);
         return success(true);

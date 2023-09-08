@@ -4,6 +4,7 @@ import com.mjl.blog.common.pojo.CommonResult;
 import com.mjl.blog.service.admin.auto.blog.AutoBlogAdminService;
 import com.mjl.blog.controller.admin.auto.blog.vo.CreateReqVO;
 import jakarta.annotation.Resource;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ public class AutoBlogAdminController {
     @Resource
     private AutoBlogAdminService autoBlogService;
     @PostMapping("/create")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> create(@RequestBody  CreateReqVO createReqVO){
         autoBlogService.create(createReqVO);
         return success(true);

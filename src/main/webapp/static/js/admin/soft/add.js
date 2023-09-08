@@ -15,10 +15,25 @@ $(document).ready(function() {
 			},
 			url: '/admin/file/upload',
 			done: function(res){
-				layer.msg('上传成功');
-				$('#ID-upload-demo-preview').removeClass('layui-hide')
-					.find('img').attr('src', res.data);
-				console.log(res)
+				if(res.code == "0"){
+					Swal.fire({
+						type: 'success', // 弹框类型
+						title: '上传图片', //标题
+						text: "上传成功！", //显示内容
+						confirmButtonText: '确定',
+					}).then(function(isConfirm) {
+						$('#ID-upload-demo-preview').removeClass('layui-hide')
+							.find('img').attr('src', res.data);
+					})
+				}else{
+					Swal.fire({
+						type: 'file', // 弹框类型
+						title: '失败信息', //标题
+						text: res.msg, //显示内容
+						confirmButtonText: '确定',
+					}).then(function(isConfirm) {
+					})
+				}
 			}
 		});
 	});
@@ -34,7 +49,6 @@ $('#submit_btn').on('click', function () {
 		status: $('select[name="status"]').val(),
 	};
 	request.post("/admin/soft/create", formData).then(function(data){
-		alert(data.data.code)
 		if(data.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型

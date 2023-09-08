@@ -13,7 +13,6 @@
 	<link href="/static/css/plugins/summernote/summernote.css" rel="stylesheet">
 	<link href="/static/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
 	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
-	<link href="/static/css/info2.css" rel="stylesheet">
 	<link href="/static/css/admin/base.css" rel="stylesheet">
 </head>
 <body class="white-bg">

@@ -7,6 +7,7 @@ import com.mjl.blog.convert.admin.MediaAdminConvert;
 import com.mjl.blog.service.admin.media.MediaAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,29 +38,34 @@ public class MediaAdminController {
     }
 
     @PostMapping ("/updateStatus")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         mediaAdminService.updateStatus(updateStatusReqVO);
         return success(true);
     }
 
     @PostMapping ("/updateTops")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateTops(@RequestBody UpdateTopsReqVO updateTopsReqVO){
         mediaAdminService.updateTops(updateTopsReqVO);
         return success(true);
     }
 
     @PostMapping ("/create")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(mediaAdminService.create(createReqVO) > 0 ? true : false);
     }
 
     @PostMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         mediaAdminService.update(updateReqVO);
         return success(true);
     }
 
     @PostMapping ("/autoCreate")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> autoCreate(@RequestBody @Valid UpdateReqVO updateReqVO){
         mediaAdminService.update(updateReqVO);
         return success(true);

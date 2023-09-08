@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,6 +33,7 @@ public class FileAdminController {
     private FileAdminService fileService;
 
     @RequestMapping({"/upload"})
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<String> upload(FileUploadReqVO fileUploadReqVO) throws IOException {
         MultipartFile file = fileUploadReqVO.getFile();
         String path = fileUploadReqVO.getPath();
@@ -47,12 +49,14 @@ public class FileAdminController {
     }
 
     @PostMapping("/updateStatus")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         fileService.updateStatus(updateStatusReqVO);
         return success(true);
     }
 
     @PostMapping ("/updateModule")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateModule(@RequestBody UpdateModuleReqVO updateModuleReqVO){
         fileService.updateModule(updateModuleReqVO);
         return success(true);
@@ -64,12 +68,14 @@ public class FileAdminController {
     }
 
     @PostMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         fileService.update(updateReqVO);
         return success(true);
     }
 
     @RequestMapping ("/updateContent")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateContent(UpdateContentReqVO updateContentReqVO) throws IOException {
         MultipartFile file = updateContentReqVO.getFile();
         String path = updateContentReqVO.getPath();

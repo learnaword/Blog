@@ -1,14 +1,14 @@
 package com.mjl.blog.framework.security.config;
 
-import com.mjl.blog.framework.MVC.handler.GlobalExceptionHandler;
 import com.mjl.blog.framework.security.core.fileter.TokenAuthenticationFilter;
 import com.mjl.blog.framework.security.core.handler.AuthenticationEntryPointImpl;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
+import com.mjl.blog.framework.security.core.service.SecurityFrameworkService;
+import com.mjl.blog.framework.security.core.service.SecurityFrameworkServiceImpl;
+import com.mjl.blog.framework.security.core.handler.AccessDeniedHandlerImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
-import org.springframework.security.web.access.AccessDeniedHandlerImpl;
 
 @Configuration
 public class SercutityConfiguration {
@@ -28,6 +28,10 @@ public class SercutityConfiguration {
         return new AccessDeniedHandlerImpl();
     }
 
+    @Bean("ss") // 使用 Spring Security 的缩写，方便使用
+    public SecurityFrameworkService securityFrameworkService() {
+        return new SecurityFrameworkServiceImpl();
+    }
     @Bean
     public TokenAuthenticationFilter authenticationTokenFilter() {
         return new TokenAuthenticationFilter();

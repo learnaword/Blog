@@ -102,10 +102,25 @@ $(document).ready(function() {
 			},
 			url: '/admin/file/upload',
 			done: function(res){
-				layer.msg('上传成功');
-				$('#ID-upload-demo-preview').removeClass('layui-hide')
-					.find('img').attr('src', res.data);
-				console.log(res)
+				if(res.code == "0"){
+					Swal.fire({
+						type: 'success', // 弹框类型
+						title: '上传图片', //标题
+						text: "上传成功！", //显示内容
+						confirmButtonText: '确定',
+					}).then(function(isConfirm) {
+						$('#ID-upload-demo-preview').removeClass('layui-hide')
+							.find('img').attr('src', res.data);
+					})
+				}else{
+					Swal.fire({
+						type: 'file', // 弹框类型
+						title: '失败信息', //标题
+						text: res.msg, //显示内容
+						confirmButtonText: '确定',
+					}).then(function(isConfirm) {
+					})
+				}
 			}
 		});
 	});
@@ -154,24 +169,23 @@ function sendFile(file, editor, $editable) {
 	data.append("key", filename); //唯一性参数
 	data.append("module",3)
 	request.post("/admin/file/upload",data).then(function(res) {
-		if (res.data == '') {
-			Swal.fire({
-				type: 'warning', // 弹框类型
-				title: '上传图片', //标题
-				text: "上传失败！", //显示内容
-				confirmButtonText: '确定',
-			}).then(function(isConfirm) {
-			})
-		} else {
-			var path = '图片地址  ' + res.data.data;
+		if(res.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型
 				title: '上传图片', //标题
 				text: "上传成功！", //显示内容
 				confirmButtonText: '确定',
 			}).then(function(isConfirm) {
+				editor.insertImage($editable, res.data.data);
+			})
+		}else{
+			Swal.fire({
+				type: 'file', // 弹框类型
+				title: '失败信息', //标题
+				text: res.data.msg, //显示内容
+				confirmButtonText: '确定',
+			}).then(function(isConfirm) {
 			})
 		}
-		editor.insertImage($editable, res.data.data);
 	})
 }

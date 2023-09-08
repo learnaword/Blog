@@ -1,6 +1,8 @@
 package com.mjl.blog.framework.security.core.handler;
 
 
+import com.mjl.blog.common.pojo.CommonResult;
+import com.mjl.blog.common.utils.ServletUtils;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +12,8 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.access.ExceptionTranslationFilter;
 
 import java.io.IOException;
+
+import static com.mjl.blog.common.enums.GlobalErrorCodeConstants.FORBIDDEN;
 
 /**
  * 访问一个需要认证的 URL 资源，已经认证（登录）但是没有权限的情况下，返回 {@link GlobalErrorCodeConstants#FORBIDDEN} 错误码。
@@ -26,10 +30,7 @@ public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
             throws IOException, ServletException {
         // 打印 warn 的原因是，不定期合并 warn，看看有没恶意破坏
            log.warn("[commence][访问 URL({}) 时，用户({}) 权限不够]", request.getRequestURI(), e);
-        System.out.println(22222222);
-
-        // 返回 403
-       // ServletUtils.writeJSON(response, CommonResult.error(FORBIDDEN));
+           ServletUtils.writeJSON(response, CommonResult.error(FORBIDDEN));
     }
 
 }

@@ -7,6 +7,7 @@ import com.mjl.blog.convert.admin.TypeAdminConvert;
 import com.mjl.blog.service.admin.type.TypeAdminService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,17 +32,20 @@ public class TypeAdminController {
 
 
     @PostMapping("/updateStatus")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         typeService.updateStatus(updateStatusReqVO);
         return success(true);
     }
 
     @PostMapping ("/create")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(typeService.create(createReqVO) > 0 ? true : false);
     }
 
     @PostMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         typeService.update(updateReqVO);
         return success(true);
