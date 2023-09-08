@@ -1,3 +1,4 @@
+/*
 package com.mjl.blog;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -51,6 +52,7 @@ public class ListFilesInFolder {
     }
 
 
+*/
 /*
     public void insertBlogImage () {
         ConfigurableApplicationContext context = SpringApplication.run(ListFilesInFolder.class, args);
@@ -108,5 +110,7 @@ public class ListFilesInFolder {
         } else {
             System.err.println("指定路径不是一个文件夹。");
         }
-    }*/
+    }*//*
+
 }
+*/

@@ -123,7 +123,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 .searchbox{width:1200px;margin:10px auto;overflow:hidden;background:#fff;position:relative}
 
 /*整体样式*/
-article{width:1080px;margin:auto;overflow:hidden}
+article{width:1200px;margin:auto;overflow:hidden}
 
 /*尾部*/
 footer{width:100%;background:#333;color:#a5a4a4;text-align:center;padding:10px 0}
