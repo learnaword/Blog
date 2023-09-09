@@ -23,12 +23,12 @@
        <div class="banbox">
             <div class="banner">
                 <div id="banner" class="fader">
-                  <li class="slide" style=" ">
+                  <li class="slide">
                       <a href="${baseUrl}/softDetail/84.html" target="_blank">
                           <img src="${baseUrl}/images/indexBig1.JPEG">
                       </a>
                   </li>
-                   <li class="slide" style=" ">
+                   <li class="slide">
                        <a href="https://a.jrpub.cn/979855" target="_blank">
                            <img src="${baseUrl}/images/indexBig2.jpeg" alt="帮忙么网">
                        </a>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="myNone headline">
+        <div class="headline">
             <ul>
                 <li><a href="${baseUrl}/find/117258.html" title="帮忙么网">
                         <img src="${baseUrl}/images/indexSmall1.JPG" alt="帮忙么网">

@@ -119,7 +119,7 @@ footer{width:100%;background:#333;color:#a5a4a4;text-align:center;padding:10px 0
 footer a{color:#a5a4a4}
 
 /*图片文章列表div样式*/
-.newblogs{background:#fff;overflow:hidden;padding:10px;clear:both;border-radius:3px}
+.newblogs{background:#fff;overflow:hidden;padding:5px;clear:both;border-radius:3px}
 .newblogs ul{overflow:hidden}
 .newblogs li{border-bottom:#ccc 1px solid;overflow:hidden}
 .newblogs li .blogpic img{margin:auto;width:100%;height:80px;width:80px;}
@@ -138,8 +138,8 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .bloglist li{overflow:hidden;margin-bottom:10px;border-bottom:#eee 1px dashed;padding-bottom:10px;position:relative;min-height:90px;z-index:1}
 /*列表图片、昵称、时间*/
 .bloginfo p{color:#888;line-height:24px}
-.bloginfo{margin-top:15px;overflow:hidden;color:#999;line-height:34px}
-.bloginfo span{margin:0 5px}
+.bloginfo{margin-top:15px;color:#999;line-height:34px}
+.bloginfo span{margin:0 2px}
 .bloginfo span a{color:#096}
 
 .blogpic{float:left;width:13.2%;margin-right:20px;display:block;overflow:hidden;border-radius:3px;position:relative}
@@ -153,7 +153,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .avatar img{width:100%;border-radius:50%}
 .avatar::after{content:"";position:absolute; no-repeat;background-size:12px;width:12px;height:12px;right:0;bottom:0}
 /*推荐文章、最新文章div样式里有两个class*/
-.whitebg{background:#fff;border-radius:3px;padding:20px;margin-bottom:10px;overflow:hidden}
+.whitebg{background:#fff;border-radius:3px;padding:10px;margin-bottom:10px;overflow:hidden}
 .notice ul{padding-top:5px}
 .notice li{font-size:12px;line-height:28px;margin-bottom:6.7px;display:block;-moz-border-radius:4px;border-radius:4px;background:#f6f6f6;padding:4px 12px 4px 30px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;position:relative;-moz-transition:all .2s ease;-webkit-transition:all .2s ease;transition:all .2s ease}
 .notice li:before{position:absolute;content:"";width:3px;height:3px;background:#000;border-radius:10px;left:15px;top:20px}
@@ -284,7 +284,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .free li{width:100%;margin-bottom:10px}
     .newspic span{padding:0 8px}
     .hnav{float:none;width:100%;clear:both;display:block;overflow:hidden}
-    .bloginfo{width:60%;margin-top: 8px;}
+    .bloginfo{width:80%;margin-top: 8px;}
     .imgscale img{height:100%;max-width:100%}
     .blogpic i{display:none}
     .fader .slide img{height:200px}

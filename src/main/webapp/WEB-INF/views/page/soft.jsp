@@ -54,7 +54,7 @@
                     <span class="caption">短视频</span></a>
             </div>
         </div>
-        <div class="newblogs bloglist">
+        <div class="newblogs bloglist whitebg">
             <ul>
                 <c:forEach var="item" items="${softList}" varStatus="status">
                     <li>

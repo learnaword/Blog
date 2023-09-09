@@ -132,7 +132,7 @@ footer a{color:#a5a4a4}
 .newblogs{background:#fff;overflow:hidden;padding:10px;clear:both;border-radius:3px}
 .newblogs ul{overflow:hidden}
 .newblogs li{border-bottom:#ccc 1px solid;overflow:hidden}
-.newblogs li .blogpic img{height:100px;width:100px;}
+.newblogs li .blogpic img{height:80px;width:80px;}
 .newblogs li:hover img{}
 .newblogs h2 span{display:none}
 .newblogs li:hover{background:#F5F5F5;}
@@ -315,7 +315,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
   .free li{width:100%;margin-bottom:10px}
   .newspic span{padding:0 8px}
   .hnav{float:none;width:100%;clear:both;display:block;overflow:hidden}
-  .bloginfo{width:60%;margin-top: 8px;}
+  .bloginfo{width:70%;margin-top: 8px;}
   .imgscale img{height:100%;max-width:100%}
   .blogpic i{display:none}
   .fader .slide img{height:200px}
