@@ -100,12 +100,12 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .bloglist li{overflow:hidden;margin-bottom:10px;border-bottom:#eee 1px dashed;padding-bottom:10px;position:relative;min-height:90px;z-index:1}
 /*列表图片、昵称、时间*/
 .bloginfo p{color:#888;line-height:24px}
-.bloginfo{margin-top:5px;overflow:hidden;color:#999;line-height:34px}
+.bloginfo{margin-top:15px;overflow:hidden;color:#999;line-height:34px}
 .bloginfo span{margin:0 5px}
 .bloginfo span a{color:#096}
 
 /*内容介绍*/
-.blogtext{font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:3;margin-top:10px}
+.blogtext{font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:2;margin-top:10px}
 /*列表图片、昵称、时间里的图片样式*/
 .avatar{position:relative;float:left;width:30px;height:30px;border-radius:100%;padding:2px;display:block}
 .avatar img{width:100%;border-radius:50%}
@@ -235,7 +235,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .free li{width:100%;margin-bottom:10px}
     .newspic span{padding:0 8px}
     .hnav{float:none;width:100%;clear:both;display:block;overflow:hidden}
-    .bloginfo{width:100%}
+    .bloginfo{width:60%;margin-top: 8px;}
     .imgscale img{height:100%;max-width:100%}
     .blogpic i{display:none}
     .fader .slide img{height:200px}

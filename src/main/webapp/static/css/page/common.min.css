@@ -168,7 +168,7 @@ a.viewmore{display:block;right:10px;bottom:20px;position:absolute;padding:3px 10
 .bplist a img{border-radius:3px;width:200px;height:140px;-moz-transition:all .5s ease;-webkit-transition:all .5s ease;-ms-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;transition:all .5s}
 .bplist a img:hover{transform:scale(1.05)}
 .blogtext{font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:3;margin-top:10px}
-.bloginfo{margin-top:20px;overflow:hidden;color:#999;line-height:34px}
+.bloginfo{margin-top:15px;overflow:hidden;color:#999;line-height:34px}
 .bloginfo span{margin:0 5px}
 .bloginfo span a{color:#096}
 .icon-youxiang:before{content:"\e640"}
@@ -219,7 +219,7 @@ a.iconfont.icon-weixin{color:#07af12}
 .tpic{width:100%;height:160px;overflow:hidden;border-radius:10px;background:#ccc}
 .tuijian li img{margin:auto;width:100%;min-height:160px;max-height:160px;-moz-transition:all .5s ease;-webkit-transition:all .5s ease;transition:all .5s ease}
 .tuijian li b{display:block;width:100%;overflow:hidden;height:30px;line-height:30px;margin:10px 0;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
-.tuijian li span{-webkit-box-orient:vertical;-webkit-line-clamp:3;color:#999;height:60px;text-overflow:ellipsis;display:-webkit-box;overflow:hidden;font-size:14px}
+.tuijian li span{-webkit-box-orient:vertical;-webkit-line-clamp:2;color:#999;height:60px;text-overflow:ellipsis;display:-webkit-box;overflow:hidden;font-size:14px}
 .tuijian li:hover{background:#fff;box-shadow:#ccc 1px 1px 8px}
 .tuijian li:hover img{transform:scale(1.1)}
 .newblogs{background:#fff;overflow:hidden;padding:10px;clear:both;border-radius:3px}
@@ -483,7 +483,7 @@ article{padding-top:5px;}
     .newspic span{padding:0 8px}
     .hnav{float:none;width:100%;clear:both;display:block;overflow:hidden}
     .zhuanti li b{-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:2;font-size:14px;height:42px;line-height:24px;white-space:inherit}
-    .bloginfo{width:100%}
+    .bloginfo{width:60%;margin-top: 8px;}
     .imgscale img{height:100%;max-width:100%}
     .blogpic i{display:none}
     .fader .slide img{height:200px}

@@ -27,7 +27,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .mediaCard h3 {font-size:16px;}
 .mediaCard p {color:#666;}
 
-.banbox{width:68.5%;overflow:hidden;float:left;border-radius:3px;margin-bottom:20px}
+.banbox{width:68.5%;overflow:hidden;float:left;border-radius:3px;margin-bottom:0px}
 .banner{width:100%;overflow:hidden;float:left}
 .banner:hover .fader_controls .pic_page.prev{left:20px}
 .banner:hover .fader_controls .pic_page.next{right:20px}
@@ -153,9 +153,9 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .bloginfo span{margin:0 5px}
 .bloginfo span a{color:#096}
 /*内容介绍*/
-.blogtext{font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:3;margin-top:10px}
+.blogtext{font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:2;margin-top:10px}
 /*列表图片、昵称、时间里的图片样式*/
-.avatar{position:relative;float:left;width:30px;height:30px;border-radius:100%;padding:2px;display:block}
+.avatar{position:relative;float:left;width:30px;height:30px;border-radius:100%;padding:2px;}
 .avatar img{width:100%;border-radius:50%}
 .avatar::after{content:"";position:absolute; no-repeat;background-size:12px;width:12px;height:12px;right:0;bottom:0}
 
@@ -250,7 +250,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .headWidth{width:96%;}
     .recommendB{border-top:0px;}
     .showBar{display:none}
-    .myNone{margin-top:10px;}
+    .myNone{margin-top:20px;}
     .headline{width:100%}
     .headline ul{height:auto;padding-bottom:10px;overflow:hidden}
     .headline ul li{width:49%;float:left}
@@ -287,7 +287,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .free li{width:100%;margin-bottom:10px}
     .newspic span{padding:0 8px}
     .hnav{float:none;width:100%;clear:both;display:block;overflow:hidden}
-    .bloginfo{width:100%}
+    .bloginfo{width:60%;margin-top:8px;}
     .imgscale img{height:100%;max-width:100%}
     .blogpic i{display:none}
     .fader .slide img{height:280px}

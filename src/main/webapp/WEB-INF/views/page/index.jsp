@@ -78,7 +78,7 @@
                                     <img src="${baseUrl}/images/image_.jpg" border=0 width="30" height="30">
                                 </i>
                                 <span>帮忙么</span>
-                                <span style="margin-left:10px;" class="m_time">${item.createTime}</span>
+                                <span style="margin-left:0px;" class="m_time">${item.createTime}</span>
                             </i>
                         </p>
                     </li>
