@@ -24,7 +24,7 @@
                 <c:forEach var="item" items="${mediaNewList.getList()}" varStatus="status">
                     <li>
                         <h3 style="font-weight:bold;" class="blogtitle">
-                            <a style="color:#467ab2;" href="<%= basePath %>/media/find/${item.id}.html">
+                            <a style="color:#467ab2;" href="${baseUrl}/media/find/${item.id}.html">
                                     ${item.title}
                             </a>
                         </h3>
@@ -33,7 +33,7 @@
                         </p>
                         <p class="bloginfo">
                             <i class = "avatar">
-                                <img src="<%= basePath %>/images/image_.jpg" border=0 width="30" height="30">
+                                <img src="${baseUrl}/images/image_.jpg" border=0 width="30" height="30">
                             </i>
                             <span>思想与现实</span>
                             <span style="margin-left:10px;" class="m_time">${item.createTime}</span>
@@ -46,7 +46,7 @@
   <div class="rbox">
 <div class="mediaCard" style="background:#fff;">
     <span class="mediaRecSpan">思想与现实</span>
-    <img style="height:50px;" src="<%= basePath %>/images/image_.jpg"  alt="思想与现实">
+    <img style="height:50px;" src="${baseUrl}/images/image_.jpg"  alt="思想与现实">
     <div class="mediaRecDiv">
          <span class="mediaRecSpan2">嗯～真是个复杂的问题。</span>
    </div>
@@ -57,7 +57,7 @@
             <h3 class="htitle">推荐文章</h3>
             <ul>
                 <c:forEach var="item" items="${topBlogs}" end="6" varStatus="status">
-                    <li><a href="<%= basePath %>/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="${baseUrl}/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
             </ul>
         </div>
@@ -65,7 +65,7 @@
             <h3 class="htitle">最新文章</h3>
             <ul>
                 <c:forEach var="item" items="${newBlogs}" end="6" varStatus="status">
-                    <li><a href="<%= basePath %>/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="${baseUrl}/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 
             </ul>

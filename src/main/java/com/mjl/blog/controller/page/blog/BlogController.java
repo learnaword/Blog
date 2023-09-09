@@ -10,6 +10,7 @@ import com.mjl.blog.dal.dataobject.SoftDO;
 import com.mjl.blog.service.page.blog.BlogService;
 import com.mjl.blog.service.page.soft.SoftService;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,8 @@ public class BlogController {
 
     @Resource
     private SoftService softService;
+    @Value("${app.base-url}")
+    private String baseUrl;
 
     @RequestMapping("/")
     public String index(Model model, IndexReqVO indexReqVO){
@@ -35,6 +38,7 @@ public class BlogController {
         model.addAttribute("blogOrderList", blogOrderList);
         model.addAttribute("blogNewList", blogNewList);
         model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("baseUrl",baseUrl);
 
         return "/page/index";
     }
@@ -73,6 +77,7 @@ public class BlogController {
             model.addAttribute("next", nextBlog);
             model.addAttribute("prev", prevBlog);
             model.addAttribute("blog", blogInfoRespVO);
+            model.addAttribute("baseUrl",baseUrl);
         } else {
             model.addAttribute("status", 0);
         }
@@ -86,6 +91,7 @@ public class BlogController {
         if (keyboard != null) {
            List<ResultRespVO> resultRespVO = BlogConvert.INSTANCE.convertResult(blogService.find(keyboard));
             model.addAttribute("result",resultRespVO);
+            model.addAttribute("baseUrl",baseUrl);
         }
         return "/page/result";
     }

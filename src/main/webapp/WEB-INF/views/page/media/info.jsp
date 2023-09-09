@@ -26,7 +26,7 @@
         <div class="infos">
             <div class="newsview">
                 <div class="intitle">
-                    <a href="<%= basePath %>">帮忙么</a>&nbsp;> <a href="/media/media.html" rel="nofollow">自媒体</a>&nbsp;&gt;&nbsp;当前页面
+                    <a href="${baseUrl}">帮忙么</a>&nbsp;> <a href="/media/media.html" rel="nofollow">自媒体</a>&nbsp;&gt;&nbsp;当前页面
                 </div>
                 <h1 class="news_title">${media.title}</h1>
                 <div>
@@ -39,10 +39,10 @@
         </div>
         <div style="margin:3px 0px 3px 0px;" class="nextinfo">
             <p>
-                上一篇：<span class="prev"><c:if test="${prev != null}"><a href="<%= basePath %>/media/find/${prev.id}.html" rel="bookmark">${prev.title}</a></c:if><c:if test="${prev == null}">无</c:if></span>
+                上一篇：<span class="prev"><c:if test="${prev != null}"><a href="${baseUrl}/media/find/${prev.id}.html" rel="bookmark">${prev.title}</a></c:if><c:if test="${prev == null}">无</c:if></span>
             </p>
             <p>
-                下一篇：<span class="next"><c:if test="${next != null}"> <a href="<%= basePath %>/media/find/${next.id}.html" rel="bookmark">${next.title}</a> </c:if> <c:if test="${next == null}"> 无</c:if></span>
+                下一篇：<span class="next"><c:if test="${next != null}"> <a href="${baseUrl}/media/find/${next.id}.html" rel="bookmark">${next.title}</a> </c:if> <c:if test="${next == null}"> 无</c:if></span>
             </p>
         </div>
         <div style="border-top:3px solid #eeeeee;" class="newblogs bloglist whitebg">
@@ -51,7 +51,7 @@
                 <c:forEach var="item" items="${relMedias}" end="2"  varStatus="status">
                     <li>
                         <h3 class="blogtitle">
-                            <a style="color:#467ab2;"  href="<%= basePath %>/media/find/${item.id}.html" rel="bookmark">${item.title}</a>
+                            <a style="color:#467ab2;"  href="${baseUrl}/media/find/${item.id}.html" rel="bookmark">${item.title}</a>
                         </h3>
                         </span>
                         <p class="blogtext">
@@ -60,7 +60,7 @@
 
                          <p class="bloginfo">
                             <i class = "avatar">
-                                <img src="<%= basePath %>/images/image_.jpg" border=0 width="30" height="30">
+                                <img src="${baseUrl}/images/image_.jpg" border=0 width="30" height="30">
                             </i>
                             <span>思想与现实</span>
                              <span style="margin-left:10px;" class="m_time">${item.createTime}</span>
@@ -73,7 +73,7 @@
     <div class="rbox">
 <div class="mediaCard" style="background:#fff;">
     <span class="mediaRecSpan">思想与现实</span>
-    <img style="height:50px;" src="<%= basePath %>/images/image_.jpg"  alt="思想与现实">
+    <img style="height:50px;" src="${baseUrl}/images/image_.jpg"  alt="思想与现实">
     <div class="mediaRecDiv">
          <span class="mediaRecSpan2">嗯～真是个复杂的问题。</span>
    </div>
@@ -85,7 +85,7 @@
             <h3 class="htitle">推荐文章</h3>
             <ul>
                 <c:forEach var="item" items="${topMedias}" end="6" varStatus="status">
-                    <li><a href="<%= basePath %>/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="${baseUrl}/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 
             </ul>
@@ -94,7 +94,7 @@
             <h3 class="htitle">最新文章</h3>
             <ul>
                 <c:forEach var="item" items="${newMedias}" end="6" varStatus="status">
-                    <li><a href="<%= basePath %>/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="${baseUrl}/media/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 
             </ul>

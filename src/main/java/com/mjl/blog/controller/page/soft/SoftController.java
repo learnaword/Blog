@@ -10,6 +10,7 @@ import com.mjl.blog.service.page.blog.BlogService;
 import com.mjl.blog.service.page.soft.SoftService;
 import com.mjl.blog.service.page.type.TypeService;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,9 @@ public class SoftController {
     @Resource
     TypeService typeService;
 
+    @Value("${app.base-url}")
+    private String baseUrl;
+
     @RequestMapping("/soft.html")
     public String index(Model model, SoftReqVO softReqVO){
         //获取软件类型
@@ -39,6 +43,7 @@ public class SoftController {
         model.addAttribute("softList", softList.getList());
         model.addAttribute("typeList", typeList);
         model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("baseUrl",baseUrl);
 
         return "/page/soft";
     }
@@ -59,6 +64,7 @@ public class SoftController {
         model.addAttribute("blogList", softDetailsBlog.getList());
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("softInfo", soft);
+        model.addAttribute("baseUrl",baseUrl);
 
         return "/page/softDetail";
     }
@@ -78,6 +84,7 @@ public class SoftController {
         model.addAttribute("softList", respVOPageResult.getList());
         model.addAttribute("typeList", typeList);
         model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("baseUrl",baseUrl);
 
         return "/page/softType";
     }
@@ -101,6 +108,7 @@ public class SoftController {
         model.addAttribute("typeList", typeList);
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("softInfo", soft);
+        model.addAttribute("baseUrl",baseUrl);
 
         return "/page/softDetail";
     }

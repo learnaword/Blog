@@ -22,19 +22,19 @@
               <c:if test="${softId != 83 && softId != 84}">
                   <div class="fenlei">
                       <div class="item">
-                          <a href="<%= basePath %>/softDetail/${softId}/1.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-30683715.PNG" alt="软件介绍"/>
+                          <a href="${baseUrl}/softDetail/${softId}/1.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-30683715.PNG" alt="软件介绍"/>
                               <span class="caption">专区介绍</span></a>
                       </div>
                       <div class="item">
-                          <a href="<%= basePath %>/softDetail/${softId}/2.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29136485.PNG" alt="使用经验"/>
+                          <a href="${baseUrl}/softDetail/${softId}/2.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29136485.PNG" alt="使用经验"/>
                               <span class="caption">使用经验</span></a>
                       </div>
                       <div class="item">
-                          <a href="<%= basePath %>/softDetail/${softId}/3.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29539107.PNG" alt="疑难解答"/>
+                          <a href="${baseUrl}/softDetail/${softId}/3.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29539107.PNG" alt="疑难解答"/>
                               <span class="caption">疑难解答</span></a>
                       </div>
                       <div class="item">
-                          <a href="<%= basePath %>/softDetail/${softId}.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-3079698.PNG" alt="全部"/>
+                          <a href="${baseUrl}/softDetail/${softId}.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-3079698.PNG" alt="全部"/>
                               <span class="caption">全部</span></a>
                       </div>
                   </div>
@@ -44,13 +44,13 @@
                 <c:forEach var="item" items="${blogList}" varStatus="status">
                     <li>
                         <h3 style="font-weight:bold;" class="blogtitle">
-                            <a href="<%= basePath %>/find/${item.id}.html">
+                            <a href="${baseUrl}/find/${item.id}.html">
                              ${item.title}
                             </a>
                         </h3>
                         <span class="blogpic">
-                            <a href="<%= basePath %>/find/${item.id}.html">
-                                <img src="<%= basePath %>${item.images}"/>
+                            <a href="${baseUrl}/find/${item.id}.html">
+                                <img src="${baseUrl}${item.images}"/>
                             </a>
                         </span>
                         <p class="blogtext">
@@ -58,7 +58,7 @@
                         </p>
                         <p class="bloginfo">
                             <i class = "avatar">
-                                <img src="<%= basePath %>/images/image_.jpg" border=0 width="30" height="30">
+                                <img src="${baseUrl}/images/image_.jpg" border=0 width="30" height="30">
                             </i>
                             <span>帮忙么</span>
                             <span style="margin-left:10px;" class="m_time">${item.createTime}</span>
@@ -74,7 +74,7 @@
             <h2 class="cloud_hometitle">软件类型</h2>
             <ul>
                 <c:forEach var="item" items="${typeList}" varStatus="status">
-                    <a href="<%= basePath %>/softInfo/${item.id}.html">${item.title}</a>
+                    <a href="${baseUrl}/softInfo/${item.id}.html">${item.title}</a>
                 </c:forEach>
             </ul>
         </div>

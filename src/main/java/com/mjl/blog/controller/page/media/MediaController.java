@@ -9,6 +9,7 @@ import com.mjl.blog.convert.page.MediaConvert;
 import com.mjl.blog.dal.dataobject.MediaDO;
 import com.mjl.blog.service.page.media.MediaService;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,9 @@ public class MediaController {
 
     @Resource
     private MediaService mediaService;
+
+    @Value("${app.base-url}")
+    private String baseUrl;
 
     @RequestMapping("/media.html")
     public String media(Model model, MediaReqVO mediaReqVO){
@@ -38,6 +42,7 @@ public class MediaController {
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("topBlogs", topBlogs);
         model.addAttribute("newBlogs", newBlogs);
+        model.addAttribute("baseUrl",baseUrl);
 
         return "/page/media/media";
     }
@@ -72,6 +77,7 @@ public class MediaController {
             model.addAttribute("next", nextBlog);
             model.addAttribute("prev", prevBlog);
             model.addAttribute("media", mediaInfoRespVO);
+            model.addAttribute("baseUrl",baseUrl);
         } else {
             model.addAttribute("status", 0);
         }

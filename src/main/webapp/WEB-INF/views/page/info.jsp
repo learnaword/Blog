@@ -25,7 +25,7 @@
        <div class="infos">
             <div class="newsview">
                 <div class="intitle">
-                    <a href="<%= basePath %>">帮忙么</a>&nbsp;&gt;&nbsp;<a href="<%= basePath %>/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
+                    <a href="${baseUrl}">帮忙么</a>&nbsp;&gt;&nbsp;<a href="${baseUrl}/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
                         </div>
                         <h1 class="news_title">${blog.title}</h1>
                         <div>
@@ -38,10 +38,10 @@
          </div>
         <div style="margin:3px 0px 3px 0px;" class="nextinfo">
              <p>
-                上一篇：<span class="prev"><c:if test="${prev != null}"><a href="<%= basePath %>/find/${prev.id}.html" rel="bookmark">${prev.title}</a></c:if><c:if test="${prev == null}">无</c:if></span>
+                上一篇：<span class="prev"><c:if test="${prev != null}"><a href="${baseUrl}/find/${prev.id}.html" rel="bookmark">${prev.title}</a></c:if><c:if test="${prev == null}">无</c:if></span>
             </p>
             <p>
-                下一篇：<span class="next"><c:if test="${next != null}"> <a href="<%= basePath %>/find/${next.id}.html" rel="bookmark">${next.title}</a> </c:if> <c:if test="${next == null}"> 无</c:if></span>
+                下一篇：<span class="next"><c:if test="${next != null}"> <a href="${baseUrl}/find/${next.id}.html" rel="bookmark">${next.title}</a> </c:if> <c:if test="${next == null}"> 无</c:if></span>
             </p>
        </div>
        <%@ include file="recommend/footBottom.jsp"%>
@@ -51,11 +51,11 @@
                 <c:forEach var="item" items="${relBlogs}" end="2"  varStatus="status">
                     <li>
                         <h3 class="blogtitle">
-                            <a style="color:#467ab2;"  href="<%= basePath %>/find/${item.id}.html" rel="bookmark">${item.title}</a>
+                            <a style="color:#467ab2;"  href="${baseUrl}/find/${item.id}.html" rel="bookmark">${item.title}</a>
                         </h3>
                         <span class="blogpic">
-                            <a href="<%= basePath %>/find/${item.id}.html">
-                                <img src="<%= basePath %>${item.images}"/>
+                            <a href="${baseUrl}/find/${item.id}.html">
+                                <img src="${baseUrl}${item.images}"/>
                             </a>
                         </span>
                         <p class="blogtext">
@@ -63,7 +63,7 @@
                         </p>
                          <p class="bloginfo">
                             <i class = "avatar">
-                                <img src="<%= basePath %>/images/image_.jpg" border=0 width="30" height="30">
+                                <img src="${baseUrl}/images/image_.jpg" border=0 width="30" height="30">
                             </i>
                             <span>帮忙么</span>
                             <span style="margin-left:10px;" class="m_time">${item.createTime}</span>
@@ -79,10 +79,10 @@
             <h3 class="htitle">推荐文章</h3>
             <ul>
                 <c:forEach var="item" items="${topBlogs}" end="2"  varStatus="status">
-                    <li><a href="<%= basePath %>/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
                 <c:forEach var="item" items="${hotBlogs}" end="2"  varStatus="status">
-                    <li><a href="<%= basePath %>/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 
             </ul>
@@ -91,7 +91,7 @@
             <h3 class="htitle">最新文章</h3>
             <ul>
                 <c:forEach var="item" items="${newBlogs}" end="5" varStatus="status">
-                    <li><a href="<%= basePath %>/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 
             </ul>

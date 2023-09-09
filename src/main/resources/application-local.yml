@@ -26,4 +26,4 @@ mybatis-plus:
     mapper-locations: classpath:com/qfedu/mapper/xml/*.xml
 
 app:
-  base-url: http://localhost:8081
+  base-url: http://localhost:${server.port}
