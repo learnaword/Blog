@@ -12,7 +12,7 @@ import java.io.Serializable;
 /**
  * @TableName t_auto_config
  */
-@TableName(value ="t_auto_config")
+@TableName(value ="blog_auto_config")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

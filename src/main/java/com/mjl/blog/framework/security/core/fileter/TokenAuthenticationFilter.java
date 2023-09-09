@@ -14,6 +14,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -26,18 +27,15 @@ import java.io.IOException;
  */
 @RequiredArgsConstructor
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
-    @Resource
+    @Autowired
     TokenAdminService tokenService;
 
-    @Resource
+    @Autowired
     AdminUserService adminUserService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = SecurityFrameworkUtils.obtainAuthorization(request,"Authorization");
-        System.out.println("token：" + token);
-        System.out.println("url："+ request.getRequestURI());
-        System.out.println("------------------------");
         if(StrUtil.isNotEmpty(token)) {
             //通过token构建用户。
             LoginUser loginUser = buildLoginUserByToken(token);

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 /**
  * @TableName t_blog
  */
-@TableName(value ="t_blog")
+@TableName(value ="b_blog")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

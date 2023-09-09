@@ -14,6 +14,7 @@ import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,9 @@ public class FileAdminController {
     @Resource
     private FileAdminService fileService;
 
+    @Value("${app.base-url}")
+    private String baseUrl;
+
     @RequestMapping({"/upload"})
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<String> upload(FileUploadReqVO fileUploadReqVO) throws IOException {
@@ -40,7 +44,11 @@ public class FileAdminController {
         String name = file.getOriginalFilename();
         int module = fileUploadReqVO.getModule();
         byte[] content = IoUtil.readBytes(file.getInputStream());
-        return CommonResult.success(fileService.upload(name,path,content, module));
+        String url = fileService.upload(name,path,content, module);
+        if(module==FileStatusEnum.BLOG_FILE.getStatus()){
+            url = baseUrl + url;
+        }
+        return CommonResult.success(url);
     }
 
     @GetMapping("/table")

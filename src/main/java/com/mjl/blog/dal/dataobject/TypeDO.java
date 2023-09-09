@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@TableName(value ="t_type")
+@TableName(value ="blog_type")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

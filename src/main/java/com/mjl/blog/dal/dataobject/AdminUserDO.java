@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("t_user")
+@TableName("blog_user")
 public class AdminUserDO implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;

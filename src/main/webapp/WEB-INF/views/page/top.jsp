@@ -1,18 +1,22 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "s://" + request.getServerName() + path;
+%>
 <header id="header" style="margin:0px;">
     <div class="navbox">
         <h2 id="mnavh">
             <span class="navicon"></span>
         </h2>
         <div class="logo">
-            <a href=""><img class="imgTop" src="/images/logo.jpg"></a>
+            <a href=""><img class="imgTop" src="<%= basePath %>/images/logo.jpg"></a>
         </div>
         <nav class="leftNav">
             <ul id="starlist">
-                <li><a href="/" title="首页" >首页</a></li>
-                <li><a href="/soft.html" rel="nofollow">经验分享</a></li>
-                <li><a href="/media/media.html" rel="nofollow">自媒体</a></li>
+                <li><a href="<%= basePath %>/" title="首页" >首页</a></li>
+                <li><a href="<%= basePath %>/soft.html" rel="nofollow">经验分享</a></li>
+                <li><a href="<%= basePath %>/media/media.html" rel="nofollow">自媒体</a></li>
             </ul>
         </nav>
         <div class="searchico"></div>

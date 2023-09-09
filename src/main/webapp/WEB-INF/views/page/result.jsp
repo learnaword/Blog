@@ -25,13 +25,13 @@
         <c:forEach var="item" items="${result}" varStatus="status">
           <li>
             <h3 style="font-weight:bold;" class="blogtitle">
-              <a href="/find/${item.id}.html">
+              <a href="<%= basePath %>/find/${item.id}.html">
                   ${item.title}
               </a>
             </h3>
             <span class="blogpic">
                             <a href="/find/${item.id}.html">
-                                <img src="${item.images}"/>
+                                <img src="<%= basePath %>${item.images}"/>
                             </a>
                         </span>
             <p class="blogtext">
@@ -39,7 +39,7 @@
             </p>
             <p class="bloginfo">
               <i class = "avatar">
-                <img src="/images/image_.jpg" border=0 width="30" height="30">
+                <img src="<%= basePath %>/images/image_.jpg" border=0 width="30" height="30">
               </i>
               <span>帮忙么</span>
               <span style="margin-left:10px;" class="m_time">${item.createTime}</span>

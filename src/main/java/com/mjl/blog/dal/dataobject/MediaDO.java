@@ -12,7 +12,7 @@ import java.io.Serializable;
 /**
  * @TableName t_blog
  */
-@TableName(value ="t_media")
+@TableName(value ="blog_media")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

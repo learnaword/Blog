@@ -1,0 +1,40 @@
+server:
+  port: 8039
+
+spring:
+  application:
+    name: /
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/views
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    locale: zh_CN
+
+  data:
+    redis:
+      port: 6379
+      database: 0
+      host: 127.0.0.1
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.104.225.54:3306/blog?serverTimezone=GMT
+    username: root
+    password: Root!!2018
+    type: com.alibaba.druid.pool.DruidDataSource
+
+logging:
+  level:
+    org.mybatis.spring: ERROR
+
+mybatis-plus:
+  configuration: #sql
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+    mapper-locations: classpath:com/qfedu/mapper/xml/*.xml
+
+app:
+  base-url: https://www.bangmangma.com

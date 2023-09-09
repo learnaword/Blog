@@ -24,13 +24,13 @@
             <div class="banner">
                 <div id="banner" class="fader">
                   <li class="slide" style=" ">
-                      <a href="/softDetail/84.html" target="_blank">
-                          <img src="/images/indexBig1.JPEG">
+                      <a href="<%= basePath %>/softDetail/84.html" target="_blank">
+                          <img src="<%= basePath %>/images/indexBig1.JPEG">
                       </a>
                   </li>
                    <li class="slide" style=" ">
                        <a href="https://a.jrpub.cn/979855" target="_blank">
-                           <img src="/images/indexBig2.jpeg" alt="帮忙么网">
+                           <img src="<%= basePath %>/images/indexBig2.jpeg" alt="帮忙么网">
                        </a>
                    </li>
                     <div class="fader_controls">
@@ -44,12 +44,12 @@
         </div>
         <div class="myNone headline">
             <ul>
-                <li><a href="/find/117258.html" title="帮忙么网">
-                        <img src="/images/indexSmall1.JPG" alt="帮忙么网">
+                <li><a href="<%= basePath %>/find/117258.html" title="帮忙么网">
+                        <img src="<%= basePath %>/images/indexSmall1.JPG" alt="帮忙么网">
                     </a>
                 </li>
-                <li><a href="/softDetail/83.html" title="生活经验">
-                        <img src="/images/indexSmall2.jpg" alt="生活经验">
+                <li><a href="<%= basePath %>/softDetail/83.html" title="生活经验">
+                        <img src="<%= basePath %>/images/indexSmall2.jpg" alt="生活经验">
                         <span>生活经验分享</span>
                     </a>
                 </li>
@@ -61,12 +61,12 @@
                 <c:forEach var="item" items="${blogNewList.getList()}" varStatus="status">
                     <li>
                         <h3 class="blogtitle">
-                            <a style="color:#467ab2;" href="/find/${item.id}.html" rel="bookmark">${item.title}</a>
+                            <a style="color:#467ab2;" href="<%= basePath %>/find/${item.id}.html" rel="bookmark">${item.title}</a>
                         </h3>
                        <c:if test="${item.images != ''}">
                         <span class="blogpic">
-                            <a href="/find/${item.id}.html">
-                                <img src="${item.images}"/>
+                            <a href="<%= basePath %>/find/${item.id}.html">
+                                <img src="<%= basePath %>${item.images}"/>
                             </a>
                         </span>
                        </c:if>
@@ -75,7 +75,7 @@
                         </p>
                         <p class="bloginfo">
                               <i class = "avatar">
-                                    <img src="/images/image_.jpg" border=0 width="30" height="30">
+                                    <img src="<%= basePath %>/images/image_.jpg" border=0 width="30" height="30">
                                 </i>
                                 <span>帮忙么</span>
                                 <span style="margin-left:10px;" class="m_time">${item.createTime}</span>
@@ -110,7 +110,7 @@
             <h2 class="htitle">热门推荐</h2>
             <ul>
                 <c:forEach var="item" end="8"  items="${blogOrderList}">
-                    <li><a href="/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                    <li><a href="<%= basePath %>/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
             </ul>
         </div>
