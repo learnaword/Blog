@@ -59,7 +59,7 @@
           <c:forEach var="item" items="${softList}" varStatus="status">
             <li>
               <h3 class="blogtitle">
-                <a href="<%= basePath %><%= basePath %>/softDetail/${item.id}/1.html">${item.title}</a>
+                <a href="<%= basePath %>/softDetail/${item.id}/1.html">${item.title}</a>
               </h3>
               <span class="blogpic">
                     <a href="<%= basePath %>/softDetail/${item.id}/1.html">

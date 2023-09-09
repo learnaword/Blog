@@ -18,6 +18,8 @@ public interface SoftConvert {
     PageResult<SoftListRespVO> covert(PageResult<SoftDO> list);
 
     PageResult<SoftDetailsRespVO> covertDetails(PageResult<BlogDO> softDetails);
+    @Mapping(target = "createTime", source = "createTime", qualifiedByName = "timestampToString")
+    SoftDetailsRespVO covertDetails(BlogDO blogDO);
 
     PageResult<SoftInfoRespVO> covertInfo(PageResult<SoftDO> softInfos);
 

@@ -8,4 +8,6 @@ public class SoftDetailsRespVO {
     private String title;
     private String introduction;
     private String images;
+
+    private String createTime;
 }
