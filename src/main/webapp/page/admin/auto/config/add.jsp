@@ -55,7 +55,7 @@
 							<div class="layui-input-suffix">
 								<button type="button"  lay-verify="required" class="layui-btn layui-btn-warm layui-btn-radius">名称</button>
 							</div>
-							<input type="text" name="title" style="width: 800px;border-color: #ff9900;" placeholder="输入名称" class="layui-input">
+							<input type="text" name="title" style="width: 600px;border-color: #ff9900;" placeholder="输入名称" class="layui-input">
 						</div>
 					</div>
 					<form class="layui-form layui-form-pane" style="padding:10px;" action="xxx">

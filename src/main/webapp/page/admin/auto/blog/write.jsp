@@ -54,7 +54,7 @@ overflow: visible !important;
 							<div class="layui-input-suffix">
 								<button type="button"  lay-verify="required" class="layui-btn layui-btn-warm layui-btn-radius">文章标题</button>
 							</div>
-							<input type="text" name="title" style="width: 800px;border-color: #ff9900;" placeholder="输入标题" class="layui-input">
+							<input type="text" name="title" style="width: 600px;border-color: #ff9900;" placeholder="输入标题" class="layui-input">
 						</div>
 					</div>
 				</div>
