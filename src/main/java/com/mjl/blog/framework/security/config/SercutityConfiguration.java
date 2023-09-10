@@ -7,6 +7,7 @@ import com.mjl.blog.framework.security.core.service.SecurityFrameworkServiceImpl
 import com.mjl.blog.framework.security.core.handler.AccessDeniedHandlerImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 

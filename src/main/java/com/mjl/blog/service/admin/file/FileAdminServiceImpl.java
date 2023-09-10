@@ -104,6 +104,12 @@ public class FileAdminServiceImpl implements FileAdminService {
         fileDO.setUpdateTime(System.currentTimeMillis());
         fileDO.setUrl(formatFileUrl(fileDO.getPath(), fileDO.getModule()));
 
+     /*   FileDO oldFileDO = fileMapper.selectById(updateReqVO.getId());
+        if(isFromRedis(oldFileDO.getModule())){
+            String redisKey = String.format(RedisKeyFileConstants.UPLOAD_BLOG_IMAGES.getKeyTemplate(), oldFileDO.getModule(),oldFileDO.getPath());
+            stringRedisTemplate.delete(redisKey);
+        }*/
+
         List<FileDO> fileDOS = fileMapper.selectList(new LambdaQueryWrapper<FileDO>().eq(FileDO::getUrl,fileDO.getUrl())
                 .eq(FileDO::getStatus,CommonStatusEnum.ENABLE.getStatus())
                 .notIn(FileDO::getId,updateReqVO.getId()));
@@ -129,10 +135,10 @@ public class FileAdminServiceImpl implements FileAdminService {
         }
 
         //检查缓存里是否存在，如果存在删除key
-        if(isFromRedis(fileDO.getModule())){
+   /*     if(isFromRedis(fileDO.getModule())){
             String redisKey = String.format(RedisKeyFileConstants.UPLOAD_BLOG_IMAGES.getKeyTemplate(), fileDO.getModule(),fileDO.getPath());
             stringRedisTemplate.delete(redisKey);
-        }
+        }*/
 
         // 保存到数据库
         FileDO file = new FileDO()
@@ -183,9 +189,9 @@ public class FileAdminServiceImpl implements FileAdminService {
 
     @Override
     public FileDO getByPath(String path, Integer module) {
-        if(isFromRedis(module)){
+/*        if(isFromRedis(module)){
             return getFromRedis(path,module);
-        }
+        }*/
         return getFromDB(path,module);
     }
 
