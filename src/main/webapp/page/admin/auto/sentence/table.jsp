@@ -6,16 +6,16 @@
 	<title>句子管理</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link rel="stylesheet" href="/static/plugins/layui/css/layui.css" media="all" />
-	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet"></link>
-	<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-	<link href="/static/css/admin/style.css" rel="stylesheet">
-	<link href="/static/css/info2.css" rel="stylesheet">
-	<link href="/static/css/admin/base.css" rel="stylesheet">
-	<script src="/static/plugins/layui/layui.js"></script>
-	<script src="/static/js/axios/axios.min.js"></script>
-	<script src="/static/js/jquery.min.js"></script>
-	<script src="/static/js/admin/token.js"></script>
+	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet"></link>
+	<script src="/upload/js/sweetalert2.min.js"></script>
+	<link href="/upload/css/style.css" rel="stylesheet">
+	<link href="/upload/css/info.min.css" rel="stylesheet">
+	<link href="/upload/css/base.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
+	<script src="/upload/js/axios.min.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/upload/js/admin/token.js"></script>
 	<script type="module" src="/static/js/admin/auto/sentence/table.js"></script>
 </head>
 <body class="white-bg">

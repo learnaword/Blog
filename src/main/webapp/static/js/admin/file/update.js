@@ -1,5 +1,4 @@
 import request from "../../axios/axios-config.js";
-
 $(document).ready(function() {
 	initFile();
 	layui.use(function(){
@@ -13,6 +12,7 @@ $(document).ready(function() {
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头
 			},
+			accept: 'file',
 			data:{
 				id: id,
 			},

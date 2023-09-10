@@ -1,4 +1,4 @@
-import request from "../../axios/axios-config.js";
+import request from "/upload/js/axios-config.js";
 
 $(document).ready(function(){
     layui.use(['table', 'dropdown'], function(){
@@ -52,6 +52,10 @@ $(document).ready(function(){
                             str = str + '<span style="background-color: green" class="layui-badge">博客文件</span>'
                         }else if (d.module == '4'){
                             str = str + '<span style="background-color: #a233c6" class="layui-badge">头像文件</span>'
+                        }else if (d.module == '5'){
+                            str = str + '<span style="background-color: red" class="layui-badge">JS文件</span>'
+                        }else if (d.module == '6'){
+                            str = str + '<span style="background-color: red" class="layui-badge">CSS文件</span>'
                         }
                         return str;
                     }}
@@ -164,6 +168,12 @@ $(document).ready(function(){
                     },{
                         id: 'COMMON_FILE',
                         title: '查看普通文件'
+                    },{
+                        id: 'JS_FILE',
+                        title: '查看JS文件'
+                    },{
+                        id: 'CSS_FILE',
+                        title: '查看CSS文件'
                     }]
                     // 菜单被点击的事件
                     ,click: function(obj){
@@ -213,6 +223,22 @@ $(document).ready(function(){
                                 table.reload('test', {
                                     where: {
                                         module: 2
+                                    }
+                                }, true);
+                                break;
+                            case 'JS_FILE':
+                                // 查看普通文件
+                                table.reload('test', {
+                                    where: {
+                                        module: 5
+                                    }
+                                }, true);
+                                break;
+                            case 'CSS_FILE':
+                                // 查看普通文件
+                                table.reload('test', {
+                                    where: {
+                                        module: 6
                                     }
                                 }, true);
                                 break;

@@ -11,7 +11,7 @@
     <meta name="description" content="${softInfo.introduction}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon"href="/images/favicon.ico">
-    <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
     <link href="/static/css/page/soft.min.css" rel="stylesheet">
     <script src="/static/js/comm.js"></script>
 </head>
@@ -22,19 +22,19 @@
               <c:if test="${softId != 83 && softId != 84}">
                   <div class="fenlei">
                       <div class="item">
-                          <a href="${baseUrl}/softDetail/${softId}/1.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-30683715.PNG" alt="软件介绍"/>
+                          <a href="${baseUrl}/softDetail/${softId}/1.html"><img src="https://www.bangmangma.com/upload/images/softDetail_introduce.PNG" alt="软件介绍"/>
                               <span class="caption">专区介绍</span></a>
                       </div>
                       <div class="item">
-                          <a href="${baseUrl}/softDetail/${softId}/2.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29136485.PNG" alt="使用经验"/>
+                          <a href="${baseUrl}/softDetail/${softId}/2.html"><img src="https://www.bangmangma.com/upload/images/softDetail_exp.PNG" alt="使用经验"/>
                               <span class="caption">使用经验</span></a>
                       </div>
                       <div class="item">
-                          <a href="${baseUrl}/softDetail/${softId}/3.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-29539107.PNG" alt="疑难解答"/>
+                          <a href="${baseUrl}/softDetail/${softId}/3.html"><img src="https://www.bangmangma.com/upload/images/softDetail_questions.PNG" alt="疑难解答"/>
                               <span class="caption">疑难解答</span></a>
                       </div>
                       <div class="item">
-                          <a href="${baseUrl}/softDetail/${softId}.html"><img src="https://www.bangmangma.com/upload/blog/2020-10-3079698.PNG" alt="全部"/>
+                          <a href="${baseUrl}/softDetail/${softId}.html"><img src="https://www.bangmangma.com/upload/images/softDetail_all.PNG" alt="全部"/>
                               <span class="caption">全部</span></a>
                       </div>
                   </div>

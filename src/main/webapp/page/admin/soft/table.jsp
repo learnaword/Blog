@@ -6,12 +6,12 @@
 	<title>专区管理</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link rel="stylesheet" href="/static/plugins/layui/css/layui.css" media="all" />
-	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet"></link>
-	<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-	<script src="/static/plugins/layui/layui.js"></script>
-	<script src="/static/js/axios/axios.min.js"></script>
-	<script src="/static/js/jquery.min.js"></script>
-	<script src="/static/js/admin/token.js"></script>
+	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet"></link>
+	<script src="/upload/js/sweetalert2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
+	<script src="/upload/js/axios.min.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/upload/js/admin/token.js"></script>
 	<script type="module" src="/static/js/admin/soft/table.js"></script>
 </head>
 <body>

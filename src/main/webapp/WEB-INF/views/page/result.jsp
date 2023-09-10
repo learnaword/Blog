@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon"href="/images/favicon.ico">
   <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
   <link href="/static/css/page/soft.min.css" rel="stylesheet">
   <script src="/static/js/comm.js"></script>
 </head>

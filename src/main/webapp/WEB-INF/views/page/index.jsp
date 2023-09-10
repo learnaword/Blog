@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/static/css/page/index.min.css" rel="stylesheet">
-    <script src="/static/js/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
     <script src="/static/js/comm.js"></script>
 </head>
 <body>

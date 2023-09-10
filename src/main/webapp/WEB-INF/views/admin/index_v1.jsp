@@ -6,9 +6,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>博客后台 - 主页</title>
-	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/admin/style.css" rel="stylesheet">
-	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/upload/css/style.css" rel="stylesheet">
+	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
@@ -129,12 +129,12 @@
 </div>
 
 <!-- 全局js -->
-<script src="/static/js/jquery.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-<script src="/static/js/axios/axios.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="/upload/js/bootstrap.min.js"></script>
+<script src="/upload/js/sweetalert2.min.js"></script>
+<script src="/upload/js/axios.min.js"></script>
 <!-- Data picker -->
-<script src="/static/js/admin/token.js"></script>
+<script src="/upload/js/admin/token.js"></script>
 <script type="module" src="/static/js/admin/index_v1.js"></script>
 
 </body>

@@ -6,10 +6,10 @@
 	<meta charset="utf-8">
 	<title>登录</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
 	<link href="/static/css/admin/animate.css" rel="stylesheet">
-	<link href="/static/css/admin/style.css" rel="stylesheet">
+	<link href="/upload/css/style.css" rel="stylesheet">
 	<link href="/static/css/admin/login.css" rel="stylesheet">
 </head>
 <body class="signin">
@@ -61,7 +61,7 @@
 		</div>
 	</div>
 </div>
-<script src="/static/js/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
 <script src="/static/js/admin/login.js"></script>
 </body>
 </html>

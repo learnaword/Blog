@@ -1,4 +1,4 @@
-import request from "../axios/axios-config.js";
+import request from "/upload/js/axios-config.js";
 
 $(document).ready(function() {
 	initBlogCountByStatus() //初始化已发表、草稿、储备

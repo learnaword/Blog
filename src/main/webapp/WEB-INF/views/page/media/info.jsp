@@ -16,7 +16,7 @@
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link href="/static/css/page/media.min.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
     <script src="/static/js/comm.js"></script>
 </head>
 <body>

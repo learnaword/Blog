@@ -21,4 +21,6 @@ public interface FileAdminService {
     void updateContent(String name, String path, byte[] content, Long id);
 
     void updateModule(UpdateModuleReqVO updateModuleReqVO);
+
+    FileDO getFile(String path, Integer module);
 }

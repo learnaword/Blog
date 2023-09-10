@@ -10,15 +10,15 @@
     <meta name="description" content="">
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/static/css/gruvbox-light.css" rel="stylesheet">
-    <link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
+    <link href="/upload/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/admin/font-awesome.css" rel="stylesheet">
     <link href="/static/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
     <link href="/static/css/admin/animate.css" rel="stylesheet">
-    <link href="/static/css/admin/style.css" rel="stylesheet">
-    <link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <link href="/upload/css/style.css" rel="stylesheet">
+    <link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
     <link href="/static/css/plugins/datapicker/datepicker3.css"rel="stylesheet">
     <link href="/static/css/page/index.min.css" rel="stylesheet">
-    <link href="/static/css/admin/base.css" rel="stylesheet">
+    <link href="/upload/css/base.css" rel="stylesheet">
     <link href="/static/css/admin/fakeLoader.css" rel="stylesheet">
     <style type="text/css">
         .input-group-addon{
@@ -134,18 +134,18 @@
 </div>
 
 <!-- 全局js -->
-<script src="/static/js/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
 <script src="/static/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script src="/static/js/bootstrap.min.js"></script>
+<script src="/upload/js/bootstrap.min.js"></script>
 <script src="/static/js/plugins/peity/jquery.peity.min.js"></script>
 <script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 <!-- 自定义js -->
 <script src="/static/js/content.js"></script>
-<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="/upload/js/sweetalert2.min.js"></script>
 <script src="/static/js/plugins/echarts/echarts.min.js"></script>
 <script src="/static/js/fakeLoader.min.js"></script>
-<script src="/static/js/admin/token.js"></script>
+<script src="/upload/js/admin/token.js"></script>
 <script src="/static/js/admin/charts/charts.js"></script>
 
 </body>

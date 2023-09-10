@@ -39,7 +39,6 @@ public class FileController {
         }
         //前端展示
         ServletUtils.write(response, content, fileType);
-
     }
 
     @GetMapping("/upload/blog/**")
@@ -49,20 +48,17 @@ public class FileController {
         if (StrUtil.isEmpty(path)) {
             throw new IllegalArgumentException("结尾的 path 路径必须传递");
         }
+
+        FileDO fileDO = fileService.getFile(path, FileStatusEnum.BLOG_FILE.getStatus());
+
         // 读取内容
-        FileDO fileDO = fileService.getByPath(path,FileStatusEnum.BLOG_FILE.getStatus());
         if(fileDO == null) {
             response.setStatus(HttpStatus.NOT_FOUND.value());
             return;
         }
-        byte[] content = fileDO.getContent();
-        String fileType = fileDO.getType();
-        if (content == null) {
-            response.setStatus(HttpStatus.NOT_FOUND.value());
-            return;
-        }
+
         //前端展示
-        ServletUtils.write(response, content, fileType);
+        ServletUtils.write(response, fileDO.getContent(), fileDO.getType());
 
     }
 
@@ -74,20 +70,17 @@ public class FileController {
         if (StrUtil.isEmpty(path)) {
             throw new IllegalArgumentException("结尾的 path 路径必须传递");
         }
+
+        FileDO fileDO = fileService.getFile(path, FileStatusEnum.SYSTEM_FILE.getStatus());
+
         // 读取内容
-        FileDO fileDO = fileService.getByPath(path,FileStatusEnum.SYSTEM_FILE.getStatus());
         if(fileDO == null) {
             response.setStatus(HttpStatus.NOT_FOUND.value());
             return;
         }
-        byte[] content = fileDO.getContent();
-        String fileType = fileDO.getType();
-        if (content == null) {
-            response.setStatus(HttpStatus.NOT_FOUND.value());
-            return;
-        }
+
         //前端展示
-        ServletUtils.write(response, content, fileType);
+        ServletUtils.write(response, fileDO.getContent(), fileDO.getType());
 
     }
 
@@ -99,19 +92,56 @@ public class FileController {
             throw new IllegalArgumentException("结尾的 path 路径必须传递");
         }
         // 读取内容
-        FileDO fileDO = fileService.getByPath(path,FileStatusEnum.BACKGROUND_FILE.getStatus());
+        FileDO fileDO = fileService.getFile(path, FileStatusEnum.BACKGROUND_FILE.getStatus());
+
+        // 读取内容
         if(fileDO == null) {
             response.setStatus(HttpStatus.NOT_FOUND.value());
             return;
         }
-        byte[] content = fileDO.getContent();
-        String fileType = fileDO.getType();
-        if (content == null) {
+
+        //前端展示
+        ServletUtils.write(response, fileDO.getContent(), fileDO.getType());
+    }
+
+    @GetMapping("/upload/js/**")
+    public void getJsFileContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        // 获取请求的路径
+        String path = StrUtil.subAfter(request.getRequestURI(), "/js/", false);
+        if (StrUtil.isEmpty(path)) {
+            throw new IllegalArgumentException("结尾的 path 路径必须传递");
+        }
+        // 读取内容
+        FileDO fileDO = fileService.getFile(path, FileStatusEnum.JS_FILE.getStatus());
+
+        // 读取内容
+        if(fileDO == null) {
             response.setStatus(HttpStatus.NOT_FOUND.value());
             return;
         }
-        //前端展示
-        ServletUtils.write(response, content, fileType);
 
+        //前端展示
+        ServletUtils.write(response, fileDO.getContent(), fileDO.getType());
     }
+
+    @GetMapping("/upload/css/**")
+    public void getCssFileContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        // 获取请求的路径
+        String path = StrUtil.subAfter(request.getRequestURI(), "/css/", false);
+        if (StrUtil.isEmpty(path)) {
+            throw new IllegalArgumentException("结尾的 path 路径必须传递");
+        }
+        // 读取内容
+        FileDO fileDO = fileService.getFile(path, FileStatusEnum.CSS_FILE.getStatus());
+
+        // 读取内容
+        if(fileDO == null) {
+            response.setStatus(HttpStatus.NOT_FOUND.value());
+            return;
+        }
+
+        //前端展示
+        ServletUtils.write(response, fileDO.getContent(), fileDO.getType());
+    }
+
 }

@@ -11,8 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="applicable-device" content="pc,mobile">
 	<meta http-equiv="Cache-Control" content="no-transform" />
-	<link href="/static/css/page/info.min.css" rel="stylesheet">
-	<script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+	<link href="/upload/css/info.min.css" rel="stylesheet">
+	<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
 	<script src="/static/js/comm.js"></script>
 </head>
 <body>

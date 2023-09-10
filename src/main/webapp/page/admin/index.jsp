@@ -8,12 +8,12 @@
 	<meta name="renderer" content="webkit">
 	<title>博客后台 - 主页</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/admin/font-awesome.min.css" rel="stylesheet">
-	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
-	<link href="/static/css/admin/animate.css" rel="stylesheet">
-	<link href="/static/css/admin/style.css" rel="stylesheet">
-	<link href="/static/css/admin/fakeLoader.css" rel="stylesheet">
+	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
+	<link href="/upload/css/animate.css" rel="stylesheet">
+	<link href="/upload/css/style.css" rel="stylesheet">
+	<link href="/upload/css/fakeLoader.css" rel="stylesheet">
 </head>
 <body class="fixed-sidebar full-height-layout white-bg" style="overflow:hidden;">
 <div id="wrapper">
@@ -272,16 +272,16 @@
 </div>
 
 <!-- 全局js -->
-<script src="/static/js/jquery.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-<script src="/static/js/plugins/axios/axios.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="/upload/js/bootstrap.min.js"></script>
+<script src="/upload/js/jquery.metisMenu.js"></script>
+<script src="/upload/js/jquery.slimscroll.min.js"></script>
+<script src="/upload/js/sweetalert2.min.js"></script>
+<script src="/upload/js/axios.min.js"></script>
 <!-- 自定义js -->
-<script src="/static/js/admin/token.js"></script>
-<script src="/static/js/hplus.js"></script>
-<script src="/static/js/contabs.js"></script>
-<script src="/static/js/fakeLoader.min.js"></script>
+<script src="/upload/js/admin/token.js"></script>
+<script src="/upload/js/hplus.js"></script>
+<script src="/upload/js/contabs.js"></script>
+<script src="/upload/js/fakeLoader.min.js"></script>
 </body>
 </html>

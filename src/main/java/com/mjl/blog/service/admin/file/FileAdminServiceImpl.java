@@ -6,17 +6,20 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.mjl.blog.common.enums.CommonStatusEnum;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.FileUtils;
+import com.mjl.blog.common.utils.JsonUtils;
 import com.mjl.blog.controller.admin.file.vo.*;
 import com.mjl.blog.convert.admin.FileAdminConvert;
 import com.mjl.blog.dal.dataobject.FileDO;
-import com.mjl.blog.dal.dataobject.MediaDO;
 import com.mjl.blog.dal.mysql.FileAdminMapper;
+import com.mjl.blog.dal.redis.RedisKeyFileConstants;
 import com.mjl.blog.enums.FileStatusEnum;
 import com.mjl.blog.framework.file.utils.FileTypeUtils;
 import jakarta.annotation.Resource;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static com.mjl.blog.common.exception.utils.ServiceExceptionUtil.exception;
 import static com.mjl.blog.enums.ErrorCodeConstants.*;
@@ -25,6 +28,9 @@ import static com.mjl.blog.enums.ErrorCodeConstants.*;
 public class FileAdminServiceImpl implements FileAdminService {
     @Resource
     private FileAdminMapper fileMapper;
+
+    @Resource
+    StringRedisTemplate stringRedisTemplate;
 
     @Override
     public String upload(String name, String path, byte[] content,Integer module) {
@@ -59,16 +65,6 @@ public class FileAdminServiceImpl implements FileAdminService {
         }
 
         return url;
-    }
-
-    @Override
-    public FileDO getByPath(String path, Integer module) {
-        List<FileDO> list = fileMapper.selectList(new QueryWrapper<FileDO>().eq("path", path)
-                .eq("module", module).eq("status", CommonStatusEnum.ENABLE.getStatus()));
-        if (!list.isEmpty()) {
-            return list.get(0);
-        }
-        return null;
     }
 
     @Override
@@ -132,6 +128,12 @@ public class FileAdminServiceImpl implements FileAdminService {
             throw exception(FILE_TYPE_MATCH);
         }
 
+        //检查缓存里是否存在，如果存在删除key
+        if(isFromRedis(fileDO.getModule())){
+            String redisKey = String.format(RedisKeyFileConstants.UPLOAD_BLOG_IMAGES.getKeyTemplate(), fileDO.getModule(),fileDO.getPath());
+            stringRedisTemplate.delete(redisKey);
+        }
+
         // 保存到数据库
         FileDO file = new FileDO()
                 .setId(id)
@@ -158,9 +160,68 @@ public class FileAdminServiceImpl implements FileAdminService {
             return StrUtil.format("/upload/background/{}", path);
         } else if (module.equals(FileStatusEnum.COMMON_FILE.getStatus())) {
             return StrUtil.format("/upload/common/{}", path);
+        }else if (module.equals(FileStatusEnum.CSS_FILE.getStatus())) {
+            return StrUtil.format("/upload/css/{}", path);
+        } else if (module.equals(FileStatusEnum.JS_FILE.getStatus())) {
+            return StrUtil.format("/upload/js/{}", path);
         }else{
             return StrUtil.format("/upload/common/{}", path);
         }
+    }
 
+    @Override
+    public FileDO getFile(String path, Integer module) {
+
+        FileDO fileDO = getByPath(path,module);
+
+        if(fileDO == null || fileDO.getContent() ==null){
+            return null;
+        }
+
+        return fileDO;
+    }
+
+    @Override
+    public FileDO getByPath(String path, Integer module) {
+        if(isFromRedis(module)){
+            return getFromRedis(path,module);
+        }
+        return getFromDB(path,module);
+    }
+
+    private FileDO getFromRedis(String path, int module) {
+
+        String redisKey = String.format(RedisKeyFileConstants.UPLOAD_BLOG_IMAGES.getKeyTemplate(), module,path);
+        //从redis里获取。
+        String fileStr = stringRedisTemplate.opsForValue().get(redisKey);
+        FileDO fileDO;
+        //redis里没有从数据库获取。
+        if(fileStr == null){
+            fileDO = getFromDB(path,module);
+            if(fileDO != null) {
+                stringRedisTemplate.opsForValue().set(redisKey, JsonUtils.toJsonString(fileDO), 100, TimeUnit.DAYS);
+            }
+        }else{
+            fileDO = JsonUtils.parseObject(fileStr, FileDO.class);
+        }
+        return fileDO;
+    }
+
+    private FileDO getFromDB(String path, int module) {
+        List<FileDO> list = fileMapper.selectList(new QueryWrapper<FileDO>().eq("path", path)
+                .eq("module", module).eq("status", CommonStatusEnum.ENABLE.getStatus()));
+        if (!list.isEmpty()) {
+            return list.get(0);
+        }
+        return null;
+    }
+
+    private Boolean isFromRedis(int module){
+        if(module == FileStatusEnum.BACKGROUND_FILE.getStatus() || module == FileStatusEnum.SYSTEM_FILE.getStatus()
+                || module == FileStatusEnum.JS_FILE.getStatus() || module == FileStatusEnum.CSS_FILE.getStatus()){
+            return true;
+        }
+
+        return false;
     }
 }

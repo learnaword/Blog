@@ -6,15 +6,15 @@
 	<meta charset="utf-8">
 	<title>自动生成</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/plugins/layui/css/layui.css" rel="stylesheet"/>
-	<link href="/static/css/admin/style.css" rel="stylesheet">
-	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
-	<link href="/static/css/plugins/summernote/summernote.css" rel="stylesheet">
-	<link href="/static/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/css/layui.min.css" rel="stylesheet"/>
+	<link href="/upload/css/style.css" rel="stylesheet">
+	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
+	<link href="/upload/css/summernote.css" rel="stylesheet">
+	<link href="/upload/css/summernote-bs3.css" rel="stylesheet">
 	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
-	<link href="/static/css/info2.css" rel="stylesheet">
-	<link href="/static/css/admin/base.css" rel="stylesheet">
+	<link href="/upload/css/info.min.css" rel="stylesheet">
+	<link href="/upload/css/base.css" rel="stylesheet">
 
 </head>
 <style>
@@ -63,6 +63,9 @@ overflow: visible !important;
 					<div class="clearfix"></div>
 				</div>
 				<div class="mail-body text-right tooltip-demo">
+					<button id="refresh_submit" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" data-toggle="tooltip">
+						<i class="fa"></i> 刷新发布
+					</button>
 					<button id="default_submit" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" data-toggle="tooltip">
 						<i class="fa"></i> 默认发布
 					</button>
@@ -98,20 +101,20 @@ overflow: visible !important;
 		</div>
 	</div>
 	<!--全局js -->
-	<script src="/static/js/jquery.min.js"></script>
-	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/upload/js/bootstrap.min.js"></script>
 	<!--request携带token-->
-	<script src="/static/js/axios/axios.min.js"></script>
-	<script src="/static/plugins/layui/layui.js"></script>
+	<script src="/upload/js/axios.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
 	<!--Swal弹框 -->
-	<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-	<script src="/static/plugins/sweetalert2/sweetalert2.min.css"></script>
+	<script src="/upload/js/sweetalert2.min.js"></script>
+	<script src="/upload/css/sweetalert2.min.css"></script>
 	<!--上传图片-->
 	<!--SUMMERNOTE -->
-	<script src="/static/js/plugins/summernote/summernote.min.js"></script>
-	<script src="/static/js/plugins/summernote/summernote-zh-CN.js"></script>
+	<script src="/upload/js/summernote.min.js"></script>
+	<script src="/upload/js/summernote-zh-CN.js"></script>
 	<!--自定义js-->
-	<script src="/static/js/admin/token.js"></script>
+	<script src="/upload/js/admin/token.js"></script>
 	<script type="module" src="/static/js/admin/auto/blog/write.js"></script>
 </body>
 </html>

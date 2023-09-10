@@ -6,15 +6,15 @@
 	<meta charset="utf-8">
 	<title>添加文件</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
-	<link href="/static/css/admin/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/plugins/layui/css/layui.css" rel="stylesheet"/>
-	<link href="/static/css/admin/style.css" rel="stylesheet">
-	<link href="/static/plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet">
-	<link href="/static/css/plugins/summernote/summernote.css" rel="stylesheet">
-	<link href="/static/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/css/layui.min.css" rel="stylesheet"/>
+	<link href="/upload/css/style.css" rel="stylesheet">
+	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
+	<link href="/upload/css/summernote.css" rel="stylesheet">
+	<link href="/upload/css/summernote-bs3.css" rel="stylesheet">
 	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
-	<link href="/static/css/info2.css" rel="stylesheet">
-	<link href="/static/css/admin/base.css" rel="stylesheet">
+	<link href="/upload/css/info.min.css" rel="stylesheet">
+	<link href="/upload/css/base.css" rel="stylesheet">
 </head>
 <body class="white-bg">
 <div class="wrapper wrapper-content">
@@ -64,6 +64,8 @@
 									<option value="2">普通文件</option>
 									<option value="3">博客文件</option>
 									<option value="4">头像文件</option>
+									<option value="5">JS文件</option>
+									<option value="6">CSS文件</option>
 								</select>
 							</div>
 						</div>
@@ -94,20 +96,20 @@
 	</div>
 </div>
 <!--全局js -->
-<script src="/static/js/jquery.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="/upload/js/bootstrap.min.js"></script>
 <!--request携带token-->
-<script src="/static/js/axios/axios.min.js"></script>
-<script src="/static/plugins/layui/layui.js"></script>
+<script src="/upload/js/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
 <!--Swal弹框 -->
-<script src="/static/plugins/sweetalert2/sweetalert2.min.js"></script>
-<script src="/static/plugins/sweetalert2/sweetalert2.min.css"></script>
+<script src="/upload/js/sweetalert2.min.js"></script>
+<script src="/upload/css/sweetalert2.min.css"></script>
 <!--上传图片-->
 <!--SUMMERNOTE -->
-<script src="/static/js/plugins/summernote/summernote.min.js"></script>
-<script src="/static/js/plugins/summernote/summernote-zh-CN.js"></script>
+<script src="/upload/js/summernote.min.js"></script>
+<script src="/upload/js/summernote-zh-CN.js"></script>
 <!--自定义js-->
-<script src="/static/js/admin/token.js"></script>
+<script src="/upload/js/admin/token.js"></script>
 <script type="module" src="/static/js/admin/file/update.js"></script>
 </body>
 </html>
