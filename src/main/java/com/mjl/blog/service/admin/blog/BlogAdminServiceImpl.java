@@ -2,9 +2,10 @@ package com.mjl.blog.service.admin.blog;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.mjl.blog.common.pojo.PageResult;
+import com.mjl.blog.common.utils.DateUtils;
 import com.mjl.blog.controller.admin.blog.vo.*;
+import com.mjl.blog.controller.admin.echars.vo.DataRespVO;
 import com.mjl.blog.convert.admin.BlogAdminConvert;
 import com.mjl.blog.dal.dataobject.BlogDO;
 import com.mjl.blog.dal.mysql.BlogMapper;
@@ -14,8 +15,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class BlogAdminServiceImpl implements BlogAdminService {
@@ -112,5 +113,29 @@ public class BlogAdminServiceImpl implements BlogAdminService {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public DataRespVO getEcharsBlogData(Long start, Long end) {
+        DataRespVO LogDataRespVO = new DataRespVO();
+        int diffNum = (int) TimeUnit.MILLISECONDS.toDays(end - start);
+        LocalDate today = LocalDate.now();
+        Long[] counts = new Long[diffNum];
+        String[] days =  new String[diffNum];
+        Long total = 0L;
+
+        for (int i = 1; i <= diffNum; i++) {
+            Long preDate = today.minusDays(i).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
+            Long nowDate = today.minusDays(i).plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();;
+            Long sum = blogMapper.selectCount(new LambdaQueryWrapper<BlogDO>()
+                    .between(BlogDO::getCreateTime,preDate,nowDate)
+                    .eq(BlogDO::getStatus,BlogStatusEnum.PUBLISHED.getStatus()));
+            counts[diffNum-i] = sum;
+            days[diffNum-i] = DateUtils.timestampToString(nowDate);
+            total = total + sum;
+        }
+
+        LogDataRespVO.setCounts(counts).setDays(days).setTotal(total);
+        return LogDataRespVO;
     }
 }

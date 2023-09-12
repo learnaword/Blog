@@ -1,4 +1,5 @@
 import request from "/upload/js/axios-config.js";
+
 $(document).ready(function(){
     layui.use(['table', 'dropdown'], function(){
         var table = layui.table;

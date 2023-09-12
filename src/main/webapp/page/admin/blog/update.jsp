@@ -152,7 +152,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
 <!--Swal弹框 -->
 <script src="/upload/js/sweetalert2.min.js"></script>
-<script src="/upload/css/sweetalert2.min.css"></script>
 <!--上传图片-->
 <!--SUMMERNOTE -->
 <script src="/upload/js/summernote.min.js"></script>

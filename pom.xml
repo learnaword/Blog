@@ -173,11 +173,17 @@
         </dependency>
 
         <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
         </dependency>
     </dependencies>
     <build>
+        <finalName>blog</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -188,7 +194,6 @@
                 </includes>
             </resource>
         </resources>
-        <finalName>blog</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

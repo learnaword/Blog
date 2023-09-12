@@ -2,6 +2,7 @@ package com.mjl.blog.service.admin.blog;
 
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.controller.admin.blog.vo.*;
+import com.mjl.blog.controller.admin.echars.vo.DataRespVO;
 import com.mjl.blog.dal.dataobject.BlogDO;
 
 public interface BlogAdminService {
@@ -26,4 +27,6 @@ public interface BlogAdminService {
     void replace(String name, String name1);
 
     boolean fileIsUse(String name);
+
+    DataRespVO getEcharsBlogData(Long start, Long end);
 }

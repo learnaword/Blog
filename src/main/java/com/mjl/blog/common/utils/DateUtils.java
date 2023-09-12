@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 时间工具类
@@ -172,6 +173,15 @@ public class DateUtils {
      */
     public static boolean isToday(LocalDateTime date) {
         return LocalDateTimeUtil.isSameDay(date, LocalDateTime.now());
+    }
+
+    /**
+     *
+     *两个时间戳相差的天数
+     * @return 是否
+     */
+    public static Long diff(Long start,Long end) {
+        return TimeUnit.MILLISECONDS.toDays(end - start);
     }
 
 }
