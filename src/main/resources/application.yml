@@ -13,4 +13,4 @@ spring:
     locale: zh_CN
 
   profiles:
-    active: product
+    active:  @profile.active@

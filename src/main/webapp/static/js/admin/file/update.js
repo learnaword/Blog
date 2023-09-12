@@ -1,4 +1,4 @@
-import request from "../../axios/axios-config.js";
+import request from "../../plugins/axios/axios-config.js";
 $(document).ready(function() {
 	initFile();
 	layui.use(function(){

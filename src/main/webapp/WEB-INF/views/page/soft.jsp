@@ -12,7 +12,7 @@
     <link rel="shortcut icon"href="/images/favicon.ico">
     <link href="/static/css/page/soft.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/static/js/comm.js"></script>
+    <script src="/static/js/common/comm.js"></script>
 </head>
 <body>
 <%@ include file="top.jsp"%>

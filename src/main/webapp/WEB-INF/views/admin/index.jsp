@@ -13,7 +13,7 @@
 	<meta http-equiv="Cache-Control" content="no-transform" />
 	<link href="/upload/css/info.min.css" rel="stylesheet">
 	<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
-	<script src="/static/js/comm.js"></script>
+	<script src="/static/js/common/comm.js"></script>
 </head>
 <body>
 <header id="header" style="margin:0px;">

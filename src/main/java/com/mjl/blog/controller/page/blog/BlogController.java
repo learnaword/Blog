@@ -1,5 +1,6 @@
 package com.mjl.blog.controller.page.blog;
 
+import com.mjl.blog.annotation.SystemLog;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.DateUtils;
 import com.mjl.blog.common.utils.PageInfo;
@@ -44,6 +45,7 @@ public class BlogController {
     }
 
     @RequestMapping({"/find/{id}.html"})
+    @SystemLog(description = "访问了文章", userType = "游客")
     public String selectBlogById(@PathVariable Long id, Model model){
         if (id != null && id > 0) {
             BlogDO blog = blogService.selectBlogById(id);

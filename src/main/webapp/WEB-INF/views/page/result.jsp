@@ -14,7 +14,7 @@
   <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
   <link href="/static/css/page/soft.min.css" rel="stylesheet">
-  <script src="/static/js/comm.js"></script>
+  <script src="/static/js/common/comm.js"></script>
 </head>
 <body>
 <%@ include file="top.jsp"%>

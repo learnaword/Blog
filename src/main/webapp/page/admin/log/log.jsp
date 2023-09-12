@@ -157,16 +157,16 @@
 
 <!-- 全局js -->
 <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
-<script src="/static/js/highlight.pack.js"></script>
+<script src="/static/js/common/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="/upload/js/bootstrap.min.js"></script>
 <script src="/static/js/layer/layer.js"></script>
-<script src="/static/js/fakeLoader.min.js"></script>
+<script src="/static/js/common/fakeLoader.min.js"></script>
 
 <!-- Data picker -->
 <script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 <!-- 自定义js -->
-<script src="/static/js/content.js"></script>
+<script src="/static/js/common/content.js"></script>
 <script src="/upload/js/sweetalert2.min.js"></script>
 <script src="/upload/js/admin/token.js"></script>
 <script src="/static/js/admin/log/log.js"></script>
