@@ -58,7 +58,7 @@ $(document).ready(function() {
 			token: $('input[name="token"]').val(),
 			status: $('select[name="status"]').val(),
 		};
-		request.post("/admin/soft/update", formData).then(function (data) {
+		request.put("/admin/soft/update", formData).then(function (data) {
 			if (data.data.code == "0") {
 				Swal.fire({
 					type: 'success', // 弹框类型

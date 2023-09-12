@@ -24,7 +24,7 @@ public class BlogAdminController {
     /*
     * 获取各个类型文章的数量
      */
-    @GetMapping("/blogTypeCounts")
+    @GetMapping("/type-counts")
     public CommonResult<BlogTypeCountsRespVO> getBlogTypeCounts(){
         BlogTypeCountsRespVO blogTypeCountsRespVO = blogAdminService.getArticleTypeCounts();
         return success(blogTypeCountsRespVO);
@@ -33,35 +33,54 @@ public class BlogAdminController {
     /*
     *获取前preNum天的文章
      */
-    @GetMapping("/blogDateCounts")
+    @GetMapping("/date-counts")
     public CommonResult<BlogDateCountsRespVO> getBlogDateCounts(int preNum){
         BlogDateCountsRespVO blogDateCountsRespVO = blogAdminService.getBlogDateCounts(preNum);
         return success(blogDateCountsRespVO);
     }
 
-    @GetMapping("/blogTable")
+    @GetMapping("/get")
+    public CommonResult<BlogRespVO> get(Long id){
+        return success(BlogAdminConvert.INSTANCE.convert(blogAdminService.getBlogById(id)));
+    }
+
+    @GetMapping("/table")
     public CommonResult<PageResult<BlogTableRespVO>> getBlogTable(BlogTableReqVO blogTableReqVO){
         return success(BlogAdminConvert.INSTANCE.convert(blogAdminService.getBlogList(blogTableReqVO)));
     }
 
-    @PostMapping ("/updateBlogsStatus")
+    @PutMapping ("/update-status")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateBlogsStatus(@RequestBody UpdateBlogsStatusReqVO updateBlogsStatusReqVO){
         blogAdminService.updateBlogsStatus(updateBlogsStatusReqVO);
         return success(true);
     }
 
-    @PostMapping ("/updateBlogsTop")
+    @PutMapping ("/update-tops")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateBlogsTop(@RequestBody UpdateBlogsTopReqVO updateBlogsTopReqVO){
         blogAdminService.updateBlogsTop(updateBlogsTopReqVO);
         return success(true);
     }
 
-    @PostMapping ("/updateBlogsRecommend")
+    @PutMapping ("/update-recommends")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateBlogsRecommend(@RequestBody UpdateBlogsRecommendReqVO updateBlogsRecommendReqVO){
         blogAdminService.updateBlogsRecommend(updateBlogsRecommendReqVO);
+        return success(true);
+    }
+
+    @PutMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
+    public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
+        blogAdminService.update(updateReqVO);
+        return success(true);
+    }
+
+    @PostMapping ("/create-auto")
+    @PreAuthorize("@ss.hasPermissions()")
+    public CommonResult<Boolean> autoCreate(@RequestBody @Valid UpdateReqVO updateReqVO){
+        blogAdminService.update(updateReqVO);
         return success(true);
     }
 
@@ -69,25 +88,6 @@ public class BlogAdminController {
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(blogAdminService.create(createReqVO) > 0 ? true : false);
-    }
-
-    @PostMapping ("/update")
-    @PreAuthorize("@ss.hasPermissions()")
-    public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
-        blogAdminService.update(updateReqVO);
-        return success(true);
-    }
-
-    @PostMapping ("/autoCreate")
-    @PreAuthorize("@ss.hasPermissions()")
-    public CommonResult<Boolean> autoCreate(@RequestBody @Valid UpdateReqVO updateReqVO){
-        blogAdminService.update(updateReqVO);
-        return success(true);
-    }
-
-    @GetMapping("/get")
-    public CommonResult<BlogRespVO> get(Long id){
-        return success(BlogAdminConvert.INSTANCE.convert(blogAdminService.getBlogById(id)));
     }
 
 }

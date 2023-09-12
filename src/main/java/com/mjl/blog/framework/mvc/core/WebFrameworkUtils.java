@@ -1,10 +1,7 @@
-package com.mjl.blog.framework.MVC.core;
+package com.mjl.blog.framework.mvc.core;
 
-import cn.hutool.core.util.NumberUtil;
-import com.mjl.blog.common.pojo.CommonResult;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -40,7 +37,6 @@ public class WebFrameworkUtils {
         HttpServletRequest request = getRequest();
         return getLoginUserId(request);
     }
-
 
     public static HttpServletRequest getRequest() {
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();

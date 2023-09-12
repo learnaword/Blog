@@ -115,7 +115,7 @@ $('#submit_btn').on('click', function () {
 });
 
 function renderSoft() {
-	let url = "/admin/soft/softList";
+	let url = "/admin/soft/list";
 	request.get(url).then(function (data) {
 		if (data != null) {
 			//数据渲染到html

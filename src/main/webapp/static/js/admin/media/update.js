@@ -66,7 +66,7 @@ $(document).ready(function() {
 				content: $("#summernote").code(),
 				images : $('#images').attr('src'),
 			};
-			request.post("/admin/media/update", formData).then(function(data){
+			request.put("/admin/media/update", formData).then(function(data){
 				if(data.data.code == "0"){
 					Swal.fire({
 						type: 'success', // 弹框类型

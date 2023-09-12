@@ -26,9 +26,14 @@ public class SoftAdminController {
     @Resource
     private TypeAdminService typeService;
 
-    @GetMapping("/softList")
+    @GetMapping("/list")
     public CommonResult<List<SoftListVO>> getSoftList(){
         return CommonResult.success(SoftAdminConvert.INSTANCE.convert(softService.getSoftList()));
+    }
+
+    @GetMapping("/get")
+    public CommonResult<GetRespVO> get(Long id){
+        return success(SoftAdminConvert.INSTANCE.convert2(softService.getById(id)));
     }
 
     @GetMapping("/table")
@@ -45,10 +50,17 @@ public class SoftAdminController {
     }
 
 
-    @PostMapping("/updateStatus")
+    @PutMapping("/update-status")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         softService.updateStatus(updateStatusReqVO);
+        return success(true);
+    }
+
+    @PutMapping ("/update")
+    @PreAuthorize("@ss.hasPermissions()")
+    public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
+        softService.update(updateReqVO);
         return success(true);
     }
 
@@ -65,15 +77,4 @@ public class SoftAdminController {
         return success(softService.create(createReqVO) > 0 ? true : false);
     }
 
-    @PostMapping ("/update")
-    @PreAuthorize("@ss.hasPermissions()")
-    public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
-        softService.update(updateReqVO);
-        return success(true);
-    }
-
-    @GetMapping("/get")
-    public CommonResult<GetRespVO> get(Long id){
-        return success(SoftAdminConvert.INSTANCE.convert2(softService.getById(id)));
-    }
 }

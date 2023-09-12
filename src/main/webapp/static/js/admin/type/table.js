@@ -318,7 +318,7 @@ $(document).ready(function(){
 })
 
 export function updateStatus(selectedIds,status,msg){
-    request.post("/admin/type/updateStatus", {ids:selectedIds,status: status}).then(function(data){
+    request.put("/admin/type/update-status", {ids:selectedIds,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题

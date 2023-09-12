@@ -44,7 +44,10 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
         }
 
         SoftDO softDO = softService.getSoftById(autoConfigDO.getSoftId());
-
+        String contentImges = "";
+        if(!createReqVO.getContent().contains("img")){
+            contentImges ="<img src=\"" +autoConfigDO.getContentImages()+ "\" style=\"width: 339.486px; float: none;\" class=\"imageCenter\"><br>";
+        }
         String[] sentenceHead =sentenceDOList.get(0).getContent().split("，");
         String introduction =autoConfigDO.getTitle() + sentenceHead[0] + "，" + sentenceHead[1] + "，下面回答的问题是“" + createReqVO.getTitle() + "”，希望可以帮到你。";
         String contentHtml = "<p>" + softDO.getTitle() + sentenceHead[0] + "，" + sentenceHead[1] + "，下面回答的问题是“" + createReqVO.getTitle() + "”，希望可以帮到你。" +
@@ -53,10 +56,9 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
                 autoConfigDO.getRecommendHtml()+"<br>" +
                 "<span style=\"font-weight: bold;\">问题答案</span><br><br>" +
                 createReqVO.getContent() +
-                "<br><img src=\"" +
-                autoConfigDO.getContentImages()+
-                "\" style=\"width: 339.486px; float: none;\" class=\"imageCenter\">" +
-                "<br>以上就是" +
+                "<br>"+
+                contentImges +
+                "以上就是" +
                 createReqVO.getTitle() +
                 "的全部内容了，" +
                 softDO.getTitle()  +

@@ -18,11 +18,11 @@ public class SecurityFrameworkServiceImpl implements SecurityFrameworkService {
 
     @Override
     public boolean hasPermissions() {
+
         LoginUser user = SecurityFrameworkUtils.getLoginUser();
         if (user == null) {
             return false;
         }
-
         if(user.isHasPermission()){
             return true;
         }

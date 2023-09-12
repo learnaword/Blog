@@ -16,7 +16,7 @@ $(document).ready(function() {
 			data:{
 				id: id,
 			},
-			url: '/admin/file/updateContent',
+			url: '/admin/file/update-content',
 			done: function(res){
 				if(res.code== "0"){
 					Swal.fire({
@@ -49,7 +49,7 @@ $('#submit_btn').on('click', function () {
 		module: $('select[name="module"]').val(),
 		status: $('select[name="status"]').val(),
 	};
-	request.post("/admin/file/update", formData).then(function(data){
+	request.put("/admin/file/update", formData).then(function(data){
 		if(data.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型

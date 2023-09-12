@@ -95,7 +95,7 @@ $('#submit_btn').on('click', function () {
 		images : $('#images').attr('src'),
 		contentImages : $('#contentImages').attr('src'),
 	};
-	request.post("/admin/auto-config/update", formData).then(function(data){
+	request.put("/admin/auto-config/update", formData).then(function(data){
 		if(data.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型
@@ -145,7 +145,7 @@ function initConfig() {
 }
 
 function renderSoft() {
-	let url = "/admin/soft/softList";
+	let url = "/admin/soft/list";
 	request.get(url).then(function (data) {
 		if (data != null) {
 			//数据渲染到html

@@ -1,6 +1,7 @@
 import request from "/upload/js/axios-config.js";
 
 $(document).ready(function() {
+	renderType();
 	layui.use(function(){
 		var upload = layui.upload;
 		var $ = layui.$;
@@ -68,5 +69,26 @@ $('#submit_btn').on('click', function () {
 		}
 	});
 });
+
+function renderType() {
+	let url = "/admin/type/list";
+	request.get(url).then(function (data) {
+		if (data != null) {
+			//数据渲染到html
+			var responseData = data.data.data;
+			$('select[name="typeId"]').html("");
+			var typeName = '';
+			for (var i = 0; i < responseData.length; i++) {
+				typeName += '<option value="' + responseData[i].id + '">' + responseData[i].title + '</option>';
+			}
+			// 初始化数据
+			$('select[name="typeId"]').append(typeName);
+			//初始化博客信息。
+			//为什么放这里，因为我也不知道为什么，不放这里$('select[name="softId"]').val(data.softId)选不上。
+			//可能是和加载顺序有关系，放在这里可以保证先初始化soft信息，再来初始化博客。
+			layui.form.render();
+		}
+	});
+}
 
 

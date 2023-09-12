@@ -30,12 +30,9 @@ public class TypeAdminController {
         return success(TypeAdminConvert.INSTANCE.convert(typeService.getList(tableReqVO)));
     }
 
-
-    @PostMapping("/updateStatus")
-    @PreAuthorize("@ss.hasPermissions()")
-    public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
-        typeService.updateStatus(updateStatusReqVO);
-        return success(true);
+    @GetMapping("/get")
+    public CommonResult<GetRespVO> get(Long id){
+        return success(TypeAdminConvert.INSTANCE.convert2(typeService.getById(id)));
     }
 
     @PostMapping ("/create")
@@ -44,15 +41,12 @@ public class TypeAdminController {
         return success(typeService.create(createReqVO) > 0 ? true : false);
     }
 
-    @PostMapping ("/update")
+    @PutMapping ("/update")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         typeService.update(updateReqVO);
         return success(true);
     }
 
-    @GetMapping("/get")
-    public CommonResult<GetRespVO> get(Long id){
-        return success(TypeAdminConvert.INSTANCE.convert2(typeService.getById(id)));
-    }
+
 }

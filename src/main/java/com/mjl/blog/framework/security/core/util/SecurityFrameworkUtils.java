@@ -1,6 +1,6 @@
 package com.mjl.blog.framework.security.core.util;
 
-import com.mjl.blog.framework.MVC.core.WebFrameworkUtils;
+import com.mjl.blog.framework.mvc.core.WebFrameworkUtils;
 import com.mjl.blog.framework.security.core.LoginUser;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.lang.Nullable;

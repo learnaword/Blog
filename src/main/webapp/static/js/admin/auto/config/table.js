@@ -243,7 +243,7 @@ $(document).ready(function(){
     });
 })
 export function updateConfigStatus(selectedIds,status,msg){
-    request.post("/admin/auto-config/updateConfigStatus", {ids:selectedIds,status: status}).then(function(data){
+    request.put("/admin/auto-config/update-status", {ids:selectedIds,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题

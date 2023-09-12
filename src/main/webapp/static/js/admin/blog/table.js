@@ -9,7 +9,7 @@ $(document).ready(function(){
         // 创建渲染实例
         table.render({
             elem: '#test'
-            ,url:'/admin/blog/blogTable' // 此处为静态模拟数据，实际使用时需换成真实接口
+            ,url:'/admin/blog/table' // 此处为静态模拟数据，实际使用时需换成真实接口
             ,toolbar: '#toolbarDemo'
             ,headers: {
                 'Authorization': 'Bearer ' + token // 设置 Authorization 头，通常用于传递 token
@@ -314,7 +314,7 @@ $(document).ready(function(){
     });
 })
 export function updateBlogsStatus(selectedIds,status,msg){
-    request.post("/admin/blog/updateBlogsStatus", {ids:selectedIds,status: status}).then(function(data){
+    request.put("/admin/blog/update-status", {ids:selectedIds,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题
@@ -332,7 +332,7 @@ export function updateBlogsStatus(selectedIds,status,msg){
 }
 
 export function updateBlogsRecommend(selectedIds,isRecommend){
-    request.post("/admin/blog/updateBlogsRecommend", {ids:selectedIds,isRecommend: isRecommend}).then(function(data){
+    request.put("/admin/blog/update-recommends", {ids:selectedIds,isRecommend: isRecommend}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: '设置推荐', //标题
@@ -345,7 +345,7 @@ export function updateBlogsRecommend(selectedIds,isRecommend){
 }
 
 export function updateBlogsTop(selectedIds,isTop){
-    request.post("/admin/blog/updateBlogsTop", {ids:selectedIds,isTop: isTop}).then(function(data){
+    request.put("/admin/blog/update-tops", {ids:selectedIds,isTop: isTop}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: '设置置顶', //标题

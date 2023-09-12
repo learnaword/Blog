@@ -12,7 +12,7 @@ $('#submit_btn').on('click', function () {
 		usages: $('input[name="usages"]').val(),
 		content: $('textarea[name="content"]').val(),
 	};
-	request.post("/admin/auto-sentence/update", formData).then(function(data){
+	request.put("/admin/auto-sentence/update", formData).then(function(data){
 		if(data.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型

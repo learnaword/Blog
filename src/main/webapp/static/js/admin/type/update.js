@@ -55,7 +55,7 @@ $('#submit_btn').on('click', function () {
 		token: $('input[name="token"]').val(),
 		status: $('select[name="status"]').val(),
 	};
-	request.post("/admin/soft/update", formData).then(function(data){
+	request.put("/admin/soft/update", formData).then(function(data){
 		if(data.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型
@@ -137,7 +137,7 @@ function sendFile(file, editor, $editable) {
 }
 
 function renderSoft() {
-	let url = "/admin/soft/softList";
+	let url = "/admin/soft/list";
 	request.get(url).then(function (data) {
 		if (data != null) {
 			//数据渲染到html

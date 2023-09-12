@@ -1,4 +1,4 @@
-package com.mjl.blog.framework.MVC.handler;
+package com.mjl.blog.framework.mvc.handler;
 
 import com.mjl.blog.common.enums.GlobalErrorCodeConstants;
 import com.mjl.blog.common.exception.ServiceException;

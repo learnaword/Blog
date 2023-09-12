@@ -39,13 +39,23 @@ public class AutoConfigAdminServiceImpl implements AutoConfigAdminService {
     @Override
     public AutoConfigDO getByBlogTitle(String title) {
         List<AutoConfigDO> autoConfigDOList = getList();
+        AutoConfigDO result=null;
+        SoftDO mainSoftDO = null;
         for (AutoConfigDO autoConfigDO:autoConfigDOList) {
             SoftDO softDO = softService.getSoftById(autoConfigDO.getSoftId());
             if(title.contains(softDO.getTitle()) && autoConfigDO.getBlogStatus().equals(BlogStatusEnum.PUBLISHED.getStatus())){
-                return autoConfigDO;
+                if(result==null){
+                    result = autoConfigDO;
+                    mainSoftDO = softDO;
+                }else{
+                    if(softDO.getTitle().length() > mainSoftDO.getTitle().length() ){
+                        result = autoConfigDO;
+                        mainSoftDO = softDO;
+                    }
+                }
             }
         }
-        return null;
+        return result;
     }
 
     @Override

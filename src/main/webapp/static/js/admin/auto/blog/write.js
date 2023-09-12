@@ -27,6 +27,7 @@ $(document).ready(function() {
 		}
 	});
 
+	$("#summernote").code("<p>您好，</p>");
 	layui.use(['table','laytpl'], function () {
 		var layer = layui.layer;
 		var util = layui.util;
@@ -127,12 +128,12 @@ function sendFile(file, editor, $editable) {
 	}
 
 	//以上防止在图片在编辑器内拖拽引发第二次上传导致的提示错误
-	data = new FormData();
+	var data = new FormData();
 	data.append("file", file);
 	data.append("key", filename); //唯一性参数
-	data.append("module",3)
+	data.append("module",3);
 
-	request.post("/admin/file/upload",data).then(function(data) {
+	request.post("/admin/file/upload",data).then(function(res) {
 		if(res.data.code == "0"){
 			Swal.fire({
 				type: 'success', // 弹框类型

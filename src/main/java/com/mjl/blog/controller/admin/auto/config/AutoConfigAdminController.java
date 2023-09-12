@@ -28,6 +28,12 @@ public class AutoConfigAdminController {
     @Resource
     private SoftAdminService softService;
 
+    @PostMapping ("/create")
+    @PreAuthorize("@ss.hasPermissions()")
+    public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
+        return success(autoConfigService.create(createReqVO) > 0 ? true : false);
+    }
+
     @GetMapping("/table")
     public CommonResult<PageResult<TableRespVO>> getBlogTable(TableReqVO tableReqVO){
 
@@ -43,34 +49,29 @@ public class AutoConfigAdminController {
         return success(new PageResult<>(autoConfigList,configDOPageResult.getTotal()));
     }
 
+    @GetMapping("/get")
+    public CommonResult<GetRespVO> get(Long id){
+        return success(AutoConfigAdminConvert.INSTANCE.convert2(autoConfigService.getById(id)));
+    }
+
     @GetMapping("/list")
     public CommonResult<List<AutoConfigDO>> getList(){
         return CommonResult.success(autoConfigService.getList());
     }
 
-    @PostMapping ("/updateConfigStatus")
+    @PutMapping ("/update-status")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> updateConfigStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         autoConfigService.updateStatus(updateStatusReqVO);
         return success(true);
     }
 
-    @PostMapping ("/create")
-    @PreAuthorize("@ss.hasPermissions()")
-    public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
-        return success(autoConfigService.create(createReqVO) > 0 ? true : false);
-    }
-
-    @PostMapping ("/update")
+    @PutMapping ("/update")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         autoConfigService.update(updateReqVO);
         return success(true);
     }
 
-    @GetMapping("/get")
-    public CommonResult<GetRespVO> get(Long id){
-        return success(AutoConfigAdminConvert.INSTANCE.convert2(autoConfigService.getById(id)));
-    }
 
 }

@@ -367,7 +367,7 @@ $(document).ready(function(){
 
 })
 export function updateStatus(selectedIds,status,msg){
-    request.post("/admin/file/updateStatus", {ids:selectedIds,status: status}).then(function(data){
+    request.put("/admin/file/update-status", {ids:selectedIds,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题
@@ -385,7 +385,7 @@ export function updateStatus(selectedIds,status,msg){
 }
 
 export function updateModule(selectedIds,module,msg){
-    request.post("/admin/file/updateModule", {ids:selectedIds,module: module}).then(function(data){
+    request.put("/admin/file/update-module", {ids:selectedIds,module: module}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题

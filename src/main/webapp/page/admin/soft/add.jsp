@@ -93,21 +93,23 @@
 				</div>
 			</div>
 		</div>
-		<!--全局js -->
-		<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
-		<script src="/upload/js/bootstrap.min.js"></script>
-		<!--request携带token-->
-		<script src="/upload/js/axios.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
-		<!--Swal弹框 -->
-		<script src="/upload/js/sweetalert2.min.js"></script>
-		<script src="/upload/css/sweetalert2.min.css"></script>
-		<!--上传图片-->
-		<!--SUMMERNOTE -->
-		<script src="/upload/js/summernote.min.js"></script>
-		<script src="/upload/js/summernote-zh-CN.js"></script>
-		<!--自定义js-->
-		<script src="/upload/js/admin/token.js"></script>
-		<script type="module" src="/static/js/admin/soft/add.js"></script>
+	</div>
+</div>
+<!--全局js -->
+<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="/upload/js/bootstrap.min.js"></script>
+<!--request携带token-->
+<script src="/upload/js/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
+<!--Swal弹框 -->
+<script src="/upload/js/sweetalert2.min.js"></script>
+<script src="/upload/css/sweetalert2.min.css"></script>
+<!--上传图片-->
+<!--SUMMERNOTE -->
+<script src="/upload/js/summernote.min.js"></script>
+<script src="/upload/js/summernote-zh-CN.js"></script>
+<!--自定义js-->
+<script src="/upload/js/admin/token.js"></script>
+<script type="module" src="/static/js/admin/soft/add.js"></script>
 </body>
 </html>

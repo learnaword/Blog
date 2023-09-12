@@ -69,7 +69,7 @@ $(document).ready(function() {
 				content: $("#summernote").code(),
 				images : $('#images').attr('src'),
 			};
-			request.post("/admin/blog/update", formData).then(function(data){
+			request.put("/admin/blog/update", formData).then(function(data){
 				if(data.data.code == "0"){
 					Swal.fire({
 						type: 'success', // 弹框类型
@@ -129,7 +129,7 @@ $(document).ready(function() {
 });
 
 function renderSoft() {
-	let url = "/admin/soft/softList";
+	let url = "/admin/soft/list";
 	request.get(url).then(function (data) {
 		if (data != null) {
 			//数据渲染到html

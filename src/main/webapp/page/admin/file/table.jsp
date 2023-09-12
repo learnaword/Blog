@@ -52,7 +52,6 @@
 		</a>
 	</div>
 </script>
-
 <script>
 	layui.use(function(){
 		var upload = layui.upload;

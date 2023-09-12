@@ -214,7 +214,7 @@ $(document).ready(function(){
 
 })
 export function updateStatus(selectedIds,status,msg){
-    request.post("/admin/auto-sentence/updateStatus", {ids:selectedIds,status: status}).then(function(data){
+    request.put("/admin/auto-sentence/update-status", {ids:selectedIds,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题

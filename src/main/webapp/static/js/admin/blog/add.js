@@ -37,7 +37,7 @@ $(document).ready(function() {
 				$('#configBlog').removeClass("layui-hide")
 				//通过id向后端传递数据
 
-				let url = "/admin/soft/softList";
+				let url = "/admin/soft/list";
 				request.get(url).then(function (data) {
 					if (data != null) {
 						//数据渲染到html

@@ -75,7 +75,7 @@
 		// 渲染
 		upload.render({
 			elem: '#upload',
-			url: '/admin/auto-sentence/fileCreate', // 此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
+			url: '/admin/auto-sentence/create-file', // 此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
 			accept: 'file',
 			headers: {
 				'Authorization': 'Bearer ' + token // 设置Token请求头

@@ -1,7 +1,5 @@
-package com.mjl.blog.framework.MVC;
+package com.mjl.blog.framework.mvc;
 
-import com.mjl.blog.framework.MVC.handler.GlobalExceptionHandler;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

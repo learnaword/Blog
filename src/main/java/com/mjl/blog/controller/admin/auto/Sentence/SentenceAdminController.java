@@ -28,25 +28,25 @@ public class SentenceAdminController {
         return success(SentenceAdminConvert.INSTANCE.convert(sentenceService.getList(tableReqVO)));
     }
 
-    @PostMapping("/updateStatus")
-    public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
-        sentenceService.updateStatus(updateStatusReqVO);
-        return success(true);
-    }
-
     @GetMapping("/get")
     public CommonResult<GetRespVO> get(Long id){
         return success(SentenceAdminConvert.INSTANCE.convert2(sentenceService.getById(id)));
     }
 
-    @PostMapping ("/update")
+    @PutMapping("/update-status")
+    public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
+        sentenceService.updateStatus(updateStatusReqVO);
+        return success(true);
+    }
+
+    @PutMapping ("/update")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         sentenceService.update(updateReqVO);
         return success(true);
     }
 
-    @RequestMapping ("/fileCreate")
+    @PostMapping ("/create-file")
     @PreAuthorize("@ss.hasPermissions()")
     public CommonResult<Boolean> fileCreate(FIleCreateReqVO fIleCreateReqVO) throws IOException {
         MultipartFile file = fIleCreateReqVO.getFile();
