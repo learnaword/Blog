@@ -13,6 +13,7 @@ import com.mjl.blog.enums.BlogStatusEnum;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
@@ -118,20 +119,20 @@ public class BlogAdminServiceImpl implements BlogAdminService {
     @Override
     public DataRespVO getEcharsBlogData(Long start, Long end) {
         DataRespVO LogDataRespVO = new DataRespVO();
-        int diffNum = (int) TimeUnit.MILLISECONDS.toDays(end - start);
-        LocalDate today = LocalDate.now();
+        int diffNum = (int) TimeUnit.MILLISECONDS.toDays(end - start) + 1;
+        LocalDate startTime = Instant.ofEpochMilli(start).atZone(ZoneId.systemDefault()).toLocalDate();
         Long[] counts = new Long[diffNum];
         String[] days =  new String[diffNum];
         Long total = 0L;
 
-        for (int i = 1; i <= diffNum; i++) {
-            Long preDate = today.minusDays(i).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
-            Long nowDate = today.minusDays(i).plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();;
+        for (int i = 0; i < diffNum; i++) {
+            Long preDate = startTime.plusDays(i).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
+            Long nowDate = startTime.plusDays(i+1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();;
             Long sum = blogMapper.selectCount(new LambdaQueryWrapper<BlogDO>()
                     .between(BlogDO::getCreateTime,preDate,nowDate)
                     .eq(BlogDO::getStatus,BlogStatusEnum.PUBLISHED.getStatus()));
-            counts[diffNum-i] = sum;
-            days[diffNum-i] = DateUtils.timestampToString(nowDate);
+            counts[i] = sum;
+            days[i] = DateUtils.timestampToString(preDate);
             total = total + sum;
         }
 

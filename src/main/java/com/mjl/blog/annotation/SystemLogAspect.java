@@ -2,8 +2,10 @@ package com.mjl.blog.annotation;
 
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import com.mjl.blog.dal.dataobject.LogDO;
+import com.mjl.blog.dal.redis.RedisLogConstants;
 import com.mjl.blog.service.admin.log.LogService;
 import com.mjl.blog.utils.UserIpUtil;
 import jakarta.annotation.Resource;
@@ -12,6 +14,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -23,6 +26,9 @@ public class SystemLogAspect {
 	@Resource
 	private LogService logService;
 
+	@Resource
+	StringRedisTemplate stringRedisTemplate;
+
 	// Service层切点
 	@Pointcut("@annotation(com.mjl.blog.annotation.SystemLog)")
 	public void serviceAspect() {
@@ -33,13 +39,17 @@ public class SystemLogAspect {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
 				.getRequestAttributes()).getRequest();
 		try {
+
+			String ip = UserIpUtil.getIp(request);
 			// 数据库日志
 			LogDO log = new LogDO()
 					.setUserType(getUserType(joinPoint)).setIp(UserIpUtil.getIp(request))
 					.setParam(joinPoint.getArgs()[0].toString()).setDescription(getDescription(joinPoint))
 					.setCreateTime(((new Date()).getTime()) );
 
-			if(!log.getParam().equals("none")){
+			String redisKey = String.format(RedisLogConstants.LOG_IP.getKeyTemplate(),ip);
+			if(!log.getParam().equals("none") && !stringRedisTemplate.hasKey(redisKey)){
+				stringRedisTemplate.opsForValue().set(redisKey,"0",1, TimeUnit.DAYS);
 				logService.insert(log);
 			}
 
