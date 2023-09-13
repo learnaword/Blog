@@ -1,6 +1,7 @@
 package com.mjl.blog.framework.mvc.handler;
 
 import com.mjl.blog.common.enums.GlobalErrorCodeConstants;
+import com.mjl.blog.common.exception.ServerException;
 import com.mjl.blog.common.exception.ServiceException;
 import com.mjl.blog.common.pojo.CommonResult;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,8 +24,18 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 @Slf4j
 public class GlobalExceptionHandler {
 
+    @ExceptionHandler(value = ServerException.class)
+    public CommonResult<?> ServerExceptionHandler(ServerException ex){
+
+        return CommonResult.error(ex.getCode(), ex.getMessage());
+
+   /*   System.out.println(11111111+"-----------------");
+        ModelAndView modelAndView = new ModelAndView("error");
+        return modelAndView;*/
+    }
+
     @ExceptionHandler(value = ServiceException.class)
-    public CommonResult<?> ServiceExceptionHandler(ServiceException ex){
+    public CommonResult<?> ServiceException(ServiceException ex){
         log.warn("[ServiceException]", ex);
         return CommonResult.error(ex.getCode(), ex.getMessage());
     }
@@ -48,7 +59,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = NoHandlerFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ModelAndView errorHandler(HttpServletRequest request, NoHandlerFoundException exception, HttpServletResponse response) {
-        System.out.println("132131231231313123");
         ModelAndView modelAndView = new ModelAndView("error");
         return modelAndView;
     }

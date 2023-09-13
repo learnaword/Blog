@@ -119,12 +119,13 @@
 						</li>
 					</ul>
 				</li>
+				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">
+					<i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
+				</li>
 				<li><a class="J_menuItem" href="/page/admin/log/log.jsp">
 					<i class="fa fa-hourglass-2"></i>
 					<span class="nav-label">操作日志</span></a>
 				 </li>
-				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp"><i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
-				</li>
 				<li><a href="/" target= "_blank"><i class="fa fa-desktop"></i> <span
 						class="nav-label">前台页面 </span></a>
 				</li>

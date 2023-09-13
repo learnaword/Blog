@@ -1,5 +1,6 @@
 package com.mjl.blog.controller.page.blog;
 
+import com.mjl.blog.annotation.ServiceLimit;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.DateUtils;
 import com.mjl.blog.common.utils.PageInfo;
@@ -48,6 +49,7 @@ public class MediaController {
     }
 
     @RequestMapping({"/find/{id}.html"})
+    @ServiceLimit
     public String selectMediaById(@PathVariable Long id, Model model){
         if (id != null && id > 0) {
             MediaDO media = mediaService.selectMediaById(id);
