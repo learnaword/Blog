@@ -74,6 +74,7 @@ $(document).ready(function() {
 						text: "保存成功！", //显示内容
 						confirmButtonText: '确定',
 					}).then(function(isConfirm) {
+					    location.reload();
 					})
 				}else{
 					Swal.fire({

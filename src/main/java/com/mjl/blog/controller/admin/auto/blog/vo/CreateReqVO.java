@@ -11,5 +11,5 @@ public class CreateReqVO {
     private Long autoConfig;
     private String content;
     private String images;
-
+    private Integer status = 1;
 }

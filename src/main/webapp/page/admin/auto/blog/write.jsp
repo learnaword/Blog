@@ -63,6 +63,9 @@
 					<div class="clearfix"></div>
 				</div>
 				<div class="mail-body text-right tooltip-demo">
+					<button id="draft_submit" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" data-toggle="tooltip">
+						<i class="fa"></i> 存到草稿
+					</button>
 					<button id="refresh_submit" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" data-toggle="tooltip">
 						<i class="fa"></i> 刷新发布
 					</button>

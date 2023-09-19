@@ -6,9 +6,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>${softInfo.title}</title>
-    <meta name="keywords" content="${softInfo.title}" />
-    <meta name="description" content="${softInfo.introduction}" />
+    <title>思想与现实</title>
+    <meta name="keywords" content="思想与现实" />
+    <meta name="description" content="嗯，真是个复杂的问题～" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon"href="/images/favicon.ico">
     <link href="/static/css/page/media.min.css" rel="stylesheet">

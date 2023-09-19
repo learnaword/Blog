@@ -130,13 +130,13 @@ public class BlogServiceImpl implements BlogService{
     @Override
     public BlogDO selectNextBlog(Long id, Long softId) {
         return blogMapper.selectOne(new LambdaQueryWrapper<BlogDO>().eq(BlogDO::getSoftId,softId)
-                .gt(BlogDO::getId,id).orderByAsc(BlogDO::getId).last("limit 1"));
+                .gt(BlogDO::getId,id).eq(BlogDO::getStatus,BlogStatusEnum.PUBLISHED.getStatus()).orderByAsc(BlogDO::getId).last("limit 1"));
     }
 
     @Override
     public BlogDO selectPrevBlog(Long id, Long softId) {
         return blogMapper.selectOne(new LambdaQueryWrapper<BlogDO>().eq(BlogDO::getSoftId,softId)
-                .lt(BlogDO::getId,id).orderByDesc(BlogDO::getId).last("limit 1"));
+                .lt(BlogDO::getId,id).eq(BlogDO::getStatus,BlogStatusEnum.PUBLISHED.getStatus()).orderByDesc(BlogDO::getId).last("limit 1"));
     }
 
     @Override

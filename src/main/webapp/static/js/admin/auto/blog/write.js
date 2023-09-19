@@ -84,6 +84,38 @@ $(document).ready(function() {
 		});
 
 
+		$('#draft_submit').on('click', function () {
+			var formData = {
+				title: $('input[name="title"]').val(),
+				autoConfig: $('select[name="autoConfig"]').val(),
+				content: $("#summernote").code(),
+				status: -1,
+				images : $('#images').attr('src'),
+			};
+			request.post("/admin/auto-blog/create", formData).then(function(data){
+				if(data.data.code == "0"){
+					Swal.fire({
+						type: 'success', // 弹框类型
+						title: '草稿', //标题
+						text: "发布成功！", //显示内容
+						confirmButtonText: '确定',
+					}).then(function(isConfirm) {
+					    location.reload();
+					})
+				}else{
+					Swal.fire({
+						type: 'file', // 弹框类型
+						title: '失败信息', //标题
+						text: data.data.msg, //显示内容
+						confirmButtonText: '确定',
+					}).then(function(isConfirm) {
+
+					})
+				}
+			});
+		});
+
+
 		$('#refresh_submit').on('click', function () {
 			var formData = {
 				title: $('input[name="title"]').val(),

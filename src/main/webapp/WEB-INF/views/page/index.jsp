@@ -48,9 +48,9 @@
                         <img src="${baseUrl}/images/indexSmall1.JPG" alt="帮忙么网">
                     </a>
                 </li>
-                <li><a href="${baseUrl}/softDetail/83.html" title="生活经验">
-                        <img src="${baseUrl}/images/indexSmall2.jpg" alt="生活经验">
-                        <span>生活经验分享</span>
+                <li><a href="${baseUrl}/media/media.html" title="思想与现实思想与现实">
+                        <img src="${baseUrl}/images/indexSmall2.jpg" alt="思想与现实">
+                        <span>思想与现实</span>
                     </a>
                 </li>
             </ul>

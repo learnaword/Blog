@@ -78,7 +78,7 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
         blogDO.setUpdateTime(System.currentTimeMillis());
         blogDO.setKeyword(createReqVO.getTitle());
         blogDO.setIntroduction(introduction);
-        blogDO.setStatus(autoConfigDO.getBlogStatus());
+        blogDO.setStatus(createReqVO.getStatus());
         blogMapper.insert(blogDO);
 
         //更新句子使用次数

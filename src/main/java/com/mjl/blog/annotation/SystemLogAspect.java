@@ -39,7 +39,6 @@ public class SystemLogAspect {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
 				.getRequestAttributes()).getRequest();
 		try {
-
 			String ip = UserIpUtil.getIp(request);
 			// 数据库日志
 			LogDO log = new LogDO()
@@ -52,7 +51,6 @@ public class SystemLogAspect {
 				stringRedisTemplate.opsForValue().set(redisKey,"0",1, TimeUnit.DAYS);
 				logService.insert(log);
 			}
-
 		} catch (Exception e) {
 		}
 	}
