@@ -13,10 +13,15 @@ import com.mjl.blog.service.page.blog.BlogService;
 import com.mjl.blog.service.page.soft.SoftService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
+import java.nio.charset.Charset;
 import java.util.List;
 
 @Controller
@@ -49,16 +54,14 @@ public class BlogController {
     @RequestMapping({"/find/{id}.html"})
     @SystemLog(description = "访问了文章", userType = "游客")
     @ServiceLimit
-    public String selectBlogById(@PathVariable Long id, Model model){
+    public String selectBlogById(@PathVariable Long id, Model model)  {
         if (id != null && id > 0) {
             BlogDO blog = blogService.selectBlogById(id);
             if (blog == null) {
-                model.addAttribute("status", 404);
-                return "/page/majunliangdas";
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Blog not found");
             }
 
             BlogInfoRespVO blogInfoRespVO = BlogConvert.INSTANCE.convert(blog);
-           // blogInfoRespVO.setCreateTime(DateUtils.timestampToString(blog.getCreateTime()));
             SoftDO softDO = softService.selectById(blog.getSoftId());
             blogInfoRespVO.setSoft(softDO);
 

@@ -26,12 +26,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = ServerException.class)
     public CommonResult<?> ServerExceptionHandler(ServerException ex){
-
         return CommonResult.error(ex.getCode(), ex.getMessage());
-
-   /*   System.out.println(11111111+"-----------------");
-        ModelAndView modelAndView = new ModelAndView("error");
-        return modelAndView;*/
     }
 
     @ExceptionHandler(value = ServiceException.class)
