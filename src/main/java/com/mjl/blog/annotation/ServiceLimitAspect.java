@@ -21,16 +21,13 @@ public class ServiceLimitAspect {
     }
 
     @Around("serviceLimit()")
-    public Object around(ProceedingJoinPoint joinPoint) {
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         Boolean flag = rateLimiter.tryAcquire();
         Object obj = null;
         if (flag) {
-            try {
-                //执行目标方法
-                obj = joinPoint.proceed();
-            }catch (Throwable e) {
-                e.printStackTrace();
-            }
+            //执行目标方法
+            //不能在这里添加try-catch，否则GlobalExceptionHandler不处理
+            obj = joinPoint.proceed();
         }else{
             throw new ServerException(TOO_MANY_REQUESTS);
         }

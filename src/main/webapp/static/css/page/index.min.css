@@ -33,7 +33,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .banner:hover .fader_controls .pic_page.next{right:20px}
 .fader{position:relative;width:100%;height:260px;font-family:futura,arial;overflow:hidden}
 .fader .slide{position:absolute;width:100%;top:0;z-index:1;opacity:0}
-.fader .slide img{width:100%;height:260px;margin:auto}
+.fader .slide img{width:100%;height:250px;margin:auto}
 .fader .next,.fader .prev{position:absolute;height:32px;line-height:32px;width:40px;top:50%;left:50px;z-index:4;margin-top:-25px;cursor:pointer;opacity:0;transition:all 150ms}
 .fader .prev{background:url(/images/left.png) no-repeat}
 .fader .next{left:auto;right:50px;background:url(/images/right.png) no-repeat}
@@ -192,7 +192,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .zhuanti li{width:27%}
     .searchbox{width:96%}
     .box,article{width:100%}
-    .fader .slide img{height:260px}
+    .fader .slide img{height:250px}
     .links li{width:100%;text-align:left}
     .jianzhan li section{margin:0 5px}
     .jianzhan li:nth-child(1){width:30%}
@@ -290,7 +290,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .bloginfo{width:70%;margin-top:8px;}
     .imgscale img{height:100%;max-width:100%}
     .blogpic i{display:none}
-    .fader .slide img{height:260px}
+    .fader .slide img{height:250px}
     .otherlink li{width:100%}
     .top_info{height:60px}
     .zhuanti span{display:none}

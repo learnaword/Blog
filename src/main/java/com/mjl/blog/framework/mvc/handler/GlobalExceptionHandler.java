@@ -4,8 +4,6 @@ import com.mjl.blog.common.enums.GlobalErrorCodeConstants;
 import com.mjl.blog.common.exception.ServerException;
 import com.mjl.blog.common.exception.ServiceException;
 import com.mjl.blog.common.pojo.CommonResult;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import lombok.AllArgsConstructor;
@@ -14,10 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.NoHandlerFoundException;
 
 @RestControllerAdvice
 @AllArgsConstructor
@@ -47,15 +43,4 @@ public class GlobalExceptionHandler {
         String errorMessage = fieldError.getDefaultMessage();
         return CommonResult.error(GlobalErrorCodeConstants.BAD_REQUEST.getCode(), String.format("请求参数不正确:%s", errorMessage));
     }
-
-    /**
-     * 404异常处理
-     */
-    @ExceptionHandler(value = NoHandlerFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ModelAndView errorHandler(HttpServletRequest request, NoHandlerFoundException exception, HttpServletResponse response) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        return modelAndView;
-    }
-
 }
