@@ -14,5 +14,5 @@ spring:
     locale: zh_CN
 
   profiles:
-    active: local
+    active: prod
 

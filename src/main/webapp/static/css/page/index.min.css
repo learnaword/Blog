@@ -27,13 +27,13 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .mediaCard h3 {font-size:16px;}
 .mediaCard p {color:#666;}
 
-.banbox{width:68.5%;overflow:hidden;float:left;border-radius:3px;margin-bottom:0px}
+.banbox{width:68.5%;overflow:hidden;float:left;border-radius:3px;margin-bottom:20px}
 .banner{width:100%;overflow:hidden;float:left}
 .banner:hover .fader_controls .pic_page.prev{left:20px}
 .banner:hover .fader_controls .pic_page.next{right:20px}
 .fader{position:relative;width:100%;height:260px;font-family:futura,arial;overflow:hidden}
 .fader .slide{position:absolute;width:100%;top:0;z-index:1;opacity:0}
-.fader .slide img{width:100%;height:250px;margin:auto}
+.fader .slide img{width:100%;height:260px;margin:auto}
 .fader .next,.fader .prev{position:absolute;height:32px;line-height:32px;width:40px;top:50%;left:50px;z-index:4;margin-top:-25px;cursor:pointer;opacity:0;transition:all 150ms}
 .fader .prev{background:url(/images/left.png) no-repeat}
 .fader .next{left:auto;right:50px;background:url(/images/right.png) no-repeat}
@@ -43,8 +43,8 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .banner:hover .fader_controls .pic_page.prev{left:20px}
 .banner:hover .fader_controls .pic_page.next{right:20px}
 .headline{width:30%;float:right;overflow:hidden}
-.headline ul{height:260px}
-.headline ul li{width:100%;background:#000;overflow:hidden;height:125px;margin-bottom:0px;border-radius:3px;position:relative}
+.headline ul{height:270px}
+.headline ul li{width:100%;background:#000;overflow:hidden;height:125px;margin-bottom:10px;border-radius:3px;position:relative}
 .headline ul li a{display:block;overflow:hidden;height:100%}
 .headline ul li img{width:100%;height:100%;-moz-transition:all .5s ease;-webkit-transition:all .5s ease;-ms-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;transition:all .5s;opacity:1}
 .headline ul li:hover img{transform:scale(1.1);opacity:1}
@@ -192,7 +192,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .zhuanti li{width:27%}
     .searchbox{width:96%}
     .box,article{width:100%}
-    .fader .slide img{height:250px}
+    .fader .slide img{height:260px}
     .links li{width:100%;text-align:left}
     .jianzhan li section{margin:0 5px}
     .jianzhan li:nth-child(1){width:30%}
@@ -252,11 +252,11 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .showBar{display:none}
     .headline{margin-top:10px;}
     .headline{width:100%}
-    .headline ul{height:auto;padding-bottom:10px;overflow:hidden}
+    .headline ul{height:auto;padding-bottom:0px;overflow:hidden}
     .headline ul li{width:49%;float:left}
     .headline ul li:last-child{float:right}
     .headline ul li span{padding:0 10px}
-    .banbox{width:100%}
+    .banbox{width:100%;margin-bottom:0px}
     .fader{height:auto;padding-top:210px}
     .newspic{width:100%;height:auto}
     .newspic li{width:49%;float:left}
