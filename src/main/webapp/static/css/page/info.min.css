@@ -55,8 +55,8 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .recSpan{color: #3a8ce7;font-family: Arial;font-size:15px;font-weight:bold;line-height:10px;}
 .recSpan span{color:red;}
 .recDiv{position:relative;height:25px;}
-.recSpan2{position:absolute;left:60px;color:#969696;font-size:12.5px;bottom:5px;}
-.recSpan2 span{font-size:13px;color:rgb(255, 69, 0);}
+.recSpan2{position:absolute;left:60px;color:#969696;font-size:13px;bottom:5px;}
+.recSpan2 span{font-size:14px;color:rgb(255, 69, 0);}
 .frecDiv2{position:absolute;right:9px;text-align:center;bottom:30px;height:23px; border-radius: 5px;width:65px;}
 .frecDiv2 a{display:block;width:65px;border-radius: 5px; background-color:#5bb56e; line-height:23px;height:23px;color: white;font-size: 12px;}
 .recDiv3{width:36px;height:36px;position: absolute;background: red;top:-18px;right:-18px;transform: rotate(45deg);}
