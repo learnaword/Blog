@@ -100,4 +100,8 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
 
         return contentHtml;
     }
+
+    public void test(){
+
+    }
 }
