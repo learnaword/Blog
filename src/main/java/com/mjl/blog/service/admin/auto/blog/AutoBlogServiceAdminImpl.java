@@ -63,11 +63,11 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
         blogDO.setIsRecommend( autoConfigDO.getIsRecommend() );
         blogDO.setSoftId( autoConfigDO.getSoftId() );
         blogDO.setSoftSection( autoConfigDO.getSoftSection() );
-        blogDO.setTitle(createReqVO.getTitle());
+        blogDO.setTitle(createReqVO.getTitle()+"？");
         blogDO.setContent(contentHtml);
         blogDO.setCreateTime(System.currentTimeMillis());
         blogDO.setUpdateTime(System.currentTimeMillis());
-        blogDO.setKeyword(createReqVO.getTitle());
+        blogDO.setKeyword(createReqVO.getTitle() + "？");
         blogDO.setIntroduction(introduction);
         blogDO.setStatus(createReqVO.getStatus());
         blogMapper.insert(blogDO);
