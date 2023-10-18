@@ -67,7 +67,7 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
         blogDO.setContent(contentHtml);
         blogDO.setCreateTime(System.currentTimeMillis());
         blogDO.setUpdateTime(System.currentTimeMillis());
-        blogDO.setKeyword(createReqVO.getTitle() + "？");
+        blogDO.setKeyword(createReqVO.getTitle());
         blogDO.setIntroduction(introduction);
         blogDO.setStatus(createReqVO.getStatus());
         blogMapper.insert(blogDO);
