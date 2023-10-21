@@ -81,7 +81,7 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
                 "<h2 id=\"nav1_1\">" + createReqVO.getTitle() +
                 "</h2><div>" +
                 autoConfigDO.getRecommendHtml()+"<br>" +
-                "<span style=\"font-weight: bold;\">问题答案</span><br><br>" +
+                "<span style=\"font-size:17px;font-weight: bold;color: #49a380\">问题答案</span><br><br>" +
                 createReqVO.getContent();
 
         if(hasImage){

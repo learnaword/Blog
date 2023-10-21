@@ -13,7 +13,7 @@
 	<link href="/upload/css/summernote.css" rel="stylesheet">
 	<link href="/upload/css/summernote-bs3.css" rel="stylesheet">
 	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
-	<link href="/upload/css/info.min.css" rel="stylesheet">
+	<link href="/static/css/page/info.min.css" rel="stylesheet">
 	<link href="/upload/css/base.css" rel="stylesheet">
 
 </head>

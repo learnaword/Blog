@@ -27,7 +27,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#summernote").code("<p>您好，</p>");
+	$("#summernote").code("您好，");
 	layui.use(['table','laytpl'], function () {
 		var layer = layui.layer;
 		var util = layui.util;

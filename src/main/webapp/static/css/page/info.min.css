@@ -48,7 +48,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .down h3 {font-size:16px;}
 .down p {color:#666}
 .recommend2 {position:relative;background: #fff;border-radius: 3px;margin:0px;overflow: hidden;padding:8px;margin:0px 0px 0px 0px;}
-.recommend2 img {height: 50px;float: left;margin-right: 10px;border-radius: 10px;}
+.recommend2 img {height: 50px;float: left;margin-right: 8px;border-radius: 10px;}
 .recommend2 h3 {font-size:16px;}
 .recommend2 p {color:#666;}
 .downSpan{color:#467ab2;font-family:Arial;font-size:17px;}
@@ -172,11 +172,11 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .nextinfo{line-height:24px;width:100%;background:#fff;border-radius:3px;overflow:hidden;margin:20px 0}
 .nextinfo p{padding:4px 10px;border-radius:5px}
 .nextinfo a:hover{color:#000;text-decoration:underline}
-.news_infos p br{display: none;}
 .news_infos{line-height:1.6;font-size: 16px; font-family: Arial; color: #333;}
 .news_infos h2{font-size:16px;}
-.news_infos p{margin-bottom:1em;}
 .news_infos img{max-width:650px}
+.news_infos ol li{line-height:1.7}
+.news_infos ol li{margin-top:10px}
 
 #nav1_1{border-left: 5px solid #FF926F;background-color: #f6f6f6;padding: 7px 20px;margin: 12px 0;}
 #nav1_2{border-left: 5px solid #FF926F;background-color: #f6f6f6;padding: 7px 20px;margin: 12px 0;}
