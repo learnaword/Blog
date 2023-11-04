@@ -183,19 +183,11 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 #nav1_5{border-left: 5px solid #FF926F;background-color: #f6f6f6;padding: 7px 20px;margin: 12px 0;}
 #nav1_6{border-left: 5px solid #FF926F;background-color: #f6f6f6;padding: 7px 20px;margin: 12px 0;}
 
-@media screen and (min-width:1024px) and (max-width:1199px){.navbox{width:80%}
-    #starlist li a{padding:0 10px}
-    #starlist li.menu:before{right:0}
-    .zhuanti li{width:27%}
-    .searchbox{width:96%}
-    .box,article{width:100%}
-    .fader .slide img{height:280px}
-    .links li{width:100%;text-align:left}
-    .jianzhan li section{margin:0 5px}
-    .jianzhan li:nth-child(1){width:30%}
-    .jianzhan li:nth-child(3){width:36.3%}
+@media screen and (min-width:1024px){
+    .recommend2 {width: 47.6%;display: inline-block;}
 }
-@media screen and (max-width:1023px){.logo img{margin:14px auto;}
+@media screen and (max-width:1023px){
+    .logo img{margin:14px auto;}
     nav{width:100%;height:auto;background:rgba(0,0,0,.5);margin-top:18px;position:fixed;z-index:999;top:42px}
     .searchico{position:absolute;top:6px;right:10px}
     .search{width:80%}
@@ -224,6 +216,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .jianzhan li:nth-child(1){width:30%}
     .jianzhan li:nth-child(3){width:36.3%}
     .zhuanti li{width:27%}
+    .recommend2 {width: 48%;float:left;}
 }
 
 @media only screen and (max-width:768px){.logo img{margin:14px auto;}
@@ -236,7 +229,8 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .hnav a{font-size:12px}
 }
 
-@media only screen and (max-width:480px){.myMp4{width:100%;}
+@media only screen and (max-width:500px){
+    .myMp4{width:100%;}
     .leftNav{margin-left:0px;}
     .clicknum,.lm,.pingl{display:none}
     .infoBar{display:block}
@@ -294,4 +288,5 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .tab_buttons ul{width:100%;}
     .tab_buttons li{width:49%;}
     .newscurrent:after{width:100%}
+    .recommend2 {width: 96%;}
 }
