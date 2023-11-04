@@ -110,6 +110,7 @@ public class BlogServiceImpl implements BlogService{
                     .eq("soft_id", blog.getSoftId())
                     .eq("is_top", 1)
                     .eq("status", BlogStatusEnum.PUBLISHED.getStatus())
+                    .orderByDesc("rank_score")
                     .last("limit 3"));
             topBlogs = BlogConvert.INSTANCE.convertRecommend(blogDOList);
             stringRedisTemplate.opsForValue().set(redisKey, JsonUtils.toJsonString(topBlogs), 2, TimeUnit.HOURS);

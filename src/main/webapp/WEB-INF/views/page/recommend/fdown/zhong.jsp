@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<div class="recommend2">
+<div class="recommend2 infoBar">
     <span class="recSpan">众人帮</span>
     <img style="height:45px;" src="/upload/background/2019-05-27434033.PNG">
     <div>
