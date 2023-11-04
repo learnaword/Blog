@@ -26,6 +26,8 @@ public interface BlogConvert {
     List<RelBlogsRespVO> convertHot(List<BlogDO> hotBlogs);
 
     List<TopBlogsRespVO> convertRecommend(List<BlogDO> blogRecommends);
+    @Mapping(target = "createTime", source = "createTime", qualifiedByName = "timestampToString")
+    TopBlogsRespVO convertRecommend(BlogDO blogDO);
 
     List<NewBlogsRespVO> convertNew(List<BlogDO> newBlogs);
 

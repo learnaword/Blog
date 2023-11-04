@@ -139,9 +139,7 @@ footer a{color:#a5a4a4}
 .newblogs li:hover{background:#F5F5F5;}
 
 /*列表标题*/
-.blogtitle{margin:0 0 10px 0;font-size:18px;overflow:hidden}
-.bloglist li:hover .blogtitle a{color:#337ab7}
-.blogtitle{margin:0 0 10px 0;font-size:18px;overflow:hidden}
+.blogtitle{margin:0 0 10px 0;font-size:18px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 .bloglist li:hover .blogtitle a{color:#337ab7}
 .blogtitle b{color:red}
 h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}

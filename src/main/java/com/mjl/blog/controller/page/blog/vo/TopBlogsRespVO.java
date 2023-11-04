@@ -6,4 +6,7 @@ import lombok.Data;
 public class TopBlogsRespVO {
     private int id;
     private String title;
+    private String introduction;
+    private String images;
+    private String createTime;
 }
