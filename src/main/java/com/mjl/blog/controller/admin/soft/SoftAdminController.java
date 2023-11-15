@@ -7,6 +7,7 @@ import com.mjl.blog.convert.admin.SoftAdminConvert;
 import com.mjl.blog.dal.dataobject.SoftDO;
 import com.mjl.blog.service.admin.soft.SoftAdminService;
 import com.mjl.blog.service.admin.type.TypeAdminService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -27,16 +28,19 @@ public class SoftAdminController {
     private TypeAdminService typeService;
 
     @GetMapping("/list")
+    @Operation(summary = "获取软件列表")
     public CommonResult<List<SoftListVO>> getSoftList(){
         return CommonResult.success(SoftAdminConvert.INSTANCE.convert(softService.getSoftList()));
     }
 
     @GetMapping("/get")
+    @Operation(summary = "获取软件内容")
     public CommonResult<GetRespVO> get(Long id){
         return success(SoftAdminConvert.INSTANCE.convert2(softService.getById(id)));
     }
 
     @GetMapping("/table")
+    @Operation(summary = "获取软件表单")
     public CommonResult<PageResult<TableRespVO>> getTable(TableReqVO tableReqVO){
         PageResult<SoftDO> softDOPageResult = softService.getList(tableReqVO);
 
@@ -52,6 +56,7 @@ public class SoftAdminController {
 
     @PutMapping("/update-status")
     @PreAuthorize("@ss.hasPermissions()")
+    @Operation(summary = "更新软件状态")
     public CommonResult<Boolean> updateStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         softService.updateStatus(updateStatusReqVO);
         return success(true);
@@ -59,12 +64,14 @@ public class SoftAdminController {
 
     @PutMapping ("/update")
     @PreAuthorize("@ss.hasPermissions()")
+    @Operation(summary = "更新软件信息")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         softService.update(updateReqVO);
         return success(true);
     }
 
     @DeleteMapping("/delete")
+    @Operation(summary = "删除软件")
     public CommonResult<Boolean> delete(@RequestBody DeleteReqVO deleteReqVO){
         softService.delete(deleteReqVO);
         return success(true);
@@ -73,6 +80,7 @@ public class SoftAdminController {
 
     @PostMapping ("/create")
     @PreAuthorize("@ss.hasPermissions()")
+    @Operation(summary = "创建软件")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(softService.create(createReqVO) > 0 ? true : false);
     }

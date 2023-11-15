@@ -7,6 +7,7 @@ import com.mjl.blog.convert.admin.AutoConfigAdminConvert;
 import com.mjl.blog.dal.dataobject.AutoConfigDO;
 import com.mjl.blog.service.admin.auto.config.AutoConfigAdminService;
 import com.mjl.blog.service.admin.soft.SoftAdminService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -30,11 +31,13 @@ public class AutoConfigAdminController {
 
     @PostMapping ("/create")
     @PreAuthorize("@ss.hasPermissions()")
+    @Operation(summary = "创建配置")
     public CommonResult<Boolean> create(@RequestBody @Valid CreateReqVO createReqVO){
         return success(autoConfigService.create(createReqVO) > 0 ? true : false);
     }
 
     @GetMapping("/table")
+    @Operation(summary = "获取表格")
     public CommonResult<PageResult<TableRespVO>> getBlogTable(TableReqVO tableReqVO){
 
         PageResult<AutoConfigDO> configDOPageResult = autoConfigService.getList(tableReqVO);
@@ -50,17 +53,20 @@ public class AutoConfigAdminController {
     }
 
     @GetMapping("/get")
+    @Operation(summary = "获取配置信息根据ID")
     public CommonResult<GetRespVO> get(Long id){
         return success(AutoConfigAdminConvert.INSTANCE.convert2(autoConfigService.getById(id)));
     }
 
     @GetMapping("/list")
+    @Operation(summary = "获取配置列表")
     public CommonResult<List<AutoConfigDO>> getList(){
         return CommonResult.success(autoConfigService.getList());
     }
 
     @PutMapping ("/update-status")
     @PreAuthorize("@ss.hasPermissions()")
+    @Operation(summary = "更新配置状态")
     public CommonResult<Boolean> updateConfigStatus(@RequestBody UpdateStatusReqVO updateStatusReqVO){
         autoConfigService.updateStatus(updateStatusReqVO);
         return success(true);
@@ -68,6 +74,7 @@ public class AutoConfigAdminController {
 
     @PutMapping ("/update")
     @PreAuthorize("@ss.hasPermissions()")
+    @Operation(summary = "更新配置信息")
     public CommonResult<Boolean> update(@RequestBody @Valid UpdateReqVO updateReqVO){
         autoConfigService.update(updateReqVO);
         return success(true);

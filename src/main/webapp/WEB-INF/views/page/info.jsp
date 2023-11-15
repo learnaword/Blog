@@ -48,27 +48,7 @@
       <div style="border-top:3px solid #eeeeee;" class="newblogs bloglist whitebg">
             <h2 class="htitle">相关文章</h2>
             <ul>
-                <c:forEach var="item" items="${topBlogs}" end="0"  varStatus="status">
-                    <li>
-                        <h3 class="blogtitle">
-                            <a style="color:#467ab2;"  href="${baseUrl}/find/${item.id}.html" rel="bookmark">${item.title}</a>
-                        </h3>
-                        <span class="blogpic">
-                            <a href="${baseUrl}/find/${item.id}.html">
-                                <img src="${baseUrl}${item.images}"/>
-                            </a>
-                        </span>
-                        <p class="blogtext">
-                                ${item.introduction}
-                        </p>
-                        <p class="bloginfo">
-                            <span>帮忙么</span>
-                            <span style="margin-left:0px;" class="m_time">${item.createTime}</span>
-                            <span style="color:red;font-size:10px;">推荐</span>
-                        </p>
-                    </li>
-                </c:forEach>
-                <c:forEach var="item" items="${relBlogs}" end="1"  varStatus="status">
+                <c:forEach var="item" items="${relBlogs}" end="2"  varStatus="status">
                     <li>
                         <h3 class="blogtitle">
                             <a style="color:#467ab2;"  href="${baseUrl}/find/${item.id}.html" rel="bookmark">${item.title}</a>

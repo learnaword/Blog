@@ -14,6 +14,19 @@ spring:
     locale: zh_CN
 
   profiles:
-    active: prod
+    active: local
 
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
 
+  swagger-ui:
+    enabled: true
+
+blog:
+  swagger:
+    title: 博客平台
+    description: 博客平台
+    version: 1.0.0
+    base-package: com.mjl.blog

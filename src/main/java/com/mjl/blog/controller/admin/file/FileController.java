@@ -5,6 +5,7 @@ import com.mjl.blog.common.utils.ServletUtils;
 import com.mjl.blog.dal.dataobject.FileDO;
 import com.mjl.blog.enums.FileStatusEnum;
 import com.mjl.blog.service.admin.file.FileAdminService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,6 +20,7 @@ public class FileController {
     private FileAdminService fileService;
 
     @GetMapping("/upload/common/**")
+    @Operation(summary = "获取common文件")
     public void getCommonContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 获取请求的路径
         String path = StrUtil.subAfter(request.getRequestURI(), "/common/", false);
@@ -42,6 +44,7 @@ public class FileController {
     }
 
     @GetMapping("/upload/blog/**")
+    @Operation(summary = "获取blog文件")
     public void getBlogFileContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 获取请求的路径
         String path = StrUtil.subAfter(request.getRequestURI(), "/blog/", false);
@@ -64,6 +67,7 @@ public class FileController {
 
 
     @GetMapping("/images/**")
+    @Operation(summary = "获取images文件")
     public void getSystemFileContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 获取请求的路径
         String path = StrUtil.subAfter(request.getRequestURI(), "/images/", false);
@@ -85,6 +89,7 @@ public class FileController {
     }
 
     @GetMapping("/upload/background/**")
+    @Operation(summary = "获取background文件")
     public void getBackgroundFileContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 获取请求的路径
         String path = StrUtil.subAfter(request.getRequestURI(), "/background/", false);
@@ -105,6 +110,7 @@ public class FileController {
     }
 
     @GetMapping("/upload/js/**")
+    @Operation(summary = "获取js文件")
     public void getJsFileContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 获取请求的路径
         String path = StrUtil.subAfter(request.getRequestURI(), "/js/", false);
@@ -125,6 +131,7 @@ public class FileController {
     }
 
     @GetMapping("/upload/css/**")
+    @Operation(summary = "获取css文件")
     public void getCssFileContent(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // 获取请求的路径
         String path = StrUtil.subAfter(request.getRequestURI(), "/css/", false);

@@ -32,6 +32,7 @@
         <maven-compiler.version>3.8.1</maven-compiler.version>
         <tika-core.version>2.7.0</tika-core.version>
         <jsoup.version>1.15.4</jsoup.version>
+        <springdoc.version>2.2.0</springdoc.version>
         <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
     </properties>
     <dependencies>
@@ -113,6 +114,18 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>${druid.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+            <version>${springdoc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
 
         <dependency>
