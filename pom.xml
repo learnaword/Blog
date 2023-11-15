@@ -33,6 +33,7 @@
         <tika-core.version>2.7.0</tika-core.version>
         <jsoup.version>1.15.4</jsoup.version>
         <springdoc.version>2.2.0</springdoc.version>
+        <knife4j.version>4.3.0</knife4j.version>
         <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
     </properties>
     <dependencies>
@@ -121,7 +122,11 @@
             <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
             <version>${springdoc.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>

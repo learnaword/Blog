@@ -14,15 +14,7 @@ spring:
     locale: zh_CN
 
   profiles:
-    active: local
-
-springdoc:
-  api-docs:
-    enabled: true
-    path: /v3/api-docs
-
-  swagger-ui:
-    enabled: true
+    active: prod
 
 blog:
   swagger:
