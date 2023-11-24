@@ -53,10 +53,10 @@
 					<span class="nav-label">基础设施</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">统计图标</a>
+							<a class="J_menuItem" href="/page/admin/file/table.jsp">文件管理</a>
 						</li>
 						<li>
-							<a  href="https://tongji.baidu.com/web/10000123625/homepage/index" target="_blank">百度统计</a>
+							<a class="J_menuItem" href="http://localhost:8039/doc.html" >系统接口</a>
 						</li>
 					</ul>
 				</li>
@@ -111,9 +111,6 @@
 						</li>
 						<li>
 							<a class="J_menuItem" href="/page/admin/type/table.jsp">类型管理</a>
-						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/file/table.jsp">文件管理</a>
 						</li>
 					</ul>
 				</li>

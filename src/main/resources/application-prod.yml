@@ -38,11 +38,11 @@ mybatis-plus:
 
 springdoc:
   api-docs:
-    enabled: false
+    enabled: true
     path: /v3/api-docs
 
   swagger-ui:
-    enabled: false
+    enabled: true
 
 knife4j:
   enable: false # 2.2 是否开启 Swagger 文档的 Knife4j UI 界面
