@@ -38,7 +38,7 @@
 					<i class="fa fa-home"></i>
 					<span class="nav-label">首页</span></a>
 				</li>
-				<li><a href="#"><i class="fa fa-book"></i>
+				<li><a href="#"><i class="fa fa-cog"></i>
 					<span class="nav-label">系统管理</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
@@ -49,18 +49,18 @@
 						</li>
 					</ul>
 				</li>
-				<li><a href="#"><i class="fa fa-book"></i>
+				<li><a href="#"><i class="fa fa-inbox"></i>
 					<span class="nav-label">基础设施</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
 							<a class="J_menuItem" href="/page/admin/file/table.jsp">文件管理</a>
 						</li>
 						<li>
-							<a class="J_menuItem" href="http://localhost:8039/doc.html" >系统接口</a>
+							<a class="J_menuItem" href="${baseUrl}/doc.html" >系统接口</a>
 						</li>
 					</ul>
 				</li>
-				<li><a href="#"><i class="fa fa-book"></i>
+				<li><a href="#"><i class="fa fa-film"></i>
 					<span class="nav-label">自媒体</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
@@ -114,7 +114,7 @@
 						</li>
 					</ul>
 				</li>
-				<li><a href="#"><i class="fa fa-book"></i>
+				<li><a href="#"><i class="fa fa-line-chart"></i>
 					<span class="nav-label">数据统计</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
@@ -126,7 +126,7 @@
 					</ul>
 				</li>
 				<li><a class="J_menuItem" href="/page/admin/log/log.jsp">
-					<i class="fa fa-hourglass-2"></i>
+					<i class="fa fa-file-text-o"></i>
 					<span class="nav-label">操作日志</span></a>
 				 </li>
 				<li><a href="/" target= "_blank"><i class="fa fa-desktop"></i> <span

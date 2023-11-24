@@ -14,7 +14,7 @@ spring:
     locale: zh_CN
 
   profiles:
-    active: prod
+    active: local
 
 blog:
   swagger:
