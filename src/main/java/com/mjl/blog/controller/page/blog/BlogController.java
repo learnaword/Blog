@@ -1,7 +1,7 @@
 package com.mjl.blog.controller.page.blog;
 
-import com.mjl.blog.annotation.ServiceLimit;
 import com.mjl.blog.annotation.SystemLog;
+import com.mjl.blog.common.exception.ServerException;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.PageInfo;
 import com.mjl.blog.controller.page.blog.vo.*;
@@ -10,6 +10,7 @@ import com.mjl.blog.dal.dataobject.BlogDO;
 import com.mjl.blog.dal.dataobject.SoftDO;
 import com.mjl.blog.service.page.blog.BlogService;
 import com.mjl.blog.service.page.soft.SoftService;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import jakarta.annotation.Resource;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+
+import static com.mjl.blog.common.enums.GlobalErrorCodeConstants.TOO_MANY_REQUESTS;
 
 @Controller
 public class BlogController {
@@ -33,25 +36,25 @@ public class BlogController {
     private String baseUrl;
 
     @RequestMapping("/")
-    @ServiceLimit
-    public String index(Model model, IndexReqVO indexReqVO){
+    @RateLimiter(name = "index", fallbackMethod = "indexFallback")
+    public String index(Model model, IndexReqVO indexReqVO) {
 
         List<OrderListRespVO> blogOrderList = BlogConvert.INSTANCE.covertOrder(blogService.getOrderList());
         PageResult<NewListRespVO> blogNewList = BlogConvert.INSTANCE.covertNew(blogService.getNewList(indexReqVO));
 
-        PageInfo<NewListRespVO> pageInfo = new PageInfo<>(blogNewList,indexReqVO,3);
+        PageInfo<NewListRespVO> pageInfo = new PageInfo<>(blogNewList, indexReqVO, 3);
         model.addAttribute("blogOrderList", blogOrderList);
         model.addAttribute("blogNewList", blogNewList);
         model.addAttribute("pageInfo", pageInfo);
-        model.addAttribute("baseUrl",baseUrl);
+        model.addAttribute("baseUrl", baseUrl);
 
         return "/page/index";
     }
 
     @RequestMapping({"/find/{id}.html"})
     @SystemLog(description = "访问了文章", userType = "游客")
-    @ServiceLimit
-    public ModelAndView selectBlogById(@PathVariable @NotNull(message = "id不能为空") Long id)  {
+    @RateLimiter(name = "find", fallbackMethod = "selectBlogByIdFallback")
+    public ModelAndView selectBlogById(@PathVariable @NotNull(message = "id不能为空") Long id) {
         ModelAndView modelAndView = new ModelAndView();
         BlogDO blog = blogService.selectBlogById(id);
         if (blog == null) {
@@ -75,7 +78,7 @@ public class BlogController {
 
         //获取上一篇和下一篇
         NextAndPreBlogRespVO nextBlog = BlogConvert.INSTANCE.convertNextAndPre(blogService.selectNextBlog(id, blog.getSoftId()));
-        NextAndPreBlogRespVO prevBlog =  BlogConvert.INSTANCE.convertNextAndPre(blogService.selectPrevBlog(id, blog.getSoftId()));
+        NextAndPreBlogRespVO prevBlog = BlogConvert.INSTANCE.convertNextAndPre(blogService.selectPrevBlog(id, blog.getSoftId()));
 
         modelAndView.addObject("relBlogs", relBlogs);
         modelAndView.addObject("hotBlogs", hotBlogs);
@@ -84,7 +87,7 @@ public class BlogController {
         modelAndView.addObject("next", nextBlog);
         modelAndView.addObject("prev", prevBlog);
         modelAndView.addObject("blog", blogInfoRespVO);
-        modelAndView.addObject("baseUrl",baseUrl);
+        modelAndView.addObject("baseUrl", baseUrl);
         modelAndView.setViewName("/page/info");
         return modelAndView;
     }
@@ -95,9 +98,17 @@ public class BlogController {
         System.out.println("---------------------");
         if (keyboard != null) {
             List<ResultRespVO> resultRespVO = BlogConvert.INSTANCE.convertResult(blogService.find(keyboard));
-            model.addAttribute("result",resultRespVO);
-            model.addAttribute("baseUrl",baseUrl);
+            model.addAttribute("result", resultRespVO);
+            model.addAttribute("baseUrl", baseUrl);
         }
         return "/page/result";
+    }
+
+    private String indexFallback(Model model, IndexReqVO indexReqVO, Throwable throwable) {
+        throw new ServerException(TOO_MANY_REQUESTS);
+    }
+
+    public ModelAndView selectBlogByIdFallback(Long id, Throwable throwable) {
+        throw new ServerException(TOO_MANY_REQUESTS);
     }
 }

@@ -80,5 +80,4 @@ public class AutoConfigAdminController {
         return success(true);
     }
 
-
 }

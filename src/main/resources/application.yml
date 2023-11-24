@@ -14,7 +14,7 @@ spring:
     locale: zh_CN
 
   profiles:
-    active: prod
+    active: local
 
 blog:
   swagger:
@@ -22,3 +22,20 @@ blog:
     description: 博客平台
     version: 1.0.0
     base-package: com.mjl.blog
+
+resilience4j:
+  # Resilience4j 的限流器配置项，对应 RateLimiterProperties 属性类
+  ratelimiter:
+    instances:
+      index:
+        limit-for-period: 5 # 每个周期内，允许的请求数。默认为 50
+        limit-refresh-period: 1s # 每个周期的时长，单位：微秒。默认为 500
+        timeout-duration: 1s # 被限流时，阻塞等待的时长，单位：微秒。默认为 5s
+        register-health-indicator: true # 是否注册到健康监测
+
+      find:
+        limit-for-period: 5 # 每个周期内，允许的请求数。默认为 50
+        limit-refresh-period: 1s # 每个周期的时长，单位：微秒。默认为 500
+        timeout-duration: 1s # 被限流时，阻塞等待的时长，单位：微秒。默认为 5s
+        register-health-indicator: true # 是否注册到健康监测
+

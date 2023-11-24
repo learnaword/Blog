@@ -15,7 +15,6 @@
 	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
 	<link href="/static/css/page/info.min.css" rel="stylesheet">
 	<link href="/upload/css/base.css" rel="stylesheet">
-
 </head>
 <style>
 	.layui-layer-page .layui-layer-content {

@@ -19,6 +19,7 @@ public class AutoBlogAdminController {
 
     @Resource
     private AutoBlogAdminService autoBlogService;
+
     @PostMapping("/create")
     @PreAuthorize("@ss.hasPermissions()")
     @Operation(summary = "文章自动生成")

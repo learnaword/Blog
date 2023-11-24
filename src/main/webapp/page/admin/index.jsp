@@ -31,7 +31,7 @@
 							</span>
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 							<span class="clear">
-								<span class="block m-t-xs"><strong class="font-bold">house</strong></span>
+								<span class="block m-t-xs"><strong class="font-bold">帮忙么网</strong></span>
 								<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
 							</span>
 						</a>
@@ -61,59 +61,47 @@
 						</li>
 					</ul>
 				</li>
-				<li><a href="#"><i class="fa fa-desktop"></i>
-					<span class="nav-label">自动生成</span><span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
-						<li>
-							<a class="J_menuItem" href="/page/admin/auto/config/table.jsp">配置管理</a>
-						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/auto/config/add.jsp">创建配置</a>
-						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/auto/sentence/table.jsp">句子管理</a>
-						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/auto/blog/write.jsp">生成博客</a>
-						</li>
-					</ul>
-				</li>
 				<li><a href="#"><i class="fa fa-book"></i>
 					<span class="nav-label">博客模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a class="J_menuItem" href="/page/admin/blog/table.jsp">博客管理</a>
-						</li>
-						<li>
 							<a class="J_menuItem" href="/page/admin/blog/add.jsp">写博客</a>
 						</li>
-					</ul>
-				</li>
-				<li><a href="#"><i class="fa fa-book"></i>
-					<span class="nav-label">专区模块</span>
-					<span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
 						<li>
-							<a class="J_menuItem" href="/page/admin/soft/add.jsp">添加专区</a>
+							<a class="J_menuItem" href="/page/admin/blog/table.jsp">博客管理</a>
 						</li>
-						<li>
-							<a class="J_menuItem" href="/page/admin/soft/table.jsp">专区管理</a>
+						<li><a href="#">
+							<span class="nav-label">自动生成</span><span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="/page/admin/auto/config/table.jsp">&nbsp;&nbsp;&nbsp;&nbsp;配置管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/auto/config/add.jsp">&nbsp;&nbsp;&nbsp;&nbsp;创建配置</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/auto/sentence/table.jsp">&nbsp;&nbsp;&nbsp;&nbsp;句子管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/auto/blog/write.jsp">&nbsp;&nbsp;&nbsp;&nbsp;生成博客</a>
+								</li>
+							</ul>
 						</li>
-					</ul>
-				</li>
-				<li><a href="#"><i class="fa fa-book"></i>
-					<span class="nav-label">类型管理</span>
-					<span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
+						<li><a href="#">
+							<span class="nav-label">专区模块</span>
+							<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="/page/admin/soft/add.jsp">&nbsp;&nbsp;&nbsp;&nbsp;添加专区</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/soft/table.jsp">&nbsp;&nbsp;&nbsp;&nbsp;专区管理</a>
+								</li>
+							</ul>
+						</li>
 						<li>
 							<a class="J_menuItem" href="/page/admin/type/table.jsp">类型管理</a>
 						</li>
-					</ul>
-				</li>
-				<li><a href="#"><i class="fa fa-book"></i>
-					<span class="nav-label">文件管理</span>
-					<span class="fa arrow"></span></a>
-					<ul class="nav nav-second-level">
 						<li>
 							<a class="J_menuItem" href="/page/admin/file/table.jsp">文件管理</a>
 						</li>
