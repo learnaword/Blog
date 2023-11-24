@@ -66,13 +66,32 @@ function initEchartsByVisit(days, counts,num){
 		yAxis: {
 			type: 'value'
 		},
-		series: [
+		series : [
 			{
-				name: 'visit',
-				type: 'line',
-				stack: 'Total',
-				data: counts
-			}
+				name : '近' + num + '日访问人数',
+				type : 'line',
+				data : counts,
+				markPoint : {
+					data : [
+						{
+							type : 'max',
+							name : '最大值'
+						},
+						{
+							type : 'min',
+							name : '最小值'
+						}
+					]
+				},
+				markLine : {
+					data : [
+						{
+							type : 'average',
+							name : '平均值'
+						}
+					]
+				}
+			},
 		]
 	};
 	option && myChart.setOption(option);

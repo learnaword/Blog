@@ -60,10 +60,7 @@
 				</div>
 				<div class="ibox-content">
 					<h1 class="nowVisitors no-margins" style="text-align: center;">0</h1>
-					<div
-							class="nowVisitorsPercent stat-percent font-bold text-success">
-						0%</div>
-					<small>较昨日</small>
+					<small>访客</small>
 				</div>
 			</div>
 		</div>

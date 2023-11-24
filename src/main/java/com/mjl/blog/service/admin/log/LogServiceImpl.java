@@ -6,7 +6,9 @@ import com.mjl.blog.common.utils.DateUtils;
 import com.mjl.blog.controller.admin.echars.vo.DataRespVO;
 import com.mjl.blog.dal.dataobject.LogDO;
 import com.mjl.blog.dal.mysql.LogMapper;
+import com.mjl.blog.dal.redis.RedisLogConstants;
 import jakarta.annotation.Resource;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.*;
@@ -19,6 +21,9 @@ public class LogServiceImpl implements LogService{
 
     @Resource
     LogMapper logMapper;
+
+    @Resource
+    StringRedisTemplate stringRedisTemplate;
 
     @Override
     public void insert(LogDO logDO) {
@@ -36,9 +41,17 @@ public class LogServiceImpl implements LogService{
 
         for (int i = 0; i < diffNum; i++) {
             Long preDate = startTime.plusDays(i).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
-            Long nowDate = startTime.plusDays(i+1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();;
-            Long sum = logMapper.selectCount(new LambdaQueryWrapper<LogDO>()
-                    .between(LogDO::getCreateTime,preDate,nowDate));
+            Long nowDate = startTime.plusDays(i+1).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
+
+            String redisKey = String.format(RedisLogConstants.LOG_COUNTS.getKeyTemplate(), preDate,nowDate);
+            String sumStr = stringRedisTemplate.opsForValue().get(redisKey);
+            Long sum = sumStr!= null ? Long.valueOf(sumStr) : null;
+            if(sumStr == null || i == diffNum-1) {
+               sum = logMapper.selectCount(new LambdaQueryWrapper<LogDO>()
+                        .between(LogDO::getCreateTime, preDate, nowDate));
+                stringRedisTemplate.opsForValue().set(redisKey,sum.toString());
+            }
+
             counts[i] = sum;
             days[i] = DateUtils.timestampToString(preDate);
             total = total + sum;
@@ -54,12 +67,9 @@ public class LogServiceImpl implements LogService{
 
     @Override
     public Long getLogNowCounts() {
-        LocalDate currentDate = LocalDate.now();
-        // 将时间部分设置为0
-        LocalDateTime midnight = LocalDateTime.of(currentDate, LocalTime.MIN);
-        // 转换为时间戳
-        long midnightTimestamp = midnight.toEpochSecond(ZoneOffset.UTC) * 1000;
-
+        long start = System.currentTimeMillis();
+        LocalDate startTime = Instant.ofEpochMilli(start).atZone(ZoneId.systemDefault()).toLocalDate();
+        Long midnightTimestamp = startTime.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
         Long counts = logMapper.selectCount(new QueryWrapper<LogDO>().gt("create_time",midnightTimestamp));
         return counts;
     }
