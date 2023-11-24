@@ -45,6 +45,19 @@ h5 {
     font-weight: 600;
 }
 
+/*左边的头像信息*/
+.mediaRecSpan{font-family: 'Open Sans';font-size:16px;color:#ffffff;font-weight:bold;line-height:35px;}
+.mediaRecDiv{position:relative;height:15px;}
+.mediaRecSpan2{position:absolute;left:60px;font-size:12px;bottom:0px;color: #a7b1c2;}
+.mediaRecSpan2 span{font-size:15px;color: #a7b1c2;}
+.mediaRecDiv2{position:absolute;right:4px;text-align:center;bottom:5px;height:25px; border-radius: 5px;width:60px;}
+.mediaRecDiv2 a{display:block;width:65px;border-radius: 5px; line-height:25px;height:25px;font-size: 13px;}
+.mediaRecText{font-size:15px; padding:10px 0px 0px 0px;position:relative;}
+.mediaCard {position:relative;overflow: hidden;padding:0px;border-top:0px solid #eeeeee;}
+.mediaCard img {height: 50px;float: left;margin-right: 10px;border-radius: 10px;}
+.mediaCard h3 {font-size:16px;}
+.mediaCard p {color:#a7b1c2;}
+
 a:focus {
     outline: none;
 }
@@ -201,7 +214,7 @@ body.body-small .navbar-top-links li:last-child {
 }
 
 .nav-header {
-    padding: 33px 25px;
+    padding: 25px 30px;
 }
 
 .pace-done .nav-header {
@@ -444,7 +457,7 @@ body.mini-navbar .nav-header {
 }
 
 body.canvas-menu .nav-header {
-    padding: 33px 25px;
+    padding: 10px 32px;
 }
 
 body.mini-navbar #page-wrapper {

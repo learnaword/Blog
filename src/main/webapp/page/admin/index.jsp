@@ -12,7 +12,7 @@
 	<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
 	<link href="/upload/css/animate.css" rel="stylesheet">
-	<link href="/upload/css/style.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
 	<link href="/upload/css/fakeLoader.css" rel="stylesheet">
 </head>
 <body class="fixed-sidebar full-height-layout white-bg" style="overflow:hidden;">
@@ -25,30 +25,40 @@
 		<div class="sidebar-collapse">
 			<ul class="nav" id="side-menu">
 				<li class="nav-header">
-					<div class="dropdown profile-element">
-							<span>
-								<img alt="images" style="width:64px;height:64px;"class="img-circle" src="/images/photos2.jpg" />
-							</span>
-						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-							<span class="clear">
-								<span class="block m-t-xs"><strong class="font-bold">帮忙么网</strong></span>
-								<span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
-							</span>
-						</a>
-						<ul class="dropdown-menu animated fadeInRight m-t-xs">
-							<li><a  href="javascript:void(0);" onclick="permission()">修改头像</a>
-							</li>
-							<li><a  href="javascript:void(0);" onclick="permission()">修改密码</a></li>
-							<li class="divider"></li>
-							<li><a href="/page/admin/logout">安全退出</a></li>
-						</ul>
+					<div class="mediaCard">
+						<span class="mediaRecSpan">帮忙么网</span>
+						<img style="height:50px;" src="${baseUrl}/images/image_.jpg"  alt="帮忙么网">
+						<div class="mediaRecDiv">
+							<span class="mediaRecSpan2">管理员</span>
+						</div>
 					</div>
-					<div class="logo-element"></div>
 				</li>
 				<li>
 					<a href="/page/admin/index_v1.jsp" class="J_menuItem">
 					<i class="fa fa-home"></i>
-					<span class="nav-label">主页</span></a>
+					<span class="nav-label">首页</span></a>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">系统管理</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">统计图标</a>
+						</li>
+						<li>
+							<a  href="https://tongji.baidu.com/web/10000123625/homepage/index" target="_blank">百度统计</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">基础设施</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">统计图标</a>
+						</li>
+						<li>
+							<a  href="https://tongji.baidu.com/web/10000123625/homepage/index" target="_blank">百度统计</a>
+						</li>
+					</ul>
 				</li>
 				<li><a href="#"><i class="fa fa-book"></i>
 					<span class="nav-label">自媒体</span><span class="fa arrow"></span></a>
@@ -107,8 +117,16 @@
 						</li>
 					</ul>
 				</li>
-				<li><a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">
-					<i class="fa fa-bar-chart"></i><span class="nav-label">统计图表</span></a>
+				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">数据统计</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">平台统计</a>
+						</li>
+						<li>
+							<a  href="https://tongji.baidu.com/web/10000123625/homepage/index" target="_blank">百度统计</a>
+						</li>
+					</ul>
 				</li>
 				<li><a class="J_menuItem" href="/page/admin/log/log.jsp">
 					<i class="fa fa-hourglass-2"></i>
