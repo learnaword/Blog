@@ -9,9 +9,8 @@ import com.mjl.blog.dal.mysql.LogMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.*;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 
@@ -48,5 +47,21 @@ public class LogServiceImpl implements LogService{
         return LogDataRespVO;
     }
 
+    @Override
+    public Long getLogCounts() {
+        return logMapper.selectCount();
+    }
+
+    @Override
+    public Long getLogNowCounts() {
+        LocalDate currentDate = LocalDate.now();
+        // 将时间部分设置为0
+        LocalDateTime midnight = LocalDateTime.of(currentDate, LocalTime.MIN);
+        // 转换为时间戳
+        long midnightTimestamp = midnight.toEpochSecond(ZoneOffset.UTC) * 1000;
+
+        Long counts = logMapper.selectCount(new QueryWrapper<LogDO>().gt("create_time",midnightTimestamp));
+        return counts;
+    }
 
 }

@@ -25,7 +25,7 @@
 		<div class="sidebar-collapse">
 			<ul class="nav" id="side-menu">
 				<li class="nav-header">
-					<div class="mediaCard">
+					<div class="dropdown mediaCard profile-element">
 						<span class="mediaRecSpan">帮忙么网</span>
 						<img style="height:50px;" src="${baseUrl}/images/image_.jpg"  alt="帮忙么网">
 						<div class="mediaRecDiv">

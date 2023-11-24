@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>博客后台 - 主页</title>
 	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/upload/css/style.css" rel="stylesheet">
+	<link href="/static/css/admin/style.css" rel="stylesheet">
 	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body class="gray-bg">
@@ -95,7 +95,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="col-sm-3">
 			<div class="ibox float-e-margins">
 				<div class="ibox-title">
@@ -118,13 +117,13 @@
 				</div>
 				<div class="ibox-content">
 					<h1 class="visitors no-margins" style="text-align: center;">0</h1>
-					<div class=" stat-percent font-bold text-success">
-						100% <i class="fa fa-bolt"></i>
-					</div>
 					<small>总访问量</small>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="ibox-content">
+		<div class="echarts" style="height:340px;" id="echarts-line-visit"></div>
 	</div>
 </div>
 
@@ -133,6 +132,7 @@
 <script src="/upload/js/bootstrap.min.js"></script>
 <script src="/upload/js/sweetalert2.min.js"></script>
 <script src="/upload/js/axios.min.js"></script>
+<script src="/static/js/plugins/echarts/echarts.min.js"></script>
 <!-- Data picker -->
 <script src="/upload/js/admin/token.js"></script>
 <script type="module" src="/static/js/admin/index_v1.js"></script>

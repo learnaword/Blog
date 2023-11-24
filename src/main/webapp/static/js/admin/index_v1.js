@@ -3,7 +3,80 @@ import request from "/upload/js/axios-config.js";
 $(document).ready(function() {
 	initBlogCountByStatus() //初始化已发表、草稿、储备
 	initBlogCountByDate() //初始化今天、明天的文章
+	initVisitCountByDate() //初始化访问表格
+	//获取今日访客
+	initVisitNowCount();
+	//获取历史访客
+	initVisitCount();
 });
+
+function initVisitCountByDate() {
+	var currentDate = new Date();
+	var start = currentDate.getTime() - 15 * 24 * 60 * 60 * 1000;
+	var end = currentDate.getTime();
+	var num = Math.abs(parseInt((end - start) / 1000 / 3600 / 24));
+	request.get('/admin/echars/log-data?start='+start+"&end="+end).then(function(res){
+		initEchartsByVisit(res.data.data.days, res.data.data.counts,num);
+	});
+}
+
+function initVisitCount(){
+	request.get('/admin/log/log-counts').then(function (data) {
+		$(".visitors").html(data.data.data);
+	})
+}
+
+function initVisitNowCount(){
+	request.get('/admin/log/log-now').then(function (data) {
+		$(".nowVisitors").html(data.data.data);
+	})
+}
+
+function initEchartsByVisit(days, counts,num){
+	var chartDom = document.getElementById('echarts-line-visit');
+	var myChart = echarts.init(chartDom);
+	var option;
+
+	option = {
+		title: {
+			text: '网站访问人数'
+		},
+		tooltip: {
+			trigger: 'axis'
+		},
+		legend: {
+			data: ['visit']
+		},
+		grid: {
+			left: '3%',
+			right: '4%',
+			bottom: '3%',
+			containLabel: true
+		},
+		toolbox: {
+			feature: {
+				saveAsImage: {}
+			}
+		},
+		xAxis: {
+			type: 'category',
+			boundaryGap: false,
+			data: days
+		},
+		yAxis: {
+			type: 'value'
+		},
+		series: [
+			{
+				name: 'visit',
+				type: 'line',
+				stack: 'Total',
+				data: counts
+			}
+		]
+	};
+	option && myChart.setOption(option);
+}
 
 //初始化已发表的文章
 function initBlogCountByStatus(){

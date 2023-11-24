@@ -7,4 +7,8 @@ public interface LogService {
     void insert(LogDO logDO);
 
     DataRespVO getEcharsLogData(Long start, Long end);
+
+    Long getLogCounts();
+
+    Long getLogNowCounts();
 }

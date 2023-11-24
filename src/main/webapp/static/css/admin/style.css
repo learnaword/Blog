@@ -457,7 +457,7 @@ body.mini-navbar .nav-header {
 }
 
 body.canvas-menu .nav-header {
-    padding: 10px 32px;
+    padding: 20px 32px;
 }
 
 body.mini-navbar #page-wrapper {
@@ -7635,7 +7635,7 @@ body.skin-3 {
         padding-top: 10px;
         min-height: 100px;
     }
-    .nav.navbar-top-links li.dropdown {
+    .nav.navbar-top-links li .dropdown {
         display: none;
     }
     .ibox-tools {
@@ -7789,6 +7789,10 @@ body.skin-3 {
 
 .echarts {
     height: 240px;
+}
+
+.indexEcharts {
+    height: 340px;
 }
 
 .checkbox-inline,
