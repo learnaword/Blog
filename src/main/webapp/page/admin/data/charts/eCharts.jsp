@@ -16,7 +16,7 @@
     <link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
     <link href="/static/css/admin/style.css" rel="stylesheet">
     <link href="/upload/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <link href="/static/css/plugins/datapicker/datepicker3.css"rel="stylesheet">
+    <link href="/static/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
     <link href="/upload/css/base.css" rel="stylesheet">
     <style type="text/css">
         .input-group-addon{
@@ -109,6 +109,6 @@
 <script src="/upload/js/admin/token.js"></script>
 <script src="/upload/js/axios.min.js"></script>
 <script src="/static/js/plugins/echarts/echarts.min.js"></script>
-<script type="module" src="/static/js/admin/charts/charts.js"></script>
+<script type="module" src="/static/js/admin/data/charts/charts.js"></script>
 </body>
 </html>

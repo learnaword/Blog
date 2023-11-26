@@ -2,8 +2,11 @@ package com.mjl.blog.service.admin.log;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.DateUtils;
 import com.mjl.blog.controller.admin.echars.vo.DataRespVO;
+import com.mjl.blog.controller.admin.log.vo.TableReqVO;
+import com.mjl.blog.controller.admin.log.vo.TableRespVO;
 import com.mjl.blog.dal.dataobject.LogDO;
 import com.mjl.blog.dal.mysql.LogMapper;
 import com.mjl.blog.dal.redis.RedisLogConstants;
@@ -72,6 +75,11 @@ public class LogServiceImpl implements LogService{
         Long midnightTimestamp = startTime.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
         Long counts = logMapper.selectCount(new QueryWrapper<LogDO>().gt("create_time",midnightTimestamp));
         return counts;
+    }
+
+    @Override
+    public PageResult<LogDO> getList(TableReqVO tableReqVO) {
+        return logMapper.selectPage(tableReqVO);
     }
 
 }

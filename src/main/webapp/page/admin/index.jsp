@@ -124,10 +124,19 @@
 					</ul>
 				</li>
 				<li><a href="#"><i class="fa fa-line-chart"></i>
+
 					<span class="nav-label">数据统计</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
-						<li>
-							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">平台统计</a>
+						<li><a href="#">
+							<span class="nav-label">平台统计</span><span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="/page/admin/data/charts/eCharts.jsp">&nbsp;&nbsp;&nbsp;&nbsp;图表统计</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/data/button/table.jsp">&nbsp;&nbsp;&nbsp;&nbsp;按钮事件统计</a>
+								</li>
+							</ul>
 						</li>
 						<li>
 							<a  href="https://tongji.baidu.com/web/10000123625/homepage/index" target="_blank">百度统计</a>

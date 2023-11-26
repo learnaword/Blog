@@ -1,7 +1,10 @@
 package com.mjl.blog.controller.admin.log;
 
 import com.mjl.blog.common.pojo.CommonResult;
-import com.mjl.blog.controller.admin.blog.vo.BlogTypeCountsRespVO;
+import com.mjl.blog.common.pojo.PageResult;
+import com.mjl.blog.controller.admin.log.vo.TableReqVO;
+import com.mjl.blog.controller.admin.log.vo.TableRespVO;
+import com.mjl.blog.convert.admin.LogConvert;
 import com.mjl.blog.service.admin.log.LogService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +39,12 @@ public class LogController {
     public CommonResult<Long> getLogNowCounts(){
         Long counts = logService.getLogNowCounts();
         return success(counts);
+    }
+
+    @GetMapping("/table")
+    @Operation(summary = "获取日志表单")
+    public CommonResult<PageResult<TableRespVO>> getTable(TableReqVO tableReqVO){
+        return success(LogConvert.INSTANCE.convert(logService.getList(tableReqVO)));
     }
 
 }

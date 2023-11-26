@@ -25,8 +25,8 @@ $(document).ready(function(){
             ,cellMinWidth: 80
             ,totalRow: true // 开启合计行
             ,page: true
-            ,limits: [10, 20, 25]
-            ,limit: 10
+            ,limits: [20, 50, 100]
+            ,limit: 20
             ,request: {
                 pageName: 'pageNo', // 页码的参数名称，默认：page
                 limitName: 'pageSize' // 每页数据条数的参数名，默认：limit

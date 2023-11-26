@@ -1,6 +1,8 @@
 package com.mjl.blog.service.page.data;
 
+import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.controller.page.data.vo.ButtonInfoRespVo;
+import com.mjl.blog.controller.page.data.vo.TableReqVO;
 import com.mjl.blog.dal.dataobject.ButtonInfoDO;
 import com.mjl.blog.dal.mysql.ButtonInfoMapper;
 import com.mjl.blog.utils.UserIpUtil;
@@ -33,5 +35,10 @@ public class ButtonInfoServiceImpl implements ButtonInfoService{
                 .setUpdateTime(System.currentTimeMillis());
 
         buttonInfoMapper.insert(buttonInfoDO);
+    }
+
+    @Override
+    public PageResult<ButtonInfoDO> getButtonInfoList(TableReqVO buttonInfoTableReqVO) {
+        return buttonInfoMapper.selectPage(buttonInfoTableReqVO);
     }
 }

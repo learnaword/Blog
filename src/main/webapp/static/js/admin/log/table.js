@@ -9,7 +9,7 @@ $(document).ready(function(){
         // 创建渲染实例
         table.render({
             elem: '#test'
-            ,url:'/admin/type/table' // 此处为静态模拟数据，实际使用时需换成真实接口
+            ,url:'/admin/log/table' // 此处为静态模拟数据，实际使用时需换成真实接口
             ,toolbar: '#toolbarDemo'
             ,headers: {
                 'Authorization': 'Bearer ' + token // 设置 Authorization 头，通常用于传递 token
@@ -25,8 +25,8 @@ $(document).ready(function(){
             ,cellMinWidth: 80
             ,totalRow: true // 开启合计行
             ,page: true
-            ,limits: [10, 20, 25]
-            ,limit: 10
+            ,limits: [20, 50, 100]
+            ,limit: 20
             ,request: {
                 pageName: 'pageNo', // 页码的参数名称，默认：page
                 limitName: 'pageSize' // 每页数据条数的参数名，默认：limit
@@ -41,21 +41,11 @@ $(document).ready(function(){
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: 'ID', sort: true, total: '合计：'}
-                ,{field:'title', width: 240, title: '标题'}
-                ,{
-                    field: 'status', title: '状态', align: 'center',width: 240, templet: function (d) {
-                        var str="";
-                        if (d.status == '0') {
-                            str = str + '<span class="layui-badge layui-bg-blue">发布</span>'
-                        } else if (d.status == '1'){
-                            str = str + '<span style="background-color: #cccccc" class="layui-badge">删除</span>'
-                        }
-                        return str;
-                    }
-                }
-                ,{field:'updateTime', title:'更新时间', width: 190, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'userType', width: 130, title: '身份'}
+                ,{field:'description', width: 240, title: '描述'}
+                ,{field:'ip', width: 240, title: 'IP'}
+                ,{field:'param', width: 240, title: '参数'}
                 ,{field:'createTime', title:'发布时间', width: 190, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{fixed: 'right', title:'操作', width: 160, minWidth: 125, toolbar: '#barDemo'}
             ]]
             ,done: function(){
                 var id = this.id;
