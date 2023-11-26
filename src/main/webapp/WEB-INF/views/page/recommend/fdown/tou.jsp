@@ -5,7 +5,7 @@
     <div>
         <span class="recSpan2">填邀请码：CUNYC36N，领最高32元</span>
         <div class="frecDiv2">
-            <a href="https://coin.toutiao12.com/score_task/page/landing/invite/?user_id=ENC-UID-MS4wLjABAAAA7hv8jBFhDOL98Um8b9FTWkiHQ3h-LCXUZzho9KLTodQ&task_id=102&aid=35&enter_from=largefission&invite_type=largefission&invite_code=CUNYC36N" rel="nofollow">前往下载</a>
+            <a class="fdownload-button" data-info="头条极速版" href="https://coin.toutiao12.com/score_task/page/landing/invite/?user_id=ENC-UID-MS4wLjABAAAA7hv8jBFhDOL98Um8b9FTWkiHQ3h-LCXUZzho9KLTodQ&task_id=102&aid=35&enter_from=largefission&invite_type=largefission&invite_code=CUNYC36N" rel="nofollow">前往下载</a>
             <span style="font-size:10px;">将跳至官网</span>
 
         </div>

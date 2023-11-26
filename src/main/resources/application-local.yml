@@ -7,6 +7,15 @@ spring:
     time-zone: GMT+8
     locale: zh_CN
 
+#  boot:
+#    admin:
+ #      # Spring Boot Admin Client 客户端的相关配置
+ #     client:
+ #       url: http://localhost:8050/boot_admin # 设置 Spring Boot Admin Server 地址
+ #       instance:
+ #         service-host-type: IP # 注册实例时，优先使用 IP [IP, HOST_NAME, CANONICAL_HOST_NAME]
+ #         service-url: http://localhost:${server.port}
+
   data:
     redis:
       port: 6379

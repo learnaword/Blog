@@ -42,10 +42,13 @@
 					<span class="nav-label">系统管理</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">统计图标</a>
+							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">用户管理</a>
 						</li>
 						<li>
-							<a  href="https://tongji.baidu.com/web/10000123625/homepage/index" target="_blank">百度统计</a>
+							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">菜单管理</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/charts/eCharts.jsp">敏感词管理</a>
 						</li>
 					</ul>
 				</li>
@@ -58,6 +61,12 @@
 						<li>
 							<a class="J_menuItem" href="${baseUrl}/doc.html" >系统接口</a>
 						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/db/db.html" >数据库文档</a>
+						</li>
+                        <li>
+                            <a class="J_menuItem" href="https://www.bangmangma.com/boot_admin" >JAVA监控</a>
+                        </li>
 					</ul>
 				</li>
 				<li><a href="#"><i class="fa fa-film"></i>

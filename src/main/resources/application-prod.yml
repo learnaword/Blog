@@ -14,6 +14,15 @@ spring:
     time-zone: GMT+8
     locale: zh_CN
 
+  #boot:
+  #  admin:
+  #    # Spring Boot Admin Client 客户端的相关配置
+  #    client:
+  #      url: https://www.bangmangma.com/boot_admin # 设置 Spring Boot Admin Server 地址
+  #      instance:
+  #        service-host-type: IP # 注册实例时，优先使用 IP [IP, HOST_NAME, CANONICAL_HOST_NAME]
+  #        service-url: https://www.bangmangma.com
+
   data:
     redis:
       port: 6379

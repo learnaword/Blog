@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BlogDO implements Serializable{
+
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 

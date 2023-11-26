@@ -5,7 +5,7 @@
     <div>
         <span class="recSpan2">玩游戏、做任务，一元提现秒到账</span>
         <div class="frecDiv2">
-            <a href="https://a.jrpub.cn/979855"  rel="nofollow">下载注册</a>
+            <a class="fdownload-button" data-info="趣闲赚" href="https://a.jrpub.cn/979855"  rel="nofollow">下载注册</a>
             <span style="font-size:10px;">将跳至官网</span>
        </div>
     </div>
