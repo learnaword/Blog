@@ -51,6 +51,14 @@ $(document).ready(function(){
                 console.log(res, msg)
             }
         });
+        table.on('toolbar(test)', function(obj){
+            var id = obj.config.id;
+            switch(obj.event){
+                case 'refresh':
+                    location.reload();
+                    break;
+            };
+        });
     });
 })
 

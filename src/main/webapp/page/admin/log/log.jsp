@@ -21,15 +21,6 @@
 <script type="text/html" id="toolbarDemo">
 	<div class="layui-btn-container">
 		<button class="layui-btn layui-btn-sm" lay-event="refresh">刷新</button>
-		<button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
-		<button class="layui-btn layui-btn-sm" id="dropdownButton">
-			操作
-			<i class="layui-icon layui-icon-down layui-font-12"></i>
-		</button>
-		<button class="layui-btn layui-btn-sm layui-bg-blue" id="reloadTest">
-			筛选
-			<i class="layui-icon layui-icon-down layui-font-12"></i>
-		</button>
 		<button class="layui-btn layui-btn-sm layui-btn-primary" id="rowMode">
 			<span>{{= d.lineStyle ? '多行' : '单行' }}模式</span>
 			<i class="layui-icon layui-icon-down layui-font-12"></i>
