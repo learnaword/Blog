@@ -118,6 +118,18 @@
 								</li>
 							</ul>
 						</li>
+						<li><a href="#">
+							<span class="nav-label">推荐管理</span>
+							<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="/page/admin/recommend/add.jsp">&nbsp;&nbsp;&nbsp;&nbsp;添加推荐</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/recommend/table.jsp">&nbsp;&nbsp;&nbsp;&nbsp;推荐管理</a>
+								</li>
+							</ul>
+						</li>
 						<li>
 							<a class="J_menuItem" href="/page/admin/type/table.jsp">类型管理</a>
 						</li>

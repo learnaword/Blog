@@ -80,6 +80,7 @@ function initFile() {
 	let url = "/admin/file/get?id=" + id;
 	request.get(url).then(function (res) {
 		var data = res.data.data;
+		$('input[name="url"]').val(data.url),
 		$('input[name="name"]').val(data.name),
 		$('input[name="path"]').val(data.path),
 		$('select[name="module"]').val(data.module),
@@ -87,5 +88,23 @@ function initFile() {
 		layui.form.render();
 	})
 }
+
+$('#clearCache_btn').on('click', function () {
+	// 使用 JavaScript 发送 HTTP 请求到 Nginx purge URL
+	var xhr = new XMLHttpRequest();
+	var url = $('input[name="url"]').val()
+	xhr.open("PURGE", "https://www.bangmangma.com/purge" + url, true);
+	xhr.onreadystatechange = function () {
+			// 缓存清理成功的处理逻辑
+			Swal.fire({
+				type: 'success', // 弹框类型
+				title: '清理缓存', //标题
+				text: "清理成功！", //显示内容
+				confirmButtonText: '确定',
+			}).then(function(isConfirm) {
+			})
+		}
+	xhr.send();
+})
 
 

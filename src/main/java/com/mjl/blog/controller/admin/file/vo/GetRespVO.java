@@ -12,8 +12,11 @@ public class GetRespVO {
     private Long id;
 
     private String name;
+
     @NotBlank(message = "路径不能为空")
     private String path;
+
+    private String url;
 
     private Integer module;
 

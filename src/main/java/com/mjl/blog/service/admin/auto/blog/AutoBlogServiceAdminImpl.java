@@ -12,6 +12,8 @@ import com.mjl.blog.service.admin.soft.SoftAdminService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.mjl.blog.common.exception.utils.ServiceExceptionUtil.exception;
@@ -58,7 +60,8 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
         BlogDO blogDO = new BlogDO();
         blogDO.setImages( autoConfigDO.getImages() );
         blogDO.setRankScore( autoConfigDO.getRankScore() );
-        blogDO.setAdType( autoConfigDO.getAdType() );
+        List<Integer> adTypes = Arrays.asList(126, 129, 128, 127);;
+        blogDO.setAdTypes(adTypes);
         blogDO.setIsTop( autoConfigDO.getIsTop() );
         blogDO.setIsRecommend( autoConfigDO.getIsRecommend() );
         blogDO.setSoftId( autoConfigDO.getSoftId() );

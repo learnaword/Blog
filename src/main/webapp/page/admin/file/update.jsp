@@ -57,6 +57,12 @@
 							</div>
 						</div>
 						<div class="layui-form-item">
+							<label class="layui-form-label">url：</label>
+							<div class="layui-input-block">
+								<input type="text" name="url" autocomplete="off" placeholder="请输入" lay-verify="required" class="layui-input" readonly>
+							</div>
+						</div>
+						<div class="layui-form-item">
 							<label class="layui-form-label">类型：</label>
 							<div class="layui-input-inline">
 								<select name="module" lay-filter="aihao">
@@ -82,6 +88,9 @@
 					<div class="mail-body text-right tooltip-demo">
 						<button id="submit_btn" type="button" class="btn btn-sm btn-primary" data-placement="top" title="发表" data-toggle="tooltip">
 							<i class="fa"></i> 发布
+						</button>
+						<button id="clearCache_btn" type="button" class="btn btn-sm btn-danger" data-placement="top" title="清理缓存" data-toggle="tooltip">
+							<i class="fa"></i> 清理缓存
 						</button>
 						<button type="button" onclick="javascript:window.location.href='table.jsp'"
 								class="btn layui-btn-primary layui-border-blue btn-sm" data-toggle="tooltip"

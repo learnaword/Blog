@@ -77,7 +77,6 @@ public class SoftAdminController {
         return success(true);
     }
 
-
     @PostMapping ("/create")
     @PreAuthorize("@ss.hasPermissions()")
     @Operation(summary = "创建软件")

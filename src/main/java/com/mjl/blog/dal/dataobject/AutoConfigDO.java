@@ -1,18 +1,21 @@
 package com.mjl.blog.dal.dataobject;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @TableName t_auto_config
  */
-@TableName(value ="blog_auto_config")
+@TableName(value ="blog_auto_config",autoResultMap = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +33,8 @@ public class AutoConfigDO implements Serializable {
 
     private Integer rankScore;
 
-    private Integer adType;
+    @TableField(typeHandler = JacksonTypeHandler.class)
+    private List<Integer> adTypes;
 
     private Integer softSection;
 

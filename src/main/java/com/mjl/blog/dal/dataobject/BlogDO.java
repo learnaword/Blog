@@ -1,11 +1,15 @@
 package com.mjl.blog.dal.dataobject;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +17,7 @@ import lombok.NoArgsConstructor;
 /**
  * @TableName t_blog
  */
-@TableName(value ="b_blog")
+@TableName(value ="b_blog",autoResultMap = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -43,7 +47,8 @@ public class BlogDO implements Serializable{
     /*
     * 广告推荐
      */
-    private Integer adType;
+    @TableField(typeHandler = JacksonTypeHandler.class)
+    private List<Integer> adTypes;
 
     /*
     * 是否置顶

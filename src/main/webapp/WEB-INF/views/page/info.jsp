@@ -45,8 +45,43 @@
                 下一篇：<span class="next"><c:if test="${next != null}"> <a href="${baseUrl}/find/${next.id}.html" rel="bookmark">${next.title}</a> </c:if> <c:if test="${next == null}"> 无</c:if></span>
             </p>
        </div>
-       <%@ include file="recommend/footBottom.jsp"%>
-      <div style="border-top:3px solid #eeeeee;" class="newblogs bloglist whitebg">
+        <!--无-->
+        <div style="border:0px;" class="down">
+            <span style="margin-left:7px;" class="downSpan">大家都在玩</span>
+            <hr style="margin-top:6px;" color="white"/>
+            <c:forEach var="item" items="${adTypes}" varStatus="status">
+                <c:if test="${status.index == 0}">
+                   <div style="border-top:1px solid #eeeeee;" class="recommend2">
+                <span class="recSpan">${item.title}（<span style="font-size:12px;color:red;">${item.smallTitle}</span>）</span>
+                <img style="height:45px;" src="${item.images}">
+                <div>
+                    <span class="recSpan2">${item.introduction}</span>
+                    <div class="frecDiv2">
+                        <a class="fdownload-button" data-info="${item.title}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
+                        <span style="font-size:11px;">${item.buttonBottom}</span>
+                    </div>
+                </div>
+                <div class="recDiv3">
+                    <span>热</span>
+                </div>
+            </div>
+                </c:if>
+                <c:if test="${status.index > 0}">
+                   <div class="recommend2 ">
+                      <span class="recSpan">${item.title}</span>
+                        <img style="height:45px;" src="${item.images}">
+                      <div>
+                       <span class="recSpan2">${item.introduction}</span>
+                    <div class="frecDiv2">
+                        <a class="fdownload-button" data-info="${item.title}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
+                        <span style="font-size:11px;">${item.buttonBottom}</span>
+                    </div>
+                </div>
+                   </div>
+                </c:if>
+            </c:forEach>
+        </div>
+    <div style="border-top:3px solid #eeeeee;" class="newblogs bloglist whitebg">
             <h2 class="htitle">相关文章</h2>
             <ul>
                 <c:forEach var="item" items="${relBlogs}" end="2"  varStatus="status">
@@ -54,11 +89,6 @@
                         <h3 class="blogtitle">
                             <a style="color:#467ab2;"  href="${baseUrl}/find/${item.id}.html" rel="bookmark">${item.title}</a>
                         </h3>
-                        <span class="blogpic">
-                            <a href="${baseUrl}/find/${item.id}.html">
-                                <img src="${baseUrl}${item.images}"/>
-                            </a>
-                        </span>
                         <p class="blogtext">
                                 ${item.introduction}
                         </p>
@@ -75,10 +105,10 @@
     <div style="background-color:white;padding:10px;" class="hitebg notice">
             <h3 class="htitle">推荐文章</h3>
             <ul>
-                <c:forEach var="item" items="${topBlogs}" end="2"  varStatus="status">
+                <c:forEach var="item" items="${topBlogs}" end="1"  varStatus="status">
                     <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
-                <c:forEach var="item" items="${hotBlogs}" end="2"  varStatus="status">
+                <c:forEach var="item" items="${hotBlogs}" end="3"  varStatus="status">
                     <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 
@@ -87,7 +117,7 @@
         <div style="margin-top:10px;background-color:white;padding:10px;" class="hitebg notice">
             <h3 class="htitle">最新文章</h3>
             <ul>
-                <c:forEach var="item" items="${newBlogs}" end="5" varStatus="status">
+                <c:forEach var="item" items="${newBlogs}" end="6" varStatus="status">
                     <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
 

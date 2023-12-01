@@ -7,7 +7,10 @@ import com.mjl.blog.common.utils.PageInfo;
 import com.mjl.blog.controller.page.blog.vo.*;
 import com.mjl.blog.convert.page.BlogConvert;
 import com.mjl.blog.dal.dataobject.BlogDO;
+import com.mjl.blog.dal.dataobject.RecommendDO;
 import com.mjl.blog.dal.dataobject.SoftDO;
+import com.mjl.blog.service.admin.recommend.RecommendAdminService;
+import com.mjl.blog.service.admin.recommend.RecommendAdminServiceImpl;
 import com.mjl.blog.service.page.blog.BlogService;
 import com.mjl.blog.service.page.soft.SoftService;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
@@ -20,6 +23,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static com.mjl.blog.common.enums.GlobalErrorCodeConstants.TOO_MANY_REQUESTS;
@@ -32,6 +37,10 @@ public class BlogController {
 
     @Resource
     private SoftService softService;
+
+    @Resource
+    private RecommendAdminService recommendAdminService;
+
     @Value("${app.base-url}")
     private String baseUrl;
 
@@ -76,6 +85,9 @@ public class BlogController {
         //获取10篇最新的文章
         List<NewBlogsRespVO> newBlogs = BlogConvert.INSTANCE.convertNew(blogService.getNewBlogs(blog));
 
+        //获取推荐
+        List<RecommendDO> recommendDOS = recommendAdminService.getRecommendListSortByList(blog.getAdTypes());
+
         //获取上一篇和下一篇
         NextAndPreBlogRespVO nextBlog = BlogConvert.INSTANCE.convertNextAndPre(blogService.selectNextBlog(id, blog.getSoftId()));
         NextAndPreBlogRespVO prevBlog = BlogConvert.INSTANCE.convertNextAndPre(blogService.selectPrevBlog(id, blog.getSoftId()));
@@ -84,6 +96,7 @@ public class BlogController {
         modelAndView.addObject("hotBlogs", hotBlogs);
         modelAndView.addObject("topBlogs", topBlogs);
         modelAndView.addObject("newBlogs", newBlogs);
+        modelAndView.addObject("adTypes", recommendDOS);
         modelAndView.addObject("next", nextBlog);
         modelAndView.addObject("prev", prevBlog);
         modelAndView.addObject("blog", blogInfoRespVO);

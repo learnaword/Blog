@@ -152,7 +152,8 @@ public class FileAdminServiceImpl implements FileAdminService {
     @Override
     public void updateModule(UpdateModuleReqVO updateModuleReqVO) {
         List<FileDO> fileDOList =  fileMapper.selectList(new LambdaQueryWrapper<FileDO>().in(FileDO::getId,updateModuleReqVO.getIds()));
-        fileDOList.forEach(item -> item.setModule(updateModuleReqVO.getModule()).setUpdateTime(System.currentTimeMillis()));
+        fileDOList.forEach(item -> item.setModule(updateModuleReqVO.getModule())
+                .setUrl(formatFileUrl(item.getPath(),updateModuleReqVO.getModule())).setUpdateTime(System.currentTimeMillis()));
         fileMapper.updateBatch(fileDOList);
     }
 

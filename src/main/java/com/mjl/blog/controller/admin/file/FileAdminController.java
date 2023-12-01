@@ -65,7 +65,7 @@ public class FileAdminController {
         return success(true);
     }
 
-    @PutMapping ("/update-content")
+    @RequestMapping ("/update-content")
     @PreAuthorize("@ss.hasPermissions()")
     @Operation(summary = "更新文件内容")
     public CommonResult<Boolean> updateContent(UpdateContentReqVO updateContentReqVO) throws IOException {

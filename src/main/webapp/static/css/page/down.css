@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 86vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.center-container {
+    text-align: center;
+    position: relative;
+    border: 1px solid #c0c4cc; /* 红色边框，可根据需要调整颜色和宽度 */
+    padding: 20px; /* 设置边框内的空白，根据需要调整 */
+    background-color: white;
+    width: 550px;
+    box-sizing: border-box; /* 保证边框宽度不会增加容器的宽度 */
+}
+
+.bigImage {
+    width: 45%;
+    height: auto;
+    border: 5px solid #ff0000; /* 红色边框，可根据需要调整颜色和宽度 */
+    padding: 8px; /* 设置边框内的空白，根据需要调整 */
+    box-sizing: border-box; /* 保证边框宽度不会增加图片的宽度 */
+}
+
+.upper-text-one {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.upper-text-two {
+    font-size: 13px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.lower-text-one {
+    font-size: 12px;
+    color: #555;
+    margin-top: 20px;
+}
+
+.lower-text-two {
+    font-size: 14px;
+    color: #c0c4cc;
+    margin-top: 20px;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.small-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px; /* 调整小图片的宽度，根据需要调整 */
+    height: 30px; /* 调整小图片的高度，根据需要调整 */
+    border-radius: 20%;
+}

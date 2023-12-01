@@ -1,4 +1,4 @@
-package com.mjl.blog.utils.test;
+package com.mjl.blog.test;
 
 import cn.smallbun.screw.core.Configuration;
 import cn.smallbun.screw.core.engine.EngineConfig;
