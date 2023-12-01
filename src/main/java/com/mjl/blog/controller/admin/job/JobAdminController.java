@@ -23,8 +23,6 @@ public class JobAdminController {
 
     @Resource
     private JobAdminService jobService;
-    @Resource
-    private TypeAdminService typeService;
 
     @GetMapping("/list")
     @Operation(summary = "获取任务列表")
@@ -44,7 +42,6 @@ public class JobAdminController {
         PageResult<JobDO> jobDOPageResult = jobService.getList(tableReqVO);
         return success(JobAdminConvert.INSTANCE.convert(jobDOPageResult));
     }
-
 
     @PutMapping("/update-status")
     @PreAuthorize("@ss.hasPermissions()")

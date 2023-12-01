@@ -355,7 +355,6 @@
 
             }).on('click', function (e) {
                 e.preventDefault();
-
                 //fillDataOfMinutesAndHoursSelectOptions();
                 //fillDayWeekInMonth();
                 //fillInWeekDays();
@@ -372,10 +371,8 @@
                     $(this).tab('show');
                     //generate();
                 });
-                $("#CronGenMainDiv select,input").change(function (e) {
-                    generate();
-                });
-                $("#CronGenMainDiv input").focus(function (e) {
+
+                $("#CronGenMainDiv select,#CronGenMainDiv input").change(function (e) {
                     generate();
                 });
                 //generate();

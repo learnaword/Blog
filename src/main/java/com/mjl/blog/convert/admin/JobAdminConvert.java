@@ -12,7 +12,6 @@ import java.util.List;
 public interface JobAdminConvert {
     JobAdminConvert INSTANCE = Mappers.getMapper(JobAdminConvert.class);
 
-
     PageResult<TableRespVO> convert(PageResult<JobDO> list);
 
     JobDO convert(CreateReqVO createReqVO);

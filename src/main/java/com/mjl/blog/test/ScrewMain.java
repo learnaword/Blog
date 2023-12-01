@@ -20,9 +20,9 @@ public class ScrewMain {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "123456";
 
-    private static final String FILE_OUTPUT_DIR = "/Users/majunliang/screw_test";
+    private static final String FILE_OUTPUT_DIR = "src/main/webapp/page/admin/db/";
     private static final EngineFileType FILE_OUTPUT_TYPE = EngineFileType.HTML; // 可以设置 Word 或者 Markdown 格式
-    private static final String DOC_FILE_NAME = "数据库文档";
+    private static final String DOC_FILE_NAME = "db";
     private static final String DOC_VERSION = "1.0.0";
     private static final String DOC_DESCRIPTION = "文档描述";
 
