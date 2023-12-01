@@ -67,6 +67,17 @@
                         <li>
                             <a class="J_menuItem" href="https://www.bangmangma.com/boot_admin" >JAVA监控</a>
                         </li>
+						<li><a href="#">
+							<span class="nav-label">定时任务</span><span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="/page/admin/job/table.jsp">&nbsp;&nbsp;&nbsp;&nbsp;任务管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/job/add.jsp">&nbsp;&nbsp;&nbsp;&nbsp;任务创建</a>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</li>
 				<li><a href="#"><i class="fa fa-film"></i>

@@ -1,24 +1,17 @@
-package com.mjl.blog.dal.dataobject;
+package com.mjl.blog.controller.admin.job.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-import java.util.Date;
-
-@TableName("blog_job")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobDO implements Serializable {
-
-    @TableId(value = "id", type = IdType.AUTO)
+public class TableRespVO {
     private Long id;
 
+    @NotBlank(message = "标题不能为空")
     private String name;
 
     private Integer status;
@@ -40,4 +33,5 @@ public class JobDO implements Serializable {
     private Long updateTime;
 
     private Boolean deleted;
+
 }

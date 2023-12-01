@@ -48,6 +48,7 @@ public class FileAdminController {
     @GetMapping("/table")
     @Operation(summary = "文件表单信息")
     public CommonResult<PageResult<TableRespVO>> getTable(TableReqVO tableReqVO){
+        System.out.println(111111);
         return success(FileAdminConvert.INSTANCE.convert(fileService.getList(tableReqVO)));
     }
 
