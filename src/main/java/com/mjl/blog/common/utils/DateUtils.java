@@ -184,4 +184,11 @@ public class DateUtils {
         return TimeUnit.MILLISECONDS.toDays(end - start);
     }
 
+    public static Boolean isMidnight() {
+        // 获取当前时间（中国时区）
+        LocalDateTime currentDateTime = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
+        // 判断当前时间是否在午夜附近（在 00:00 到 03:00 之间）
+        return currentDateTime.toLocalTime().isAfter(LocalTime.MIDNIGHT) && currentDateTime.toLocalTime().isBefore(LocalTime.of(3, 0));
+    }
+
 }

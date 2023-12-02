@@ -10,7 +10,6 @@ public class QuartzConfiguration {
 
     @Bean
     public SchedulerManager schedulerManager(Scheduler scheduler){
-
         return new SchedulerManager(scheduler);
     }
 

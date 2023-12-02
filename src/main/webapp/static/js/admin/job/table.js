@@ -41,61 +41,32 @@ $(document).ready(function(){
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', fixed: 'left', width:80, title: '任务编号', sort: true, total: '合计：'}
-                ,{field:'name', width: 240, title: '任务昵称'}
-                ,{field:'handlerName', title:'处理器名字', width: 80}
-                ,{field:'handlerParam', title:'处理器参数', width: 120}
-                ,{field:'cronExpression', title:'cron表达式', width: 80}
-                ,{field:'retryCount', title:'重试此时', width: 80}
-                ,{field:'retryInterval', title:'重试间隔', width: 80}
-                ,{field:'monitorTimeout', title:'监控超时时间', width: 80}
+                ,{field:'name', width: 110, title: '任务昵称'}
+                ,{field:'handlerName', title:'处理器名字', width: 110}
                 ,{
                     field: 'status', title: '任务状态', align: 'center',width: 120, templet: function (d) {
                         var str="";
                         if (d.status == '1') {
                             str = str + '<span class="layui-badge layui-bg-blue">启动</span>'
                         } else if (d.status == '0'){
+                            str = str + '<span style="background-color: #cccccc" class="layui-badge">初始化</span>'
+                        }else if (d.status == '2'){
                             str = str + '<span style="background-color: #cccccc" class="layui-badge">暂停</span>'
                         }
                         return str;
                     }
                 }
-                ,{field:'updateTime', title:'更新时间', width: 120, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{field:'createTime', title:'发布时间', width: 120, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
-                ,{fixed: 'right', title:'操作', width: 160, minWidth: 125, toolbar: '#barDemo'}
+                ,{field:'cronExpression', title:'cron表达式', width: 110}
+                ,{field:'retryCount', title:'重试此时', width: 110}
+                ,{field:'retryInterval', title:'重试间隔', width: 110}
+                ,{field:'monitorTimeout', title:'监控超时时间', width: 110}
+                ,{field:'handlerParam', title:'处理器参数', width: 110}
+                ,{field:'updateTime', title:'更新时间', width: 110, templet: function (d) {return util.toDateString(d.updateTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{field:'createTime', title:'发布时间', width: 110, templet: function (d) {return util.toDateString(d.createTime,"yyyy-MM-dd HH:mm:ss")}}
+                ,{fixed: 'right', title:'操作', width: 150, minWidth: 125, toolbar: '#barDemo'}
             ]]
             ,done: function(){
                 var id = this.id;
-                // 下拉按钮测试
-                dropdown.render({
-                    elem: '#dropdownButton' // 可绑定在任意元素中，此处以上述按钮为例
-                    ,data: [{
-                        id: 'SPAM',
-                        title: '移到删除'
-                    },{
-                        id: 'PUBLISHED',
-                        title: '移到发布'
-                    }]
-                    // 菜单被点击的事件
-                    ,click: function(obj){
-                        var checkStatus = table.checkStatus(id)
-                        var data = checkStatus.data; // 获取选中的数据
-                        switch(obj.id){
-                            case 'SPAM':
-                                var selectedIds = data.map(function(item) {
-                                    return item.id;
-                                });
-                                updateStatus(selectedIds,1,"移到删除")
-                                break;
-                            case 'PUBLISHED':
-                                var selectedIds = data.map(function(item) {
-                                    return item.id;
-                                });
-                                updateStatus(selectedIds,0,"移到发布")
-                                break;
-                        }
-                    }
-                });
-
                 // 重载测试
                 dropdown.render({
                     elem: '#reloadTest' // 可绑定在任意元素中，此处以上述按钮为例
@@ -187,38 +158,52 @@ $(document).ready(function(){
                     elem: this, // 触发事件的 DOM 对象
                     show: true, // 外部事件触发即显示
                     data: [{
-                        id: 'SPAM',
-                        title: '移到删除'
+                        id: 'resume',
+                        title: '启动'
                     },{
-                        id: 'PUBLISHED',
-                        title: '移到发布'
+                        id: 'pause',
+                        title: '暂停'
                     },{
-                        id: 'SPAM',
-                        title: '彻底删除'
+                        id: 'trigger',
+                        title: '执行一次'
+                    },{
+                        id: 'delete',
+                        title: '删除'
                     }],
                     click: function(menudata){
-                        if(menudata.id === 'SPAM'){
-                            layer.confirm('将 [id: '+ data.id +'] 移到删除', function(index){
-                                updateStatus([data.id],1,"移到删除");
+                        if(menudata.id === 'resume'){
+                            layer.confirm('将 [id: '+ data.id +'] 任务启动', function(index){
+                                resumeJob([data.id],1,'任务启动');
                                 layer.close(index);
                             })
-                        }else if(menudata.id === 'PUBLISHED'){
-                            layer.confirm('将 [id: '+ data.id +'] 移到发布', function(index){
-                                updateStatus([data.id],0,"移到发布");
+                        }else if(menudata.id === 'pause'){
+                            layer.confirm('将 [id: '+ data.id +'] 任务暂停', function(index){
+                                resumeJob([data.id],2,'任务暂停');
                                 layer.close(index);
                             })
-                        }
+                        }else if(menudata.id === 'trigger'){
+                            layer.confirm('将 [id: '+ data.id +'] 执行一次', function(index){
+                                triggerJob([data.id],"执行一次");
+                                layer.close(index);
+                            })
+                        }else if(menudata.id === 'delete'){
+                            layer.confirm('将 [id: '+ data.id +'] 删除任务', function(index){
+                                deleteJob([data.id],"删除任务");
+                                layer.close(index);
+                            })
+                        };
                     },
                     align: 'right', // 右对齐弹出
                     style: 'box-shadow: 1px 1px 10px rgb(0 0 0 / 12%);' // 设置额外样式
                 })
+
             }
         });
 
     });
 })
-export function updateStatus(selectedIds,status,msg){
-    request.put("/admin/job/update-status", {ids:selectedIds,status: status}).then(function(data){
+export function updateStatus(id,status,msg){
+    request.put("/admin/job/update-status", {id:id,status: status}).then(function(data){
         Swal.fire({
             type: 'warning', // 弹框类型
             title: msg + '操作', //标题
@@ -234,6 +219,60 @@ export function updateStatus(selectedIds,status,msg){
         })
     })
 }
+
+export function resumeJob(id,status,msg){
+    request.put("/admin/job/update-status?id="+id+"&status="+status).then(function(data){
+        Swal.fire({
+            type: 'warning', // 弹框类型
+            title: msg + '操作', //标题
+            text: msg + "成功！", //显示内容
+            confirmButtonText: '确定',
+        }).then(function(isConfirm) {
+            var table = layui.table;
+            table.reloadData('test', {
+                where: {
+                    status: status
+                }
+            });
+        })
+    })
+}
+export function triggerJob(id,msg){
+    request.put("/admin/job/trigger?id="+id).then(function(data){
+        Swal.fire({
+            type: 'warning', // 弹框类型
+            title: msg + '操作', //标题
+            text: msg + "成功！", //显示内容
+            confirmButtonText: '确定',
+        }).then(function(isConfirm) {
+            var table = layui.table;
+            table.reloadData('test', {
+                where: {
+                    status: status
+                }
+            });
+        })
+    })
+}
+export function deleteJob(id,msg){
+    request.delete("/admin/job/delete?id="+id).then(function(data){
+        Swal.fire({
+            type: 'warning', // 弹框类型
+            title: msg + '操作', //标题
+            text: msg + "成功！", //显示内容
+            confirmButtonText: '确定',
+        }).then(function(isConfirm) {
+            var table = layui.table;
+            table.reloadData('test', {
+                where: {
+                    status: status
+                }
+            });
+        })
+    })
+}
+
+
 
 
 

@@ -11,7 +11,10 @@ import org.apache.ibatis.annotations.Mapper;
 public interface JobMapper extends BaseMapperX<JobDO> {
     default PageResult<JobDO> selectPage(TableReqVO reqVO) {
         return selectPage(reqVO, new LambdaQueryWrapper<JobDO>()
-                .eq(JobDO::getStatus, reqVO.getStatus())
+                .eq(JobDO::getDeleted, reqVO.getDeleted())
                 .orderByDesc(JobDO::getUpdateTime));
     }
-}
+
+    default JobDO selectByHandlerName(String handlerName) {
+        return selectOne(JobDO::getHandlerName, handlerName);
+    }}

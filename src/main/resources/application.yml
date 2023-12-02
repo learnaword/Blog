@@ -45,4 +45,3 @@ resilience4j:
         limit-refresh-period: 1s # 每个周期的时长，单位：微秒。默认为 500
         timeout-duration: 1s # 被限流时，阻塞等待的时长，单位：微秒。默认为 5s
         register-health-indicator: true # 是否注册到健康监测
-

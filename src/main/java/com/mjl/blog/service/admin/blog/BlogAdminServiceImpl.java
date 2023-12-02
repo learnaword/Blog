@@ -1,7 +1,10 @@
 package com.mjl.blog.service.admin.blog;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.toolkit.SqlRunner;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.DateUtils;
 import com.mjl.blog.controller.admin.blog.vo.*;
@@ -138,5 +141,32 @@ public class BlogAdminServiceImpl implements BlogAdminService {
 
         LogDataRespVO.setCounts(counts).setDays(days).setTotal(total);
         return LogDataRespVO;
+    }
+
+    public void autoUpdateBlog() {
+        // 统计满足条件的记录数
+        Long blogCounts = blogMapper.selectCount(BlogDO::getStatus,-1);
+        //更新文章时间
+        Wrapper<BlogDO> wrapper = Wrappers.<BlogDO>update().set("create_time", System.currentTimeMillis())
+                .set("update_time",System.currentTimeMillis()).eq("status", -1);
+        blogMapper.update(null, wrapper);
+        // 更新文章的数,
+
+        LambdaQueryWrapper<BlogDO> lambdaQueryWrapper = new LambdaQueryWrapper<BlogDO>();
+        lambdaQueryWrapper.eq(BlogDO::getStatus,-1);
+
+        int updateBlogNum= 0;
+        if(DateUtils.isMidnight()){
+            updateBlogNum= Math.max((int) Math.floor(blogCounts / 70), 0);
+            lambdaQueryWrapper.orderByAsc(BlogDO::getId);
+        }else{
+            updateBlogNum = Math.max((int) Math.floor(blogCounts / 70), 1);
+            lambdaQueryWrapper.orderByDesc(BlogDO::getId);
+        }
+        lambdaQueryWrapper.last("limit "+updateBlogNum);
+
+        List<BlogDO> blogDOList = blogMapper.selectList(lambdaQueryWrapper);
+        blogDOList.stream().forEach(item->item.setStatus(1));
+        blogMapper.updateBatch(blogDOList);
     }
 }
