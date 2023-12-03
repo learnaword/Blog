@@ -130,6 +130,7 @@ public class SchedulerManager {
 
     private Trigger buildTrigger(String jobHandlerName, String jobHandlerParam, String cronExpression,
                                  Integer retryCount, Integer retryInterval) {
+        System.out.println(CronScheduleBuilder.cronSchedule(cronExpression).toString());
         return TriggerBuilder.newTrigger()
                 .withIdentity(jobHandlerName)
                 .withSchedule(CronScheduleBuilder.cronSchedule(cronExpression))

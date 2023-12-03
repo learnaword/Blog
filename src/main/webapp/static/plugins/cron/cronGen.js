@@ -31,7 +31,7 @@
             //creating the secondsTab
             var secondsTab = $("<div/>", { "class": "tab-pane active", id: "Secondly" });
             var seconds1 = $("<div/>",{"class":"line"});
-            $("<input/>",{type : "radio", value : "1", name : "second"}).appendTo(seconds1);
+            $("<input/>",{type : "radio", value : "1", name : "second",checked: true}).appendTo(seconds1);
             $(seconds1).append("每秒 允许的通配符[, - * /]");
             $(seconds1).appendTo(secondsTab);
 
@@ -71,7 +71,7 @@
             var minutesTab = $("<div/>", { "class": "tab-pane", id: "Minutes" });
 
             var minutes1 = $("<div/>",{"class":"line"});
-            $("<input/>",{type : "radio", value : "1", name : "min"}).appendTo(minutes1);
+            $("<input/>",{type : "radio", value : "1", name : "min",checked: true}).appendTo(minutes1);
             $(minutes1).append("每分钟 允许的通配符[, - * /]");
             $(minutes1).appendTo(minutesTab);
 
@@ -111,7 +111,7 @@
             var hourlyTab = $("<div/>", { "class": "tab-pane", id: "Hourly" });
 
             var hourly1 = $("<div/>",{"class":"line"});
-            $("<input/>",{type : "radio", value : "1", name : "hour"}).appendTo(hourly1);
+            $("<input/>",{type : "radio", value : "1", name : "hour",checked: true}).appendTo(hourly1);
             $(hourly1).append("每小时 允许的通配符[, - * /]");
             $(hourly1).appendTo(hourlyTab);
 
@@ -150,7 +150,7 @@
             var dailyTab = $("<div/>", { "class": "tab-pane", id: "Daily" });
 
             var daily1 = $("<div/>",{"class":"line"});
-            $("<input/>",{type : "radio", value : "1", name : "day"}).appendTo(daily1);
+            $("<input/>",{type : "radio", value : "1", name : "day",checked: true}).appendTo(daily1);
             $(daily1).append("每天 允许的通配符[, - * / L W]");
             $(daily1).appendTo(dailyTab);
 
@@ -206,7 +206,7 @@
             var monthlyTab = $("<div/>", { "class": "tab-pane", id: "Monthly" });
 
             var monthly1 = $("<div/>",{"class":"line"});
-            $("<input/>",{type : "radio", value : "1", name : "month"}).appendTo(monthly1);
+            $("<input/>",{type : "radio", value : "1", name : "month",checked: true}).appendTo(monthly1);
             $(monthly1).append("每月 允许的通配符[, - * /]");
             $(monthly1).appendTo(monthlyTab);
 
@@ -252,7 +252,7 @@
             $(weekly1).appendTo(weeklyTab);
 
             var weekly2 = $("<div/>",{"class":"line"});
-            $("<input/>",{type : "radio", value : "2", name : "week"}).appendTo(weekly2);
+            $("<input/>",{type : "radio", value : "2", name : "week",checked: true}).appendTo(weekly2);
             $(weekly2).append("不指定");
             $(weekly2).appendTo(weeklyTab);
 
@@ -292,7 +292,7 @@
             var yearlyTab = $("<div/>", { "class": "tab-pane", id: "Yearly" });
 
             var yearly1 = $("<div/>",{"class":"line"});
-            $("<input/>",{type : "radio", value : "1", name : "year"}).appendTo(yearly1);
+            $("<input/>",{type : "radio", value : "1", name : "year",checked: true}).appendTo(yearly1);
             $(yearly1).append("不指定 允许的通配符[, - * /] 非必填");
             $(yearly1).appendTo(yearlyTab);
 
@@ -331,7 +331,7 @@
             // Replace the input with an input group
             var $g = $("<div>").addClass("input-group");
             // Add an input
-            var $i = $("<input>", { name: 'cronExpression', type: 'text', placeholder: 'cron表达式...'}).addClass("form-control").val($(that).val()).css({ 'width': '400px', 'height': '39px' });
+            var $i = $("<input>", { name: 'cronExpression', type: 'text', placeholder: 'cron表达式...'}).addClass("form-control").val('* * * * * ?').css({ 'width': '400px', 'height': '39px' });
             $i.appendTo($g);
             // Add the button
             var $b = $("<button style=\"padding:9px;\" class=\"btn btn-default\"><i class=\"fa fa-edit\"></i></button>");
@@ -1026,7 +1026,7 @@
             }
     	},
         cronResult : function() {
-            var result;
+            var result = [];
             var second = $("#secondHidden").val();
             second = second== "" ? "*":second;
             var minute = $("#minHidden").val();

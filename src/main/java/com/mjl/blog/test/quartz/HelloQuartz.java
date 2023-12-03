@@ -1,4 +1,4 @@
-package com.mjl.blog.test;
+package com.mjl.blog.test.quartz;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
