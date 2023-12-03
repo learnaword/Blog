@@ -360,7 +360,7 @@
                 //fillInWeekDays();
                 //fillInMonths();
 
-                $.fn.cronGen.tools.cronParse(inputElement.val());
+                $.fn.cronGen.tools.cronParse(displayElement.val());
 
                 //绑定指定事件
                 $.fn.cronGen.tools.initChangeEvent();
