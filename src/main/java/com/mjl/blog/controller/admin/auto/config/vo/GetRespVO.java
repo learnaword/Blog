@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,7 +33,7 @@ public class GetRespVO {
     /*
      * 广告推荐
      */
-    private Integer adType;
+    private List<Long> adTypes;
 
     /*
      * 是否置顶

@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.NotBlank;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,7 +29,7 @@ public class UpdateReqVO {
     /*
      * 广告推荐
      */
-    private Integer adType;
+    private List<Long> adTypes;
 
     /*
      * 是否置顶

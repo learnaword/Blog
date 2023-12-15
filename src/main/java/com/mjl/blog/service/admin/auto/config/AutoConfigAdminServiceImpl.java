@@ -9,9 +9,11 @@ import com.mjl.blog.controller.admin.auto.config.vo.UpdateStatusReqVO;
 import com.mjl.blog.controller.admin.auto.config.vo.UpdateReqVO;
 import com.mjl.blog.convert.admin.AutoConfigAdminConvert;
 import com.mjl.blog.dal.dataobject.AutoConfigDO;
+import com.mjl.blog.dal.dataobject.BlogDO;
 import com.mjl.blog.dal.dataobject.SoftDO;
 import com.mjl.blog.dal.mysql.AutoConfigAdminMapper;
 import com.mjl.blog.enums.BlogStatusEnum;
+import com.mjl.blog.service.admin.blog.BlogAdminService;
 import com.mjl.blog.service.admin.soft.SoftAdminService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -24,11 +26,18 @@ public class AutoConfigAdminServiceImpl implements AutoConfigAdminService {
     private AutoConfigAdminMapper autoConfigMapper;
     @Resource
     private SoftAdminService softService;
+
+    @Resource
+    private BlogAdminService blogAdminService;
     @Override
     public void update(UpdateReqVO updateReqVO) {
+        AutoConfigDO oldAutoConfig = autoConfigMapper.selectById(updateReqVO.getId());
         AutoConfigDO autoConfigDO = AutoConfigAdminConvert.INSTANCE.convert(updateReqVO);
         autoConfigDO.setUpdateTime(System.currentTimeMillis());
         autoConfigMapper.updateById(autoConfigDO);
+
+        //更新博客推荐
+        blogAdminService.updateBlogs(autoConfigDO.getSoftId(),oldAutoConfig.getAdTypes(),autoConfigDO.getAdTypes());
     }
 
     @Override

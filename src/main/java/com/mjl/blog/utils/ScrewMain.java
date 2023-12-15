@@ -1,4 +1,4 @@
-package com.mjl.blog.test;
+package com.mjl.blog.utils;
 
 import cn.smallbun.screw.core.Configuration;
 import cn.smallbun.screw.core.engine.EngineConfig;
@@ -12,13 +12,14 @@ import com.zaxxer.hikari.HikariDataSource;
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.Collections;
+import java.lang.String;
 
 public class ScrewMain {
 
-    private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306";
-    private static final String DB_NAME = "Blog";
+    private static final String DB_URL = "jdbc:mysql://47.104.225.54:3306";
+    private static final String DB_NAME = "blog";
     private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "123456";
+    private static final String DB_PASSWORD = "Root!!2018";
 
     private static final String FILE_OUTPUT_DIR = "src/main/webapp/page/admin/db/";
     private static final EngineFileType FILE_OUTPUT_TYPE = EngineFileType.HTML; // 可以设置 Word 或者 Markdown 格式
@@ -73,7 +74,10 @@ public class ScrewMain {
                 .designatedTableName(Collections.<String>emptyList())  // 根据名称指定表生成
                 .designatedTablePrefix(Collections.<String>emptyList()) //根据表前缀生成
                 .designatedTableSuffix(Collections.<String>emptyList()) // 根据表后缀生成
-                .ignoreTableName(Arrays.asList("test_user", "test_group")) // 忽略表名
+                .ignoreTableName(Arrays.asList("test_user", "test_group",
+                        "QRTZ_BLOB_TRIGGERS","QRTZ_CALENDARS","QRTZ_CRON_TRIGGERS","QRTZ_FIRED_TRIGGERS",
+                        "QRTZ_JOB_DETAILS","QRTZ_LOCKS","QRTZ_PAUSED_TRIGGER_GRPS","QRTZ_SCHEDULER_STATE",
+                        "QRTZ_SIMPLE_TRIGGERS","QRTZ_SIMPROP_TRIGGERS","QRTZ_TRIGGERS")) // 忽略表名
                 .ignoreTablePrefix(Collections.singletonList("test_")) // 忽略表前缀
                 .ignoreTableSuffix(Collections.singletonList("_test")) // 忽略表后缀
                 .build();

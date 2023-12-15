@@ -72,10 +72,25 @@
 							</div>
 						</div>
 						<div class="layui-form-item">
-							<label class="layui-form-label">广告推荐</label>
+							<label class="layui-form-label">底部推荐</label>
 							<div class="layui-input-inline">
-								<select name="adType" lay-filter="aihao">
-									<option value="1">暂时没有</option>
+								<div class="layui-input-inline">
+									<select name="adType1">
+									</select>
+								</div>
+							</div>
+							<div class="layui-input-inline">
+								<select name="adType2">
+								</select>
+							</div>
+							<div class="layui-input-inline">
+								<select name="adType3">
+
+								</select>
+							</div>
+							<div class="layui-input-inline">
+								<select name="adType4">
+
 								</select>
 							</div>
 						</div>

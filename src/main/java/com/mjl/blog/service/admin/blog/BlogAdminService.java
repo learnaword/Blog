@@ -5,6 +5,8 @@ import com.mjl.blog.controller.admin.blog.vo.*;
 import com.mjl.blog.controller.admin.echars.vo.DataRespVO;
 import com.mjl.blog.dal.dataobject.BlogDO;
 
+import java.util.List;
+
 public interface BlogAdminService {
     BlogTypeCountsRespVO getArticleTypeCounts();
 
@@ -26,7 +28,7 @@ public interface BlogAdminService {
 
     void replace(String name, String name1);
 
-    boolean fileIsUse(String name);
-
     DataRespVO getEcharsBlogData(Long start, Long end);
+
+    void updateBlogs(Long softId, List<Integer> adTypes, List<Integer> adTypes1);
 }

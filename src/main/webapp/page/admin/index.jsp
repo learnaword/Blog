@@ -8,8 +8,8 @@
 	<meta name="renderer" content="webkit">
 	<title>博客后台 - 主页</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
 	<link href="/upload/css/animate.css" rel="stylesheet">
 	<link href="/static/css/admin/style.css" rel="stylesheet">

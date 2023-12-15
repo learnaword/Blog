@@ -1,10 +1,11 @@
 package com.mjl.blog.service.admin.blog;
 
+import cn.hutool.json.ObjectMapper;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.toolkit.SqlRunner;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.DateUtils;
 import com.mjl.blog.controller.admin.blog.vo.*;
@@ -14,6 +15,7 @@ import com.mjl.blog.dal.dataobject.BlogDO;
 import com.mjl.blog.dal.mysql.BlogMapper;
 import com.mjl.blog.enums.BlogStatusEnum;
 import jakarta.annotation.Resource;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -111,15 +113,6 @@ public class BlogAdminServiceImpl implements BlogAdminService {
     }
 
     @Override
-    public boolean fileIsUse(String name) {
-        List<BlogDO> blogDOList = blogMapper.selectList(new LambdaQueryWrapper<BlogDO>().like(BlogDO::getContent,name));
-        if(blogDOList.isEmpty()){
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public DataRespVO getEcharsBlogData(Long start, Long end) {
         DataRespVO LogDataRespVO = new DataRespVO();
         int diffNum = (int) TimeUnit.MILLISECONDS.toDays(end - start) + 1;
@@ -143,6 +136,14 @@ public class BlogAdminServiceImpl implements BlogAdminService {
         return LogDataRespVO;
     }
 
+    @SneakyThrows
+    @Override
+    public void updateBlogs(Long softId, List<Integer> oldAdTypes, List<Integer> adTypes) {
+        blogMapper.update(new BlogDO().setAdTypes(adTypes),new LambdaQueryWrapper<BlogDO>()
+                .eq(BlogDO::getSoftId,softId)
+                .eq(BlogDO::getAdTypes,JacksonTypeHandler.getObjectMapper().writeValueAsString(oldAdTypes)));
+    }
+
     public void autoUpdateBlog() {
         // 统计满足条件的记录数
         Long blogCounts = blogMapper.selectCount(BlogDO::getStatus,-1);
@@ -163,6 +164,7 @@ public class BlogAdminServiceImpl implements BlogAdminService {
             updateBlogNum = Math.max((int) Math.floor(blogCounts / 70), 1);
             lambdaQueryWrapper.orderByDesc(BlogDO::getId);
         }
+
         lambdaQueryWrapper.last("limit "+updateBlogNum);
 
         List<BlogDO> blogDOList = blogMapper.selectList(lambdaQueryWrapper);

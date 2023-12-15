@@ -60,8 +60,8 @@ public class AutoBlogServiceAdminImpl implements AutoBlogAdminService {
         BlogDO blogDO = new BlogDO();
         blogDO.setImages( autoConfigDO.getImages() );
         blogDO.setRankScore( autoConfigDO.getRankScore() );
-        List<Integer> adTypes = Arrays.asList(126, 129, 128, 127);;
-        blogDO.setAdTypes(adTypes);
+//        List<Integer> adTypes = Arrays.asList(127, 128, 126, 129);;
+        blogDO.setAdTypes(autoConfigDO.getAdTypes());
         blogDO.setIsTop( autoConfigDO.getIsTop() );
         blogDO.setIsRecommend( autoConfigDO.getIsRecommend() );
         blogDO.setSoftId( autoConfigDO.getSoftId() );
