@@ -33,6 +33,16 @@ public class BlogAdminController {
     }
 
     /*
+     * 获取各个类型文章的数量
+     */
+    @GetMapping("/test")
+    @Operation(summary = "测试")
+    public CommonResult<BlogTypeCountsRespVO> test(){
+        BlogTypeCountsRespVO blogTypeCountsRespVO = blogAdminService.getArticleTypeCounts();
+        return success(blogTypeCountsRespVO);
+    }
+
+    /*
     *获取前preNum天的文章
      */
     @GetMapping("/date-counts")
