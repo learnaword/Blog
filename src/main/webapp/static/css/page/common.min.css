@@ -334,7 +334,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .readmore:before{content:"+";color:#063}
 .zhuanti li:hover{background:#fff;box-shadow:#ccc 1px 1px 8px}
 .zhuanti li:hover img{transform:scale(1.05)}
-.newblogs li .blogpic img{margin:auto;width:100%;max-height:142px;min-height:80px;}
+.newblogs li .blogpic img{height:80px;width:80px;}
 .newblogs li:hover img{}
 .newblogs li:hover{background:#F5F5F5;}
 .share{padding:20px}
