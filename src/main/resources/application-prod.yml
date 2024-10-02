@@ -89,4 +89,4 @@ knife4j:
     language: zh_cn
 
 app:
-  base-url: https://www.bangmangma.com
+  base-url: http://localhost:${server.port} #https://www.bangmangma.com

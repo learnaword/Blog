@@ -99,7 +99,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 .open .navicon:after{margin-top:0;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .open .navicon:after,.open .navicon:before{content:'';display:block;width:30px;height:5px;position:absolute;background:#fff}
 .open{display:block!important}
-.navbox{width:1200px;margin:auto}
+.navbox{width:1280px;margin:auto}
 .imgTop{height:30px;}
 #starlist li{position:relative;display:inline;float:left;width:max-content}
 #starlist li a{display:inline;float:left;padding:0 16px;color:#fff}

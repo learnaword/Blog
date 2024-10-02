@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <title>思想与现实</title>
     <meta name="keywords" content="思想与现实" />
-    <meta name="description" content="嗯，真是个复杂的问题～" />
+    <meta name="description" content="由心生律" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon"href="/images/favicon.ico">
     <link href="/static/css/page/media.min.css" rel="stylesheet">
@@ -48,7 +48,7 @@
     <span class="mediaRecSpan">思想与现实</span>
     <img style="height:50px;" src="${baseUrl}/images/image_.jpg"  alt="思想与现实">
     <div class="mediaRecDiv">
-         <span class="mediaRecSpan2">嗯～真是个复杂的问题。</span>
+         <span class="mediaRecSpan2">由心生律</span>
    </div>
    <div class="mediaRecText">
    </div>

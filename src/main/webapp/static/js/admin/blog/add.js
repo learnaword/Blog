@@ -128,7 +128,7 @@ $(document).ready(function() {
 				title: $('input[name="title"]').val(),
 				introduction: $('input[name="introduction"]').val(),
 				softId: $('select[name="softId"]').val(),
-				softSection: $('input[name="softSection"]').val(),
+				softSection: $('select[name="softSection"]').val(),
 				adTypes: selectedAd,
 				isTop: $('input[name="isTop"]:checked').val(),
 				isRecommend: $('input[name="isRecommend"]:checked').val(),

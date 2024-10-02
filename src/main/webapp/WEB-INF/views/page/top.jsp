@@ -13,6 +13,7 @@
                 <li><a href="${baseUrl}" title="首页" >首页</a></li>
                 <li><a href="${baseUrl}/soft.html" rel="nofollow">经验分享</a></li>
                 <li><a href="${baseUrl}/media/media.html" rel="nofollow">自媒体</a></li>
+                <li><a href="${baseUrl}/technology/technology.html" rel="nofollow">技术专区</a></li>
             </ul>
         </nav>
         <div class="searchico"></div>

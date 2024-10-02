@@ -50,7 +50,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 .open .navicon:after{margin-top:0;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .open .navicon:after,.open .navicon:before{content:'';display:block;width:30px;height:5px;position:absolute;background:#fff}
 .open{display:block!important}
-.navbox{width:1200px;margin:auto}
+.navbox{width:1280px;margin:auto}
 .imgTop{height:30px;}
 #starlist li{position:relative;display:inline;float:left;width:max-content}
 #starlist li a{display:inline;float:left;padding:0 16px;color:#fff}
@@ -74,7 +74,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 .searchbox{width:1200px;margin:10px auto;overflow:hidden;background:#fff;position:relative}
 
 /*整体样式*/
-article{width:1080px;margin:auto;overflow:hidden}
+article{width:1280px;margin:auto;overflow:hidden}
 
 /*尾部*/
 footer{width:100%;background:#333;color:#a5a4a4;text-align:center;padding:10px 0}

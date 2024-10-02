@@ -92,6 +92,32 @@
 					</ul>
 				</li>
 				<li><a href="#"><i class="fa fa-book"></i>
+					<span class="nav-label">技术博客</span><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a class="J_menuItem" href="/page/admin/technology/blog/add.jsp">写博客</a>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/technology/blog/table.jsp">博客管理</a>
+						</li>
+						<li><a href="#">
+							<span class="nav-label">专区模块</span>
+							<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="/page/admin/technology/soft/add.jsp">&nbsp;&nbsp;&nbsp;&nbsp;添加专区</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="/page/admin/technology/soft/table.jsp">&nbsp;&nbsp;&nbsp;&nbsp;专区管理</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="J_menuItem" href="/page/admin/technology/type/table.jsp">类型管理</a>
+						</li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="fa fa-book"></i>
 					<span class="nav-label">博客模块</span><span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
