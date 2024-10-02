@@ -22,6 +22,10 @@
     <div class="lbox">
         <div class="fenlei">
             <div class="item">
+                <a href="${baseUrl}/technology/softInfo/97.html"><img src="${baseUrl}/images/java.png" alt="java"/>
+                    <span class="caption">Java</span></a>
+            </div>
+            <div class="item">
                 <a href="${baseUrl}/technology/softInfo/89.html"><img src="${baseUrl}/images/spring.png" alt="Spring"/>
                     <span class="caption">Spring</span></a>
             </div>
@@ -30,12 +34,26 @@
                     <span class="caption">Mybatis</span></a>
             </div>
             <div class="item">
+                <a href="${baseUrl}/technology/softInfo/92.html"><img src="${baseUrl}/images/mysql.png" alt="MySQL"/>
+                    <span class="caption">MySQL</span></a>
+            </div>
+        </div>
+        <div class="fenlei">
+            <div class="item">
                 <a href="${baseUrl}/technology/softInfo/91.html"><img src="${baseUrl}/images/redis.png" alt="Redis"/>
                     <span class="caption">Redis</span></a>
             </div>
             <div class="item">
-                <a href="${baseUrl}/technology/softInfo/92.html"><img src="${baseUrl}/images/mysql.png" alt="MySQL"/>
-                    <span class="caption">MySQL</span></a>
+                <a href="${baseUrl}/technology/softInfo/99.html"><img src="${baseUrl}/images/RabbitMQ.png" alt="RabbitMQ"/>
+                    <span class="caption">RabbitMQ</span></a>
+            </div>
+            <div class="item">
+                <a href="${baseUrl}/technology/softInfo/98.html"><img src="${baseUrl}/images/kafka.jpeg" alt="Kafka"/>
+                    <span class="caption">Kafka</span></a>
+            </div>
+            <div class="item">
+                <a href="${baseUrl}/technology/softInfo/100.html"><img src="${baseUrl}/images/dubbo.png" alt="Dubbo"/>
+                    <span class="caption">Dubbo</span></a>
             </div>
         </div>
         <div class="fenlei">
@@ -68,7 +86,7 @@
                                  <img src="${baseUrl}${item.images}"/>
                              </a>
                          </span>
-                        <p class="blogtext" style="margin-left: 10px;">${item.introduction}</p>
+                        <p class="blogtext">${item.introduction}</p>
                     </li>
                 </c:forEach>
             </ul>
