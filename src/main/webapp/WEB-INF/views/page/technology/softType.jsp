@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-    <title>生活经验</title>
-    <meta name="keywords" content="手机兼职,手机赚钱软件,免费赚钱" />
-    <meta name="description" content="手机赚钱软件专区:在这里有大量的手机免费赚钱赚钱软件，软件专区功能，在这里你将充分了解这个软件，如何赚钱，能赚到多少，有什么优点和缺点等等，尽我最大可能让你找到适合自己的网赚方式。" />
+    <title>技术专区</title>
+    <meta name="keywords" content="技术专区" />
+    <meta name="description" content="JAVA是世界上最好的语言" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon"href="/images/favicon.ico">
     <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
@@ -21,6 +21,10 @@
       <div class="lbox">
           <div class="fenlei">
               <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/97.html"><img src="${baseUrl}/images/java.png" alt="java"/>
+                      <span class="caption">Java</span></a>
+              </div>
+              <div class="item">
                   <a href="${baseUrl}/technology/softInfo/89.html"><img src="${baseUrl}/images/spring.png" alt="Spring"/>
                       <span class="caption">Spring</span></a>
               </div>
@@ -29,12 +33,26 @@
                       <span class="caption">Mybatis</span></a>
               </div>
               <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/92.html"><img src="${baseUrl}/images/mysql.png" alt="MySQL"/>
+                      <span class="caption">MySQL</span></a>
+              </div>
+          </div>
+          <div class="fenlei">
+              <div class="item">
                   <a href="${baseUrl}/technology/softInfo/91.html"><img src="${baseUrl}/images/redis.png" alt="Redis"/>
                       <span class="caption">Redis</span></a>
               </div>
               <div class="item">
-                  <a href="${baseUrl}/technology/softInfo/92.html"><img src="${baseUrl}/images/mysql.png" alt="MySQL"/>
-                      <span class="caption">MySQL</span></a>
+                  <a href="${baseUrl}/technology/softInfo/99.html"><img src="${baseUrl}/images/RabbitMQ.png" alt="RabbitMQ"/>
+                      <span class="caption">RabbitMQ</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/98.html"><img src="${baseUrl}/images/kafka.jpeg" alt="Kafka"/>
+                      <span class="caption">Kafka</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/100.html"><img src="${baseUrl}/images/dubbo.png" alt="Dubbo"/>
+                      <span class="caption">Dubbo</span></a>
               </div>
           </div>
           <div class="fenlei">
