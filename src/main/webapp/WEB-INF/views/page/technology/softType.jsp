@@ -18,67 +18,68 @@
 <body>
   <%@ include file="../top.jsp"%>
   <article>
-    <div class="lbox">
-        <div class="fenlei">
-            <div class="item">
-                <a href="${baseUrl}/technology/softInfo/89.html"><img src="${baseUrl}/images/soft_task.PNG" alt="Spring"/>
-                    <span class="caption">Spring</span></a>
-            </div>
-            <div class="item">
-                <a href="${baseUrl}/softInfo/79.html"><img src="${baseUrl}/images/soft_news.PNG" alt="看新闻"/>
-                    <span class="caption"></span></a>
-            </div>
-            <div class="item">
-                <a href="${baseUrl}/softInfo/78.html"><img src="${baseUrl}/images/soft_vedio.PNG" alt="看视频"/>
-                    <span class="caption">看视频</span></a>
-            </div>
-            <div class="item">
-                <a href="${baseUrl}/softInfo/80.html"><img src="${baseUrl}/images/soft_taobaoke.PNG" alt="淘宝客"/>
-                    <span class="caption">淘宝客</span></a>
-            </div>
-        </div>
-        <div class="fenlei">
-            <div class="item">
-                <a href="${baseUrl}/softInfo/82.html"><img src="${baseUrl}/images/soft_game.PNG" alt="玩游戏"/>
-                    <span class="caption">玩游戏</span></a>
-            </div>
-            <div class="item">
-                <a href="${baseUrl}/softInfo/84.html"><img src="${baseUrl}/images/soft_wap.PNG" alt="建网站"/>
-                    <span class="caption">建网站</span></a>
-            </div>
-            <div class="item">
-                <a href="${baseUrl}/softInfo/83.html"><img src="${baseUrl}/images/soft_media.PNG" alt="自媒体"/>
-                    <span class="caption">自媒体</span></a>
-            </div>
-            <div class="item">
-                <a href="${baseUrl}/softInfo/85.html"><img src="${baseUrl}/images/soft_douyin.PNG" alt="玩抖音"/>
-                    <span class="caption">短视频</span></a>
-            </div>
-        </div>
-      <div class="newblogs bloglist">
-        <ul>
-          <c:forEach var="item" items="${softList}" varStatus="status">
-            <li>
-              <h3 class="blogtitle">
-                <a href="${baseUrl}/technology/softDetail/${item.id}/1.html">${item.title}</a>
-              </h3>
-              <span class="blogpic">
-                    <a href="${baseUrl}/technology/softDetail/${item.id}/1.html">
-                       <img src="${baseUrl}${item.images}"/></a>
-              </span>
-              <p class="blogtext">${item.introduction}</p>
-            </li>
-          </c:forEach>
-        </ul>
-        <%@ include file="../fenye.jsp"%>
+      <div class="lbox">
+          <div class="fenlei">
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/89.html"><img src="${baseUrl}/images/spring.png" alt="Spring"/>
+                      <span class="caption">Spring</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/90.html"><img src="${baseUrl}/images/mybatis.jpeg" alt="Mybatis"/>
+                      <span class="caption">Mybatis</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/91.html"><img src="${baseUrl}/images/redis.png" alt="Redis"/>
+                      <span class="caption">Redis</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/92.html"><img src="${baseUrl}/images/mysql.png" alt="MySQL"/>
+                      <span class="caption">MySQL</span></a>
+              </div>
+          </div>
+          <div class="fenlei">
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/93.html"><img src="${baseUrl}/images/linux.png" alt="Linux"/>
+                      <span class="caption">Linux</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/95.html"><img src="${baseUrl}/images/tomcat.png" alt="Tomcat"/>
+                      <span class="caption">Tomcat</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/94.html"><img src="${baseUrl}/images/nginx.jpeg" alt="Nginx"/>
+                      <span class="caption">Nginx</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/96.html"><img src="${baseUrl}/images/jenkins.png" alt="Jenkins"/>
+                      <span class="caption">Jenkins</span></a>
+              </div>
+          </div>
+          <div class="newblogs bloglist whitebg">
+              <ul>
+                  <c:forEach var="item" items="${softList}" varStatus="status">
+                      <li>
+                          <h3 class="blogtitle">
+                              <a style="color:#467ab2;"  href="${baseUrl}/technology/softDetail/${item.id}/1.html">${item.title}</a>
+                          </h3>
+                          <span class="blogpic">
+                             <a href="${baseUrl}/technology/softDetail/${item.id}/1.html">
+                                 <img src="${baseUrl}${item.images}"/>
+                             </a>
+                         </span>
+                          <p class="blogtext">${item.introduction}</p>
+                      </li>
+                  </c:forEach>
+              </ul>
+              <%@ include file="../fenye.jsp"%>
+          </div>
       </div>
-    </div>
       <div class="rbox">
           <div class="mediaCard" style="background:#fff;">
-              <span class="mediaRecSpan">思想与现实</span>
-              <img style="height:50px;" src="${baseUrl}/images/image_.jpg"  alt="思想与现实">
+              <span class="mediaRecSpan">NEW个对象</span>
+              <img style="height:50px;" src="${baseUrl}/images/touxiang.jpg"  alt="NEW个对象">
               <div class="mediaRecDiv">
-                  <span class="mediaRecSpan2">嗯～真是个复杂的问题。</span>
+                  <span class="mediaRecSpan2">JAVA是世界上最好的语言</span>
               </div>
               <div class="mediaRecText">
               </div>

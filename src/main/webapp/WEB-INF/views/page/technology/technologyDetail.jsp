@@ -24,15 +24,15 @@
                   <div class="fenlei">
                       <div class="item">
                           <a href="${baseUrl}/technology/softDetail/${softId}/1.html"><img src="https://www.bangmangma.com/images/softDetail_introduce.PNG" alt="软件介绍"/>
-                              <span class="caption">专区介绍</span></a>
+                              <span class="caption">理论</span></a>
                       </div>
                       <div class="item">
                           <a href="${baseUrl}/technology/softDetail/${softId}/2.html"><img src="https://www.bangmangma.com/images/softDetail_exp.PNG" alt="使用经验"/>
-                              <span class="caption">使用经验</span></a>
+                              <span class="caption">经验</span></a>
                       </div>
                       <div class="item">
                           <a href="${baseUrl}/technology/softDetail/${softId}/3.html"><img src="https://www.bangmangma.com/images/softDetail_questions.PNG" alt="疑难解答"/>
-                              <span class="caption">疑难解答</span></a>
+                              <span class="caption">问题</span></a>
                       </div>
                       <div class="item">
                           <a href="${baseUrl}/technology/softDetail/${softId}.html"><img src="https://www.bangmangma.com/images/softDetail_all.PNG" alt="全部"/>
@@ -68,10 +68,10 @@
     </div>
     <div class="rbox">
         <div class="mediaCard" style="background:#fff;">
-            <span class="mediaRecSpan">思想与现实</span>
-            <img style="height:50px;" src="${baseUrl}/images/image_.jpg"  alt="思想与现实">
+            <span class="mediaRecSpan">NEW个对象</span>
+            <img style="height:50px;" src="${baseUrl}/images/touxiang.jpg"  alt="NEW个对象">
             <div class="mediaRecDiv">
-                <span class="mediaRecSpan2">嗯，真是个复杂的问题～</span>
+                <span class="mediaRecSpan2">JAVA是世界上最好的语言</span>
             </div>
             <div class="mediaRecText">
             </div>
