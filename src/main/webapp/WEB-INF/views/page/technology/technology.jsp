@@ -68,7 +68,7 @@
                                  <img src="${baseUrl}${item.images}"/>
                              </a>
                          </span>
-                        <p class="blogtext">${item.introduction}</p>
+                        <p class="blogtext" style="margin-left: 10px;">${item.introduction}</p>
                     </li>
                 </c:forEach>
             </ul>
