@@ -73,15 +73,51 @@
                       <span class="caption">Jenkins</span></a>
               </div>
           </div>
+          <div class="fenlei">
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/101.html"><img src="${baseUrl}/images/git.png" alt="Git"/>
+                      <span class="caption">Git</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/104.html"><img src="${baseUrl}/images/docker.png" alt="docker"/>
+                      <span class="caption">Docker</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/102.html"><img src="${baseUrl}/images/swagger.png" alt="Nginx"/>
+                      <span class="caption">Swagger</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/103.html"><img src="${baseUrl}/images/jiagou.jpeg" alt="Jenkins"/>
+                      <span class="caption">架构</span></a>
+              </div>
+          </div>
+          <div class="fenlei">
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/106.html"><img src="${baseUrl}/images/springcloud.png" alt="Spring Cloud"/>
+                      <span class="caption">Spring Cloud</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/108.html"><img src="${baseUrl}/images/weifuwu.jpeg" alt="微服务"/>
+                      <span class="caption">微服务</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/107.html"><img src="${baseUrl}/images/fenbushi.png" alt="分布式"/>
+                      <span class="caption">分布式</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/105.html"><img src="${baseUrl}/images/fenkufenbiao.png" alt="分库分表"/>
+                      <span class="caption">分库分表</span></a>
+              </div>
+          </div>
           <div class="newblogs bloglist whitebg">
               <ul>
                   <c:forEach var="item" items="${softList}" varStatus="status">
                       <li>
                           <h3 class="blogtitle">
-                              <a style="color:#467ab2;"  href="${baseUrl}/technology/softDetail/${item.id}/1.html">${item.title}</a>
+                              <a style="color:#467ab2;"  href="${baseUrl}/technology/softDetail/${item.id}.html">${item.title}</a>
                           </h3>
                           <span class="blogpic">
-                             <a href="${baseUrl}/technology/softDetail/${item.id}/1.html">
+                             <a href="${baseUrl}/technology/softDetail/${item.id}.html">
                                  <img src="${baseUrl}${item.images}"/>
                              </a>
                          </span>
