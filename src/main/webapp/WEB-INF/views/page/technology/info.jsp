@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>${blog.title}-帮忙么</title>
+    <title>${blog.title}-NEW个对象</title>
     <meta name="keywords" content="${blog.keyword}" />
     <meta name="description" content="${blog.introduction}" />
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -26,12 +26,12 @@
        <div class="infos">
             <div class="newsview">
                 <div class="intitle">
-                    <a href="${baseUrl}">帮忙么</a>&nbsp;&gt;&nbsp;<a href="${baseUrl}/technology/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
+                    <a href="${baseUrl}">NEW个对象</a>&nbsp;&gt;&nbsp;<a href="${baseUrl}/technology/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
                         </div>
                         <h1 class="news_title">${blog.title}</h1>
                         <div>
                             <span class="m_time">${blog.createTime}</span>
-                            <span style="margin-left:10px;"><i class="fa fa-user fa-fw"></i>帮忙么</span>
+                            <span style="margin-left:10px;"><i class="fa fa-user fa-fw"></i>NEW个对象</span>
                         </div>
                         <hr style="margin:5px 0px 5px 0px;"/>
                        <div class="news_infos">${blog.content}</div>
@@ -58,7 +58,7 @@
                                 ${item.introduction}
                         </p>
                          <p class="bloginfo">
-                            <span>帮忙么</span>
+                            <span>NEW个对象</span>
                             <span style="margin-left:0px;" class="m_time">${item.createTime}</span>
                         </p>
                     </li>

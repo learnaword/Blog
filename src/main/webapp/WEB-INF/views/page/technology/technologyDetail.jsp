@@ -58,7 +58,7 @@
                             ${item.introduction}
                         </p>
                         <p class="bloginfo">
-                            <span>帮忙么</span>
+                            <span>NEW个对象</span>
                             <span style="margin-left:0px;" class="m_time">${item.createTime}</span>
                     </li>
                 </c:forEach>
