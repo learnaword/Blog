@@ -87,8 +87,8 @@
                       <span class="caption">Swagger</span></a>
               </div>
               <div class="item">
-                  <a href="${baseUrl}/technology/softInfo/103.html"><img src="${baseUrl}/images/jiagou.jpeg" alt="Jenkins"/>
-                      <span class="caption">架构</span></a>
+                  <a href="${baseUrl}/technology/softInfo/109.html"><img src="${baseUrl}/images/suanfa.png" alt="算法"/>
+                      <span class="caption">算法</span></a>
               </div>
           </div>
           <div class="fenlei">
@@ -107,6 +107,24 @@
               <div class="item">
                   <a href="${baseUrl}/technology/softInfo/105.html"><img src="${baseUrl}/images/fenkufenbiao.png" alt="分库分表"/>
                       <span class="caption">分库分表</span></a>
+              </div>
+          </div>
+          <div class="fenlei">
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/103.html"><img src="${baseUrl}/images/jiagou.jpeg" alt="Jenkins"/>
+                      <span class="caption">架构</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/110.html"><img src="${baseUrl}/images/xiangmu.png" alt="项目"/>
+                      <span class="caption">项目</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/111.html"><img src="${baseUrl}/images/sixiang.jpeg" alt="编程思想"/>
+                      <span class="caption">编程思想</span></a>
+              </div>
+              <div class="item">
+                  <a href="${baseUrl}/technology/softInfo/112.html"><img src="${baseUrl}/images/fenkufenbiao.png" alt="分库分表"/>
+                      <span class="caption">其它</span></a>
               </div>
           </div>
           <div class="newblogs bloglist whitebg">
