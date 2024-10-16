@@ -134,11 +134,13 @@
                           <h3 class="blogtitle">
                               <a style="color:#467ab2;"  href="${baseUrl}/technology/softDetail/${item.id}.html">${item.title}</a>
                           </h3>
-                          <span class="blogpic">
-                             <a href="${baseUrl}/technology/softDetail/${item.id}.html">
-                                 <img src="${baseUrl}${item.images}"/>
-                             </a>
-                         </span>
+                          <c:if test="${item.images != ''}">
+                        <span class="blogpic">
+                            <a href="${baseUrl}/technology/find/${item.id}.html">
+                                <img src="${baseUrl}${item.images}"/>
+                            </a>
+                        </span>
+                          </c:if>
                           <p class="blogtext">${item.introduction}</p>
                       </li>
                   </c:forEach>

@@ -61,11 +61,11 @@
                 <c:forEach var="item" items="${blogNewList.getList()}" varStatus="status">
                     <li>
                         <h3 class="blogtitle">
-                            <a style="color:#467ab2;" href="${baseUrl}/find/${item.id}.html" rel="bookmark">${item.title}</a>
+                            <a style="color:#467ab2;" href="${baseUrl}/technology/find/${item.id}.html" rel="bookmark">${item.title}</a>
                         </h3>
                        <c:if test="${item.images != ''}">
                         <span class="blogpic">
-                            <a href="${baseUrl}/find/${item.id}.html">
+                            <a href="${baseUrl}/technology/find/${item.id}.html">
                                 <img src="${baseUrl}${item.images}"/>
                             </a>
                         </span>

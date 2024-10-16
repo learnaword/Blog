@@ -49,11 +49,13 @@
                              ${item.title}
                             </a>
                         </h3>
+                        <c:if test="${item.images != ''}">
                         <span class="blogpic">
                             <a href="${baseUrl}/technology/find/${item.id}.html">
                                 <img src="${baseUrl}${item.images}"/>
                             </a>
                         </span>
+                        </c:if>
                         <p class="blogtext">
                             ${item.introduction}
                         </p>

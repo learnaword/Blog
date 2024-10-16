@@ -33,9 +33,9 @@ public class BlogServiceImpl implements BlogService{
 
     @Override
     public List<BlogDO> getOrderList() {
-        return blogMapper.selectList(new QueryWrapper<BlogDO>().eq("soft_id",83)
+        return blogMapper.selectList(new QueryWrapper<BlogDO>()
                 .eq("status", BlogStatusEnum.PUBLISHED.getStatus())
-                .orderByAsc("create_time").last("limit 10"));
+                .orderByDesc("create_time").last("limit 10"));
     }
 
     @Override

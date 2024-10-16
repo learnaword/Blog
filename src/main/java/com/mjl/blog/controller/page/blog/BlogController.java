@@ -6,13 +6,14 @@ import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.PageInfo;
 import com.mjl.blog.controller.page.blog.vo.*;
 import com.mjl.blog.convert.page.BlogConvert;
+import com.mjl.blog.convert.page.TechnologyBlogConvert;
 import com.mjl.blog.dal.dataobject.BlogDO;
 import com.mjl.blog.dal.dataobject.RecommendDO;
 import com.mjl.blog.dal.dataobject.SoftDO;
 import com.mjl.blog.service.admin.recommend.RecommendAdminService;
-import com.mjl.blog.service.admin.recommend.RecommendAdminServiceImpl;
 import com.mjl.blog.service.page.blog.BlogService;
 import com.mjl.blog.service.page.soft.SoftService;
+import com.mjl.blog.service.page.technology.blog.TechnologyBlogService;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import jakarta.annotation.Resource;
 import jakarta.validation.constraints.NotNull;
@@ -22,9 +23,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Collections;
-import java.util.Comparator;
+import com.mjl.blog.controller.page.technology.blog.vo.NewListRespVO;
+import com.mjl.blog.controller.page.technology.blog.vo.IndexReqVO;
 import java.util.List;
 
 import static com.mjl.blog.common.enums.GlobalErrorCodeConstants.TOO_MANY_REQUESTS;
@@ -39,6 +39,9 @@ public class BlogController {
     private SoftService softService;
 
     @Resource
+    private TechnologyBlogService technologyBlogService;
+
+    @Resource
     private RecommendAdminService recommendAdminService;
 
     @Value("${app.base-url}")
@@ -49,11 +52,11 @@ public class BlogController {
     public String index(Model model, IndexReqVO indexReqVO) {
 
         List<OrderListRespVO> blogOrderList = BlogConvert.INSTANCE.covertOrder(blogService.getOrderList());
-        PageResult<NewListRespVO> blogNewList = BlogConvert.INSTANCE.covertNew(blogService.getNewList(indexReqVO));
+        PageResult<NewListRespVO> technologyBlogNewList = TechnologyBlogConvert.INSTANCE.covertNew(technologyBlogService.getNewList(indexReqVO));
 
-        PageInfo<NewListRespVO> pageInfo = new PageInfo<>(blogNewList, indexReqVO, 3);
+        PageInfo<NewListRespVO> pageInfo = new PageInfo<>(technologyBlogNewList, indexReqVO, 3);
         model.addAttribute("blogOrderList", blogOrderList);
-        model.addAttribute("blogNewList", blogNewList);
+        model.addAttribute("blogNewList", technologyBlogNewList);
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("baseUrl", baseUrl);
 
