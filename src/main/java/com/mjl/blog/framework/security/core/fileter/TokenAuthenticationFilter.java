@@ -23,7 +23,6 @@ import java.io.IOException;
  * Token 过滤器，验证 token 的有效性
  * 验证通过后，获得 信息，并加入到 Spring Security 上下文
  *
- * @author 芋道源码
  */
 @RequiredArgsConstructor
 public class TokenAuthenticationFilter extends OncePerRequestFilter {

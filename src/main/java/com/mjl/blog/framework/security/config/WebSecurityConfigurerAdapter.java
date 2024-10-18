@@ -34,7 +34,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 /**
  * 自定义的 Spring Security 配置适配器实现
  *
- * @author 芋道源码
+
  */
 @Configuration
 @EnableMethodSecurity
@@ -50,6 +50,7 @@ public class WebSecurityConfigurerAdapter {
      */
     @Resource
     private AccessDeniedHandler accessDeniedHandler;
+
     /**
      * Token 认证过滤器 Bean
      */
