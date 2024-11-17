@@ -3,8 +3,6 @@
 
 github地址：https://github.com/learnaword/Blog
 
-在线地址：www.bangmangma.com
-
 ![](https://www.bangmangma.com/upload/blog/28e21c25a70e3a8a54ccb9c60692c7584acf9531f4ca964f8029650366df9c8e.png)
 
 ## 项目整体
