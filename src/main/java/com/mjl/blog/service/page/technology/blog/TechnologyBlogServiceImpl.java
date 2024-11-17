@@ -60,7 +60,7 @@ public class TechnologyBlogServiceImpl implements TechnologyBlogService {
     @Override
     public List<RelBlogsRespVO> getRelBlogs(TechnologyBlogDO blog) {
 
-        String redisKey = String.format(RedisKeyConstants.BLOG_INFO_REL_LIST.getKeyTemplate(),blog.getId());
+        String redisKey = String.format(RedisKeyConstants.TECHNOLOGY_INFO_REL_LIST.getKeyTemplate(),blog.getId());
         //如果redis里没有，就从数据库里获取。
         String blogs = stringRedisTemplate.opsForValue().get(redisKey);
         List<RelBlogsRespVO> relBlogs;
@@ -80,7 +80,7 @@ public class TechnologyBlogServiceImpl implements TechnologyBlogService {
 
     @Override
     public List<RelBlogsRespVO> getHotBlogs(TechnologyBlogDO blog) {
-        String redisKey = String.format(RedisKeyConstants.BLOG_INFO_HOT_LIST.getKeyTemplate(),blog.getId());
+        String redisKey = String.format(RedisKeyConstants.TECHNOLOGY_INFO_HOT_LIST.getKeyTemplate(),blog.getId());
         //如果redis里没有，就从数据库里获取。
         String blogs = stringRedisTemplate.opsForValue().get(redisKey);
         List<RelBlogsRespVO> hotBlogs;
@@ -99,7 +99,7 @@ public class TechnologyBlogServiceImpl implements TechnologyBlogService {
     @Override
     public List<TopBlogsRespVO> getTopBlogs(TechnologyBlogDO blog) {
 
-        String redisKey = String.format(RedisKeyConstants.BLOG_INFO_TOP_LIST.getKeyTemplate(),blog.getSoftId());
+        String redisKey = String.format(RedisKeyConstants.TECHNOLOGY_INFO_TOP_LIST.getKeyTemplate(),blog.getSoftId());
         //如果redis里没有，就从数据库里获取。
         String blogs = stringRedisTemplate.opsForValue().get(redisKey);
         List<TopBlogsRespVO> topBlogs;
