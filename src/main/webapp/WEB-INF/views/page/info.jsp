@@ -117,10 +117,12 @@
         <div style="margin-top:10px;background-color:white;padding:10px;" class="hitebg notice">
             <h3 class="htitle">最新文章</h3>
             <ul>
-                <c:forEach var="item" items="${newBlogs}" end="6" varStatus="status">
+                <c:forEach var="item" items="${newTechnologyBlogs}" end="3" varStatus="status">
+                    <li><a href="${baseUrl}/technology/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+                </c:forEach>
+                <c:forEach var="item" items="${newBlogs}" end="3" varStatus="status">
                     <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
-
             </ul>
         </div>
     </div>

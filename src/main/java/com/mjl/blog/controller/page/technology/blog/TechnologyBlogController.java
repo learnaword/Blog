@@ -46,7 +46,7 @@ public class TechnologyBlogController {
     public String index(Model model, SoftReqVO softReqVO) {
 
         List<OrderListRespVO> blogOrderList = TechnologyBlogConvert.INSTANCE.covertOrder(technologyblogService.getOrderList());
-        List<NewBlogsRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyblogService.getNewBlogs());
+        List<NewBlogsTechRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyblogService.getNewBlogs());
 
         PageResult<SoftListRespVO> softList = TechnologySoftConvert.INSTANCE.covert(technologysoftService.getList(softReqVO));
 
@@ -82,7 +82,7 @@ public class TechnologyBlogController {
         //获取4篇文章对应的专区置顶文章。
         List<TopBlogsRespVO> topBlogs = technologyblogService.getTopBlogs(blog);
         //获取10篇最新的文章
-        List<NewBlogsRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyblogService.getNewBlogs());
+        List<NewBlogsTechRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyblogService.getNewBlogs());
 
         //获取上一篇和下一篇
         NextAndPreBlogRespVO nextBlog = TechnologyBlogConvert.INSTANCE.convertNextAndPre(technologyblogService.selectNextBlog(id, blog.getSoftId()));

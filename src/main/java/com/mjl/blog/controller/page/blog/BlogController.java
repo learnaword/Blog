@@ -5,6 +5,7 @@ import com.mjl.blog.common.exception.ServerException;
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.PageInfo;
 import com.mjl.blog.controller.page.blog.vo.*;
+import com.mjl.blog.controller.page.technology.blog.vo.NewBlogsTechRespVO;
 import com.mjl.blog.convert.page.BlogConvert;
 import com.mjl.blog.convert.page.TechnologyBlogConvert;
 import com.mjl.blog.dal.dataobject.BlogDO;
@@ -87,6 +88,8 @@ public class BlogController {
         List<TopBlogsRespVO> topBlogs = blogService.getTopBlogs(blog);
         //获取10篇最新的文章
         List<NewBlogsRespVO> newBlogs = BlogConvert.INSTANCE.convertNew(blogService.getNewBlogs(blog));
+        IndexReqVO indexReqVO = new IndexReqVO();
+        List<NewBlogsTechRespVO> newTechnologyBlogs = TechnologyBlogConvert.INSTANCE.covertNewTitle(technologyBlogService.getNewList(indexReqVO).getList());
 
         //获取推荐
         List<RecommendDO> recommendDOS = recommendAdminService.getRecommendListSortByList(blog.getAdTypes());
@@ -99,6 +102,7 @@ public class BlogController {
         modelAndView.addObject("hotBlogs", hotBlogs);
         modelAndView.addObject("topBlogs", topBlogs);
         modelAndView.addObject("newBlogs", newBlogs);
+        modelAndView.addObject("newTechnologyBlogs", newTechnologyBlogs);
         modelAndView.addObject("adTypes", recommendDOS);
         modelAndView.addObject("next", nextBlog);
         modelAndView.addObject("prev", prevBlog);

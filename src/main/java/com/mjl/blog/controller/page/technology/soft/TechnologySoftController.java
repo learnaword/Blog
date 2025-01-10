@@ -2,8 +2,7 @@ package com.mjl.blog.controller.page.technology.soft;
 
 import com.mjl.blog.common.pojo.PageResult;
 import com.mjl.blog.common.utils.PageInfo;
-import com.mjl.blog.controller.page.technology.blog.vo.NewBlogsRespVO;
-import com.mjl.blog.controller.page.technology.blog.vo.NewListRespVO;
+import com.mjl.blog.controller.page.technology.blog.vo.NewBlogsTechRespVO;
 import com.mjl.blog.controller.page.technology.blog.vo.OrderListRespVO;
 import com.mjl.blog.controller.page.technology.soft.vo.*;
 import com.mjl.blog.convert.page.TechnologyBlogConvert;
@@ -45,7 +44,7 @@ public class TechnologySoftController {
 
         PageInfo<SoftListRespVO> pageInfo = new PageInfo<>(softList, softReqVO,3);
         List<OrderListRespVO> blogOrderList = TechnologyBlogConvert.INSTANCE.covertOrder(technologyBlogService.getOrderList());
-        List<NewBlogsRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
+        List<NewBlogsTechRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
 
         model.addAttribute("topBlogs", blogOrderList);
         model.addAttribute("newBlogs", newBlogs);
@@ -71,7 +70,7 @@ public class TechnologySoftController {
         PageInfo<SoftDetailsRespVO> pageInfo = new PageInfo<>(softDetailsBlog,softDetailsReqVO,3);
 
         List<OrderListRespVO> blogOrderList = TechnologyBlogConvert.INSTANCE.covertOrder(technologyBlogService.getOrderList());
-        List<NewBlogsRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
+        List<NewBlogsTechRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
 
         model.addAttribute("topBlogs", blogOrderList);
         model.addAttribute("newBlogs", newBlogs);
@@ -95,7 +94,7 @@ public class TechnologySoftController {
 
         PageInfo<SoftInfoRespVO> pageInfo = new PageInfo<>(respVOPageResult,SoftInfoReqVO,3);
         List<OrderListRespVO> blogOrderList = TechnologyBlogConvert.INSTANCE.covertOrder(technologyBlogService.getOrderList());
-        List<NewBlogsRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
+        List<NewBlogsTechRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
 
         model.addAttribute("topBlogs", blogOrderList);
         model.addAttribute("newBlogs", newBlogs);
@@ -124,7 +123,7 @@ public class TechnologySoftController {
         TechnologySoftDO soft = technologySoftService.selectById(softId);
 
         List<OrderListRespVO> blogOrderList = TechnologyBlogConvert.INSTANCE.covertOrder(technologyBlogService.getOrderList());
-        List<NewBlogsRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
+        List<NewBlogsTechRespVO> newBlogs = TechnologyBlogConvert.INSTANCE.convertNew(technologyBlogService.getNewBlogs());
 
         model.addAttribute("topBlogs", blogOrderList);
         model.addAttribute("newBlogs", newBlogs);

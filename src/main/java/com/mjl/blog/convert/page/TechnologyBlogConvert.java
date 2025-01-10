@@ -29,7 +29,7 @@ public interface TechnologyBlogConvert {
     @Mapping(target = "createTime", source = "createTime", qualifiedByName = "timestampToString")
     TopBlogsRespVO convertRecommend(TechnologyBlogDO blogDO);
 
-    List<NewBlogsRespVO> convertNew(List<TechnologyBlogDO> newBlogs);
+    List<NewBlogsTechRespVO> convertNew(List<TechnologyBlogDO> newBlogs);
 
     NextAndPreBlogRespVO convertNextAndPre(TechnologyBlogDO selectNextBlog);
 
@@ -40,4 +40,5 @@ public interface TechnologyBlogConvert {
     @Mapping(target = "createTime", source = "createTime", qualifiedByName = "timestampToString")
     ResultRespVO convertResult(TechnologyBlogDO blogDO);
 
+    List<NewBlogsTechRespVO> covertNewTitle(List<TechnologyBlogDO> newList);
 }
