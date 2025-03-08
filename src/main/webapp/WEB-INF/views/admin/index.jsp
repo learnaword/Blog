@@ -9,7 +9,7 @@
 	<title>博客后台 - 主页</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/static/css/admin/font-awesome.css" rel="stylesheet">
 	<link href="/upload/css/sweetalert2.min.css" rel="stylesheet">
 	<link href="/upload/css/animate.css" rel="stylesheet">
 	<link href="/static/css/admin/style.css" rel="stylesheet">
@@ -276,7 +276,7 @@
 </div>
 
 <!-- 全局js -->
-<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="/static/js/common/jquery.min.js"></script>
 <script src="/upload/js/bootstrap.min.js"></script>
 <script src="/upload/js/jquery.metisMenu.js"></script>
 <script src="/upload/js/jquery.slimscroll.min.js"></script>

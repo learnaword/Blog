@@ -10,7 +10,7 @@
     <meta name="description" content="JAVA是世界上最好的语言" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon"href="/images/favicon.ico">
-    <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/static/js/common/jquery.min.js"></script>
     <link href="/static/css/page/soft.min.css" rel="stylesheet">
     <link href="/static/css/page/media.min.css" rel="stylesheet">
     <script src="/static/js/common/comm.js"></script>

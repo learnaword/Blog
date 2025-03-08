@@ -11,8 +11,8 @@
   <meta name="description" content="${softInfo.introduction}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon"href="/images/favicon.ico">
-  <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+  <link href="/static/css/admin/font-awesome.css" rel="stylesheet">
+  <script src="/static/js/common/jquery.min.js"></script>
   <link href="/static/css/page/soft.min.css" rel="stylesheet">
   <script src="/static/js/common/comm.js"></script>
 </head>

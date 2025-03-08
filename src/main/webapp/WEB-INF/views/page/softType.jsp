@@ -10,7 +10,7 @@
     <meta name="description" content="手机赚钱软件专区:在这里有大量的手机免费赚钱赚钱软件，软件专区功能，在这里你将充分了解这个软件，如何赚钱，能赚到多少，有什么优点和缺点等等，尽我最大可能让你找到适合自己的网赚方式。" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon"href="/images/favicon.ico">
-    <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/static/js/common/jquery.min.js"></script>
     <link href="/static/css/page/soft.min.css" rel="stylesheet">
     <script src="/static/js/common/comm.js"></script>
 </head>

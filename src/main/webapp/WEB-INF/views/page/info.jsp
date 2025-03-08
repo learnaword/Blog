@@ -15,7 +15,7 @@
     <meta name="applicable-device" content="pc,mobile">
     <meta http-equiv="Cache-Control" content="no-transform" />
     <link href="/static/css/page/info.min.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/static/js/common/jquery.min.js"></script>
     <script src="/static/js/common/comm.js"></script>
     <script src="/static/js/common/info.js"></script>
 </head>
@@ -33,7 +33,7 @@
                             <span class="m_time">${blog.createTime}</span>
                             <span style="margin-left:10px;"><i class="fa fa-user fa-fw"></i>帮忙么</span>
                         </div>
-                        <hr style="margin:5px 0px 5px 0px;"/>
+                        <hr style="margin:10px 0px 10px 0px;"/>
                        <div class="news_infos">${blog.content}</div>
             </div>
          </div>
@@ -117,10 +117,10 @@
         <div style="margin-top:10px;background-color:white;padding:10px;" class="hitebg notice">
             <h3 class="htitle">最新文章</h3>
             <ul>
-                <c:forEach var="item" items="${newTechnologyBlogs}" end="3" varStatus="status">
+                <c:forEach var="item" items="${newTechnologyBlogs}" end="1" varStatus="status">
                     <li><a href="${baseUrl}/technology/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
-                <c:forEach var="item" items="${newBlogs}" end="3" varStatus="status">
+                <c:forEach var="item" items="${newBlogs}" end="5" varStatus="status">
                     <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
             </ul>
