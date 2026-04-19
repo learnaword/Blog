@@ -158,10 +158,10 @@ public class BlogAdminServiceImpl implements BlogAdminService {
 
         int updateBlogNum= 0;
         if(DateUtils.isMidnight()){
-            updateBlogNum= Math.max((int) Math.floor(blogCounts / 70), 0);
+            updateBlogNum= Math.max((int) Math.floor(blogCounts / 100), 0);
             lambdaQueryWrapper.orderByAsc(BlogDO::getId);
         }else{
-            updateBlogNum = Math.max((int) Math.floor(blogCounts / 70), 1);
+            updateBlogNum = Math.max((int) Math.floor(blogCounts / 100), 1);
             lambdaQueryWrapper.orderByDesc(BlogDO::getId);
         }
 

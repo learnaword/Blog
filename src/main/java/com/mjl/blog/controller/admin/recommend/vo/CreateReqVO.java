@@ -13,6 +13,8 @@ public class CreateReqVO {
     @NotBlank(message="标题不能为空！！")
     private String title;
 
+    private String invitation;
+
     private String introduction;
 
     private String smallTitle;

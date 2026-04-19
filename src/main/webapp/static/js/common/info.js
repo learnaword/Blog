@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $('.fdownload-button').click(function() {
-        var info = $(this).data('info');
-        handleButtonClick(info,'文章底部');
+        var info = $(this).data('info').split(",");
+       // navigator.clipboard.writeText(info[1]);
+        handleButtonClick(info[0],'文章底部');
     });
 
     $('.mdownload-button').click(function() {
-        var info = $(this).data('info');
-        handleButtonClick(info,'文章内部');
+        var info = $(this).data('info').split(",");
+        handleButtonClick(info[0],'文章内部');
     });
 
     function handleButtonClick(info,position) {
@@ -20,7 +21,7 @@ $(document).ready(function() {
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({
-                buttonInfo: info, // 使用提取的信息
+                recommendId: info, // 使用提取的信息
                 blogId: blogId,
                 position: position
             }),

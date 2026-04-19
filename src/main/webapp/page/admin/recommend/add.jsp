@@ -80,6 +80,12 @@
 							</div>
 						</div>
 						<div class="layui-form-item">
+							<label class="layui-form-label">邀请口令：</label>
+							<div class="layui-input-inline layui-input-wrap">
+								<input type="text" name="invitation" placeholder="邀请口令" autocomplete="off" lay-affix="clear" class="layui-input">
+							</div>
+						</div>
+						<div class="layui-form-item">
 							<label class="layui-form-label">状态：</label>
 							<div class="layui-input-inline">
 								<select name="status">

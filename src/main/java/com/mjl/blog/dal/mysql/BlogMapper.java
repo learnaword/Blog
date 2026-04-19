@@ -35,8 +35,8 @@ public interface BlogMapper extends BaseMapperX<BlogDO> {
 
     default PageResult<BlogDO> selectPage(SoftDetailTypeReqVO reqVO, Long softId, Integer softSection){
         return selectPage(reqVO, new LambdaQueryWrapper<BlogDO>()
-                .eq(BlogDO::getStatus, BlogStatusEnum.PUBLISHED.getStatus())
+                .in(BlogDO::getStatus, BlogStatusEnum.PUBLISHED.getStatus(),BlogStatusEnum.RESERVED.getStatus())
                 .eq(BlogDO::getSoftId,softId).eq(BlogDO::getSoftSection,softSection)
                 .orderByDesc(BlogDO::getUpdateTime));
-    };
+    }
 }

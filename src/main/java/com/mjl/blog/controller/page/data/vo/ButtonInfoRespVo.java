@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class ButtonInfoRespVo {
     private Long blogId;
-    private String buttonInfo;
+    private Long recommendId;
     private String position;
 }

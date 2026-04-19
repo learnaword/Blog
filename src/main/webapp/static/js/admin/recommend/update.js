@@ -52,6 +52,7 @@ $(document).ready(function() {
 		var formData = {
 			id: id,
 			title: $('input[name="title"]').val(),
+			invitation: $('input[name="invitation"]').val(),
 			smallTitle: $('input[name="small_title"]').val(),
 			introduction: $('input[name="introduction"]').val(),
 			images : $('#images').attr('src'),
@@ -93,6 +94,7 @@ $(document).ready(function() {
 			var data = res.data.data;
 			$('input[name="title"]').val(data.title),
 				$('input[name="introduction"]').val(data.introduction),
+				$('input[name="invitation"]').val(data.invitation),
 				$('#images').attr('src', data.images),
 				$('input[name="button_info"]').val(data.buttonInfo),
 				$('input[name="button_bottom"]').val(data.buttonBottom),

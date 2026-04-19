@@ -14,6 +14,8 @@ public class UpdateReqVO {
 
     private String title;
 
+    private String invitation;
+
     private String introduction;
 
     private String smallTitle;

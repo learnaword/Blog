@@ -5,6 +5,7 @@ import com.mjl.blog.controller.page.data.vo.ButtonInfoRespVo;
 import com.mjl.blog.controller.page.data.vo.TableReqVO;
 import com.mjl.blog.dal.dataobject.ButtonInfoDO;
 import com.mjl.blog.dal.mysql.ButtonInfoMapper;
+import com.mjl.blog.service.admin.recommend.RecommendAdminService;
 import com.mjl.blog.utils.UserIpUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class ButtonInfoServiceImpl implements ButtonInfoService{
     @Autowired
     ButtonInfoMapper buttonInfoMapper;
 
+    @Autowired
+    RecommendAdminService recommendAdminService;
+
     @Override
     public void insert(ButtonInfoRespVo buttonInfoRespVo) {
         ButtonInfoDO buttonInfoDO = new ButtonInfoDO();
@@ -28,7 +32,7 @@ public class ButtonInfoServiceImpl implements ButtonInfoService{
         String ip = UserIpUtil.getIp(request);
 
         buttonInfoDO.setBlogId(buttonInfoRespVo.getBlogId())
-                .setButtonInfo(buttonInfoRespVo.getButtonInfo())
+                .setButtonInfo(recommendAdminService.getRecommendById(buttonInfoRespVo.getRecommendId()).getTitle())
                 .setPosition(buttonInfoRespVo.getPosition())
                 .setIp(ip)
                 .setCreateTime(System.currentTimeMillis())

@@ -64,15 +64,15 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
 /*整体信息*/
 body{font:15px "Microsoft YaHei",Arial,Helvetica,sans-serif;background:#f1f1f1;line-height:1.5;color:#333}
-.lbox{width:73%;float:right;overflow:hidden}
-.rbox{width:25.5%;float:left;overflow:hidden}
+.lbox{width:73%;float:left;overflow:hidden}
+.rbox{width:25.5%;float:right;overflow:hidden}
 /*系统标签样式*/
 img{border:0;display:block}
 li,ul{list-style:none}
 a{text-decoration:none;color:#333}
 
 /*头部样式*/
-.leftNav{margin-left:740px;}
+.leftNav{margin-left:640px;}
 header{width:100%;padding:5px 0;background:#1c2327;height:50px}
 header::before{background:#000 linear-gradient(to left,#4cd964,#5ac8fa,#007aff,#34aadc,#5856d6,#ff2d55);content:"";height:5px;position:absolute;top:0;width:100%}
 nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
@@ -87,7 +87,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 .open .navicon:after{margin-top:0;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .open .navicon:after,.open .navicon:before{content:'';display:block;width:30px;height:5px;position:absolute;background:#fff}
 .open{display:block!important}
-.navbox{width:1280px;margin:auto}
+.navbox{width:1080px;margin:auto}
 .imgTop{height:30px;}
 #starlist li{position:relative;display:inline;float:left;width:max-content}
 #starlist li a{display:inline;float:left;padding:0 16px;color:#fff}
@@ -112,7 +112,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 
 
 /*整体样式*/
-article{width:1200px;margin:auto;overflow:hidden}
+article{width:1080px;margin:auto;overflow:hidden}
 
 /*尾部*/
 footer{width:100%;background:#333;color:#a5a4a4;text-align:center;padding:10px 0}

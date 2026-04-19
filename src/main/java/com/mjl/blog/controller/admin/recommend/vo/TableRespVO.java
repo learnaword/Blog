@@ -16,6 +16,8 @@ public class TableRespVO {
 
     private String introduction;
 
+    private String invitation;
+
     private String smallTitle;
 
     private String images;

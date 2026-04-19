@@ -9,7 +9,6 @@
     <link href="/static/css/page/down.css" rel="stylesheet">
 </head>
 <body>
-
 <div class="center-container">
     <div class="upper-text-one">手机用户长按二维码，识别即可下载</div>
     <div class="upper-text-two">新用户扫码下载最高可得58元奖励</div>
@@ -23,6 +22,6 @@
         小安装包，下载快，浏览更省流量，运行更流畅。<br>
     </div>
 </div>
-
+<%@ include file="fonter.jsp"%>
 </body>
 </html>

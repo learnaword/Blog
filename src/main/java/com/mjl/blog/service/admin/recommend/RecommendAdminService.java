@@ -25,4 +25,4 @@ public interface RecommendAdminService {
     List<RecommendDO> getRecommendList(List<Long> adTypes);
 
     List<RecommendDO> getRecommendListSortByList(List<Integer> adTypes);
-    }
+}

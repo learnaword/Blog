@@ -42,6 +42,7 @@ $(document).ready(function() {
 $('#submit_btn').on('click', function () {
 	var formData = {
 		title: $('input[name="title"]').val(),
+		invitation: $('input[name="invitation"]').val(),
 		smallTitle: $('input[name="small_title"]').val(),
 		introduction: $('input[name="introduction"]').val(),
 		images : $('#images').attr('src'),

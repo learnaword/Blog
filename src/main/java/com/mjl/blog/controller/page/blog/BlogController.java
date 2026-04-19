@@ -49,7 +49,6 @@ public class BlogController {
     private String baseUrl;
 
     @RequestMapping("/")
-    @RateLimiter(name = "index", fallbackMethod = "indexFallback")
     public String index(Model model, IndexReqVO indexReqVO) {
 
         List<OrderListRespVO> blogOrderList = BlogConvert.INSTANCE.covertOrder(blogService.getOrderList());
@@ -64,9 +63,23 @@ public class BlogController {
         return "/page/index";
     }
 
+    @RequestMapping("/reserve.html")
+    public String reserve(Model model, IndexReqVO indexReqVO) {
+
+        List<OrderListRespVO> blogOrderList = BlogConvert.INSTANCE.covertOrder(blogService.getOrderList());
+        PageResult<NewListRespVO> blogNewList = BlogConvert.INSTANCE.covertNew(blogService.getNewList(indexReqVO));
+
+        PageInfo<NewListRespVO> pageInfo = new PageInfo<>(blogNewList, indexReqVO, 3);
+        model.addAttribute("blogOrderList", blogOrderList);
+        model.addAttribute("blogNewList", blogNewList);
+        model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("baseUrl", baseUrl);
+
+        return "/page/reserve";
+    }
+
     @RequestMapping({"/find/{id}.html"})
     @SystemLog(description = "访问了文章", userType = "游客")
-    @RateLimiter(name = "find", fallbackMethod = "selectBlogByIdFallback")
     public ModelAndView selectBlogById(@PathVariable @NotNull(message = "id不能为空") Long id) {
         ModelAndView modelAndView = new ModelAndView();
         BlogDO blog = blogService.selectBlogById(id);

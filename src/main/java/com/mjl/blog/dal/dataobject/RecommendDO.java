@@ -22,6 +22,8 @@ public class RecommendDO implements Serializable {
 
     private String title;
 
+    private String invitation;
+
     private String introduction;
 
     private String smallTitle;

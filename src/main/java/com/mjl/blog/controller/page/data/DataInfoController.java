@@ -10,9 +10,13 @@ import com.mjl.blog.convert.page.DataInfoConvert;
 import com.mjl.blog.dal.dataobject.BlogDO;
 import com.mjl.blog.dal.dataobject.ButtonInfoDO;
 import com.mjl.blog.dal.dataobject.SoftDO;
+import com.mjl.blog.service.admin.recommend.RecommendAdminService;
 import com.mjl.blog.service.page.blog.BlogService;
 import com.mjl.blog.service.page.data.ButtonInfoService;
+import io.swagger.v3.oas.annotations.Operation;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -26,6 +30,9 @@ public class DataInfoController {
 
     @Autowired
     ButtonInfoService buttonInfoService;
+
+    @Resource
+    private RecommendAdminService recommendService;
 
     @Autowired
     BlogService blogService;
@@ -50,5 +57,10 @@ public class DataInfoController {
 
         return success(new PageResult<>(buttonInfoDOList,ButtonInfoDOPageResult.getTotal()));
 
+    }
+
+    @GetMapping ("/invitation")
+    public CommonResult<String> invitation(@RequestParam("id") Long id){
+        return success(recommendService.getRecommendById(id).getInvitation());
     }
 }

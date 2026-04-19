@@ -57,7 +57,7 @@
                 <div>
                     <span class="recSpan2">${item.introduction}</span>
                     <div class="frecDiv2">
-                        <a class="fdownload-button" data-info="${item.title}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
+                        <a class="fdownload-button" data-info="${item.id},${item.invitation}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
                         <span style="font-size:11px;">${item.buttonBottom}</span>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                       <div>
                        <span class="recSpan2">${item.introduction}</span>
                     <div class="frecDiv2">
-                        <a class="fdownload-button" data-info="${item.title}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
+                        <a class="fdownload-button" data-info="${item.id},${item.invitation}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
                         <span style="font-size:11px;">${item.buttonBottom}</span>
                     </div>
                 </div>

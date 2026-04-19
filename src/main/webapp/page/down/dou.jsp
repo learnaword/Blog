@@ -23,5 +23,6 @@
         专属金币红包，玩法丰富有趣，助你轻松赚钱！<br>
     </div>
 </div>
+<%@ include file="fonter.jsp"%>
 </body>
 </html>

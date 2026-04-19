@@ -3,7 +3,6 @@ package com.mjl.blog.framework.quartz.core.handler;
 /**
  * 任务处理器
  *
- 
  */
 public interface JobHandler {
 

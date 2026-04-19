@@ -25,8 +25,8 @@ public class TokenAdminServiceImpl implements TokenAdminService {
     @Resource
     private SystemRefreshTokenMapper systemRefreshTokenMapper;
 
-    private final int ACCESS_TOKEN_EXPIRES_TIME = 120; //分钟
-    private final int REFRESH_TOKEN_EXPIRES_TIME = 1200;
+    private final int ACCESS_TOKEN_EXPIRES_TIME = 30; //天
+    private final int REFRESH_TOKEN_EXPIRES_TIME = 30;
 
     @Override
     public SystemAccessTokenDO createAccessToken(Long userId, LoginReqVO loginReqVO) {
@@ -35,8 +35,13 @@ public class TokenAdminServiceImpl implements TokenAdminService {
                 .setAccessToken(generateAccessToken())
                 .setStatus(CommonStatusEnum.ENABLE.getStatus())
                 .setCreateTime(LocalDateTime.now())
-                .setExpires(LocalDateTime.now().plusMinutes(ACCESS_TOKEN_EXPIRES_TIME))
+                .setExpires(LocalDateTime.now().plusDays(ACCESS_TOKEN_EXPIRES_TIME))
                 .setRefreshToken(systemRefreshTokenDO.getRefreshToken());
+
+        // 如果是测试用户，有效期设置为10分钟。
+        if(userId == 2){
+            accessTokenDO.setExpires(LocalDateTime.now().plusMinutes(10));
+        }
         systemAccessTokenMapper.insert(accessTokenDO);
         return accessTokenDO;
     }
@@ -47,7 +52,7 @@ public class TokenAdminServiceImpl implements TokenAdminService {
                 .setRefreshToken(generateRefreshToken())
                 .setStatus(CommonStatusEnum.ENABLE.getStatus())
                 .setCreateTime(LocalDateTime.now())
-                .setExpires(LocalDateTime.now().plusMinutes(REFRESH_TOKEN_EXPIRES_TIME));
+                .setExpires(LocalDateTime.now().plusDays(REFRESH_TOKEN_EXPIRES_TIME));
         systemRefreshTokenMapper.insert(refreshTokenDO);
         return refreshTokenDO;
     }
