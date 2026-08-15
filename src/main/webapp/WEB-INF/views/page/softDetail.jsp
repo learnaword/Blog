@@ -39,6 +39,16 @@
                       </div>
                   </div>
               </c:if>
+        <c:if test="${softId == 118}">
+            <div class="fenlei" style="padding: 20px;">
+                <p><span style="color: rgb(255, 0, 0);"><br></span></p><p><span style="color: rgb(255, 0, 0);">今日头条极速版邀请码</span>：Q70344631，新用户填写邀请码最高可获取32元奖励，长期有效，不要错过哦～</p><p><br></p>
+            </div>
+        </c:if>
+        <c:if test="${softId == 117}">
+            <div class="fenlei" style="padding: 20px;">
+                <p><span style="color: rgb(255, 0, 0);"><br></span></p><p><span style="color: rgb(255, 0, 0);">抖音极速版邀请码</span>：AF231869201，新用户填写邀请码可获取随机现金奖励，长期有效，不要错过哦～</p><p><br></p>
+            </div>
+        </c:if>
         <div class="newblogs bloglist whitebg">
             <ul>
                 <c:forEach var="item" items="${blogList}" varStatus="status">

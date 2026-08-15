@@ -66,6 +66,7 @@ $(document).ready(function() {
 				status: $('select[name="status"]').val(),
 				images : $('#images').attr('src'),
 			};
+
 			request.post("/admin/media/create", formData).then(function(data){
 				if(data.data.code == "0"){
 					Swal.fire({

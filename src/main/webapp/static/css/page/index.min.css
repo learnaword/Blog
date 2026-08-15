@@ -84,7 +84,7 @@ li,ul{list-style:none}
 a{text-decoration:none;color:#333}
 
 /*头部样式*/
-.leftNav{margin-left:740px;}
+.leftNav{margin-left:700px;}
 header{width:100%;padding:5px 0;background:#1c2327;height:50px}
 header::before{background:#000 linear-gradient(to left,#4cd964,#5ac8fa,#007aff,#34aadc,#5856d6,#ff2d55);content:"";height:5px;position:absolute;top:0;width:100%}
 nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
@@ -99,7 +99,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 .open .navicon:after{margin-top:0;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .open .navicon:after,.open .navicon:before{content:'';display:block;width:30px;height:5px;position:absolute;background:#fff}
 .open{display:block!important}
-.navbox{width:1280px;margin:auto}
+.navbox{width:1200px;margin:auto}
 .imgTop{height:30px;}
 #starlist li{position:relative;display:inline;float:left;width:max-content}
 #starlist li a{display:inline;float:left;padding:0 16px;color:#fff}
@@ -184,18 +184,6 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .news_infos img{max-width:650px}
 
 
-@media screen and (min-width:1024px) and (max-width:1199px){.navbox{width:80%}
-    #starlist li a{padding:0 10px}
-    #starlist li.menu:before{right:0}
-    .zhuanti li{width:27%}
-    .searchbox{width:96%}
-    .box,article{width:100%}
-    .fader .slide img{height:260px}
-    .links li{width:100%;text-align:left}
-    .jianzhan li section{margin:0 5px}
-    .jianzhan li:nth-child(1){width:30%}
-    .jianzhan li:nth-child(3){width:36.3%}
-}
 @media screen and (max-width:1023px){.logo img{margin:14px auto;}
     nav{width:100%;height:auto;background:rgba(0,0,0,.5);margin-top:18px;position:fixed;z-index:999;top:42px}
     .searchico{position:absolute;top:6px;right:10px}
@@ -227,7 +215,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .zhuanti li{width:27%}
 }
 
-@media only screen and (max-width:768px){.logo img{margin:14px auto;}
+@media only screen and (max-width:768px){.logo{margin:14px auto;}
     .bplist a img{width:96%}
     .xinlu li a{padding:5px;margin:0 5px}
     .myblog li{width:33.3%}
@@ -242,7 +230,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
     .fader .pager_list{position:absolute;width:100%;height:10px;padding:0;line-height:10px;bottom:20px;text-align:center;z-index:4}
     .clicknum,.lm,.pingl{display:none}
     .infoBar{display:block}
-    .logo img{margin:14px auto;}
+    .logo{margin:0px auto;}
     .dayWidth{width:94%;}
     .rel-question li{width:96%;}
     .headWidth{width:96%;}

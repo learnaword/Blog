@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>修改推荐</title>
+	<title>添加推荐</title>
 	<link rel="shortcut icon" href="/images/favicon.ico">
 	<link href="/upload/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/css/layui.min.css" rel="stylesheet"/>
@@ -80,12 +80,6 @@
 							</div>
 						</div>
 						<div class="layui-form-item">
-							<label class="layui-form-label">邀请口令：</label>
-							<div class="layui-input-inline layui-input-wrap">
-								<input type="text" name="invitation" placeholder="邀请口令" autocomplete="off" lay-affix="clear" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item">
 							<label class="layui-form-label">状态：</label>
 							<div class="layui-input-inline">
 								<select name="status">
@@ -112,7 +106,7 @@
 	</div>
 </div>
 <!--全局js -->
-<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="/static/js/common/jquery.min.js"></script>
 <script src="/upload/js/bootstrap.min.js"></script>
 <!--request携带token-->
 <script src="/upload/js/axios.min.js"></script>

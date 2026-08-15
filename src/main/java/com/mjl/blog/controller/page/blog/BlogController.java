@@ -64,12 +64,12 @@ public class BlogController {
     }
 
     @RequestMapping("/reserve.html")
-    public String reserve(Model model, IndexReqVO indexReqVO) {
+    public String reserve(Model model, com.mjl.blog.controller.page.blog.vo.IndexReqVO indexReqVO) {
 
         List<OrderListRespVO> blogOrderList = BlogConvert.INSTANCE.covertOrder(blogService.getOrderList());
-        PageResult<NewListRespVO> blogNewList = BlogConvert.INSTANCE.covertNew(blogService.getNewList(indexReqVO));
+        PageResult<com.mjl.blog.controller.page.blog.vo.NewListRespVO> blogNewList = BlogConvert.INSTANCE.covertNew(blogService.getNewList(indexReqVO));
 
-        PageInfo<NewListRespVO> pageInfo = new PageInfo<>(blogNewList, indexReqVO, 3);
+        PageInfo<com.mjl.blog.controller.page.blog.vo.NewListRespVO> pageInfo = new PageInfo<>(blogNewList, indexReqVO, 3);
         model.addAttribute("blogOrderList", blogOrderList);
         model.addAttribute("blogNewList", blogNewList);
         model.addAttribute("pageInfo", pageInfo);
@@ -79,7 +79,6 @@ public class BlogController {
     }
 
     @RequestMapping({"/find/{id}.html"})
-    @SystemLog(description = "访问了文章", userType = "游客")
     public ModelAndView selectBlogById(@PathVariable @NotNull(message = "id不能为空") Long id) {
         ModelAndView modelAndView = new ModelAndView();
         BlogDO blog = blogService.selectBlogById(id);

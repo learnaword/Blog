@@ -10,7 +10,7 @@
 	<script src="/upload/js/sweetalert2.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.4/layui.min.js"></script>
 	<script src="/upload/js/axios.min.js"></script>
-	<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/static/js/common/jquery.min.js"></script>
 	<script src="/upload/js/admin/token.js"></script>
 	<script type="module" src="/static/js/admin/blog/table.js"></script>
 </head>

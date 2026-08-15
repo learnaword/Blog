@@ -166,9 +166,11 @@ public class BlogAdminServiceImpl implements BlogAdminService {
         }
 
         lambdaQueryWrapper.last("limit "+updateBlogNum);
-
         List<BlogDO> blogDOList = blogMapper.selectList(lambdaQueryWrapper);
         blogDOList.stream().forEach(item->item.setStatus(1));
+        if(blogDOList.isEmpty()){
+            return;
+        }
         blogMapper.updateBatch(blogDOList);
     }
 }

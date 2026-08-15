@@ -35,7 +35,7 @@ li,ul{list-style:none}
 a{text-decoration:none;color:#333}
 
 /*头部样式*/
-.leftNav{margin-left:740px;}
+.leftNav{margin-left:700px;}
 header{width:100%;padding:5px 0;background:#1c2327;height:50px}
 header::before{background:#000 linear-gradient(to left,#4cd964,#5ac8fa,#007aff,#34aadc,#5856d6,#ff2d55);content:"";height:5px;position:absolute;top:0;width:100%}
 nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}

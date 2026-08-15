@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>${blog.title}-帮忙么</title>
+    <title>${blog.title}-帮忙么网</title>
     <meta name="keywords" content="${blog.keyword}" />
     <meta name="description" content="${blog.introduction}" />
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -26,12 +26,12 @@
        <div class="infos">
             <div class="newsview">
                 <div class="intitle">
-                    <a href="${baseUrl}">帮忙么</a>&nbsp;&gt;&nbsp;<a href="${baseUrl}/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
+                    <a href="${baseUrl}">首页</a>&nbsp;&gt;&nbsp;<a href="${baseUrl}/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
                         </div>
                         <h1 class="news_title">${blog.title}</h1>
                         <div>
                             <span class="m_time">${blog.createTime}</span>
-                            <span style="margin-left:10px;"><i class="fa fa-user fa-fw"></i>帮忙么</span>
+                            <span style="margin-left:10px;"><i class="fa fa-user fa-fw"></i>帮忙么网</span>
                         </div>
                         <hr style="margin:10px 0px 10px 0px;"/>
                        <div class="news_infos">${blog.content}</div>
@@ -57,7 +57,7 @@
                 <div>
                     <span class="recSpan2">${item.introduction}</span>
                     <div class="frecDiv2">
-                        <a class="fdownload-button" data-info="${item.id},${item.invitation}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
+                        <a class="fdownload-button" data-info="${item.title}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
                         <span style="font-size:11px;">${item.buttonBottom}</span>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                       <div>
                        <span class="recSpan2">${item.introduction}</span>
                     <div class="frecDiv2">
-                        <a class="fdownload-button" data-info="${item.id},${item.invitation}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
+                        <a class="fdownload-button" data-info="${item.title}" href="${item.buttonLink}" rel="nofollow">${item.buttonInfo}</a>
                         <span style="font-size:11px;">${item.buttonBottom}</span>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                                 ${item.introduction}
                         </p>
                          <p class="bloginfo">
-                            <span>帮忙么</span>
+                            <span>帮忙么网</span>
                             <span style="margin-left:0px;" class="m_time">${item.createTime}</span>
                         </p>
                     </li>
@@ -117,10 +117,7 @@
         <div style="margin-top:10px;background-color:white;padding:10px;" class="hitebg notice">
             <h3 class="htitle">最新文章</h3>
             <ul>
-                <c:forEach var="item" items="${newTechnologyBlogs}" end="1" varStatus="status">
-                    <li><a href="${baseUrl}/technology/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
-                </c:forEach>
-                <c:forEach var="item" items="${newBlogs}" end="5" varStatus="status">
+                <c:forEach var="item" items="${newBlogs}" end="7" varStatus="status">
                     <li><a href="${baseUrl}/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
                 </c:forEach>
             </ul>

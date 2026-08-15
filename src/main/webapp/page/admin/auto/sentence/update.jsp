@@ -72,7 +72,7 @@
 	</div>
 </div>
 <!--全局js -->
-<script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+<script src="/static/js/common/jquery.min.js"></script>
 <script src="/upload/js/bootstrap.min.js"></script>
 <!--request携带token-->
 <script src="/upload/js/axios.min.js"></script>

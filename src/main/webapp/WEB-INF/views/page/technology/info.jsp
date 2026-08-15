@@ -26,7 +26,7 @@
        <div class="infos">
             <div class="newsview">
                 <div class="intitle">
-                    <a href="${baseUrl}">NEW个对象</a>&nbsp;&gt;&nbsp;<a href="${baseUrl}/technology/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
+                    <a href="${baseUrl}">首页</a>&nbsp;>&nbsp;<a href="${baseUrl}/technology/softDetail/${blog.soft.id}.html" rel="nofollow">${blog.soft.title}</a>&nbsp;&gt;&nbsp;当前页面
                         </div>
                         <h1 class="news_title">${blog.title}</h1>
                         <div>
@@ -67,23 +67,32 @@
     </div>
 </div>
 <div class="rbox">
-    <div style="background-color:white;padding:10px;" class="hitebg notice">
-            <h3 class="htitle">推荐文章</h3>
-            <ul>
-                <c:forEach var="item" items="${topBlogs}" end="1"  varStatus="status">
-                    <li><a href="${baseUrl}/technology/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
-                </c:forEach>
-            </ul>
+    <div class="mediaCard" style="background:#fff;">
+        <span class="mediaRecSpan">NEW个对象</span>
+        <img style="height:50px;" src="${baseUrl}/images/touxiang.jpg"  alt="NEW个对象">
+        <div class="mediaRecDiv">
+            <span class="mediaRecSpan2">JAVA是世界上最好的语言</span>
         </div>
-        <div style="margin-top:10px;background-color:white;padding:10px;" class="hitebg notice">
-            <h3 class="htitle">最新文章</h3>
-            <ul>
-                <c:forEach var="item" items="${newBlogs}" end="6" varStatus="status">
-                    <li><a href="${baseUrl}/technology/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
-                </c:forEach>
+        <div class="mediaRecText">
+        </div>
+    </div>
+    <div style="margin-top:10px;background-color:white;padding:10px;" class="whitebg notice">
+        <h3 class="htitle">推荐文章</h3>
+        <ul>
+            <c:forEach var="item" items="${topBlogs}" end="6" varStatus="status">
+                <li><a href="${baseUrl}/technology/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+            </c:forEach>
+        </ul>
+    </div>
+    <div style="margin-top:10px;background-color:white;padding:10px;" class="whitebg notice">
+        <h3 class="htitle">最新文章</h3>
+        <ul>
+            <c:forEach var="item" items="${newBlogs}" end="6" varStatus="status">
+                <li><a href="${baseUrl}/technology/find/${item.id}.html" title="${item.title}" rel="bookmark">${item.title}</a></li>
+            </c:forEach>
 
-            </ul>
-        </div>
+        </ul>
+    </div>
     </div>
 </article>
 <%@ include file="../fonter.jsp"%>

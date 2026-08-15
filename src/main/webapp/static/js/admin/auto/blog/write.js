@@ -27,7 +27,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#summernote").code("您好，");
+	$("#summernote").code("<br><span style=\"background-color: rgb(255, 255, 255); color: rgb(255, 0, 0); font-size: 18px;\">您好</span>，");
 	layui.use(['table','laytpl'], function () {
 		var layer = layui.layer;
 		var util = layui.util;

@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>${media.title}-帮忙么</title>
+    <title>${media.title}-帮忙么网</title>
     <meta name="keywords" content="${media.keyword}" />
     <meta name="description" content="${media.introduction}" />
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -16,7 +16,7 @@
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link href="/static/css/page/media.min.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/static/js/common/jquery.min.js"></script>
     <script src="/static/js/common/comm.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
         <div class="infos">
             <div class="newsview">
                 <div class="intitle">
-                    <a href="${baseUrl}">帮忙么</a>&nbsp;> <a href="/media/media.html" rel="nofollow">自媒体</a>&nbsp;&gt;&nbsp;当前页面
+                    <a href="${baseUrl}">帮忙么网</a>&nbsp;> <a href="/media/media.html" rel="nofollow">自媒体</a>&nbsp;&gt;&nbsp;当前页面
                 </div>
                 <h1 class="news_title">${media.title}</h1>
                 <div>

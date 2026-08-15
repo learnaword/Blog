@@ -1,12 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
-<header id="header" style="margin:0px;">
+<header id="header" class="infoBar" style="margin:0px;">
     <div class="navbox">
-        <h2 id="mnavh">
-            <span class="navicon"></span>
-        </h2>
         <div class="logo">
-            <a href=""><img class="imgTop" src="${baseUrl}/images/logo.jpg"></a>
+            帮忙么网
         </div>
         <nav class="leftNav">
             <ul id="starlist">
@@ -16,9 +13,9 @@
                 <li><a href="${baseUrl}/technology/technology.html" rel="nofollow">技术专区</a></li>
             </ul>
         </nav>
-        <div class="searchico"></div>
     </div>
 </header>
+
 <div class="searchbox">
     <div class="search">
         <form action="/blog/result.html" method="get" accept-charset="UTF-8">
@@ -28,4 +25,3 @@
     </div>
     <div class="searchclose"></div>
 </div>
-

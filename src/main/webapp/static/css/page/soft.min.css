@@ -83,7 +83,7 @@ li,ul{list-style:none}
 a{text-decoration:none;color:#333}
 
 /*头部样式*/
-.leftNav{margin-left:740px;}
+.leftNav{margin-left:700px;}
 header{width:100%;padding:5px 0;background:#1c2327;height:50px}
 header::before{background:#000 linear-gradient(to left,#4cd964,#5ac8fa,#007aff,#34aadc,#5856d6,#ff2d55);content:"";height:5px;position:absolute;top:0;width:100%}
 nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
@@ -98,7 +98,7 @@ nav{float:left;height:50px;line-height:50px;text-align:center;margin-top:3px}
 .open .navicon:after{margin-top:0;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .open .navicon:after,.open .navicon:before{content:'';display:block;width:30px;height:5px;position:absolute;background:#fff}
 .open{display:block!important}
-.navbox{width:1280px;margin:auto}
+.navbox{width:1200px;margin:auto}
 .imgTop{height:30px;}
 #starlist li{position:relative;display:inline;float:left;width:max-content}
 #starlist li a{display:inline;float:left;padding:0 16px;color:#fff}
@@ -214,7 +214,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
 .cloud ul a:last-child{background:#3299bb}
 .cloud ul a:hover{border-radius:0;text-shadow:#000 1px 1px 1px}
 
-@media screen and (min-width:1024px) and (max-width:1199px){.navbox{width:80%}
+@media screen and (min-width:1024px) and (max-width:1199px){.navbox{width:100%}
   #starlist li a{padding:0 10px}
   #starlist li.menu:before{right:0}
   .zhuanti li{width:27%}
@@ -294,7 +294,7 @@ h3.blogtitle{line-height:30px;height:30px;margin:0px 0px 10px 0px;}
   .bplist{height:60px}
   .bplist a img{height:100%}
   a.viewmore{position:static;margin-top:20px;text-align:center}
-  .blogpic{height:80px;width:80px;margin-right:10px}
+  .blogpic{height:70px;width:70px;margin-right:10px}
   .blogtext{margin-top:10px}
   .lanmu h1{font-size:18px}
   .top_pic{width:100%;float:none;margin-bottom:10px}

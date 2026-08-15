@@ -13,29 +13,29 @@ body {
     text-align: center;
     position: relative;
     border: 1px solid #c0c4cc; /* 红色边框，可根据需要调整颜色和宽度 */
-    padding: 20px; /* 设置边框内的空白，根据需要调整 */
+    padding: 10px; /* 设置边框内的空白，根据需要调整 */
     background-color: white;
     width: 550px;
     box-sizing: border-box; /* 保证边框宽度不会增加容器的宽度 */
 }
 
 .bigImage {
-    width: 45%;
+    width: 60%;
     height: auto;
-    border: 5px solid #ff0000; /* 红色边框，可根据需要调整颜色和宽度 */
-    padding: 8px; /* 设置边框内的空白，根据需要调整 */
+    border: 1px solid #ff0000; /* 红色边框，可根据需要调整颜色和宽度 */
+    padding: 1px; /* 设置边框内的空白，根据需要调整 */
     box-sizing: border-box; /* 保证边框宽度不会增加图片的宽度 */
 }
 
 .upper-text-one {
-    font-size: 17px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 15px;
+    color: red;
+    margin-bottom: 10px;
 }
 
 .upper-text-two {
     font-size: 13px;
-    color: red;
+    color: #333;
     margin-bottom: 20px;
 }
 

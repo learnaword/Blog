@@ -63,16 +63,19 @@ $(document).ready(function() {
 
 		function renderSoft(data) {
 			var responseData = data.data.data;
-			$('select[name="softId"]').html("");
+			var softId =  $('select[name="softId"]').val();
+			$('select[name="softId"]').html(""); // 清空当前选项
 			var typeName = '';
 			for (var i = 0; i < responseData.length; i++) {
-				typeName += '<option value="' + responseData[i].id + '">' + responseData[i].title + '</option>';
+				// 为每个选项添加值
+				typeName += '<option value="' + responseData[i].id + '" ' +
+					(responseData[i].id == softId ? 'selected' : '') + '>' + responseData[i].title + '</option>';
 			}
-			// 初始化数据
+			// 将选项添加到下拉框
 			$('select[name="softId"]').append(typeName);
-
-			layui.form.render();
+			layui.form.render(); // 刷新表单渲染
 		}
+
 
 		function renderAd() {
 			let url = "/admin/recommend/list";
@@ -138,6 +141,7 @@ $(document).ready(function() {
 				status: $('select[name="status"]').val(),
 				images : $('#images').attr('src'),
 			};
+
 			request.post("/admin/blog/create", formData).then(function(data){
 				if(data.data.code == "0"){
 					Swal.fire({
