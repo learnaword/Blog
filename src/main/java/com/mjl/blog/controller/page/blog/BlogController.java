@@ -63,6 +63,20 @@ public class BlogController {
         return "/page/index";
     }
 
+    @RequestMapping("/new")
+    public String news(Model model, IndexReqVO indexReqVO) {
+        List<OrderListRespVO> blogOrderList = BlogConvert.INSTANCE.covertOrder(blogService.getOrderList());
+        PageResult<NewListRespVO> technologyBlogNewList = TechnologyBlogConvert.INSTANCE.covertNew(technologyBlogService.getNewList(indexReqVO));
+
+        PageInfo<NewListRespVO> pageInfo = new PageInfo<>(technologyBlogNewList, indexReqVO, 3);
+        model.addAttribute("blogOrderList", blogOrderList);
+        model.addAttribute("blogNewList", technologyBlogNewList);
+        model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute("baseUrl", baseUrl);
+
+        return "/page/new";
+    }
+
     @RequestMapping("/reserve.html")
     public String reserve(Model model, com.mjl.blog.controller.page.blog.vo.IndexReqVO indexReqVO) {
 
